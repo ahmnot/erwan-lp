@@ -12,9 +12,6 @@
 	</div>
 
 	<nav>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L1,2 C1.5,3 1.5,3 2,3 L2,0 Z" />
-		</svg>
 		<ul>
 			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
 				<a href="/">Home</a>
@@ -26,9 +23,6 @@
 				<a href="/contact">Contact</a>
 			</li>
 		</ul>
-		<svg viewBox="0 0 2 3" aria-hidden="true">
-			<path d="M0,0 L0,3 C0.5,3 0.5,3 1,2 L2,0 Z" />
-		</svg>
 	</nav>
 
 	<div class="corner">
@@ -42,6 +36,7 @@
 	header {
 		display: flex;
 		justify-content: space-between;
+        background-color: transparent;
 	}
 
 	.corner {
@@ -90,6 +85,7 @@
 		list-style: none;
 		background: var(--background);
 		background-size: contain;
+        background-color: transparent;
 	}
 
 	li {
@@ -106,7 +102,7 @@
 		top: 0;
 		left: calc(50% - var(--size));
 		border: var(--size) solid transparent;
-		border-top: var(--size) solid var(--color-theme-1);
+        border-top: var(--size) solid var(--color-theme-1);
 	}
 
 	nav a {
