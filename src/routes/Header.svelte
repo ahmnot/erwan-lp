@@ -1,77 +1,49 @@
-<script>
+<script lang="ts">
 	import { page } from '$app/stores';
-	import logo from '$lib/images/svelte-logo.svg';
-	import github from '$lib/images/github.svg';
+	import logo from '$lib/images/autres/logo-signature-transparent-upscale.png';
+
 </script>
 
 <header>
-	<div class="corner">
-		<a href="https://kit.svelte.dev">
-			<img src={logo} alt="SvelteKit" />
+	<div class="corner-left">
+		<a href="http://localhost:5173/">
+			<img src={logo} alt="logo-signature" />
 		</a>
 	</div>
 
 	<nav>
 		<ul>
 			<li aria-current={$page.url.pathname === '/' ? 'page' : undefined}>
-				<a href="/">Home</a>
+				<a href="/">Accueil</a>
 			</li>
 			<li aria-current={$page.url.pathname === '/bio' ? 'page' : undefined}>
 				<a href="/bio">Bio</a>
 			</li>
-			<li aria-current={$page.url.pathname.startsWith('/contact') ? 'page' : undefined}>
+			<li aria-current={$page.url.pathname === '/contact' ? 'page' : undefined}>
 				<a href="/contact">Contact</a>
 			</li>
 		</ul>
 	</nav>
-
-	<div class="corner">
-		<a href="https://github.com/sveltejs/kit">
-			<img src={github} alt="GitHub" />
-		</a>
-	</div>
+	<div></div>
 </header>
 
 <style>
 	header {
 		display: flex;
 		justify-content: space-between;
-        background-color: transparent;
+		background-color: transparent;
 	}
 
-	.corner {
-		width: 3em;
-		height: 3em;
-	}
-
-	.corner a {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		width: 100%;
-		height: 100%;
-	}
-
-	.corner img {
-		width: 2em;
-		height: 2em;
-		object-fit: contain;
+	.corner-left {
+		width: 10px;
+		height: 10px;
 	}
 
 	nav {
+		position: relative;
 		display: flex;
 		justify-content: center;
 		--background: rgba(255, 255, 255, 0.7);
-	}
-
-	svg {
-		width: 2em;
-		height: 3em;
-		display: block;
-	}
-
-	path {
-		fill: var(--background);
 	}
 
 	ul {
@@ -85,24 +57,12 @@
 		list-style: none;
 		background: var(--background);
 		background-size: contain;
-        background-color: transparent;
+		background-color: transparent;
 	}
 
 	li {
 		position: relative;
 		height: 100%;
-	}
-
-	li[aria-current='page']::before {
-		--size: 6px;
-		content: '';
-		width: 0;
-		height: 0;
-		position: absolute;
-		top: 0;
-		left: calc(50% - var(--size));
-		border: var(--size) solid transparent;
-        border-top: var(--size) solid var(--color-theme-1);
 	}
 
 	nav a {
@@ -117,9 +77,26 @@
 		letter-spacing: 0.1em;
 		text-decoration: none;
 		transition: color 0.2s linear;
+		overflow: hidden;
+	}
+
+	nav a::after {
+		content: '';
+		position: absolute;
+		bottom: -5px; /* Adjust based on your design */
+		left: 50%;
+		width: 0%;
+		height: 2px; /* Thickness of the underline */
+		background-color: var(--color-theme-1); /* Color of the underline */
+	}
+
+	li[aria-current='page'] a::after {
+		width: 100%; /* Full width of the link */
+		left: 0; /* Align to the left edge */
 	}
 
 	a:hover {
 		color: var(--color-theme-1);
 	}
+
 </style>
