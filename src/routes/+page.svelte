@@ -1,28 +1,86 @@
 <script>
+  import MediaContainer from "./MediaContainer.svelte"
+
+  let imagePath = 'src/lib/images/affiches-court-metrages/';
+
+  // Vous auriez ici votre liste de médias avec leurs informations
+  let mediaList = [
+    { image: imagePath + 'fantasy.jpg', title: 'Fantasy', author: 'Auteur', type: 'Type', work: 'Travail' },
+    { image: imagePath + 'le-bouquet-square.png', title: 'Le bouquet', author: 'Auteur', type: 'Type', work: 'Travail'},
+    { image: imagePath + 'nature-morte.png', title: 'nature morte', author: 'Auteur', type: 'Type', work: 'Travail'},
+    { image: imagePath + 'resistencia.png', title: 'Resistencia', author: 'Auteur', type: 'Type', work: 'Travail', verticalOffset: '6.5%'},
+    { image: imagePath + 'sahara-3.png', title: 'SAHARA', author: 'Auteur', type: 'Type', work: 'Travail' },
+    { image: imagePath + 'time-trap.jpg', title: 'Time Trap', author: 'Auteur', type: 'Type', work: 'Travail', verticalOffset: '-8%' },
+    { image: imagePath + 'erinyes.jpg', title: 'ERINYES', author: 'Auteur', type: 'Type', work: 'Travail', horizontalOffset: '-5%'   },
+    { image: imagePath + 'glory-to-dallas.jpg', title: 'Glory To Dallas', author: 'Auteur', type: 'Type', work: 'Travail', verticalOffset: '-17%'   },
+    { image: imagePath + 'bistro-belzebuth.jpg', title: 'Toy Tinkers', author: 'Auteur', type: 'Type', work: 'Travail'  }
+  ];
+  
 </script>
 
-<svelte:head>
-	<title>Accueil</title>
-	<meta name="description" content="Erwan Le Pape" />
-</svelte:head>
 
-<section>
-	<h1>
-		Bienvenue
-	</h1>
 
-</section>
+<main>
+	<section id="accueil">
+		<h1>Bienvenue</h1>
+
+		<div class="media-grid">
+		{#each mediaList as media}
+			<MediaContainer {...media} />
+		{/each}
+		</div>
+
+	</section>
+
+	<section id="bio">
+		<div class="text-column">
+		<h1>Who am I</h1>
+		<p>
+			Hi, my name is Erwan, I'm a young composer based in Lyon, France. I
+			studied music and composition at the conservatory and university and
+			I'm currently doing a Master degree in music scoring for films,
+			television and video games. My main influences span from neoclassical
+			to contemporary music with a special preference for orchestral music.
+		</p>
+		</div>
+	</section>
+
+	<section id="contact">
+		<h1>Contact</h1>
+	</section>
+</main>
+
 
 <style>
-	section {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		flex: 0.6;
-	}
+  .media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  }
 
-	h1 {
-		width: 100%;
-	}
+  section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 0.6;
+    padding-bottom: 500px;
+  }
+
+  #accueil {
+    display: block;
+  }
+
+  h1 {
+    width: 100%;
+  }
+
+  main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px; /* Adjust based on the height of your header */
+    width: 100%;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
 </style>
