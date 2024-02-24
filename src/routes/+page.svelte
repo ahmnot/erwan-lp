@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
   import MediaContainer from "./MediaContainer.svelte"
 
   let imagePath = 'src/lib/images/affiches-court-metrages/';
@@ -6,10 +8,10 @@
   // Vous auriez ici votre liste de médias avec leurs informations
   let mediaList = [
     { image: imagePath + 'fantasy.jpg', title: 'Fantasy', author: 'Auteur', type: 'Type', work: 'Travail' },
-    { image: imagePath + 'le-bouquet-square.png', title: 'Le bouquet', author: 'Auteur', type: 'Type', work: 'Travail'},
+    { image: imagePath + 'le-bouquet.png', title: 'Le bouquet', author: 'Auteur', type: 'Type', work: 'Travail'},
     { image: imagePath + 'nature-morte.png', title: 'nature morte', author: 'Auteur', type: 'Type', work: 'Travail'},
     { image: imagePath + 'resistencia.png', title: 'Resistencia', author: 'Auteur', type: 'Type', work: 'Travail', verticalOffset: '6.5%'},
-    { image: imagePath + 'sahara-3.png', title: 'SAHARA', author: 'Auteur', type: 'Type', work: 'Travail' },
+    { image: imagePath + 'sahara.png', title: 'SAHARA', author: 'Auteur', type: 'Type', work: 'Travail' },
     { image: imagePath + 'time-trap.jpg', title: 'Time Trap', author: 'Auteur', type: 'Type', work: 'Travail', verticalOffset: '-8%' },
     { image: imagePath + 'erinyes.jpg', title: 'ERINYES', author: 'Auteur', type: 'Type', work: 'Travail', horizontalOffset: '-5%'   },
     { image: imagePath + 'glory-to-dallas.jpg', title: 'Glory To Dallas', author: 'Auteur', type: 'Type', work: 'Travail', verticalOffset: '-17%'   },
@@ -17,8 +19,6 @@
   ];
   
 </script>
-
-
 
 <main>
 	<section id="accueil">
