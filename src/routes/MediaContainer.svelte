@@ -1,8 +1,5 @@
 <script>
     // @ts-nocheck
-	import { onMount } from "svelte";
-
-
     export let image = "";
     export let title = "";
     export let author = "";
@@ -14,13 +11,10 @@
   function extractTitle(imageWholePath) {
     return imageWholePath.split("/").pop().split('.')[0];
   }
-  
-  onMount(() => {
-    extractTitle(image);
-  })
 </script>
 
 <div class="media-container">
+    <a href="/{extractTitle(image)}" class="media-title">
     <div class="media-image-wrapper">
         <img src={image} alt={title} class="media-image" style="--horizontal-offset: {horizontalOffset}; --vertical-offset: {verticalOffset}" />
     </div>
@@ -30,6 +24,7 @@
         <div class="media-type">{type}</div>
         <div class="media-work">{work}</div>
     </div>
+</a>
 </div>
 
 <style>
@@ -48,7 +43,7 @@
         object-fit: cover;
         height: calc(100% + var(--vertical-offset));
         width: calc(100% + var(--horizontal-offset));
-        transition: opacity 0.3s ease;
+        transition: opacity 0.1s ease;
         left: var(--horizontal-offset, 0%);
         top: var(--vertical-offset, 0%);
         overflow: visible;
@@ -70,7 +65,7 @@
         opacity: 0;
         transition:
             visibility 0s,
-            opacity 0.3s ease;
+            opacity 0.2s ease;
         padding: 10px;
     }
 
