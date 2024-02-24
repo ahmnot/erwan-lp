@@ -41,11 +41,6 @@
   }
 
   section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex: 0.6;
     padding-bottom: 500px;
   }
 
@@ -65,5 +60,13 @@
     width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
+  }
+
+  @media(max-width: 400px) {
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+
   }
 </style>
