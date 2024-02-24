@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
 	import Header from './Header.svelte';
 	import './styles.css';
 </script>

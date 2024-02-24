@@ -41,7 +41,7 @@
   }
 
   section {
-    padding-bottom: 500px;
+    padding-bottom: 2000px;
   }
 
   #accueil {
@@ -56,7 +56,6 @@
     flex: 1;
     display: flex;
     flex-direction: column;
-    padding-top: 60px; /* Adjust based on the height of your header */
     width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
