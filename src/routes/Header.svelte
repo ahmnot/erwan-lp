@@ -2,6 +2,8 @@
 	// @ts-nocheck
 
 	import { onMount, tick } from 'svelte';
+	import { underlineVisible } from '$lib/underlineVisibility';
+	import { goto } from '$app/navigation';
 
 	let clickedLink = 'accueil'; // Initialize with 'accueil' as the default section
 	let applyTransition = false; // Initially, do not apply transition
@@ -51,15 +53,24 @@
 		isResizing = false; // Reset the flag
 	}, 100);
 
-	function handleAnchorClick(event, linkId) {
+	async function handleAnchorClick(event, linkId) {
+		underlineVisible.set(true);
 		event.preventDefault();
 		const link = event.currentTarget;
 		const anchorId = new URL(link.href).hash.replace('#', '');
 		const anchor = document.getElementById(anchorId);
-		window.scrollTo({
-			top: anchor.offsetTop - 70,
-			behavior: 'smooth'
-		});
+		if (anchor) {
+			// If the anchor exists in the current document, scroll to it
+			window.scrollTo({
+				top: anchor.offsetTop - 100,
+				behavior: 'smooth'
+			});
+		} else {
+			// If the anchor doesn't exist, use goto to navigate to the target page
+			// Assuming the link's href attribute contains the path to navigate to
+			await goto(link.href);
+			handleAnchorClick(event)
+		}
 		updateUnderlinePosition(link); // Update underline position when a link is clicked
 	}
 
@@ -67,9 +78,10 @@
 		await tick();
 		const { left, width } = clickedElement.getBoundingClientRect();
 		const navLeft = document.querySelector('nav').getBoundingClientRect().left;
-		const transitionStyle = applyTransition && applyTransitionFlag // Use a flag to control transition application
-			? 'transition: left 0.15s ease, width 0.15s ease;'
-			: 'transition: none;';
+		const transitionStyle =
+			applyTransition && applyTransitionFlag // Use a flag to control transition application
+				? 'transition: left 0.15s ease, width 0.15s ease;'
+				: 'transition: none;';
 		underlineStyle = `left: ${left - navLeft}px; width: ${width}px; ${transitionStyle}`;
 	}
 
@@ -120,7 +132,7 @@
 				requestAnimationFrame(continuousUpdateUnderline); // Start the loop
 			}
 		});
-		
+
 		window.addEventListener('resize', onResizeEnd);
 
 		return () => {
@@ -143,7 +155,10 @@
 			</li>
 		</ul>
 		<!-- Underline element -->
-		<div class="underline" style={underlineStyle}></div>
+		<div
+			class="underline"
+			style={underlineStyle + ($underlineVisible ? 'display: block;' : 'display: none;')}
+		></div>
 	</nav>
 </header>
 

@@ -1,75 +1,85 @@
 <script>
-    // @ts-nocheck
-    export let id = "";
-    export let image = "";
-    export let title = "";
-    export let author = "";
-    export let type = "";
-    export let work = "";
-    export let horizontalOffset = '0%';
-    export let verticalOffset = '0%';
+	// @ts-nocheck
+    import { underlineVisible } from '$lib/underlineVisibility';
+	export let id = '';
+	export let image = '';
+	export let title = '';
+	export let author = '';
+	export let type = '';
+	export let work = '';
+	export let horizontalOffset = '0%';
+	export let verticalOffset = '0%';
+
+    function handleClick() {
+        underlineVisible.set(false);
+    }
 </script>
 
-<div class="media-container">
-    <a href="/{id}" class="media-title">
-    <div class="media-image-wrapper">
-        <img src={image} alt={title} class="media-image" style="--horizontal-offset: {horizontalOffset}; --vertical-offset: {verticalOffset}" />
-    </div>
-    <div class="media-info">
-        <a href="/{id}" class="media-title">{title}</a> -
-        <span class="media-author">{author}</span>
-        <div class="media-type">{type}</div>
-        <div class="media-work">{work}</div>
-    </div>
-</a>
+<div class="media-container" on:click={handleClick}>
+	<a href="/{id}" class="media-title">
+		<div class="media-image-wrapper">
+			<img
+				src={image}
+				alt={title}
+				class="media-image"
+				style="--horizontal-offset: {horizontalOffset}; --vertical-offset: {verticalOffset}"
+			/>
+		</div>
+		<div class="media-info">
+			<a href="/{id}" class="media-title">{title}</a> -
+			<span class="media-author">{author}</span>
+			<div class="media-type">{type}</div>
+			<div class="media-work">{work}</div>
+		</div>
+	</a>
 </div>
 
 <style>
-    .media-container {
-        position: relative;
-        overflow: hidden;
-    }
-    .media-image-wrapper {
-        width: 100%;
-        padding-bottom: 100%; /* Equal to width to maintain square aspect ratio */
-        position: relative;
-    }
-    .media-image {
-        position: absolute;
-        object-fit: cover;
-        height: calc(100% + var(--vertical-offset));
-        width: calc(100% + var(--horizontal-offset));
-        transition: opacity 0.1s ease;
-        left: var(--horizontal-offset, 0%);
-        top: var(--vertical-offset, 0%);
-        overflow: visible;
-    }
-    .media-info {
-        position: absolute;
-        top: 0;   
-        left: 0;  
-        right: 0; 
-        bottom: 0;
-        display: flex; 
-        flex-direction: column; 
-        justify-content: center; 
-        align-items: center; 
-        text-align: center; 
-        background: rgba(0, 0, 0, 0.5); 
-        color: white;
-        visibility: hidden;
-        opacity: 0;
-        transition:
-            visibility 0s,
-            opacity 0.2s ease;
-        padding: 10px;
-    }
+	.media-container {
+		position: relative;
+		overflow: hidden;
+	}
+	.media-image-wrapper {
+		width: 100%;
+		padding-bottom: 100%; /* Equal to width to maintain square aspect ratio */
+		position: relative;
+	}
+	.media-image {
+		position: absolute;
+		object-fit: cover;
+		height: calc(100% + var(--vertical-offset));
+		width: calc(100% + var(--horizontal-offset));
+		transition: opacity 0.1s ease;
+		left: var(--horizontal-offset, 0%);
+		top: var(--vertical-offset, 0%);
+		overflow: visible;
+	}
+	.media-info {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		background: rgba(0, 0, 0, 0.5);
+		color: white;
+		visibility: hidden;
+		opacity: 0;
+		transition:
+			visibility 0s,
+			opacity 0.2s ease;
+		padding: 10px;
+	}
 
-    .media-container:hover .media-image {
-        opacity: 0.3;
-    }
-    .media-container:hover .media-info {
-        visibility: visible;
-        opacity: 1;
-    }
+	.media-container:hover .media-image {
+		opacity: 0.3;
+	}
+	.media-container:hover .media-info {
+		visibility: visible;
+		opacity: 1;
+	}
 </style>
