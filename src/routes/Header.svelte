@@ -154,7 +154,6 @@
 		top: 0;
 		right: 0;
 		width: 100%;
-		justify-content: space-between;
 		background-color: black;
 		box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
 		z-index: 1000;
@@ -198,7 +197,6 @@
 		font-size: 0.8rem;
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
-		text-decoration: none;
 		transition: color 0.2s linear;
 		overflow: hidden;
 	}

@@ -36,7 +36,6 @@
     }
     .media-image {
         position: absolute;
-        width: 100%;
         object-fit: cover;
         height: calc(100% + var(--vertical-offset));
         width: calc(100% + var(--horizontal-offset));
