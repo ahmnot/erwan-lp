@@ -1,14 +1,11 @@
 <script>
 // @ts-nocheck
 
-	import { writable } from 'svelte/store';
-	import { page } from '$app/stores';
-	import logo from '$lib/images/autres/logo-signature-transparent-upscale.png';
-  let clickedLink = writable(null);
+  let clickedLink = "";
 
-  function toggleUnderline(event, linkId) {
+  function toggleUnderline(linkId) {
     // Update the clicked link
-    clickedLink.set(linkId === $clickedLink ? null : linkId);
+    clickedLink = linkId === clickedLink ? null : linkId;
   }
 
 </script>
@@ -17,17 +14,17 @@
 	<nav>
 		<ul>
 		  <li>
-			<a href="/#accueil" on:click={(e) => toggleUnderline(e, 'accueil')}
-				style="--underline-width: {$clickedLink === 'accueil' ? '100%' : '0'};">Accueil
+			<a href="/#accueil" on:click={() => toggleUnderline('accueil')}
+				style="--underline-width: {clickedLink === 'accueil' ? '100%' : '0'};">Accueil
 			</a>
 		  </li>
 		  <li>
-			<a href="/#bio" on:click={(e) => toggleUnderline(e, 'bio')}
-				style="--underline-width: {$clickedLink === 'bio' ? '100%' : '0'};">Bio</a>
+			<a href="/#bio" on:click={(e) => toggleUnderline('bio')}
+				style="--underline-width: {clickedLink === 'bio' ? '100%' : '0'};">Bio</a>
 		  </li>
 		  <li>
-			<a href="/#contact" on:click={(e) => toggleUnderline(e, 'contact')}
-				style="--underline-width: {$clickedLink === 'contact' ? '100%' : '0'};">Contact</a>
+			<a href="/#contact" on:click={(e) => toggleUnderline('contact')}
+				style="--underline-width: {clickedLink === 'contact' ? '100%' : '0'};">Contact</a>
 		  </li>
 		</ul>
 	  </nav>
@@ -96,7 +93,7 @@
 	nav a::after {
 	  content: "";
 	  position: absolute;
-	  bottom: -5px; 
+	  bottom: 10px; 
 	  left: 0;
 	  width: var(--underline-width, 0); 
 	  height: 2px; 

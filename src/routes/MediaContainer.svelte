@@ -1,5 +1,6 @@
 <script>
     // @ts-nocheck
+    export let id = "";
     export let image = "";
     export let title = "";
     export let author = "";
@@ -7,19 +8,15 @@
     export let work = "";
     export let horizontalOffset = '0%';
     export let verticalOffset = '0%';
-
-  function extractTitle(imageWholePath) {
-    return imageWholePath.split("/").pop().split('.')[0];
-  }
 </script>
 
 <div class="media-container">
-    <a href="/{extractTitle(image)}" class="media-title">
+    <a href="/{id}" class="media-title">
     <div class="media-image-wrapper">
         <img src={image} alt={title} class="media-image" style="--horizontal-offset: {horizontalOffset}; --vertical-offset: {verticalOffset}" />
     </div>
     <div class="media-info">
-        <a href="/{extractTitle(image)}" class="media-title">{title}</a> -
+        <a href="/{id}" class="media-title">{title}</a> -
         <span class="media-author">{author}</span>
         <div class="media-type">{type}</div>
         <div class="media-work">{work}</div>
