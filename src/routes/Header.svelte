@@ -3,11 +3,26 @@
 
 	import { onMount, tick } from 'svelte';
 
-    let clickedLink = 'accueil'; // Initialize with 'accueil' as the default section
+	let clickedLink = 'accueil'; // Initialize with 'accueil' as the default section
 	let applyTransition = false; // Initially, do not apply transition
 	let underlineStyle = 'left: 0; width: 0; transition: none;'; // Initialize with no transition
+	let isResizing = false; // Flag to track if the window is currently being resized
 
-	// Debounce function limits the rate of execution of updateActiveSection to enhance performance and ensure smooth UI updates on scroll. 
+	const sections = ['accueil', 'bio', 'contact'];
+
+	// Function to update the underline position
+	function continuousUpdateUnderline() {
+		if (!isResizing) return; // Stop the loop if resizing has ended
+
+		const activeLink = document.querySelector(`a[href="/#${clickedLink}"]`);
+		if (activeLink) {
+			updateUnderlinePosition(activeLink, false); // Use your existing function to update the position
+		}
+
+		requestAnimationFrame(continuousUpdateUnderline); // Continue the loop
+	}
+
+	// Debounce function limits the rate of execution of updateActiveSection to enhance performance and ensure smooth UI updates on scroll.
 	// It waits for 100ms of inactivity before executing, reducing excessive processing and improving responsiveness.
 	function debounce(func, wait) {
 		let timeout;
@@ -18,6 +33,23 @@
 			}, wait);
 		};
 	}
+
+	// To detect when resizing ends, you may need an additional event listener or logic
+	// One approach is to debounce a function that sets isResizing to false
+	function debounceEndResize(func, wait) {
+		let timeout;
+		return function (...args) {
+			clearTimeout(timeout);
+			timeout = setTimeout(() => {
+				func.apply(this, args);
+			}, wait);
+		};
+	}
+
+	// Use the debounce function to detect the end of resizing
+	const onResizeEnd = debounceEndResize(() => {
+		isResizing = false; // Reset the flag
+	}, 100);
 
 	function handleAnchorClick(event, linkId) {
 		event.preventDefault();
@@ -31,12 +63,11 @@
 		updateUnderlinePosition(link); // Update underline position when a link is clicked
 	}
 
-	async function updateUnderlinePosition(clickedElement) {
-		await tick(); // Ensure DOM updates are reflected
+	async function updateUnderlinePosition(clickedElement, applyTransitionFlag = true) {
+		await tick();
 		const { left, width } = clickedElement.getBoundingClientRect();
 		const navLeft = document.querySelector('nav').getBoundingClientRect().left;
-		// Conditional transition based on applyTransition flag
-		const transitionStyle = applyTransition
+		const transitionStyle = applyTransition && applyTransitionFlag // Use a flag to control transition application
 			? 'transition: left 0.15s ease, width 0.15s ease;'
 			: 'transition: none;';
 		underlineStyle = `left: ${left - navLeft}px; width: ${width}px; ${transitionStyle}`;
@@ -55,7 +86,6 @@
 		applyTransition = true;
 
 		function updateActiveSection() {
-			const sections = ['accueil', 'bio', 'contact'];
 			let currentSection = '';
 
 			sections.forEach((section) => {
@@ -82,6 +112,16 @@
 		const debouncedUpdate = debounce(updateActiveSection, 100); // Adjust delay as needed
 
 		window.addEventListener('scroll', debouncedUpdate);
+
+		// Enhanced resize event listener using requestAnimationFrame
+		window.addEventListener('resize', () => {
+			if (!isResizing) {
+				isResizing = true; // Mark as resizing
+				requestAnimationFrame(continuousUpdateUnderline); // Start the loop
+			}
+		});
+		
+		window.addEventListener('resize', onResizeEnd);
 
 		return () => {
 			window.removeEventListener('scroll', debouncedUpdate);
