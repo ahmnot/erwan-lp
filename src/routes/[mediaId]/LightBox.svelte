@@ -80,8 +80,8 @@
 	}
 
 	img {
-		max-width: 50%;
-		max-height: 50%;
+		max-width: 75%;
+		max-height: 75%;
 		display: block; /* Ensures no extra space below the image */
 	}
 </style>
