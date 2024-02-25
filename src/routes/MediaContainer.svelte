@@ -1,6 +1,7 @@
 <script>
 	// @ts-nocheck
-    import { underlineVisible } from '$lib/underlineVisibility';
+	import { fade, fly } from 'svelte/transition';
+	import { underlineVisible } from '$lib/underlineVisibility';
 	export let id = '';
 	export let images = [];
 	export let title = '';
@@ -10,9 +11,13 @@
 	export let horizontalOffset = '0%';
 	export let verticalOffset = '0%';
 
-    function handleClick() {
-        underlineVisible.set(false);
-    }
+	function handleClick() {
+		underlineVisible.set(false);
+	}
+
+	function handleImageLoading() {
+
+	}
 </script>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
@@ -25,6 +30,7 @@
 				alt={title}
 				class="media-image"
 				style="--horizontal-offset: {horizontalOffset}; --vertical-offset: {verticalOffset}"
+				on:load={handleImageLoading}
 			/>
 		</div>
 		<div class="media-info">

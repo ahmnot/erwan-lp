@@ -13,7 +13,7 @@
 <section id="accueil">
 	<h1>Bienvenue</h1>
 
-	<div class="media-grid">
+	<div class="media-grid" >
 		{#each mediaList as media}
 			<MediaContainer {...media} />
 		{/each}
