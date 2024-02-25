@@ -38,8 +38,9 @@
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
+		width: 100%;
 		align-items: center;
-		padding: 12px;
+		box-shadow: 0 -1px 0px rgba(255, 255, 255, 0.2);
 	}
 
 	@media (min-width: 480px) {

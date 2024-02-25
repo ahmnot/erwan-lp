@@ -2,7 +2,7 @@
 	// @ts-nocheck
     import { underlineVisible } from '$lib/underlineVisibility';
 	export let id = '';
-	export let image = '';
+	export let images = [];
 	export let title = '';
 	export let author = '';
 	export let type = '';
@@ -15,11 +15,13 @@
     }
 </script>
 
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+<!-- svelte-ignore a11y-click-events-have-key-events -->
 <div class="media-container" on:click={handleClick}>
 	<a href="/{id}" class="media-title">
 		<div class="media-image-wrapper">
 			<img
-				src={image}
+				src={images[0]}
 				alt={title}
 				class="media-image"
 				style="--horizontal-offset: {horizontalOffset}; --vertical-offset: {verticalOffset}"
