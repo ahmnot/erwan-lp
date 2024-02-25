@@ -1,13 +1,28 @@
 <script>
+	// @ts-nocheck
+
 	import { page } from '$app/stores';
 	import { mediaList } from '$lib/mediaList';
 	import { onMount } from 'svelte';
 	import { underlineVisible } from '$lib/underlineVisibility';
+	import LightBox from './LightBox.svelte';
 
 	let mediaData = mediaList.find((media) => media.id === $page.params.mediaId);
+	let lightBoxVisible = false;
+	let selectedImage = '';
 	onMount(() => {
 		underlineVisible.set(false);
 	});
+
+	function openLightBox(imageSrc) {
+		selectedImage = imageSrc;
+		lightBoxVisible = true;
+	}
+
+	// Listen for the close event from LightBox
+	function handleClose() {
+		lightBoxVisible = false;
+	}
 </script>
 
 <h1>{JSON.stringify(mediaData)}</h1>
@@ -16,14 +31,11 @@
 
 <div class="side-by-side">
 	<div class="portfolio-gallery">
-		<!-- svelte-ignore a11y-missing-attribute -->
-		<a>
-			<img src={mediaData?.images[0]} alt={mediaData?.title} class="image" />
-		</a>
-		<!-- svelte-ignore a11y-missing-attribute -->
-		<a>
-			<img src={mediaData?.images[0]} alt={mediaData?.title} class="image" />
-		</a>
+		{#each mediaData?.images as image}
+			<a on:click|preventDefault={() => openLightBox(image)}>
+				<img src={image} alt={mediaData?.title} class="image" />
+			</a>
+		{/each}
 	</div>
 
 	<p class="about">
@@ -31,8 +43,15 @@
 		Original music from<br />
 		director bla bla<br />
 		Bla bla bla<br />
-  </p>
+	</p>
 </div>
+
+<LightBox
+	{selectedImage}
+	isVisible={lightBoxVisible}
+	title={mediaData?.title}
+	on:close={handleClose}
+/>
 
 <style>
 	.portfolio-gallery {
