@@ -86,6 +86,7 @@
 	}
 
 	onMount(async () => {
+		underlineVisible.set(true);
 		const initialLink = document.querySelector('a[href="/#accueil"]');
 		if (initialLink) {
 			updateUnderlinePosition(initialLink);

@@ -1,6 +1,12 @@
 <script>
 	import MediaContainer from './MediaContainer.svelte';
 	import { mediaList } from '$lib/mediaList';
+	import { onMount } from 'svelte';
+	import { underlineVisible } from '$lib/underlineVisibility';
+
+  onMount(() => {
+    underlineVisible.set(true);
+  })
 
 </script>
 
