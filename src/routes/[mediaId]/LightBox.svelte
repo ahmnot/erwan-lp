@@ -61,17 +61,17 @@
 		position: relative;
 		padding: 0px;
 		box-sizing: border-box;
-		max-width: 100%; /* Adjust based on your preference */
-		max-height: 100%; /* Adjust based on your preference */
+		max-width: 100%;
+		max-height: 100%;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 	}
 
 	.close-button {
-		position: fixed; /* Change to fixed if you want it closer to the image */
-		top: 20px; /* Adjust these values to move the button closer to the image */
-		right: 20px; /* Adjust to ensure it's within the desired proximity to the image */
+		position: fixed; 
+		top: 20px;
+		right: 20px;
 		border: none;
 		background-color: transparent;
 		color: white;

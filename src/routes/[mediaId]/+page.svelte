@@ -65,6 +65,10 @@
 		margin-left: 0;
 	}
 
+	.image:hover {
+		cursor:pointer;
+	}
+
 	.about {
 		display: flex;
 		flex-wrap: wrap;
