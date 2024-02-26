@@ -27,7 +27,12 @@
 	}
 
 	onMount(() => {
-		if (imageElement && imageElement.complete && imageElement.naturalHeight > 0 && imageElement.naturalWidth > 0) {
+		if (
+			imageElement &&
+			imageElement.complete &&
+			imageElement.naturalHeight > 0 &&
+			imageElement.naturalWidth > 0
+		) {
 			imageComplete = true;
 		}
 	});
@@ -49,6 +54,9 @@
 					: 0}; transition: opacity 0.3s ease;"
 				on:load={handleImageLoading}
 			/>
+			{#if !imageComplete}
+				<div class="loading-placeholder"></div>
+			{/if}
 		</div>
 		<div class="media-info">
 			<a href="/{id}" class="media-title">{title}</a> -
@@ -60,6 +68,28 @@
 </div>
 
 <style>
+	.loading-placeholder {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		outline:black solid 1px;
+		top: 0;
+		left: 0;
+		background-color: #f0f0f000; /* Light grey color */
+		animation: pulseAnimation 2s infinite ease-in-out;
+	}
+
+	@keyframes pulseAnimation {
+		0% {
+			background-color: #a8a8a828;
+		}
+		50% {
+			background-color: #2929293a;
+		}
+		100% {
+			background-color: #a8a8a828;
+		}
+	}
 	.media-container {
 		position: relative;
 		overflow: hidden;
