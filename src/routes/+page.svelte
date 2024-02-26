@@ -4,16 +4,20 @@
 	import { onMount } from 'svelte';
 	import { underlineVisible } from '$lib/underlineVisibility';
 
-  onMount(() => {
-    underlineVisible.set(true);
-  })
-
+	onMount(() => {
+		underlineVisible.set(true);
+	});
 </script>
 
 <section id="accueil">
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
 	<h1>Bienvenue</h1>
 
-	<div class="media-grid" >
+	<div class="media-grid">
 		{#each mediaList as media}
 			<MediaContainer {...media} />
 		{/each}
@@ -39,7 +43,7 @@
 <style>
 	.media-grid {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		grid-template-columns: 1fr 1fr 1fr 1fr;
 	}
 
 	section {
@@ -56,8 +60,19 @@
 
 	@media (max-width: 900px) {
 		.media-grid {
-			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+	}
+
+	@media (max-width: 768px) {
+		.media-grid {
 			grid-template-columns: 1fr 1fr;
+		}
+	}
+
+	@media (max-width: 600px) {
+		.media-grid {
+			grid-template-columns: 1fr;
 		}
 	}
 </style>

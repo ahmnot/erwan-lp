@@ -60,22 +60,27 @@
 		const anchorId = new URL(link.href).hash.replace('#', '');
 		const anchor = document.getElementById(anchorId);
 		if (anchor) {
+			console.log("toto");
 			// If the anchor exists in the current document, scroll to it
 			window.scrollTo({
 				top: anchor.offsetTop - 70,
 				behavior: 'smooth'
 			});
 		} else {
+			console.log("titi");
 			// If the anchor doesn't exist, use goto to navigate to the target page
 			// Assuming the link's href attribute contains the path to navigate to
 			await goto(link.href);
-			handleAnchorClick(event)
+			handleAnchorClick(event);
 		}
 		updateUnderlinePosition(link); // Update underline position when a link is clicked
 	}
 
 	async function updateUnderlinePosition(clickedElement, applyTransitionFlag = true) {
 		await tick();
+		if(clickedElement.id === "logo-header") {
+			clickedElement = document.getElementById("accueilId")
+		}
 		const { left, width } = clickedElement.getBoundingClientRect();
 		const navLeft = document.querySelector('nav').getBoundingClientRect().left;
 		const transitionStyle =
@@ -122,7 +127,7 @@
 		}
 
 		// Debounced update function
-		const debouncedUpdate = debounce(updateActiveSection, 100); // Adjust delay as needed
+		const debouncedUpdate = debounce(updateActiveSection, 20); // Adjust delay as needed
 
 		window.addEventListener('scroll', debouncedUpdate);
 
@@ -143,10 +148,18 @@
 </script>
 
 <header>
+	<a id="logo-header" href="/#accueil" on:click={(e) => handleAnchorClick(e, 'accueil')}>
+		<img
+			src="\src\lib\images\autres\logo-transparent-upscale-cropped.png"
+			alt="logo"
+			class="logo-header"
+		/>
+	</a>
+
 	<nav>
 		<ul>
 			<li>
-				<a href="/#accueil" on:click={(e) => handleAnchorClick(e, 'accueil')}>Accueil</a>
+				<a id="accueilId" href="/#accueil" on:click={(e) => handleAnchorClick(e, 'accueil')}>Accueil</a>
 			</li>
 			<li>
 				<a href="/#bio" on:click={(e) => handleAnchorClick(e, 'bio')}>Bio</a>
@@ -164,6 +177,12 @@
 </header>
 
 <style>
+	.logo-header {
+		height: 50px;
+		flex-shrink: 0;
+		margin: 20px;
+	}
+
 	header {
 		display: flex;
 		position: fixed;
@@ -173,8 +192,9 @@
 		background-color: black;
 		box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
 		z-index: 1000;
-		flex-direction: column;
-		justify-content: start; /* Align content to the top */
+		flex-direction: row; /* Align items in a row */
+		justify-content: start; /* Align items to the start of the container */
+		align-items: center; /* Center items vertically */
 	}
 
 	nav {
@@ -224,7 +244,7 @@
 	/* CSS for the moving underline */
 	.underline {
 		position: absolute;
-		bottom: 8px;
+		bottom: 0px;
 		height: 2px;
 		background-color: var(--color-theme-1); /* Color of the underline */
 	}
