@@ -48,6 +48,7 @@
 </section>
 
 <style>
+
 	h1 {
 		font-weight: 800;
 		font-size: 640%;
@@ -134,6 +135,10 @@
 	}
 
 	@media (max-width: 550px) {
+		h1 {
+			font-size: 540%;
+		}
+		
 		.logo-presentation {
 			position: absolute;
 			bottom: 100px;
@@ -150,6 +155,7 @@
 	}
 
 	@media (max-width: 280px) {
+		
 		.media-grid {
 			grid-template-columns: 1fr;
 		}

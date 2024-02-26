@@ -9,7 +9,7 @@
 	let underlineStyle = 'left: 0; width: 0; transition: none;'; // Initialize with no transition
 	let isResizing = false; // Flag to track if the window is currently being resized
 
-	let innerwidth = 0;
+	let innerWidth = 0;
 
 	$: innerWidth = 0;
 
