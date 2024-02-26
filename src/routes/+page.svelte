@@ -1,5 +1,5 @@
 <script>
-// @ts-nocheck
+	// @ts-nocheck
 
 	import MediaContainer from './MediaContainer.svelte';
 	import { mediaList } from '$lib/mediaList';
@@ -12,12 +12,18 @@
 </script>
 
 <section id="accueil">
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	<h1>Bienvenue</h1>
+	<div class="presentation">
+		<div class="titres">
+			<h1>Erwan Le Pape</h1>
+			<h2>Music Composer</h2>
+			<h2>For Film, TV, Performing Arts, Video Games.</h2>
+		</div>
+		<img
+			class="profile-picture"
+			src="src/lib/images/photos-personnelles/photo-profil-5.png"
+			alt="My Face"
+		/>
+	</div>
 
 	<div class="media-grid">
 		{#each mediaList as media (media.id)}
@@ -43,6 +49,21 @@
 </section>
 
 <style>
+	.titres {
+		margin-left:20px;
+		width: 100%;
+	}
+
+	.presentation {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+	}
+	.profile-picture {
+		margin:20px;
+		width: 50%;
+	}
+
 	.media-grid {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -54,10 +75,6 @@
 
 	#accueil {
 		display: block;
-	}
-
-	h1 {
-		width: 100%;
 	}
 
 	@media (max-width: 900px) {
@@ -72,7 +89,7 @@
 		}
 	}
 
-	@media (max-width: 600px) {
+	@media (max-width: 250px) {
 		.media-grid {
 			grid-template-columns: 1fr;
 		}

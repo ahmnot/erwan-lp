@@ -64,7 +64,6 @@ a {
 
 h1 {
 	font-size: 2rem;
-	text-align: center;
 }
 
 h2 {
@@ -80,15 +79,6 @@ pre {
 	padding: 0.5em;
 	overflow-x: auto;
 	color: var(--color-text);
-}
-
-.text-column {
-	display: flex;
-	max-width: 48rem;
-	flex: 0.6;
-	flex-direction: column;
-	justify-content: center;
-	margin: 0 auto;
 }
 
 input,
