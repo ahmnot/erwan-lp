@@ -72,7 +72,7 @@
 		width: 100%;
 		height: 100%;
 		position: absolute;
-		outline:black solid 1px;
+		border: 1px solid black;
 		top: 0;
 		left: 0;
 		background-color: #f0f0f000; /* Light grey color */
