@@ -17,7 +17,6 @@
 			<h2>Music Composer</h2>
 			<h3>For Film, TV, Performing Arts, Video Games.</h3>
 		</div>
-
 		<img src="/src/lib/images/autres/logo-3.png" alt="logo" class="logo-presentation" />
 
 		<img
@@ -79,15 +78,14 @@
 
 	.logo-presentation {
 		position: absolute;
-		top: 65vh;
-		left: 30%;
-		transform: translateX(-30%);
+		bottom: 100px;
+		left: 250px;
 		z-index: 1001;
-		width: 30vh;
 		opacity: 0.5;
 	}
 
 	.titres {
+		position: relative; /* Add this line */
 		width: 100%;
 	}
 
@@ -135,16 +133,20 @@
 		}
 	}
 
-@media (max-width: 550px) {
-	.profile-picture {
-		top: -145px;
-		right: 180px;
+	@media (max-width: 550px) {
+		.logo-presentation {
+			position: absolute;
+			bottom: 100px;
+			left: 250px;
+			width: 50%;
+			z-index: 1001;
+			opacity: 0.5;
+		}
+		.profile-picture {
+			top: -145px;
+			right: 180px;
+		}
 	}
-	.media-grid {
-		grid-template-columns: 1fr 1fr;
-	}
-}
-
 
 	@media (max-width: 250px) {
 		.media-grid {
