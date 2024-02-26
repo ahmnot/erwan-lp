@@ -138,17 +138,18 @@
 			position: absolute;
 			bottom: 100px;
 			left: 250px;
-			width: 50%;
+			width: 70%;
 			z-index: 1001;
 			opacity: 0.5;
 		}
 		.profile-picture {
 			top: -145px;
 			right: 180px;
+			z-index: 950;
 		}
 	}
 
-	@media (max-width: 250px) {
+	@media (max-width: 280px) {
 		.media-grid {
 			grid-template-columns: 1fr;
 		}

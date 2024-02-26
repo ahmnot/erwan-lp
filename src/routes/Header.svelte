@@ -9,6 +9,10 @@
 	let underlineStyle = 'left: 0; width: 0; transition: none;'; // Initialize with no transition
 	let isResizing = false; // Flag to track if the window is currently being resized
 
+	let innerwidth = 0;
+
+	$: innerWidth = 0;
+
 	const sections = ['home', 'bio', 'contact'];
 
 	// Function to update the underline position
@@ -75,8 +79,8 @@
 
 	async function updateUnderlinePosition(clickedElement, applyTransitionFlag = true) {
 		await tick();
-		if(clickedElement.id === "logo-header") {
-			clickedElement = document.getElementById("homeId")
+		if (clickedElement.id === 'logo-header-id') {
+			clickedElement = document.getElementById('homeId');
 		}
 		const { left, width } = clickedElement.getBoundingClientRect();
 		const navLeft = document.querySelector('nav').getBoundingClientRect().left;
@@ -144,48 +148,63 @@
 	});
 </script>
 
-<header>
-	<a id="logo-header" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>
-		<img
-			src="/src/lib/images/autres/logo-1.png"
-			alt="logo"
-			class="logo-header"
-		/>
-	</a>
+<svelte:window bind:innerWidth />
 
-	<nav>
-		<ul>
-			<li>
-				<a id="homeId" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>home</a>
-			</li>
-			<li>
-				<a href="/#bio" on:click={(e) => handleAnchorClick(e, 'bio')}>Bio</a>
-			</li>
-			<li>
-				<a href="/#contact" on:click={(e) => handleAnchorClick(e, 'contact')}>Contact</a>
-			</li>
-		</ul>
-		<!-- Underline element -->
-		<div
-			class="underline"
-			style={underlineStyle + ($underlineVisible ? 'display: block;' : 'display: none;')}
-		></div>
-	</nav>
+<header>
+	{#if innerWidth > 480}
+		<a id="logo-header-id" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>
+			<img src="/src/lib/images/autres/logo-1.png" alt="logo" class="logo-header" />
+		</a>
+
+		<nav>
+			<ul>
+				<li>
+					<a id="homeId" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>home</a>
+				</li>
+				<li>
+					<a href="/#bio" on:click={(e) => handleAnchorClick(e, 'bio')}>Bio</a>
+				</li>
+				<li>
+					<a href="/#contact" on:click={(e) => handleAnchorClick(e, 'contact')}>Contact</a>
+				</li>
+			</ul>
+			<!-- Underline element -->
+			<div
+				class="underline"
+				style={underlineStyle + ($underlineVisible ? 'display: block;' : 'display: none;')}
+			></div>
+		</nav>
+	{:else}
+		<nav>
+			<span class="material-symbols-outlined">menu</span>
+
+			<a id="logo-header-id" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')} class="link-header-centered" >
+				<img src="/src/lib/images/autres/logo-1.png" alt="logo" class="logo-header-centered" />
+			</a>
+		</nav>
+	{/if}
 </header>
 
 <style>
-
 	.material-symbols-outlined {
-	  font-variation-settings:
-	  'FILL' 0,
-	  'wght' 400,
-	  'GRAD' 0,
-	  'opsz' 24
+		margin: 20px;
 	}
-	
+
+	.link-header-centered {
+		position:relative;
+		left: 50%;
+		transform: translateX(-50%);
+		height: 50px;
+		margin: 20px;
+		padding: 0;
+	}
+
+	.logo-header-centered {
+		height: 50px;
+	}
+
 	.logo-header {
 		height: 50px;
-		flex-shrink: 0;
 		margin: 20px;
 	}
 
@@ -240,7 +259,6 @@
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
 		transition: color 0.2s linear;
-		overflow: hidden;
 	}
 
 	a:hover {
