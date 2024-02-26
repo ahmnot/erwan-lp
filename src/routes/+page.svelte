@@ -79,11 +79,11 @@
 
 	.logo-presentation {
 		position: absolute;
-		top: 70vh;
-		left: 25%;
+		top: 65vh;
+		left: 30%;
 		transform: translateX(-30%);
 		z-index: 1001;
-		width: 50vh;
+		width: 30vh;
 		opacity: 0.5;
 	}
 
