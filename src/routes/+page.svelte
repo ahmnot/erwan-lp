@@ -17,11 +17,11 @@
 		<div class="titres">
 			<h1>Erwan Le Pape</h1>
 			<h2>Music Composer</h2>
-			<h2>For Film, TV, Performing Arts, Video Games.</h2>
+			<h3>For Film, TV, Performing Arts, Video Games.</h3>
 		</div>
 
 		<img
-			src="\src\lib\images\autres\logo-signature-transparent.png"
+			src="/src/lib/images/autres/logo-signature-transparent.png"
 			alt="logo"
 			class="logo-presentation"
 		/>
@@ -55,18 +55,40 @@
 </section>
 
 <style>
+
+	h1 {
+		font-weight: 800;
+		font-size: 600%;
+	}
+
+	h2 {
+		font-weight: 600;
+		font-size: 400%;
+	}
+
+	h3 {
+		font-weight: 400;
+		font-size: 150%;
+	}
+
+	p {
+		font-size: 140%;
+	}
+
 	h1,
 	h2,
+	h3,
 	p {
-		margin-left: 20px;
+		margin-left: 40px;
 	}
 
 	.logo-presentation {
 		position: absolute;
+		top:58%;
 		left:30%;
 		transform: translateX(-30%);
 		z-index: 1001;
-		width: 50%;
+		width: 40%;
 		opacity: 0.5;
 	}
 
@@ -86,7 +108,7 @@
 		width: 100%;
 		z-index: 1000;
 		opacity: 0.9;
-		height: 90vh;
+		height: 87vh;
 		object-fit: contain;
 	}
 

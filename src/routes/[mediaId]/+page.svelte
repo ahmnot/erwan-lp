@@ -60,6 +60,13 @@
 />
 
 <style>
+
+	h1 {
+		font-weight: 500;
+		font-size: 400%;
+		margin-left: 20px;
+	}
+
 	.youtube-wrapper {
 		position: relative;
 		width: 100%; /* Adjust this to control the width */
@@ -100,7 +107,8 @@
 		flex-direction: row;
 		align-items: center;
 		justify-content: flex-end;
-		margin-right: 10px;
+		margin-right: 40px;
+		font-size: 150%;
 	}
 
 /* Media query for larger screens */
