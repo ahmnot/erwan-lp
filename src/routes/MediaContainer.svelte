@@ -1,8 +1,7 @@
 <script>
 	// @ts-nocheck
-	import { fade, fly } from 'svelte/transition';
 	import { underlineVisible } from '$lib/underlineVisibility';
-	import { afterUpdate, onMount, tick } from 'svelte';
+	import { onMount } from 'svelte';
 	export let id = '';
 	export let images = [];
 	export let title = '';

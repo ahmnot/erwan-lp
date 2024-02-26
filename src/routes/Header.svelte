@@ -1,6 +1,5 @@
 <script>
 	// @ts-nocheck
-
 	import { onMount, tick } from 'svelte';
 	import { underlineVisible } from '$lib/underlineVisibility';
 	import { goto } from '$app/navigation';
@@ -148,7 +147,7 @@
 <header>
 	<a id="logo-header" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>
 		<img
-			src="\src\lib\images\autres\logo-signature-transparent-upscale-cropped.png"
+			src="/src/lib/images/autres/logo-1.png"
 			alt="logo"
 			class="logo-header"
 		/>
@@ -189,7 +188,7 @@
 		width: 100%;
 		background-color: black;
 		/*box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);*/
-		z-index: 1000;
+		z-index: 999;
 		flex-direction: row; /* Align items in a row */
 		justify-content: start; /* Align items to the start of the container */
 		align-items: center; /* Center items vertically */
@@ -227,8 +226,8 @@
 		align-items: center;
 		padding: 0 0.5rem;
 		color: var(--color-text);
-		font-weight: 550;
-		font-size: 0.9rem;
+		font-weight: 500;
+		font-size: 1.2rem;
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
 		transition: color 0.2s linear;

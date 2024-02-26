@@ -1,7 +1,5 @@
 <script>
 	// @ts-nocheck
-
-	import { fade, fly } from 'svelte/transition';
 	import MediaContainer from './MediaContainer.svelte';
 	import { mediaList } from '$lib/mediaList';
 	import { onMount } from 'svelte';
@@ -20,11 +18,7 @@
 			<h3>For Film, TV, Performing Arts, Video Games.</h3>
 		</div>
 
-		<img
-			src="/src/lib/images/autres/logo-signature-transparent.png"
-			alt="logo"
-			class="logo-presentation"
-		/>
+		<img src="/src/lib/images/autres/logo-3.png" alt="logo" class="logo-presentation" />
 
 		<img
 			class="profile-picture"
@@ -55,10 +49,9 @@
 </section>
 
 <style>
-
 	h1 {
 		font-weight: 800;
-		font-size: 600%;
+		font-size: 640%;
 	}
 
 	h2 {
@@ -73,6 +66,8 @@
 
 	p {
 		font-size: 140%;
+		margin-right: 40px;
+		text-align: justify;
 	}
 
 	h1,
@@ -84,11 +79,11 @@
 
 	.logo-presentation {
 		position: absolute;
-		top:58%;
-		left:30%;
+		top: 70vh;
+		left: 25%;
 		transform: translateX(-30%);
 		z-index: 1001;
-		width: 40%;
+		width: 50vh;
 		opacity: 0.5;
 	}
 
@@ -104,8 +99,9 @@
 	}
 
 	.profile-picture {
+		position: relative;
 		margin: 20px;
-		width: 100%;
+		width: 60%;
 		z-index: 1000;
 		opacity: 0.9;
 		height: 87vh;
@@ -137,6 +133,17 @@
 			grid-template-columns: 1fr 1fr;
 		}
 	}
+
+@media (max-width: 550px) {
+	.profile-picture {
+		top: -150px;
+		right: 200px;
+	}
+	.media-grid {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
 
 	@media (max-width: 250px) {
 		.media-grid {
