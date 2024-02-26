@@ -48,7 +48,6 @@
 </section>
 
 <style>
-
 	h1 {
 		font-weight: 800;
 		font-size: 640%;
@@ -79,8 +78,8 @@
 
 	.logo-presentation {
 		position: absolute;
-		bottom: 100px;
-		left: 250px;
+		bottom: 180px;
+		left: 300px;
 		z-index: 1001;
 		opacity: 0.5;
 	}
@@ -141,8 +140,8 @@
 		
 		.logo-presentation {
 			position: absolute;
-			bottom: 100px;
-			left: 250px;
+			bottom: -10px;
+			left: 200px;
 			width: 70%;
 			z-index: 1001;
 			opacity: 0.5;
