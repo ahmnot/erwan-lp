@@ -96,6 +96,7 @@
 		display: flex;
 		justify-content: flex-start;
 		align-items: center;
+		overflow: hidden;
 	}
 
 	.profile-picture {
@@ -136,8 +137,8 @@
 
 @media (max-width: 550px) {
 	.profile-picture {
-		top: -150px;
-		right: 200px;
+		top: -145px;
+		right: 180px;
 	}
 	.media-grid {
 		grid-template-columns: 1fr 1fr;
