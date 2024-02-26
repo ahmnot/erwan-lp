@@ -12,7 +12,7 @@
 	});
 </script>
 
-<section id="accueil">
+<section id="home">
 	<div class="presentation">
 		<div class="titres">
 			<h1>Erwan Le Pape</h1>
@@ -32,24 +32,22 @@
 			alt="My Face"
 		/>
 	</div>
-
-	<div class="media-grid">
-		{#each mediaList as media (media.id)}
-			<MediaContainer {...media} />
-		{/each}
-	</div>
 </section>
 
+<div class="media-grid">
+	{#each mediaList as media (media.id)}
+		<MediaContainer {...media} />
+	{/each}
+</div>
+
 <section id="bio">
-	<div class="text-column">
-		<h1>Who am I</h1>
-		<p>
-			Hi, my name is Erwan, I'm a young composer based in Lyon, France. I studied music and
-			composition at the conservatory and university and I'm currently doing a Master degree in
-			music scoring for films, television and video games. My main influences span from neoclassical
-			to contemporary music with a special preference for orchestral music.
-		</p>
-	</div>
+	<h1>Who am I</h1>
+	<p>
+		Hi, my name is Erwan, I'm a young composer based in Lyon, France. I studied music and
+		composition at the conservatory and university and I'm currently doing a Master degree in music
+		scoring for films, television and video games. My main influences span from neoclassical to
+		contemporary music with a special preference for orchestral music.
+	</p>
 </section>
 
 <section id="contact">
@@ -57,17 +55,22 @@
 </section>
 
 <style>
+	h1,
+	h2,
+	p {
+		margin-left: 20px;
+	}
+
 	.logo-presentation {
 		position: absolute;
-		left: 40%;
-		transform: translateX(-40%);
-		z-index: 1001; 
-		width: 50%; 
+		left:30%;
+		transform: translateX(-30%);
+		z-index: 1001;
+		width: 50%;
 		opacity: 0.5;
 	}
 
 	.titres {
-		margin-left: 20px;
 		width: 100%;
 	}
 
@@ -80,8 +83,11 @@
 
 	.profile-picture {
 		margin: 20px;
-		width: 50%;
+		width: 100%;
 		z-index: 1000;
+		opacity: 0.9;
+		height: 90vh;
+		object-fit: contain;
 	}
 
 	.media-grid {
@@ -90,11 +96,12 @@
 	}
 
 	section {
-		padding-bottom: 2000px;
+		padding-bottom: 100px;
 	}
 
-	#accueil {
+	#home {
 		display: block;
+		height: 100vh;
 	}
 
 	@media (max-width: 900px) {

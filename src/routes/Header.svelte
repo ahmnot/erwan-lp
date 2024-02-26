@@ -5,12 +5,12 @@
 	import { underlineVisible } from '$lib/underlineVisibility';
 	import { goto } from '$app/navigation';
 
-	let clickedLink = 'accueil'; // Initialize with 'accueil' as the default section
+	let clickedLink = 'home'; // Initialize with 'home' as the default section
 	let applyTransition = false; // Initially, do not apply transition
 	let underlineStyle = 'left: 0; width: 0; transition: none;'; // Initialize with no transition
 	let isResizing = false; // Flag to track if the window is currently being resized
 
-	const sections = ['accueil', 'bio', 'contact'];
+	const sections = ['home', 'bio', 'contact'];
 
 	// Function to update the underline position
 	function continuousUpdateUnderline() {
@@ -77,7 +77,7 @@
 	async function updateUnderlinePosition(clickedElement, applyTransitionFlag = true) {
 		await tick();
 		if(clickedElement.id === "logo-header") {
-			clickedElement = document.getElementById("accueilId")
+			clickedElement = document.getElementById("homeId")
 		}
 		const { left, width } = clickedElement.getBoundingClientRect();
 		const navLeft = document.querySelector('nav').getBoundingClientRect().left;
@@ -90,10 +90,10 @@
 
 	onMount(async () => {
 		underlineVisible.set(true);
-		const initialLink = document.querySelector('a[href="/#accueil"]');
+		const initialLink = document.querySelector('a[href="/#home"]');
 		if (initialLink) {
 			updateUnderlinePosition(initialLink);
-			//clickedLink = 'accueil';
+			//clickedLink = 'home';
 		}
 
 		// Use next tick to ensure the DOM updates are applied
@@ -146,7 +146,7 @@
 </script>
 
 <header>
-	<a id="logo-header" href="/#accueil" on:click={(e) => handleAnchorClick(e, 'accueil')}>
+	<a id="logo-header" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>
 		<img
 			src="\src\lib\images\autres\logo-signature-transparent-upscale-cropped.png"
 			alt="logo"
@@ -157,7 +157,7 @@
 	<nav>
 		<ul>
 			<li>
-				<a id="accueilId" href="/#accueil" on:click={(e) => handleAnchorClick(e, 'accueil')}>Accueil</a>
+				<a id="homeId" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>home</a>
 			</li>
 			<li>
 				<a href="/#bio" on:click={(e) => handleAnchorClick(e, 'bio')}>Bio</a>
