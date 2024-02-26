@@ -2,22 +2,35 @@
 	// @ts-nocheck
 	import { fade, fly } from 'svelte/transition';
 	import { underlineVisible } from '$lib/underlineVisibility';
+	import { afterUpdate, onMount, tick } from 'svelte';
 	export let id = '';
 	export let images = [];
 	export let title = '';
 	export let author = '';
 	export let type = '';
 	export let work = '';
+	export let youtube = '';
+	export let soundcloud = '';
 	export let horizontalOffset = '0%';
 	export let verticalOffset = '0%';
+
+	let imageElement;
+
+	let imageComplete = false;
 
 	function handleClick() {
 		underlineVisible.set(false);
 	}
 
 	function handleImageLoading() {
-
+		imageComplete = true;
 	}
+
+	onMount(() => {
+		if (imageElement && imageElement.complete && imageElement.naturalHeight > 0 && imageElement.naturalWidth > 0) {
+			imageComplete = true;
+		}
+	});
 </script>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
@@ -26,10 +39,14 @@
 	<a href="/{id}" class="media-title">
 		<div class="media-image-wrapper">
 			<img
+				bind:this={imageElement}
+				{id}
 				src={images[0]}
 				alt={title}
 				class="media-image"
-				style="--horizontal-offset: {horizontalOffset}; --vertical-offset: {verticalOffset}"
+				style="--horizontal-offset: {horizontalOffset}; --vertical-offset: {verticalOffset}; opacity: {imageComplete
+					? 1
+					: 0}; transition: opacity 0.3s ease;"
 				on:load={handleImageLoading}
 			/>
 		</div>

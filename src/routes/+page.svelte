@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
 	import MediaContainer from './MediaContainer.svelte';
 	import { mediaList } from '$lib/mediaList';
 	import { onMount } from 'svelte';
@@ -10,15 +12,15 @@
 </script>
 
 <section id="accueil">
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
 	<h1>Bienvenue</h1>
 
 	<div class="media-grid">
-		{#each mediaList as media}
+		{#each mediaList as media (media.id)}
 			<MediaContainer {...media} />
 		{/each}
 	</div>

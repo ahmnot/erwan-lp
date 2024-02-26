@@ -60,14 +60,12 @@
 		const anchorId = new URL(link.href).hash.replace('#', '');
 		const anchor = document.getElementById(anchorId);
 		if (anchor) {
-			console.log("toto");
 			// If the anchor exists in the current document, scroll to it
 			window.scrollTo({
 				top: anchor.offsetTop - 70,
 				behavior: 'smooth'
 			});
 		} else {
-			console.log("titi");
 			// If the anchor doesn't exist, use goto to navigate to the target page
 			// Assuming the link's href attribute contains the path to navigate to
 			await goto(link.href);
