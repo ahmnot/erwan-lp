@@ -1,6 +1,7 @@
 <script>
 	// @ts-nocheck
 
+	import { fade, fly } from 'svelte/transition';
 	import MediaContainer from './MediaContainer.svelte';
 	import { mediaList } from '$lib/mediaList';
 	import { onMount } from 'svelte';
@@ -18,6 +19,13 @@
 			<h2>Music Composer</h2>
 			<h2>For Film, TV, Performing Arts, Video Games.</h2>
 		</div>
+
+		<img
+			src="\src\lib\images\autres\logo-signature-transparent.png"
+			alt="logo"
+			class="logo-presentation"
+		/>
+
 		<img
 			class="profile-picture"
 			src="src/lib/images/photos-personnelles/photo-profil-5.png"
@@ -49,19 +57,31 @@
 </section>
 
 <style>
+	.logo-presentation {
+		position: absolute;
+		left: 40%;
+		transform: translateX(-40%);
+		z-index: 1001; 
+		width: 50%; 
+		opacity: 0.5;
+	}
+
 	.titres {
-		margin-left:20px;
+		margin-left: 20px;
 		width: 100%;
 	}
 
 	.presentation {
+		position: relative;
 		display: flex;
 		justify-content: flex-start;
 		align-items: center;
 	}
+
 	.profile-picture {
-		margin:20px;
+		margin: 20px;
 		width: 50%;
+		z-index: 1000;
 	}
 
 	.media-grid {

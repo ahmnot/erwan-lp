@@ -62,7 +62,7 @@
 		if (anchor) {
 			// If the anchor exists in the current document, scroll to it
 			window.scrollTo({
-				top: anchor.offsetTop - 70,
+				top: anchor.offsetTop - 100,
 				behavior: 'smooth'
 			});
 		} else {
@@ -148,7 +148,7 @@
 <header>
 	<a id="logo-header" href="/#accueil" on:click={(e) => handleAnchorClick(e, 'accueil')}>
 		<img
-			src="\src\lib\images\autres\logo-transparent-upscale-cropped.png"
+			src="\src\lib\images\autres\logo-signature-transparent-upscale-cropped.png"
 			alt="logo"
 			class="logo-header"
 		/>
@@ -188,7 +188,7 @@
 		right: 0;
 		width: 100%;
 		background-color: black;
-		box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);
+		/*box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);*/
 		z-index: 1000;
 		flex-direction: row; /* Align items in a row */
 		justify-content: start; /* Align items to the start of the container */
