@@ -17,10 +17,15 @@
 
 	const sections = ['home', 'music', 'bio', 'contact'];
 
-	let isExpanded = false;
+	let isHamburgerExpanded = false;
+	let isMailShown = false;
 
 	function hamburgerClickHandler() {
-		isExpanded = !isExpanded;
+		isHamburgerExpanded = !isHamburgerExpanded;
+	}
+
+	function mailClickingHandler() {
+		isMailShown = !isMailShown;
 	}
 
 	// Function to update the underline position
@@ -192,13 +197,13 @@
 
 			<ul class="socials">
 				<li>
-					<button class="mail-icon-button">
-						<img class="mail-icon" src="/icons/mail.png" alt="Instagram Link" />
+					<button class="mail-icon-button" on:click={mailClickingHandler}>
+						<img class="mail-icon" src="/icons/mail.png" alt="Mail Displaying" />
 					</button>
 				</li>
 				<li>
 					<a class="soundcloud-icon-link" href="https://soundcloud.com/erwanlepape" target="_blank">
-						<img class="soundcloud-icon" src="/icons/soundcloud.png" alt="Instagram Link" />
+						<img class="soundcloud-icon" src="/icons/soundcloud.png" alt="Soundcloud Link" />
 					</a>
 				</li>
 				<li>
@@ -211,7 +216,7 @@
 	{:else}
 		<nav>
 			<button class="material-symbols-outlined" on:click={hamburgerClickHandler}
-				>{isExpanded ? 'close' : 'menu'}</button
+				>{isHamburgerExpanded ? 'close' : 'menu'}</button
 			>
 
 			<a
@@ -222,8 +227,8 @@
 			>
 				<img src="/logo-1.png" alt="logo" class="logo-header-centered" />
 			</a>
-			<!-- isExpanded -->
-			{#if isExpanded}
+			<!-- isHamburgerExpanded -->
+			{#if isHamburgerExpanded}
 				<ul class="hamburger-menu" in:slide={{ duration: 300 }} out:fade={{ duration: 60 }}>
 					<li>
 						<a id="homeId" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>Home</a>
@@ -265,6 +270,7 @@
 
 	.mail-icon:hover {
 		filter: grayscale(0);
+		cursor: pointer;
 	}
 
 	.instagram-icon-link {
@@ -323,7 +329,7 @@
 		display: flex;
 		height: 100%;
 		align-items: center;
-		padding: 0 0.5rem;
+		padding: 0 10px;
 		color: var(--color-text);
 		font-weight: 500;
 		font-size: 1.2rem;

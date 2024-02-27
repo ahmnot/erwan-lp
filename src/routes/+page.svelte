@@ -77,7 +77,7 @@
 
 	.logo-presentation {
 		position: absolute;
-		bottom: 0px;
+		bottom: 60px;
 		left: 300px;
 		width: 30vw;
 		z-index: 1001;
