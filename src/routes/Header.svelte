@@ -11,20 +11,25 @@
 	let isResizing = false; // Flag to track if the window is currently being resized
 
 	let innerWidth = 0;
-	let innerWidthLimit = 800;
+	let innerWidthLimit = 1050;
 
 	$: innerWidth = 0;
 
 	const sections = ['home', 'music', 'bio', 'contact'];
 
 	let isHamburgerExpanded = false;
+	let isPhoneShown = false;
 	let isMailShown = false;
 
 	function hamburgerClickHandler() {
 		isHamburgerExpanded = !isHamburgerExpanded;
 	}
 
-	function mailClickingHandler() {
+	function phoneClickHandler() {
+		isPhoneShown = !isPhoneShown;
+	}
+
+	function mailClickHandler() {
 		isMailShown = !isMailShown;
 	}
 
@@ -197,9 +202,24 @@
 
 			<ul class="socials">
 				<li>
-					<button class="mail-icon-button" on:click={mailClickingHandler}>
-						<img class="mail-icon" src="/icons/mail.png" alt="Mail Displaying" />
+					<button class="phone-icon-button" on:click={phoneClickHandler}>
+						<img class="phone-icon" src="/icons/phone.png" alt="Phone Icon" />
 					</button>
+					{#if isPhoneShown}
+						<div class="phone-box">
+							+33 6 47 86 26 23
+						</div>
+					{/if}
+				</li>
+				<li>
+					<button class="mail-icon-button" on:click={mailClickHandler}>
+						<img class="mail-icon" src="/icons/mail.png" alt="Mail Icon" />
+					</button>
+					{#if isMailShown}
+						<div class="email-box">
+							erwanlepape@outlook.com
+						</div>
+					{/if}
 				</li>
 				<li>
 					<a class="soundcloud-icon-link" href="https://soundcloud.com/erwanlepape" target="_blank">
@@ -249,11 +269,49 @@
 </header>
 
 <style>
+	.phone-box {
+		position:absolute;
+		top:50%;
+		right:120%;
+		transform: translateX(50%);
+		transform: translateY(-50%);
+		font-size: larger;
+		white-space: nowrap;
+		opacity: 1;
+		color:white ;
+	}
+	
+	.email-box {
+		position:absolute;
+		right:50%;
+		transform: translate(50%);
+		font-size: larger;
+		opacity: 1;
+		color:white;
+	}
+
 	.socials {
 		display: flex;
 		position: fixed;
 		right: 0px;
 		opacity: 0.7;
+	}
+
+	.phone-icon-button {
+		margin-right: 20px;
+		padding: 0px;
+		background: none;
+		border: none;
+	}
+
+	.phone-icon {
+		filter: grayscale(1);
+		transition: 0.1s filter linear;
+	}
+
+	.phone-icon:hover {
+		filter: grayscale(0);
+		cursor: pointer;
 	}
 
 	.mail-icon-button {
@@ -338,7 +396,7 @@
 		transition: color 0.2s linear;
 	}
 
-	@media (max-width: 800px) {
+	@media (max-width: 1050px) {
 		nav {
 			position: relative;
 			display: flex;
