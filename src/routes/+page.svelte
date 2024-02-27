@@ -4,6 +4,9 @@
 	import { mediaList } from '$lib/mediaList';
 	import { onMount } from 'svelte';
 	import { underlineVisible } from '$lib/underlineVisibility';
+	import SocialBar from './SocialBar.svelte';
+
+	let socialsincontact = true;
 
 	onMount(() => {
 		underlineVisible.set(true);
@@ -15,23 +18,22 @@
 		<div class="titres">
 			<h1 id="main-title">Erwan Le Pape</h1>
 			<h2>Music Composer</h2>
-			<h3>For Film, TV, Performing Arts, Video Games.</h3>
+			<h3 id="bottom-text">For Film, TV, Performing Arts, Video Games.</h3>
 		</div>
 		<img src="/logo-3.png" alt="logo" class="logo-presentation" />
 
-		<img
-			class="profile-picture"
-			src="/photo-profil-7.png"
-			alt="My Face"
-		/>
+		<img class="profile-picture" src="/photo-profil-7.png" alt="My Face" />
 	</div>
 </section>
 
-<div class="media-grid">
-	{#each mediaList as media (media.id)}
-		<MediaContainer {...media} />
-	{/each}
-</div>
+<section id="music">
+	<h1>Music</h1>
+	<div class="media-grid">
+		{#each mediaList as media (media.id)}
+			<MediaContainer {...media} />
+		{/each}
+	</div>
+</section>
 
 <section id="bio">
 	<h1>Who am I</h1>
@@ -45,9 +47,19 @@
 
 <section id="contact">
 	<h1>Contact</h1>
+	<div class="contact-section-content">
+		<h2 class="contact-text">Let's talk! →</h2>
+		<SocialBar {socialsincontact} />
+	</div>
 </section>
 
 <style>
+	.contact-section-content {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
 	h1 {
 		font-weight: 800;
 		font-size: 640%;
@@ -78,8 +90,9 @@
 
 	.logo-presentation {
 		position: absolute;
-		bottom: 180px;
+		bottom: 60px;
 		left: 300px;
+		width: 30vw;
 		z-index: 1001;
 		opacity: 0.5;
 	}
@@ -134,14 +147,13 @@
 
 	@media (max-width: 550px) {
 		#main-title {
-		font-weight: 800;
-		font-size: 540%;
-
+			font-weight: 800;
+			font-size: 540%;
 		}
 		h1 {
 			font-size: 400%;
 		}
-		
+
 		.logo-presentation {
 			position: absolute;
 			bottom: -10px;
@@ -157,7 +169,6 @@
 	}
 
 	@media (max-width: 280px) {
-		
 		.media-grid {
 			grid-template-columns: 1fr;
 		}

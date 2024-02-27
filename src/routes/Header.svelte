@@ -3,7 +3,8 @@
 	import { onMount, tick } from 'svelte';
 	import { underlineVisible } from '$lib/underlineVisibility';
 	import { goto } from '$app/navigation';
-	import { slide } from 'svelte/transition';
+	import { fade, slide } from 'svelte/transition';
+	import SocialBar from './SocialBar.svelte';
 
 	let clickedLink = 'home'; // Initialize with 'home' as the default section
 	let applyTransition = false; // Initially, do not apply transition
@@ -11,15 +12,17 @@
 	let isResizing = false; // Flag to track if the window is currently being resized
 
 	let innerWidth = 0;
+	let innerWidthMenuLimit = 600;
+	let innerWidthSocialsLimit = 1050;
 
 	$: innerWidth = 0;
 
-	const sections = ['home', 'bio', 'contact'];
+	const sections = ['home', 'music', 'bio', 'contact'];
 
-	let isExpanded = false;
+	let isHamburgerExpanded = false;
 
 	function hamburgerClickHandler() {
-		isExpanded = !isExpanded;
+		isHamburgerExpanded = !isHamburgerExpanded;
 	}
 
 	// Function to update the underline position
@@ -64,11 +67,11 @@
 	}, 100);
 
 	const resizeBegins = () => {
-			if (!isResizing) {
-				isResizing = true; // Mark as resizing
-				requestAnimationFrame(continuousUpdateUnderline); // Start the loop
-			}
+		if (!isResizing) {
+			isResizing = true; // Mark as resizing
+			requestAnimationFrame(continuousUpdateUnderline); // Start the loop
 		}
+	};
 
 	async function handleAnchorClick(event, linkId) {
 		underlineVisible.set(true);
@@ -79,7 +82,7 @@
 		if (anchor) {
 			// If the anchor exists in the current document, scroll to it
 			window.scrollTo({
-				top: anchor.offsetTop - 70,
+				top: anchor.offsetTop - 100,
 				behavior: 'smooth'
 			});
 		} else {
@@ -92,7 +95,7 @@
 	}
 
 	async function updateUnderlinePosition(clickedElement, applyTransitionFlag = true) {
-		if (innerWidth > 480 && clickedElement !== null) {
+		if (innerWidth > innerWidthMenuLimit && clickedElement !== null) {
 			await tick();
 			if (clickedElement.id === 'logo-header-id') {
 				clickedElement = document.getElementById('homeId');
@@ -112,7 +115,6 @@
 		const initialLink = document.querySelector('a[href="/#home"]');
 		if (initialLink) {
 			updateUnderlinePosition(initialLink);
-			//clickedLink = 'home';
 		}
 
 		// Use next tick to ensure the DOM updates are applied
@@ -129,8 +131,8 @@
 
 				const scrollPosition = window.scrollY;
 				if (
-					element.offsetTop - 70 <= scrollPosition &&
-					element.offsetTop + element.offsetHeight - 70 > scrollPosition
+					element.offsetTop - 110 <= scrollPosition &&
+					element.offsetTop + element.offsetHeight - 110 > scrollPosition
 				) {
 					currentSection = section;
 				}
@@ -159,13 +161,12 @@
 			window.removeEventListener('resize', onResizeEnd);
 		};
 	});
-
 </script>
 
 <svelte:window bind:innerWidth />
 
 <header>
-	{#if innerWidth > 480}
+	{#if innerWidth > innerWidthMenuLimit}
 		<a id="logo-header-id" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>
 			<img src="/logo-1.png" alt="logo" class="logo-header" />
 		</a>
@@ -173,7 +174,10 @@
 		<nav>
 			<ul>
 				<li>
-					<a id="homeId" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>home</a>
+					<a id="homeId" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>Home</a>
+				</li>
+				<li>
+					<a href="/#music" on:click={(e) => handleAnchorClick(e, 'music')}>Music</a>
 				</li>
 				<li>
 					<a href="/#bio" on:click={(e) => handleAnchorClick(e, 'bio')}>Bio</a>
@@ -187,11 +191,16 @@
 				class="underline"
 				style={underlineStyle + ($underlineVisible ? 'display: block;' : 'display: none;')}
 			></div>
+
+			{#if innerWidth > innerWidthSocialsLimit}
+				<SocialBar />
+			{/if}
 		</nav>
 	{:else}
 		<nav>
-			<!-- <span class="material-symbols-outlined">menu</span> -->
-			<button class="material-symbols-outlined" on:click={hamburgerClickHandler}>menu</button>
+			<button class="material-symbols-outlined" on:click={hamburgerClickHandler}
+				>{isHamburgerExpanded ? 'close' : 'menu'}</button
+			>
 
 			<a
 				id="logo-header-id"
@@ -201,11 +210,14 @@
 			>
 				<img src="/logo-1.png" alt="logo" class="logo-header-centered" />
 			</a>
-			<!-- isExpanded -->
-			{#if isExpanded}
-				<ul class="hamburger-menu" transition:slide={{ duration: 150 }}>
+			<!-- isHamburgerExpanded -->
+			{#if isHamburgerExpanded}
+				<ul class="hamburger-menu" in:slide={{ duration: 200 }} out:fade={{ duration: 60 }}>
 					<li>
-						<a id="homeId" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>home</a>
+						<a id="homeId" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>Home</a>
+					</li>
+					<li>
+						<a href="/#music" on:click={(e) => handleAnchorClick(e, 'music')}>Music</a>
 					</li>
 					<li>
 						<a href="/#bio" on:click={(e) => handleAnchorClick(e, 'bio')}>Bio</a>
@@ -220,6 +232,7 @@
 </header>
 
 <style>
+
 	nav {
 		position: relative;
 		display: flex;
@@ -248,7 +261,7 @@
 		display: flex;
 		height: 100%;
 		align-items: center;
-		padding: 0 0.5rem;
+		padding: 0 10px;
 		color: var(--color-text);
 		font-weight: 500;
 		font-size: 1.2rem;
@@ -257,7 +270,7 @@
 		transition: color 0.2s linear;
 	}
 
-	@media (max-width: 480px) {
+	@media (max-width: 600px) {
 		nav {
 			position: relative;
 			display: flex;
@@ -283,6 +296,8 @@
 		color: var(--color-text);
 		background-color: var(--color-bg-0);
 		border: none;
+		cursor:pointer;
+		font-size: xx-large;
 	}
 
 	.link-header-centered {
@@ -290,8 +305,8 @@
 		left: 50%;
 		transform: translate(-50%);
 		height: 50px;
-		margin-top: 10px;
-		margin-bottom: 10px;
+		margin-top: 20px;
+		margin-bottom: 20px;
 		padding: 0;
 	}
 
