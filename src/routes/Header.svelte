@@ -4,6 +4,7 @@
 	import { underlineVisible } from '$lib/underlineVisibility';
 	import { goto } from '$app/navigation';
 	import { fade, slide } from 'svelte/transition';
+	import { expoIn } from 'svelte/easing';
 
 	let clickedLink = 'home'; // Initialize with 'home' as the default section
 	let applyTransition = false; // Initially, do not apply transition
@@ -206,7 +207,7 @@
 						<img class="phone-icon" src="/icons/phone.png" alt="Phone Icon" />
 					</button>
 					{#if isPhoneShown}
-						<div class="phone-box">
+						<div class="phone-box" transition:fade={{ duration: 60 }}>
 							+33 6 47 86 26 23
 						</div>
 					{/if}
@@ -216,7 +217,7 @@
 						<img class="mail-icon" src="/icons/mail.png" alt="Mail Icon" />
 					</button>
 					{#if isMailShown}
-						<div class="email-box">
+						<div class="email-box" transition:fade={{ duration: 60 }}>
 							erwanlepape@outlook.com
 						</div>
 					{/if}
