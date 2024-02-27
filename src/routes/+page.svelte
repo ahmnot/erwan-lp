@@ -112,7 +112,7 @@
 	}
 
 	section {
-		padding-bottom: 200px;
+		padding-bottom: 800px;
 	}
 
 	#home {
