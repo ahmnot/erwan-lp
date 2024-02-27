@@ -112,7 +112,6 @@
 		const initialLink = document.querySelector('a[href="/#home"]');
 		if (initialLink) {
 			updateUnderlinePosition(initialLink);
-			//clickedLink = 'home';
 		}
 
 		// Use next tick to ensure the DOM updates are applied
@@ -191,7 +190,7 @@
 	{:else}
 		<nav>
 			<!-- <span class="material-symbols-outlined">menu</span> -->
-			<button class="material-symbols-outlined" on:click={hamburgerClickHandler}>menu</button>
+			<button class="material-symbols-outlined" on:click={hamburgerClickHandler}>{isExpanded ? 'close' : 'menu'}</button>
 
 			<a
 				id="logo-header-id"
