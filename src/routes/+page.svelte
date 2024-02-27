@@ -17,11 +17,11 @@
 			<h2>Music Composer</h2>
 			<h3>For Film, TV, Performing Arts, Video Games.</h3>
 		</div>
-		<img src="/src/lib/images/autres/logo-3.png" alt="logo" class="logo-presentation" />
+		<img src="/logo-3.png" alt="logo" class="logo-presentation" />
 
 		<img
 			class="profile-picture"
-			src="src/lib/images/photos-personnelles/photo-profil-7.png"
+			src="/photo-profil-7.png"
 			alt="My Face"
 		/>
 	</div>

@@ -1,6 +1,6 @@
 // @ts-nocheck
 // src/lib/mediaList.js
-let imagePath = 'src/lib/images/affiches-court-metrages/';
+let imagePath = '/affiches-court-metrages/';
 
 export const mediaList = [
     { id: 'fantasy'         , images: [imagePath + 'fantasy.jpg'], title: 'Fantasy', author: 'Auteur', type: 'Type', work: 'Travail', youtube: 'https://www.youtube.com/embed/9VjncpK4dV8', soundcloud: '' },

@@ -160,7 +160,7 @@
 <header>
 	{#if innerWidth > 480}
 		<a id="logo-header-id" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>
-			<img src="/src/lib/images/autres/logo-1.png" alt="logo" class="logo-header" />
+			<img src="/logo-1.png" alt="logo" class="logo-header" />
 		</a>
 
 		<nav>
@@ -192,7 +192,7 @@
 				on:click={(e) => handleAnchorClick(e, 'home')}
 				class="link-header-centered"
 			>
-				<img src="/src/lib/images/autres/logo-1.png" alt="logo" class="logo-header-centered" />
+				<img src="/logo-1.png" alt="logo" class="logo-header-centered" />
 			</a>
 			<!-- isExpanded -->
 			{#if isExpanded}
