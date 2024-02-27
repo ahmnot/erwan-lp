@@ -26,7 +26,7 @@
 }
 
 /* For WebKit browsers such as Chrome, Safari, and newer versions of Edge */
-::-webkit-scrollbar {
+/*::-webkit-scrollbar {
 	width: 0px;
 }
 
@@ -43,7 +43,7 @@ html {
 	scrollbar-width: none;
 	scrollbar-color: #888 #888;
 }
-
+*/
 body {
 	min-height: 100vh;
 	margin: 0;

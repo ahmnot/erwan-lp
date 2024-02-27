@@ -191,11 +191,12 @@
 	}
 
 	.link-header-centered {
-		position:relative;
-		left: 50%;
-		transform: translateX(-50%);
+		position:fixed;
+		left:50%;
+		transform: translate(-50%);
 		height: 50px;
-		margin: 20px;
+		margin-top: 20px;
+		margin-bottom: 20px;
 		padding: 0;
 	}
 
