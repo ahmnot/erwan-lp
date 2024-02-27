@@ -4,6 +4,9 @@
 	import { mediaList } from '$lib/mediaList';
 	import { onMount } from 'svelte';
 	import { underlineVisible } from '$lib/underlineVisibility';
+	import SocialBar from './SocialBar.svelte';
+
+	let socialsincontact = true;
 
 	onMount(() => {
 		underlineVisible.set(true);
@@ -44,9 +47,19 @@
 
 <section id="contact">
 	<h1>Contact</h1>
+	<div class="contact-section-content">
+		<h2 class="contact-text">Let's talk! →</h2>
+		<SocialBar {socialsincontact} />
+	</div>
 </section>
 
 <style>
+	.contact-section-content {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
 	h1 {
 		font-weight: 800;
 		font-size: 640%;

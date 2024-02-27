@@ -4,7 +4,7 @@
 	import { underlineVisible } from '$lib/underlineVisibility';
 	import { goto } from '$app/navigation';
 	import { fade, slide } from 'svelte/transition';
-	import { expoIn } from 'svelte/easing';
+	import SocialBar from './SocialBar.svelte';
 
 	let clickedLink = 'home'; // Initialize with 'home' as the default section
 	let applyTransition = false; // Initially, do not apply transition
@@ -20,19 +20,9 @@
 	const sections = ['home', 'music', 'bio', 'contact'];
 
 	let isHamburgerExpanded = false;
-	let isPhoneShown = false;
-	let isMailShown = false;
 
 	function hamburgerClickHandler() {
 		isHamburgerExpanded = !isHamburgerExpanded;
-	}
-
-	function phoneClickHandler() {
-		isPhoneShown = !isPhoneShown;
-	}
-
-	function mailClickHandler() {
-		isMailShown = !isMailShown;
 	}
 
 	// Function to update the underline position
@@ -92,7 +82,7 @@
 		if (anchor) {
 			// If the anchor exists in the current document, scroll to it
 			window.scrollTo({
-				top: anchor.offsetTop - 70,
+				top: anchor.offsetTop - 100,
 				behavior: 'smooth'
 			});
 		} else {
@@ -141,8 +131,8 @@
 
 				const scrollPosition = window.scrollY;
 				if (
-					element.offsetTop - 70 <= scrollPosition &&
-					element.offsetTop + element.offsetHeight - 70 > scrollPosition
+					element.offsetTop - 110 <= scrollPosition &&
+					element.offsetTop + element.offsetHeight - 110 > scrollPosition
 				) {
 					currentSection = section;
 				}
@@ -203,38 +193,7 @@
 			></div>
 
 			{#if innerWidth > innerWidthSocialsLimit}
-			<ul class="socials">
-				<li>
-					<button class="phone-icon-button" on:click={phoneClickHandler}>
-						<img class="phone-icon" src="/icons/phone.png" alt="Phone Icon" />
-					</button>
-					{#if isPhoneShown}
-						<div class="phone-box" transition:fade={{ duration: 60 }}>
-							+33 6 47 86 26 23
-						</div>
-					{/if}
-				</li>
-				<li>
-					<button class="mail-icon-button" on:click={mailClickHandler}>
-						<img class="mail-icon" src="/icons/mail.png" alt="Mail Icon" />
-					</button>
-					{#if isMailShown}
-						<div class="email-box" transition:fade={{ duration: 60 }}>
-							erwanlepape@outlook.com
-						</div>
-					{/if}
-				</li>
-				<li>
-					<a class="soundcloud-icon-link" href="https://soundcloud.com/erwanlepape" target="_blank">
-						<img class="soundcloud-icon" src="/icons/soundcloud.png" alt="Soundcloud Link" />
-					</a>
-				</li>
-				<li>
-					<a class="instagram-icon-link" href="https://www.instagram.com/erwanklp/" target="_blank">
-						<img class="instagram-icon" src="/icons/instagram.png" alt="Instagram Link" />
-					</a>
-				</li>
-			</ul>
+				<SocialBar />
 			{/if}
 		</nav>
 	{:else}
@@ -253,7 +212,7 @@
 			</a>
 			<!-- isHamburgerExpanded -->
 			{#if isHamburgerExpanded}
-				<ul class="hamburger-menu" in:slide={{ duration: 300 }} out:fade={{ duration: 60 }}>
+				<ul class="hamburger-menu" in:slide={{ duration: 200 }} out:fade={{ duration: 60 }}>
 					<li>
 						<a id="homeId" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>Home</a>
 					</li>
@@ -273,95 +232,6 @@
 </header>
 
 <style>
-	.phone-box {
-		position:absolute;
-		top:50%;
-		right:120%;
-		transform: translateX(50%);
-		transform: translateY(-50%);
-		font-size: larger;
-		white-space: nowrap;
-		opacity: 1;
-		color:white ;
-	}
-	
-	.email-box {
-		position:absolute;
-		right:50%;
-		transform: translate(50%);
-		font-size: larger;
-		opacity: 1;
-		color:white;
-	}
-
-	.socials {
-		display: flex;
-		position: fixed;
-		right: 0px;
-		opacity: 0.7;
-	}
-
-	.phone-icon-button {
-		margin-right: 20px;
-		padding: 0px;
-		background: none;
-		border: none;
-	}
-
-	.phone-icon {
-		filter: grayscale(1);
-		transition: 0.1s filter linear;
-	}
-
-	.phone-icon:hover {
-		filter: grayscale(0);
-		cursor: pointer;
-	}
-
-	.mail-icon-button {
-		margin-right: 20px;
-		padding: 0px;
-		background: none;
-		border: none;
-	}
-
-	.mail-icon {
-		filter: grayscale(1);
-		transition: 0.1s filter linear;
-	}
-
-	.mail-icon:hover {
-		filter: grayscale(0);
-		cursor: pointer;
-	}
-
-	.instagram-icon-link {
-		margin-right: 20px;
-		padding: 0px;
-	}
-
-	.instagram-icon {
-		filter: grayscale(1);
-		transition: 0.1s filter linear;
-	}
-
-	.instagram-icon:hover {
-		filter: grayscale(0);
-	}
-
-	.soundcloud-icon-link {
-		margin-right: 20px;
-		padding: 0px;
-	}
-
-	.soundcloud-icon {
-		filter: grayscale(1);
-		transition: 0.1s filter linear;
-	}
-
-	.soundcloud-icon:hover {
-		filter: grayscale(0);
-	}
 
 	nav {
 		position: relative;
@@ -426,6 +296,7 @@
 		color: var(--color-text);
 		background-color: var(--color-bg-0);
 		border: none;
+		transform: scale(1.5);
 	}
 
 	.link-header-centered {
