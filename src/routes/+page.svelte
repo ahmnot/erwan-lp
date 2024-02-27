@@ -21,7 +21,7 @@
 
 		<img
 			class="profile-picture"
-			src="src/lib/images/photos-personnelles/photo-profil-5.png"
+			src="src/lib/images/photos-personnelles/photo-profil-7.png"
 			alt="My Face"
 		/>
 	</div>
