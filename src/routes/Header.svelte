@@ -63,6 +63,13 @@
 		isResizing = false; // Reset the flag
 	}, 100);
 
+	const resizeBegins = () => {
+			if (!isResizing) {
+				isResizing = true; // Mark as resizing
+				requestAnimationFrame(continuousUpdateUnderline); // Start the loop
+			}
+		}
+
 	async function handleAnchorClick(event, linkId) {
 		underlineVisible.set(true);
 		event.preventDefault();
@@ -85,7 +92,7 @@
 	}
 
 	async function updateUnderlinePosition(clickedElement, applyTransitionFlag = true) {
-		if (clickedElement) {
+		if (innerWidth > 480 && clickedElement !== null) {
 			await tick();
 			if (clickedElement.id === 'logo-header-id') {
 				clickedElement = document.getElementById('homeId');
@@ -142,19 +149,17 @@
 		window.addEventListener('scroll', debouncedUpdate);
 
 		// Enhanced resize event listener using requestAnimationFrame
-		window.addEventListener('resize', () => {
-			if (!isResizing) {
-				isResizing = true; // Mark as resizing
-				requestAnimationFrame(continuousUpdateUnderline); // Start the loop
-			}
-		});
+		window.addEventListener('resize', resizeBegins);
 
 		window.addEventListener('resize', onResizeEnd);
 
 		return () => {
 			window.removeEventListener('scroll', debouncedUpdate);
+			window.removeEventListener('resize', resizeBegins);
+			window.removeEventListener('resize', onResizeEnd);
 		};
 	});
+
 </script>
 
 <svelte:window bind:innerWidth />

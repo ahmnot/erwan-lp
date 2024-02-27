@@ -101,7 +101,6 @@
 		position: relative;
 		margin: 20px;
 		width: 60%;
-		z-index: 1000;
 		opacity: 0.9;
 		height: 87vh;
 		object-fit: contain;
@@ -154,7 +153,6 @@
 		.profile-picture {
 			top: -145px;
 			right: 180px;
-			z-index: 950;
 		}
 	}
 
