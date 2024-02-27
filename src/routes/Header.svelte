@@ -12,7 +12,8 @@
 	let isResizing = false; // Flag to track if the window is currently being resized
 
 	let innerWidth = 0;
-	let innerWidthLimit = 1050;
+	let innerWidthMenuLimit = 600;
+	let innerWidthSocialsLimit = 1050;
 
 	$: innerWidth = 0;
 
@@ -104,7 +105,7 @@
 	}
 
 	async function updateUnderlinePosition(clickedElement, applyTransitionFlag = true) {
-		if (innerWidth > innerWidthLimit && clickedElement !== null) {
+		if (innerWidth > innerWidthMenuLimit && clickedElement !== null) {
 			await tick();
 			if (clickedElement.id === 'logo-header-id') {
 				clickedElement = document.getElementById('homeId');
@@ -175,7 +176,7 @@
 <svelte:window bind:innerWidth />
 
 <header>
-	{#if innerWidth > innerWidthLimit}
+	{#if innerWidth > innerWidthMenuLimit}
 		<a id="logo-header-id" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>
 			<img src="/logo-1.png" alt="logo" class="logo-header" />
 		</a>
@@ -201,6 +202,7 @@
 				style={underlineStyle + ($underlineVisible ? 'display: block;' : 'display: none;')}
 			></div>
 
+			{#if innerWidth > innerWidthSocialsLimit}
 			<ul class="socials">
 				<li>
 					<button class="phone-icon-button" on:click={phoneClickHandler}>
@@ -233,6 +235,7 @@
 					</a>
 				</li>
 			</ul>
+			{/if}
 		</nav>
 	{:else}
 		<nav>
@@ -397,7 +400,7 @@
 		transition: color 0.2s linear;
 	}
 
-	@media (max-width: 1050px) {
+	@media (max-width: 600px) {
 		nav {
 			position: relative;
 			display: flex;
