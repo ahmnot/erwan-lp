@@ -64,11 +64,11 @@
 	}, 100);
 
 	const resizeBegins = () => {
-			if (!isResizing) {
-				isResizing = true; // Mark as resizing
-				requestAnimationFrame(continuousUpdateUnderline); // Start the loop
-			}
+		if (!isResizing) {
+			isResizing = true; // Mark as resizing
+			requestAnimationFrame(continuousUpdateUnderline); // Start the loop
 		}
+	};
 
 	async function handleAnchorClick(event, linkId) {
 		underlineVisible.set(true);
@@ -158,7 +158,6 @@
 			window.removeEventListener('resize', onResizeEnd);
 		};
 	});
-
 </script>
 
 <svelte:window bind:innerWidth />
@@ -190,7 +189,9 @@
 	{:else}
 		<nav>
 			<!-- <span class="material-symbols-outlined">menu</span> -->
-			<button class="material-symbols-outlined" on:click={hamburgerClickHandler}>{isExpanded ? 'close' : 'menu'}</button>
+			<button class="material-symbols-outlined" on:click={hamburgerClickHandler}
+				>{isExpanded ? 'close' : 'menu'}</button
+			>
 
 			<a
 				id="logo-header-id"
