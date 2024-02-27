@@ -296,7 +296,8 @@
 		color: var(--color-text);
 		background-color: var(--color-bg-0);
 		border: none;
-		transform: scale(1.5);
+		cursor:pointer;
+		font-size: xx-large;
 	}
 
 	.link-header-centered {
