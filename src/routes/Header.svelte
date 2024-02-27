@@ -85,17 +85,19 @@
 	}
 
 	async function updateUnderlinePosition(clickedElement, applyTransitionFlag = true) {
-		await tick();
-		if (clickedElement.id === 'logo-header-id') {
-			clickedElement = document.getElementById('homeId');
+		if (clickedElement) {
+			await tick();
+			if (clickedElement.id === 'logo-header-id') {
+				clickedElement = document.getElementById('homeId');
+			}
+			const { left, width } = clickedElement.getBoundingClientRect();
+			const navLeft = document.querySelector('nav').getBoundingClientRect().left;
+			const transitionStyle =
+				applyTransition && applyTransitionFlag // Use a flag to control transition application
+					? 'transition: left 0.15s ease, width 0.15s ease;'
+					: 'transition: none;';
+			underlineStyle = `left: ${left - navLeft}px; width: ${width}px; ${transitionStyle}`;
 		}
-		const { left, width } = clickedElement.getBoundingClientRect();
-		const navLeft = document.querySelector('nav').getBoundingClientRect().left;
-		const transitionStyle =
-			applyTransition && applyTransitionFlag // Use a flag to control transition application
-				? 'transition: left 0.15s ease, width 0.15s ease;'
-				: 'transition: none;';
-		underlineStyle = `left: ${left - navLeft}px; width: ${width}px; ${transitionStyle}`;
 	}
 
 	onMount(async () => {
@@ -266,11 +268,10 @@
 			justify-content: flex-start;
 			align-items: baseline;
 			flex-direction: column;
-			top:40px;
-			left:0px;
+			top: 40px;
+			left: 0px;
 		}
 	}
-
 
 	.material-symbols-outlined {
 		margin: 20px;
