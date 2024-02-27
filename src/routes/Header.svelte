@@ -3,6 +3,7 @@
 	import { onMount, tick } from 'svelte';
 	import { underlineVisible } from '$lib/underlineVisibility';
 	import { goto } from '$app/navigation';
+	import { slide } from 'svelte/transition';
 
 	let clickedLink = 'home'; // Initialize with 'home' as the default section
 	let applyTransition = false; // Initially, do not apply transition
@@ -14,6 +15,12 @@
 	$: innerWidth = 0;
 
 	const sections = ['home', 'bio', 'contact'];
+
+	let isExpanded = false;
+
+	function hamburgerClickHandler() {
+		isExpanded = !isExpanded;
+	}
 
 	// Function to update the underline position
 	function continuousUpdateUnderline() {
@@ -176,27 +183,109 @@
 		</nav>
 	{:else}
 		<nav>
-			<span class="material-symbols-outlined">menu</span>
+			<!-- <span class="material-symbols-outlined">menu</span> -->
+			<button class="material-symbols-outlined" on:click={hamburgerClickHandler}>menu</button>
 
-			<a id="logo-header-id" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')} class="link-header-centered" >
+			<a
+				id="logo-header-id"
+				href="/#home"
+				on:click={(e) => handleAnchorClick(e, 'home')}
+				class="link-header-centered"
+			>
 				<img src="/src/lib/images/autres/logo-1.png" alt="logo" class="logo-header-centered" />
 			</a>
+			<!-- isExpanded -->
+			{#if isExpanded}
+				<ul class="hamburger-menu" transition:slide={{ duration: 150 }}>
+					<li>
+						<a id="homeId" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>home</a>
+					</li>
+					<li>
+						<a href="/#bio" on:click={(e) => handleAnchorClick(e, 'bio')}>Bio</a>
+					</li>
+					<li>
+						<a href="/#contact" on:click={(e) => handleAnchorClick(e, 'contact')}>Contact</a>
+					</li>
+				</ul>
+			{/if}
 		</nav>
 	{/if}
 </header>
 
 <style>
+	nav {
+		position: relative;
+		display: flex;
+		justify-content: center;
+	}
+
+	ul {
+		position: relative;
+		padding: 0;
+		margin: 0;
+		height: 3em;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		list-style: none;
+		background-size: contain;
+		background-color: transparent;
+	}
+
+	li {
+		position: relative;
+		height: 100%;
+	}
+
+	nav a {
+		display: flex;
+		height: 100%;
+		align-items: center;
+		padding: 0 0.5rem;
+		color: var(--color-text);
+		font-weight: 500;
+		font-size: 1.2rem;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		transition: color 0.2s linear;
+	}
+
+	@media (max-width: 480px) {
+		nav {
+			position: relative;
+			display: flex;
+			justify-content: center;
+		}
+
+		ul {
+			position: absolute;
+			padding: 0;
+			margin: 20px;
+			height: 3em;
+			display: flex;
+			justify-content: flex-start;
+			align-items: baseline;
+			flex-direction: column;
+			top:40px;
+			left:0px;
+		}
+	}
+
+
 	.material-symbols-outlined {
 		margin: 20px;
+		color: var(--color-text);
+		background-color: var(--color-bg-0);
+		border: none;
 	}
 
 	.link-header-centered {
-		position:fixed;
-		left:50%;
+		position: fixed;
+		left: 50%;
 		transform: translate(-50%);
 		height: 50px;
-		margin-top: 20px;
-		margin-bottom: 20px;
+		margin-top: 10px;
+		margin-bottom: 10px;
 		padding: 0;
 	}
 
@@ -221,45 +310,6 @@
 		flex-direction: row; /* Align items in a row */
 		justify-content: start; /* Align items to the start of the container */
 		align-items: center; /* Center items vertically */
-	}
-
-	nav {
-		position: relative;
-		display: flex;
-		justify-content: center;
-		--background: rgba(255, 255, 255, 0.7);
-	}
-
-	ul {
-		position: relative;
-		padding: 0;
-		margin: 0;
-		height: 3em;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		list-style: none;
-		background: var(--background);
-		background-size: contain;
-		background-color: transparent;
-	}
-
-	li {
-		position: relative;
-		height: 100%;
-	}
-
-	nav a {
-		display: flex;
-		height: 100%;
-		align-items: center;
-		padding: 0 0.5rem;
-		color: var(--color-text);
-		font-weight: 500;
-		font-size: 1.2rem;
-		text-transform: uppercase;
-		letter-spacing: 0.1em;
-		transition: color 0.2s linear;
 	}
 
 	a:hover {
