@@ -3,7 +3,7 @@
 	import { onMount, tick } from 'svelte';
 	import { underlineVisible } from '$lib/underlineVisibility';
 	import { goto } from '$app/navigation';
-	import { slide } from 'svelte/transition';
+	import { fade, slide } from 'svelte/transition';
 
 	let clickedLink = 'home'; // Initialize with 'home' as the default section
 	let applyTransition = false; // Initially, do not apply transition
@@ -11,10 +11,11 @@
 	let isResizing = false; // Flag to track if the window is currently being resized
 
 	let innerWidth = 0;
+	let innerWidthLimit = 800;
 
 	$: innerWidth = 0;
 
-	const sections = ['home', 'bio', 'contact'];
+	const sections = ['home', 'music', 'bio', 'contact'];
 
 	let isExpanded = false;
 
@@ -92,7 +93,7 @@
 	}
 
 	async function updateUnderlinePosition(clickedElement, applyTransitionFlag = true) {
-		if (innerWidth > 480 && clickedElement !== null) {
+		if (innerWidth > innerWidthLimit && clickedElement !== null) {
 			await tick();
 			if (clickedElement.id === 'logo-header-id') {
 				clickedElement = document.getElementById('homeId');
@@ -163,7 +164,7 @@
 <svelte:window bind:innerWidth />
 
 <header>
-	{#if innerWidth > 480}
+	{#if innerWidth > innerWidthLimit}
 		<a id="logo-header-id" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>
 			<img src="/logo-1.png" alt="logo" class="logo-header" />
 		</a>
@@ -171,7 +172,10 @@
 		<nav>
 			<ul>
 				<li>
-					<a id="homeId" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>home</a>
+					<a id="homeId" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>Home</a>
+				</li>
+				<li>
+					<a href="/#music" on:click={(e) => handleAnchorClick(e, 'music')}>Music</a>
 				</li>
 				<li>
 					<a href="/#bio" on:click={(e) => handleAnchorClick(e, 'bio')}>Bio</a>
@@ -185,10 +189,27 @@
 				class="underline"
 				style={underlineStyle + ($underlineVisible ? 'display: block;' : 'display: none;')}
 			></div>
+
+			<ul class="socials">
+				<li>
+					<button class="mail-icon-button">
+						<img class="mail-icon" src="/icons/mail.png" alt="Instagram Link" />
+					</button>
+				</li>
+				<li>
+					<a class="soundcloud-icon-link" href="https://soundcloud.com/erwanlepape" target="_blank">
+						<img class="soundcloud-icon" src="/icons/soundcloud.png" alt="Instagram Link" />
+					</a>
+				</li>
+				<li>
+					<a class="instagram-icon-link" href="https://www.instagram.com/erwanklp/" target="_blank">
+						<img class="instagram-icon" src="/icons/instagram.png" alt="Instagram Link" />
+					</a>
+				</li>
+			</ul>
 		</nav>
 	{:else}
 		<nav>
-			<!-- <span class="material-symbols-outlined">menu</span> -->
 			<button class="material-symbols-outlined" on:click={hamburgerClickHandler}
 				>{isExpanded ? 'close' : 'menu'}</button
 			>
@@ -203,9 +224,12 @@
 			</a>
 			<!-- isExpanded -->
 			{#if isExpanded}
-				<ul class="hamburger-menu" transition:slide={{ duration: 150 }}>
+				<ul class="hamburger-menu" in:slide={{ duration: 300 }} out:fade={{ duration: 60 }}>
 					<li>
-						<a id="homeId" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>home</a>
+						<a id="homeId" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>Home</a>
+					</li>
+					<li>
+						<a href="/#music" on:click={(e) => handleAnchorClick(e, 'music')}>Music</a>
 					</li>
 					<li>
 						<a href="/#bio" on:click={(e) => handleAnchorClick(e, 'bio')}>Bio</a>
@@ -220,6 +244,57 @@
 </header>
 
 <style>
+	.socials {
+		display: flex;
+		position: fixed;
+		right: 0px;
+		opacity: 0.7;
+	}
+
+	.mail-icon-button {
+		margin-right: 20px;
+		padding: 0px;
+		background: none;
+		border: none;
+	}
+
+	.mail-icon {
+		filter: grayscale(1);
+		transition: 0.1s filter linear;
+	}
+
+	.mail-icon:hover {
+		filter: grayscale(0);
+	}
+
+	.instagram-icon-link {
+		margin-right: 20px;
+		padding: 0px;
+	}
+
+	.instagram-icon {
+		filter: grayscale(1);
+		transition: 0.1s filter linear;
+	}
+
+	.instagram-icon:hover {
+		filter: grayscale(0);
+	}
+
+	.soundcloud-icon-link {
+		margin-right: 20px;
+		padding: 0px;
+	}
+
+	.soundcloud-icon {
+		filter: grayscale(1);
+		transition: 0.1s filter linear;
+	}
+
+	.soundcloud-icon:hover {
+		filter: grayscale(0);
+	}
+
 	nav {
 		position: relative;
 		display: flex;
@@ -257,7 +332,7 @@
 		transition: color 0.2s linear;
 	}
 
-	@media (max-width: 480px) {
+	@media (max-width: 800px) {
 		nav {
 			position: relative;
 			display: flex;
@@ -290,8 +365,8 @@
 		left: 50%;
 		transform: translate(-50%);
 		height: 50px;
-		margin-top: 10px;
-		margin-bottom: 10px;
+		margin-top: 20px;
+		margin-bottom: 20px;
 		padding: 0;
 	}
 

@@ -15,23 +15,22 @@
 		<div class="titres">
 			<h1 id="main-title">Erwan Le Pape</h1>
 			<h2>Music Composer</h2>
-			<h3>For Film, TV, Performing Arts, Video Games.</h3>
+			<h3 id="bottom-text">For Film, TV, Performing Arts, Video Games.</h3>
 		</div>
 		<img src="/logo-3.png" alt="logo" class="logo-presentation" />
 
-		<img
-			class="profile-picture"
-			src="/photo-profil-7.png"
-			alt="My Face"
-		/>
+		<img class="profile-picture" src="/photo-profil-7.png" alt="My Face" />
 	</div>
 </section>
 
-<div class="media-grid">
-	{#each mediaList as media (media.id)}
-		<MediaContainer {...media} />
-	{/each}
-</div>
+<section id="music">
+	<h1>Music</h1>
+	<div class="media-grid">
+		{#each mediaList as media (media.id)}
+			<MediaContainer {...media} />
+		{/each}
+	</div>
+</section>
 
 <section id="bio">
 	<h1>Who am I</h1>
@@ -78,8 +77,9 @@
 
 	.logo-presentation {
 		position: absolute;
-		bottom: 180px;
+		bottom: 0px;
 		left: 300px;
+		width: 30vw;
 		z-index: 1001;
 		opacity: 0.5;
 	}
@@ -134,14 +134,13 @@
 
 	@media (max-width: 550px) {
 		#main-title {
-		font-weight: 800;
-		font-size: 540%;
-
+			font-weight: 800;
+			font-size: 540%;
 		}
 		h1 {
 			font-size: 400%;
 		}
-		
+
 		.logo-presentation {
 			position: absolute;
 			bottom: -10px;
@@ -157,7 +156,6 @@
 	}
 
 	@media (max-width: 280px) {
-		
 		.media-grid {
 			grid-template-columns: 1fr;
 		}
