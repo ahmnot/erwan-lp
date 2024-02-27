@@ -13,7 +13,7 @@
 <section id="home">
 	<div class="presentation">
 		<div class="titres">
-			<h1>Erwan Le Pape</h1>
+			<h1 id="main-title">Erwan Le Pape</h1>
 			<h2>Music Composer</h2>
 			<h3>For Film, TV, Performing Arts, Video Games.</h3>
 		</div>
@@ -134,8 +134,13 @@
 	}
 
 	@media (max-width: 550px) {
+		#main-title {
+		font-weight: 800;
+		font-size: 540%;
+
+		}
 		h1 {
-			font-size: 540%;
+			font-size: 400%;
 		}
 		
 		.logo-presentation {
