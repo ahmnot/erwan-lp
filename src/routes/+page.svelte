@@ -20,9 +20,9 @@
 			<h2>Music Composer</h2>
 			<h3 id="bottom-text">For Film, TV, Performing Arts, Video Games.</h3>
 		</div>
-		<img class="signature-presentation" src="/logo-3.png" alt="logo" />
+		<img class="signature-presentation" src="/logo-3.webp" alt="logo" />
 
-		<img class="profile-picture" src="/photo-profil-7.png" alt="Erwan's Presentation" />
+		<img class="profile-picture" src="/photo-profil-7.webp" alt="Erwan's Presentation" style="color: transparent;" />
 	</div>
 </section>
 
@@ -54,6 +54,7 @@
 </section>
 
 <style>
+
 	.contact-section-content {
 		display: flex;
 		flex-direction: row;
@@ -153,7 +154,7 @@
 			font-size: 400%;
 		}
 
-		.logo-presentation {
+		.signature-presentation {
 			position: absolute;
 			bottom: -10px;
 			left: 200px;

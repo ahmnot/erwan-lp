@@ -41,7 +41,7 @@
 			on:keydown={handleKeyDownPhone}
 			tabindex="0"
 		>
-			<img class="phone-icon" src="/icons/phone.png" alt="Phone Icon" />
+			<img class="phone-icon" src="/icons/phone.webp" alt="Phone Icon" />
 		</button>
 		{#if isPhoneShown || socialsincontact}
 			<div class="phone-box" transition:fade={{ duration: 60 }}>+33 6 47 86 26 23</div>
@@ -54,7 +54,7 @@
 			on:keydown={handleKeyDownMail}
 			tabindex="0"
 		>
-			<img class="mail-icon" src="/icons/mail.png" alt="Mail Icon" />
+			<img class="mail-icon" src="/icons/mail.webp" alt="Mail Icon" />
 		</button>
 		{#if isMailShown || socialsincontact}
 			<div class="email-box" transition:fade={{ duration: 60 }}>erwanlepape@outlook.com</div>
@@ -62,12 +62,12 @@
 	</li>
 	<li>
 		<a class="soundcloud-icon-link" href="https://soundcloud.com/erwanlepape" target="_blank">
-			<img class="soundcloud-icon" src="/icons/soundcloud.png" alt="Soundcloud Link" />
+			<img class="soundcloud-icon" src="/icons/soundcloud.webp" alt="Soundcloud Link" />
 		</a>
 	</li>
 	<li>
 		<a class="instagram-icon-link" href="https://www.instagram.com/erwanklp/" target="_blank">
-			<img class="instagram-icon" src="/icons/instagram.png" alt="Instagram Link" />
+			<img class="instagram-icon" src="/icons/instagram.webp" alt="Instagram Link" />
 		</a>
 	</li>
 </ul>

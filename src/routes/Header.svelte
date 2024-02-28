@@ -173,7 +173,7 @@
 		<img
 			bind:this={logoImageElement}
 			class="logo-header"
-			src="/logo-1.png"
+			src="/logo-1.webp"
 			alt="logo"
 			on:load={handleLogoImageLoading}
 		/>
@@ -217,7 +217,7 @@
 			on:click={(e) => handleAnchorClick(e, 'home')}
 			class="link-header-centered"
 		>
-			<img class="logo-header-centered" src="/logo-1.png" alt="logo" />
+			<img class="logo-header-centered" src="/logo-1.webp" alt="logo" />
 		</a>
 		<!-- isHamburgerExpanded -->
 		{#if isHamburgerExpanded}
@@ -240,6 +240,7 @@
 </header>
 
 <style>
+
 	.logo-placeholder {
 		display: flex;
 		position: absolute;
