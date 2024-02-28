@@ -1,37 +1,61 @@
 <script>
+	// @ts-nocheck
+
 	import { fade } from 'svelte/transition';
 
-    export let socialsincontact = false;
+	export let socialsincontact = false;
 
 	let isPhoneShown = false;
 	let isMailShown = false;
 
 	function phoneClickHandler() {
-        if (!socialsincontact) {
-		    isPhoneShown = !isPhoneShown;
-        }
+		if (!socialsincontact) {
+			isPhoneShown = !isPhoneShown;
+		}
 	}
 
 	function mailClickHandler() {
-        if (!socialsincontact) {
-            isMailShown = !isMailShown;
-        }
+		if (!socialsincontact) {
+			isMailShown = !isMailShown;
+		}
+	}
+
+	function handleKeyDownPhone(event) {
+		if (event.key === 'Enter' || event.key === ' ') {
+			phoneClickHandler();
+		}
+	}
+
+	function handleKeyDownMail(event) {
+		if (event.key === 'Enter' || event.key === ' ') {
+			mailClickHandler();
+		}
 	}
 </script>
 
 <ul class="socials" class:socialsincontact>
 	<li>
-		<a class="phone-icon-button" on:click={phoneClickHandler}>
+		<button
+			class="phone-icon-button"
+			on:click={phoneClickHandler}
+			on:keydown={handleKeyDownPhone}
+			tabindex="0"
+		>
 			<img class="phone-icon" src="/icons/phone.png" alt="Phone Icon" />
-		</a>
+		</button>
 		{#if isPhoneShown || socialsincontact}
 			<div class="phone-box" transition:fade={{ duration: 60 }}>+33 6 47 86 26 23</div>
 		{/if}
 	</li>
 	<li>
-		<a class="mail-icon-button" on:click={mailClickHandler}>
+		<button
+			class="mail-icon-button"
+			on:click={mailClickHandler}
+			on:keydown={handleKeyDownMail}
+			tabindex="0"
+		>
 			<img class="mail-icon" src="/icons/mail.png" alt="Mail Icon" />
-		</a>
+		</button>
 		{#if isMailShown || socialsincontact}
 			<div class="email-box" transition:fade={{ duration: 60 }}>erwanlepape@outlook.com</div>
 		{/if}
@@ -49,6 +73,8 @@
 </ul>
 
 <style>
+	button {
+	}
 
 	img {
 		position: sticky;
@@ -56,7 +82,7 @@
 		top: 50%;
 	}
 
-    .socials.socialsincontact {
+	.socials.socialsincontact {
 		position: absolute;
 		display: flex;
 		right: 10%;
@@ -66,7 +92,7 @@
 		list-style: none;
 		background-size: contain;
 		background-color: transparent;
-    }
+	}
 
 	.socials {
 		display: flex;
