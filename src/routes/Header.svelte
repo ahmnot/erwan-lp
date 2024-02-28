@@ -4,6 +4,7 @@
 	import { underlineVisible } from '$lib/underlineVisibility';
 	import { goto } from '$app/navigation';
 	import { fade, slide } from 'svelte/transition';
+	import { quintOut } from 'svelte/easing';
 
 	import SocialBar from './SocialBar.svelte';
 
@@ -222,7 +223,8 @@
 			<img class="logo-header-centered" src="/logo-1.webp" alt="logo" />
 		</a>
 		{#if isHamburgerExpanded}
-			<ul class="hamburger-menu" in:slide={{ duration: 200 }} out:fade={{ duration: 60 }}>
+
+			<ul id="toto" class="hamburger-menu" in:slide={{ duration: 300}} out:fade={{ duration: 60 }}>
 				<li>
 					<a id="homeId" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>Home</a>
 				</li>
@@ -241,6 +243,17 @@
 </header>
 
 <style>
+
+	.hamburger-menu {
+		position: absolute;
+		top: 90px; 
+		left: 20px;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: baseline;
+	}
+
 	.logo-placeholder {
 		display: flex;
 		position: absolute;
@@ -303,16 +316,6 @@
 		}
 		.header-large {
 			display: none;
-		}
-
-		.hamburger-menu {
-			position: absolute;
-			top: 90px; /* Adjust this value based on the actual size of your hamburger icon including any margins */
-			left: 20px;
-			margin: auto; /* Center the menu */
-			display: flex;
-			flex-direction: column;
-			align-items: baseline;
 		}
 	}
 
