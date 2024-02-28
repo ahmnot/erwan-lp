@@ -11,11 +11,9 @@
 	let underlineStyle = 'left: 0; width: 0; transition: none;'; // Initialize with no transition
 	let isResizing = false; // Flag to track if the window is currently being resized
 
-	let innerWidth = 0;
+	let innerWidth = 1080;
 	let innerWidthMenuLimit = 600;
 	let innerWidthSocialsLimit = 1050;
-
-	$: innerWidth = 0;
 
 	const sections = ['home', 'music', 'bio', 'contact'];
 
@@ -165,14 +163,54 @@
 
 <svelte:window bind:innerWidth />
 
-<header>
-	{#if innerWidth > innerWidthMenuLimit}
-		<a id="logo-header-id" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>
-			<img src="/logo-1.png" alt="logo" class="logo-header" />
-		</a>
+<header class="header-large">
+	<a id="logo-header-id" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>
+		<img src="/logo-1.png" alt="logo" class="logo-header" />
+	</a>
 
-		<nav>
-			<ul>
+	<nav>
+		<ul>
+			<li>
+				<a id="homeId" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>Home</a>
+			</li>
+			<li>
+				<a href="/#music" on:click={(e) => handleAnchorClick(e, 'music')}>Music</a>
+			</li>
+			<li>
+				<a href="/#bio" on:click={(e) => handleAnchorClick(e, 'bio')}>Bio</a>
+			</li>
+			<li>
+				<a href="/#contact" on:click={(e) => handleAnchorClick(e, 'contact')}>Contact</a>
+			</li>
+		</ul>
+		<!-- Underline element -->
+		<div
+			class="underline"
+			style={underlineStyle + ($underlineVisible ? 'display: block;' : 'display: none;')}
+		></div>
+
+		<div class="header-socials-show">
+			<SocialBar />
+		</div>
+	</nav>
+</header>
+<header class="header-small">
+	<nav>
+		<button class="material-symbols-outlined" on:click={hamburgerClickHandler}
+			>{isHamburgerExpanded ? 'close' : 'menu'}</button
+		>
+
+		<a
+			id="logo-header-id"
+			href="/#home"
+			on:click={(e) => handleAnchorClick(e, 'home')}
+			class="link-header-centered"
+		>
+			<img src="/logo-1.png" alt="logo" class="logo-header-centered" />
+		</a>
+		<!-- isHamburgerExpanded -->
+		{#if isHamburgerExpanded}
+			<ul class="hamburger-menu" in:slide={{ duration: 200 }} out:fade={{ duration: 60 }}>
 				<li>
 					<a id="homeId" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>Home</a>
 				</li>
@@ -186,52 +224,41 @@
 					<a href="/#contact" on:click={(e) => handleAnchorClick(e, 'contact')}>Contact</a>
 				</li>
 			</ul>
-			<!-- Underline element -->
-			<div
-				class="underline"
-				style={underlineStyle + ($underlineVisible ? 'display: block;' : 'display: none;')}
-			></div>
-
-			{#if innerWidth > innerWidthSocialsLimit}
-				<SocialBar />
-			{/if}
-		</nav>
-	{:else}
-		<nav>
-			<button class="material-symbols-outlined" on:click={hamburgerClickHandler}
-				>{isHamburgerExpanded ? 'close' : 'menu'}</button
-			>
-
-			<a
-				id="logo-header-id"
-				href="/#home"
-				on:click={(e) => handleAnchorClick(e, 'home')}
-				class="link-header-centered"
-			>
-				<img src="/logo-1.png" alt="logo" class="logo-header-centered" />
-			</a>
-			<!-- isHamburgerExpanded -->
-			{#if isHamburgerExpanded}
-				<ul class="hamburger-menu" in:slide={{ duration: 200 }} out:fade={{ duration: 60 }}>
-					<li>
-						<a id="homeId" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>Home</a>
-					</li>
-					<li>
-						<a href="/#music" on:click={(e) => handleAnchorClick(e, 'music')}>Music</a>
-					</li>
-					<li>
-						<a href="/#bio" on:click={(e) => handleAnchorClick(e, 'bio')}>Bio</a>
-					</li>
-					<li>
-						<a href="/#contact" on:click={(e) => handleAnchorClick(e, 'contact')}>Contact</a>
-					</li>
-				</ul>
-			{/if}
-		</nav>
-	{/if}
+		{/if}
+	</nav>
 </header>
 
 <style>
+
+	@media (max-width: 1050px) {
+		.header-socials-show {
+			display: none;
+		}
+	}
+
+	@media (min-width: 1051px) {
+		.header-socials-show {
+			display: flex;
+		}
+	}
+
+	@media (max-width: 600px) {
+		.header-small {
+			display: flex;
+		}
+		.header-large {
+			display: none;
+		}
+	}
+
+	@media (min-width: 601px) {
+		.header-small {
+			display: none;
+		}
+		.header-large {
+		display: flex;
+		}
+	}
 
 	nav {
 		position: relative;
@@ -296,7 +323,7 @@
 		color: var(--color-text);
 		background-color: var(--color-bg-0);
 		border: none;
-		cursor:pointer;
+		cursor: pointer;
 		font-size: xx-large;
 	}
 
