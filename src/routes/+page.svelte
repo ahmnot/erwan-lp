@@ -20,7 +20,7 @@
 			<h2>Music Composer</h2>
 			<h3 id="bottom-text">For Film, TV, Performing Arts, Video Games.</h3>
 		</div>
-		<img class="logo-presentation" src="/logo-3.png" alt="logo" />
+		<img class="signature-presentation" src="/logo-3.png" alt="logo" />
 
 		<img class="profile-picture" src="/photo-profil-7.png" alt="Erwan's Presentation" />
 	</div>
@@ -88,12 +88,11 @@
 		margin-left: 40px;
 	}
 
-	.logo-presentation {
+	.signature-presentation {
 		position: absolute;
 		bottom: 60px;
 		left: 300px;
 		width: 30vw;
-		z-index: 1001;
 		opacity: 0.7;
 	}
 

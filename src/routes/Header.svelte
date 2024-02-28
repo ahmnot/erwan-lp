@@ -4,6 +4,7 @@
 	import { underlineVisible } from '$lib/underlineVisibility';
 	import { goto } from '$app/navigation';
 	import { fade, slide } from 'svelte/transition';
+
 	import SocialBar from './SocialBar.svelte';
 
 	let clickedLink = 'home'; // Initialize with 'home' as the default section
@@ -11,8 +12,11 @@
 	let underlineStyle = 'left: 0; width: 0; transition: none;'; // Initialize with no transition
 	let isResizing = false; // Flag to track if the window is currently being resized
 
-	let innerWidth = 1080;
-	let innerWidthMenuLimit = 600;
+	let logoImageElement;
+	let logoImageComplete = false;
+	function handleLogoImageLoading() {
+		logoImageComplete = true;
+	}
 
 	const sections = ['home', 'music', 'bio', 'contact'];
 
@@ -35,7 +39,7 @@
 	}
 
 	// Debounce function limits the rate of execution of updateActiveSection to enhance performance and ensure smooth UI updates on scroll.
-	// It waits for 100ms of inactivity before executing, reducing excessive processing and improving responsiveness.
+	// It waits for "wait" milliseconds of inactivity before executing, reducing excessive processing and improving responsiveness.
 	function debounce(func, wait) {
 		let timeout;
 		return function (...args) {
@@ -92,7 +96,7 @@
 	}
 
 	async function updateUnderlinePosition(clickedElement, applyTransitionFlag = true) {
-		if (innerWidth > innerWidthMenuLimit && clickedElement !== null) {
+		if (clickedElement !== null) {
 			await tick();
 			if (clickedElement.id === 'logo-header-id') {
 				clickedElement = document.getElementById('homeId');
@@ -100,7 +104,7 @@
 			const { left, width } = clickedElement.getBoundingClientRect();
 			const navLeft = document.querySelector('nav').getBoundingClientRect().left;
 			const transitionStyle =
-				applyTransition && applyTransitionFlag // Use a flag to control transition application
+				applyTransition && applyTransitionFlag
 					? 'transition: left 0.15s ease, width 0.15s ease;'
 					: 'transition: none;';
 			underlineStyle = `left: ${left - navLeft}px; width: ${width}px; ${transitionStyle}`;
@@ -108,6 +112,14 @@
 	}
 
 	onMount(async () => {
+		if (
+			logoImageElement &&
+			logoImageElement.complete &&
+			logoImageElement.naturalHeight > 0 &&
+			logoImageElement.naturalWidth > 0
+		) {
+			logoImageComplete = true;
+		}
 		underlineVisible.set(true);
 		const initialLink = document.querySelector('a[href="/#home"]');
 		if (initialLink) {
@@ -160,11 +172,14 @@
 	});
 </script>
 
-<svelte:window bind:innerWidth />
-
 <header class="header-large">
 	<a id="logo-header-id" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>
-		<img src="/logo-1.png" alt="logo" class="logo-header" />
+		<!-- !logoImageComplete -->
+		{#if !logoImageComplete}
+			<div transition:fade={{duration:150}} class="logo-placeholder"></div>
+		{/if}
+		<img
+		bind:this={logoImageElement} class="logo-header" src="/logo-1.png" alt="logo" on:load={handleLogoImageLoading} />
 	</a>
 
 	<nav>
@@ -205,7 +220,7 @@
 			on:click={(e) => handleAnchorClick(e, 'home')}
 			class="link-header-centered"
 		>
-			<img src="/logo-1.png" alt="logo" class="logo-header-centered" />
+			<img class="logo-header-centered" src="/logo-1.png" alt="logo"  />
 		</a>
 		<!-- isHamburgerExpanded -->
 		{#if isHamburgerExpanded}
@@ -228,6 +243,17 @@
 </header>
 
 <style>
+
+	.logo-placeholder {
+		display: flex;
+		position:absolute;
+		height: 50px;
+		width: 174px;
+		margin: 20px;
+		background-color: var(--color-bg-0);
+		justify-content: center;
+		align-items: center;
+	}
 
 	@media (max-width: 1050px) {
 		.header-socials-show {
@@ -255,7 +281,7 @@
 			display: none;
 		}
 		.header-large {
-		display: flex;
+			display: flex;
 		}
 	}
 
@@ -341,6 +367,7 @@
 	}
 
 	.logo-header {
+		width:174px;
 		height: 50px;
 		margin: 20px;
 	}

@@ -99,7 +99,7 @@
 
 	.email-box {
 		position: absolute;
-		right: 50%;
+		right: 77%;
 		transform: translate(50%);
 		font-size: larger;
 		opacity: 1;
