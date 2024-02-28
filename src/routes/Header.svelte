@@ -4,6 +4,7 @@
 	import { underlineVisible } from '$lib/underlineVisibility';
 	import { goto } from '$app/navigation';
 	import { fade, slide } from 'svelte/transition';
+	import { quintOut } from 'svelte/easing';
 
 	import SocialBar from './SocialBar.svelte';
 
@@ -178,8 +179,8 @@
 		/>
 	</a>
 
-	<nav>
-		<ul>
+	<nav class="nav-header-large">
+		<ul class="ul-header-large">
 			<li>
 				<a id="homeId" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>Home</a>
 			</li>
@@ -208,7 +209,7 @@
 	</nav>
 </header>
 <header class="header-small">
-	<nav>
+	<nav class="nav-header-small">
 		<button class="material-symbols-outlined" on:click={hamburgerClickHandler}
 			>{isHamburgerExpanded ? 'close' : 'menu'}</button
 		>
@@ -222,7 +223,8 @@
 			<img class="logo-header-centered" src="/logo-1.webp" alt="logo" />
 		</a>
 		{#if isHamburgerExpanded}
-			<ul class="hamburger-menu" in:slide={{ duration: 200 }} out:fade={{ duration: 60 }}>
+
+			<ul class="hamburger-menu" in:slide={{ duration: 300}} out:fade={{ duration: 60 }}>
 				<li>
 					<a id="homeId" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>Home</a>
 				</li>
@@ -241,6 +243,17 @@
 </header>
 
 <style>
+
+	.hamburger-menu {
+		position: absolute;
+		top: 90px; 
+		left: 20px;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		align-items: baseline;
+	}
+
 	.logo-placeholder {
 		display: flex;
 		position: absolute;
@@ -280,13 +293,13 @@
 	}
 
 	@media (max-width: 600px) {
-		nav {
+		.nav-header-small {
 			position: relative;
 			display: flex;
 			justify-content: center;
 		}
 
-		ul {
+		ul.hamburger-menu {
 			position: absolute;
 			padding: 0;
 			margin: 20px;
@@ -297,22 +310,13 @@
 			flex-direction: column;
 			top: 40px;
 			left: 0px;
+			list-style: none;
 		}
 		.header-small {
 			display: flex;
 		}
 		.header-large {
 			display: none;
-		}
-
-		.hamburger-menu {
-			position: absolute;
-			top: 90px; /* Adjust this value based on the actual size of your hamburger icon including any margins */
-			left: 20px;
-			margin: auto; /* Center the menu */
-			display: flex;
-			flex-direction: column;
-			align-items: baseline;
 		}
 	}
 
@@ -325,13 +329,13 @@
 		}
 	}
 
-	nav {
+	.nav-header-large {
 		position: relative;
 		display: flex;
 		justify-content: center;
 	}
 
-	ul {
+	ul.ul-header-large {
 		position: relative;
 		padding: 0;
 		margin: 0;
