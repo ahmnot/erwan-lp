@@ -4,22 +4,24 @@
 	import { underlineVisible } from '$lib/underlineVisibility';
 	import { goto } from '$app/navigation';
 	import { fade, slide } from 'svelte/transition';
+
 	import SocialBar from './SocialBar.svelte';
 
-	let clickedLink = 'home'; // Initialize with 'home' as the default section
-	let applyTransition = false; // Initially, do not apply transition
-	let underlineStyle = 'left: 0; width: 0; transition: none;'; // Initialize with no transition
-	let isResizing = false; // Flag to track if the window is currently being resized
+	let clickedLink = 'home';
+	let applyTransition = false;
+	let underlineStyle = 'left: 0; width: 0; transition: none;';
+	let isResizing = false;
 
-	let innerWidth = 0;
-	let innerWidthMenuLimit = 600;
-	let innerWidthSocialsLimit = 1050;
-
-	$: innerWidth = 0;
+	let navElement; // Caching the nav element
+	let logoImageElement;
+	let logoImageComplete = false;
 
 	const sections = ['home', 'music', 'bio', 'contact'];
-
 	let isHamburgerExpanded = false;
+
+	function handleLogoImageLoading() {
+		logoImageComplete = true;
+	}
 
 	function hamburgerClickHandler() {
 		isHamburgerExpanded = !isHamburgerExpanded;
@@ -38,7 +40,7 @@
 	}
 
 	// Debounce function limits the rate of execution of updateActiveSection to enhance performance and ensure smooth UI updates on scroll.
-	// It waits for 100ms of inactivity before executing, reducing excessive processing and improving responsiveness.
+	// It waits for "wait" milliseconds of inactivity before executing, reducing excessive processing and improving responsiveness.
 	function debounce(func, wait) {
 		let timeout;
 		return function (...args) {
@@ -49,20 +51,8 @@
 		};
 	}
 
-	// To detect when resizing ends, you may need an additional event listener or logic
-	// One approach is to debounce a function that sets isResizing to false
-	function debounceEndResize(func, wait) {
-		let timeout;
-		return function (...args) {
-			clearTimeout(timeout);
-			timeout = setTimeout(() => {
-				func.apply(this, args);
-			}, wait);
-		};
-	}
-
 	// Use the debounce function to detect the end of resizing
-	const onResizeEnd = debounceEndResize(() => {
+	const onResizeEnd = debounce(() => {
 		isResizing = false; // Reset the flag
 	}, 100);
 
@@ -95,15 +85,15 @@
 	}
 
 	async function updateUnderlinePosition(clickedElement, applyTransitionFlag = true) {
-		if (innerWidth > innerWidthMenuLimit && clickedElement !== null) {
+		if (clickedElement !== null) {
 			await tick();
 			if (clickedElement.id === 'logo-header-id') {
 				clickedElement = document.getElementById('homeId');
 			}
 			const { left, width } = clickedElement.getBoundingClientRect();
-			const navLeft = document.querySelector('nav').getBoundingClientRect().left;
+			const navLeft = navElement.getBoundingClientRect().left;
 			const transitionStyle =
-				applyTransition && applyTransitionFlag // Use a flag to control transition application
+				applyTransition && applyTransitionFlag
 					? 'transition: left 0.15s ease, width 0.15s ease;'
 					: 'transition: none;';
 			underlineStyle = `left: ${left - navLeft}px; width: ${width}px; ${transitionStyle}`;
@@ -111,6 +101,16 @@
 	}
 
 	onMount(async () => {
+		navElement = document.querySelector('nav'); // Cache nav element once
+
+		if (
+			logoImageElement &&
+			logoImageElement.complete &&
+			logoImageElement.naturalHeight > 0 &&
+			logoImageElement.naturalWidth > 0
+		) {
+			logoImageComplete = true;
+		}
 		underlineVisible.set(true);
 		const initialLink = document.querySelector('a[href="/#home"]');
 		if (initialLink) {
@@ -163,16 +163,66 @@
 	});
 </script>
 
-<svelte:window bind:innerWidth />
+<header class="header-large">
+	<a id="logo-header-id" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>
+		<!-- !logoImageComplete -->
+		{#if !logoImageComplete}
+			<div transition:fade={{ duration: 150 }} class="logo-placeholder"></div>
+		{/if}
+		<img
+			bind:this={logoImageElement}
+			class="logo-header"
+			src="/logo-1.webp"
+			alt="logo"
+			on:load={handleLogoImageLoading}
+		/>
+	</a>
 
-<header>
-	{#if innerWidth > innerWidthMenuLimit}
-		<a id="logo-header-id" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>
-			<img src="/logo-1.png" alt="logo" class="logo-header" />
+	<nav>
+		<ul>
+			<li>
+				<a id="homeId" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>Home</a>
+			</li>
+			<li>
+				<a href="/#music" on:click={(e) => handleAnchorClick(e, 'music')}>Music</a>
+			</li>
+			<li>
+				<a href="/#bio" on:click={(e) => handleAnchorClick(e, 'bio')}>Bio</a>
+			</li>
+			<li>
+				<a href="/#contact" on:click={(e) => handleAnchorClick(e, 'contact')}>Contact</a>
+			</li>
+		</ul>
+		<div
+			class="underline"
+			style={underlineStyle + ($underlineVisible ? 'display: block;' : 'display: none;')}
+		></div>
+
+		<div class="header-socials-show">
+			<SocialBar />
+		</div>
+
+		<div class="header-socials-column-show">
+			<SocialBar columnize={true} />
+		</div>
+	</nav>
+</header>
+<header class="header-small">
+	<nav>
+		<button class="material-symbols-outlined" on:click={hamburgerClickHandler}
+			>{isHamburgerExpanded ? 'close' : 'menu'}</button
+		>
+
+		<a
+			id="logo-header-id"
+			href="/#home"
+			on:click={(e) => handleAnchorClick(e, 'home')}
+			class="link-header-centered"
+		>
+			<img class="logo-header-centered" src="/logo-1.webp" alt="logo" />
 		</a>
-
-		<nav>
-			<ul>
+		{#if isHamburgerExpanded}
+			<ul class="hamburger-menu" in:slide={{ duration: 200 }} out:fade={{ duration: 60 }}>
 				<li>
 					<a id="homeId" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>Home</a>
 				</li>
@@ -186,52 +236,94 @@
 					<a href="/#contact" on:click={(e) => handleAnchorClick(e, 'contact')}>Contact</a>
 				</li>
 			</ul>
-			<!-- Underline element -->
-			<div
-				class="underline"
-				style={underlineStyle + ($underlineVisible ? 'display: block;' : 'display: none;')}
-			></div>
-
-			{#if innerWidth > innerWidthSocialsLimit}
-				<SocialBar />
-			{/if}
-		</nav>
-	{:else}
-		<nav>
-			<button class="material-symbols-outlined" on:click={hamburgerClickHandler}
-				>{isHamburgerExpanded ? 'close' : 'menu'}</button
-			>
-
-			<a
-				id="logo-header-id"
-				href="/#home"
-				on:click={(e) => handleAnchorClick(e, 'home')}
-				class="link-header-centered"
-			>
-				<img src="/logo-1.png" alt="logo" class="logo-header-centered" />
-			</a>
-			<!-- isHamburgerExpanded -->
-			{#if isHamburgerExpanded}
-				<ul class="hamburger-menu" in:slide={{ duration: 200 }} out:fade={{ duration: 60 }}>
-					<li>
-						<a id="homeId" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>Home</a>
-					</li>
-					<li>
-						<a href="/#music" on:click={(e) => handleAnchorClick(e, 'music')}>Music</a>
-					</li>
-					<li>
-						<a href="/#bio" on:click={(e) => handleAnchorClick(e, 'bio')}>Bio</a>
-					</li>
-					<li>
-						<a href="/#contact" on:click={(e) => handleAnchorClick(e, 'contact')}>Contact</a>
-					</li>
-				</ul>
-			{/if}
-		</nav>
-	{/if}
+		{/if}
+	</nav>
 </header>
 
 <style>
+	.logo-placeholder {
+		display: flex;
+		position: absolute;
+		height: 50px;
+		width: 174px;
+		margin: 20px;
+		background-color: var(--color-bg-0);
+		justify-content: center;
+		align-items: center;
+	}
+	/* Base case: Assume small screens first */
+	.header-socials-column-show {
+		display: none; /* Hide by default */
+	}
+	.header-socials-show {
+		display: none; /* Hide by default */
+	}
+
+	/* Medium screens: Between 831px and 1040px */
+	@media (min-width: 831px) and (max-width: 1040px) {
+		.header-socials-column-show {
+			display: flex; /* Now show this for medium screens */
+		}
+		.header-socials-show {
+			display: none; /* Hide the other one on medium screens */
+		}
+	}
+
+	/* Large screens: Above 1040px */
+	@media (min-width: 1041px) {
+		.header-socials-column-show {
+			display: none; /* Ensure this is hidden on large screens */
+		}
+		.header-socials-show {
+			display: flex; /* And this one is shown on large screens */
+		}
+	}
+
+	@media (max-width: 600px) {
+		nav {
+			position: relative;
+			display: flex;
+			justify-content: center;
+		}
+
+		ul {
+			position: absolute;
+			padding: 0;
+			margin: 20px;
+			height: 3em;
+			display: flex;
+			justify-content: flex-start;
+			align-items: baseline;
+			flex-direction: column;
+			top: 40px;
+			left: 0px;
+		}
+		.header-small {
+			display: flex;
+		}
+		.header-large {
+			display: none;
+		}
+
+		.hamburger-menu {
+			position: absolute;
+			top: 90px; /* Adjust this value based on the actual size of your hamburger icon including any margins */
+			left: 20px;
+			margin: auto; /* Center the menu */
+			display: flex;
+			flex-direction: column;
+			align-items: baseline;
+		}
+	}
+
+	@media (min-width: 601px) {
+		.header-small {
+			display: none;
+		}
+		.header-large {
+			display: flex;
+		}
+	}
 
 	nav {
 		position: relative;
@@ -270,33 +362,12 @@
 		transition: color 0.2s linear;
 	}
 
-	@media (max-width: 600px) {
-		nav {
-			position: relative;
-			display: flex;
-			justify-content: center;
-		}
-
-		ul {
-			position: absolute;
-			padding: 0;
-			margin: 20px;
-			height: 3em;
-			display: flex;
-			justify-content: flex-start;
-			align-items: baseline;
-			flex-direction: column;
-			top: 40px;
-			left: 0px;
-		}
-	}
-
 	.material-symbols-outlined {
 		margin: 20px;
 		color: var(--color-text);
 		background-color: var(--color-bg-0);
 		border: none;
-		cursor:pointer;
+		cursor: pointer;
 		font-size: xx-large;
 	}
 
@@ -315,6 +386,7 @@
 	}
 
 	.logo-header {
+		width: 174px;
 		height: 50px;
 		margin: 20px;
 	}
@@ -328,20 +400,19 @@
 		background-color: black;
 		/*box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);*/
 		z-index: 999;
-		flex-direction: row; /* Align items in a row */
-		justify-content: start; /* Align items to the start of the container */
-		align-items: center; /* Center items vertically */
+		flex-direction: row;
+		justify-content: start;
+		align-items: center;
 	}
 
 	a:hover {
 		color: var(--color-theme-1);
 	}
 
-	/* CSS for the moving underline */
 	.underline {
 		position: absolute;
 		bottom: 0px;
 		height: 2px;
-		background-color: var(--color-theme-1); /* Color of the underline */
+		background-color: var(--color-theme-1);
 	}
 </style>

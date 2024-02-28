@@ -6,8 +6,6 @@
 	import { underlineVisible } from '$lib/underlineVisibility';
 	import SocialBar from './SocialBar.svelte';
 
-	let socialsincontact = true;
-
 	onMount(() => {
 		underlineVisible.set(true);
 	});
@@ -20,9 +18,9 @@
 			<h2>Music Composer</h2>
 			<h3 id="bottom-text">For Film, TV, Performing Arts, Video Games.</h3>
 		</div>
-		<img src="/logo-3.png" alt="logo" class="logo-presentation" />
+		<img class="signature-presentation" src="/logo-3.webp" alt="logo" />
 
-		<img class="profile-picture" src="/photo-profil-7.png" alt="My Face" />
+		<img class="profile-picture" src="/photo-profil-7.webp" alt="Erwan's Presentation" style="color: transparent;" />
 	</div>
 </section>
 
@@ -49,11 +47,12 @@
 	<h1>Contact</h1>
 	<div class="contact-section-content">
 		<h2 class="contact-text">Let's talk! →</h2>
-		<SocialBar {socialsincontact} />
+		<SocialBar socialsincontact={true} />
 	</div>
 </section>
 
 <style>
+
 	.contact-section-content {
 		display: flex;
 		flex-direction: row;
@@ -88,13 +87,12 @@
 		margin-left: 40px;
 	}
 
-	.logo-presentation {
+	.signature-presentation {
 		position: absolute;
 		bottom: 60px;
 		left: 300px;
 		width: 30vw;
-		z-index: 1001;
-		opacity: 0.5;
+		opacity: 0.7;
 	}
 
 	.titres {
@@ -114,7 +112,7 @@
 		position: relative;
 		margin: 20px;
 		width: 60%;
-		opacity: 0.9;
+		opacity: 0.95;
 		height: 87vh;
 		object-fit: contain;
 	}
@@ -154,13 +152,13 @@
 			font-size: 400%;
 		}
 
-		.logo-presentation {
+		.signature-presentation {
 			position: absolute;
 			bottom: -10px;
 			left: 200px;
 			width: 70%;
 			z-index: 1001;
-			opacity: 0.5;
+			opacity: 0.7;
 		}
 		.profile-picture {
 			top: -145px;

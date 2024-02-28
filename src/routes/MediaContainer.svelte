@@ -21,11 +21,20 @@
 		underlineVisible.set(false);
 	}
 
+	function handleKeyDown(event) {
+		if (event.key === 'Enter' || event.key === ' ') {
+			handleClick();
+		}
+	}
+
 	function handleImageLoading() {
 		imageComplete = true;
 	}
 
 	onMount(() => {
+		// assignments just to remove the warnings
+		youtube = '';
+		soundcloud = '';
 		if (
 			imageElement &&
 			imageElement.complete &&
@@ -37,10 +46,14 @@
 	});
 </script>
 
-<!-- svelte-ignore a11y-no-static-element-interactions -->
-<!-- svelte-ignore a11y-click-events-have-key-events -->
-<div class="media-container" on:click={handleClick}>
-	<a href="/{id}" class="media-title">
+<a
+	href="/{id}" 
+	class="media-container"
+	on:click={handleClick}
+	on:keydown={handleKeyDown}
+	role="button"
+	tabindex="0"
+>
 		<div class="media-image-wrapper">
 			<img
 				bind:this={imageElement}
@@ -63,8 +76,7 @@
 			<div class="media-type">{type}</div>
 			<div class="media-work">{work}</div>
 		</div>
-	</a>
-</div>
+</a>
 
 <style>
 	.loading-placeholder {

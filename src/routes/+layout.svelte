@@ -14,7 +14,7 @@
 	</main>
 
 	<footer>
-		<p>© Copyright 2024 - Erwan Le Pape</p>
+		<p>© Copyright 2024 - Erwan Le Pape - site by <a href="https://github.com/ahmnot">ahmnot</a></p>
 	</footer>
 </div>
 
