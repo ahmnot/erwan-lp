@@ -21,17 +21,17 @@
 
 <ul class="socials" class:socialsincontact>
 	<li>
-		<button class="phone-icon-button" on:click={phoneClickHandler}>
+		<a class="phone-icon-button" on:click={phoneClickHandler}>
 			<img class="phone-icon" src="/icons/phone.png" alt="Phone Icon" />
-		</button>
+		</a>
 		{#if isPhoneShown || socialsincontact}
 			<div class="phone-box" transition:fade={{ duration: 60 }}>+33 6 47 86 26 23</div>
 		{/if}
 	</li>
 	<li>
-		<button class="mail-icon-button" on:click={mailClickHandler}>
+		<a class="mail-icon-button" on:click={mailClickHandler}>
 			<img class="mail-icon" src="/icons/mail.png" alt="Mail Icon" />
-		</button>
+		</a>
 		{#if isMailShown || socialsincontact}
 			<div class="email-box" transition:fade={{ duration: 60 }}>erwanlepape@outlook.com</div>
 		{/if}
@@ -50,6 +50,12 @@
 
 <style>
 
+	img {
+		position: sticky;
+		width: 50%;
+		top: 50%;
+	}
+
     .socials.socialsincontact {
 		position: absolute;
 		display: flex;
@@ -60,8 +66,6 @@
 		list-style: none;
 		background-size: contain;
 		background-color: transparent;
-        
-        
     }
 
 	.socials {
@@ -83,7 +87,7 @@
 
 	.phone-box {
 		position: absolute;
-		top: 50%;
+		top: 60%;
 		right: 120%;
 		transform: translateX(50%);
 		transform: translateY(-50%);
