@@ -7,13 +7,12 @@
 
 	import SocialBar from './SocialBar.svelte';
 
-	let clickedLink = 'home'; // Initialize with 'home' as the default section
-	let applyTransition = false; // Initially, do not apply transition
-	let underlineStyle = 'left: 0; width: 0; transition: none;'; // Initialize with no transition
-	let isResizing = false; // Flag to track if the window is currently being resized
+	let clickedLink = 'home'; 
+	let applyTransition = false; 
+	let underlineStyle = 'left: 0; width: 0; transition: none;';
+	let isResizing = false;
 
 	let navElement; // Caching the nav element
-
 	let logoImageElement;
 	let logoImageComplete = false;
 
@@ -194,7 +193,6 @@
 				<a href="/#contact" on:click={(e) => handleAnchorClick(e, 'contact')}>Contact</a>
 			</li>
 		</ul>
-		<!-- Underline element -->
 		<div
 			class="underline"
 			style={underlineStyle + ($underlineVisible ? 'display: block;' : 'display: none;')}
@@ -219,7 +217,6 @@
 		>
 			<img class="logo-header-centered" src="/logo-1.webp" alt="logo" />
 		</a>
-		<!-- isHamburgerExpanded -->
 		{#if isHamburgerExpanded}
 			<ul class="hamburger-menu" in:slide={{ duration: 200 }} out:fade={{ duration: 60 }}>
 				<li>
@@ -252,13 +249,13 @@
 		align-items: center;
 	}
 
-	@media (max-width: 1050px) {
+	@media (max-width: 1040px) {
 		.header-socials-show {
 			display: none;
 		}
 	}
 
-	@media (min-width: 1051px) {
+	@media (min-width: 1041px) {
 		.header-socials-show {
 			display: flex;
 		}
@@ -375,20 +372,19 @@
 		background-color: black;
 		/*box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);*/
 		z-index: 999;
-		flex-direction: row; /* Align items in a row */
-		justify-content: start; /* Align items to the start of the container */
-		align-items: center; /* Center items vertically */
+		flex-direction: row;
+		justify-content: start; 
+		align-items: center;
 	}
 
 	a:hover {
 		color: var(--color-theme-1);
 	}
 
-	/* CSS for the moving underline */
 	.underline {
 		position: absolute;
 		bottom: 0px;
 		height: 2px;
-		background-color: var(--color-theme-1); /* Color of the underline */
+		background-color: var(--color-theme-1); 
 	}
 </style>

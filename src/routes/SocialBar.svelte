@@ -26,18 +26,12 @@
 		{#if isPhoneShown || socialsincontact}
 			<div class="phone-box" transition:fade={{ duration: 60 }}>+33 6 47 86 26 23</div>
 		{/if}
-		<button
-			class="phone-icon-button"
-			on:click={phoneClickHandler}
-		>
+		<button class="phone-icon-button" on:click={phoneClickHandler}>
 			<img class="phone-icon" src="/icons/phone.webp" alt="Phone Icon" />
 		</button>
 	</li>
 	<li class="email-container">
-		<button
-			class="mail-icon-button"
-			on:click={mailClickHandler}
-		>
+		<button class="mail-icon-button" on:click={mailClickHandler}>
 			<img class="mail-icon" src="/icons/mail.webp" alt="Mail Icon" />
 		</button>
 		{#if isMailShown || socialsincontact}
@@ -57,7 +51,6 @@
 </ul>
 
 <style>
-
 	.phone-icon,
 	.mail-icon,
 	.soundcloud-icon,
@@ -81,21 +74,28 @@
 		padding: 10px; /* Adjust or remove padding based on your design */
 	}
 	li.phone-container {
-		display: flex;
-		align-items: center; /* This will vertically center the items in the li */
-		justify-content: flex-start; /* Align items to the start of the li, which is the left side */
-		gap: 10px; /* This adds space between the phone-box and the phone-icon-button */
+		position: relative;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
 	}
 
 	li.email-container {
-		position: relative; /* Add this to your existing li styles */
+		position: relative;
 		display: flex;
 		align-items: center;
 		justify-content: center;
 	}
 
 	.phone-box {
-		font-size: x-large;
+		position: absolute;
+		left: -100%;
+		top: 50%;
+		transform: translate(
+			-60%,
+			-50%
+		);
+		font-size: larger;
 		white-space: nowrap;
 		opacity: 1;
 		color: white;
@@ -106,7 +106,7 @@
 		top: 100%; /* Position the top of the email-box right at the bottom of the button */
 		left: 38%; /* Start at the horizontal center of the button */
 		transform: translate(-50%, 10px); /* Center it horizontally and move it 10px down */
-		font-size: x-large;
+		font-size: larger;
 		white-space: nowrap;
 		opacity: 1;
 		color: white;
