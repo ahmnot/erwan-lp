@@ -12,15 +12,17 @@
 	let underlineStyle = 'left: 0; width: 0; transition: none;'; // Initialize with no transition
 	let isResizing = false; // Flag to track if the window is currently being resized
 
+	let navElement; // Caching the nav element
+
 	let logoImageElement;
 	let logoImageComplete = false;
+
+	const sections = ['home', 'music', 'bio', 'contact'];
+	let isHamburgerExpanded = false;
+
 	function handleLogoImageLoading() {
 		logoImageComplete = true;
 	}
-
-	const sections = ['home', 'music', 'bio', 'contact'];
-
-	let isHamburgerExpanded = false;
 
 	function hamburgerClickHandler() {
 		isHamburgerExpanded = !isHamburgerExpanded;
@@ -50,20 +52,8 @@
 		};
 	}
 
-	// To detect when resizing ends, you may need an additional event listener or logic
-	// One approach is to debounce a function that sets isResizing to false
-	function debounceEndResize(func, wait) {
-		let timeout;
-		return function (...args) {
-			clearTimeout(timeout);
-			timeout = setTimeout(() => {
-				func.apply(this, args);
-			}, wait);
-		};
-	}
-
 	// Use the debounce function to detect the end of resizing
-	const onResizeEnd = debounceEndResize(() => {
+	const onResizeEnd = debounce(() => {
 		isResizing = false; // Reset the flag
 	}, 100);
 
@@ -102,7 +92,7 @@
 				clickedElement = document.getElementById('homeId');
 			}
 			const { left, width } = clickedElement.getBoundingClientRect();
-			const navLeft = document.querySelector('nav').getBoundingClientRect().left;
+			const navLeft = navElement.getBoundingClientRect().left;
 			const transitionStyle =
 				applyTransition && applyTransitionFlag
 					? 'transition: left 0.15s ease, width 0.15s ease;'
@@ -112,6 +102,8 @@
 	}
 
 	onMount(async () => {
+		navElement = document.querySelector('nav'); // Cache nav element once
+
 		if (
 			logoImageElement &&
 			logoImageElement.complete &&
@@ -176,10 +168,15 @@
 	<a id="logo-header-id" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>
 		<!-- !logoImageComplete -->
 		{#if !logoImageComplete}
-			<div transition:fade={{duration:150}} class="logo-placeholder"></div>
+			<div transition:fade={{ duration: 150 }} class="logo-placeholder"></div>
 		{/if}
 		<img
-		bind:this={logoImageElement} class="logo-header" src="/logo-1.png" alt="logo" on:load={handleLogoImageLoading} />
+			bind:this={logoImageElement}
+			class="logo-header"
+			src="/logo-1.png"
+			alt="logo"
+			on:load={handleLogoImageLoading}
+		/>
 	</a>
 
 	<nav>
@@ -220,7 +217,7 @@
 			on:click={(e) => handleAnchorClick(e, 'home')}
 			class="link-header-centered"
 		>
-			<img class="logo-header-centered" src="/logo-1.png" alt="logo"  />
+			<img class="logo-header-centered" src="/logo-1.png" alt="logo" />
 		</a>
 		<!-- isHamburgerExpanded -->
 		{#if isHamburgerExpanded}
@@ -243,10 +240,9 @@
 </header>
 
 <style>
-
 	.logo-placeholder {
 		display: flex;
-		position:absolute;
+		position: absolute;
 		height: 50px;
 		width: 174px;
 		margin: 20px;
@@ -268,6 +264,24 @@
 	}
 
 	@media (max-width: 600px) {
+		nav {
+			position: relative;
+			display: flex;
+			justify-content: center;
+		}
+
+		ul {
+			position: absolute;
+			padding: 0;
+			margin: 20px;
+			height: 3em;
+			display: flex;
+			justify-content: flex-start;
+			align-items: baseline;
+			flex-direction: column;
+			top: 40px;
+			left: 0px;
+		}
 		.header-small {
 			display: flex;
 		}
@@ -322,27 +336,6 @@
 		transition: color 0.2s linear;
 	}
 
-	@media (max-width: 600px) {
-		nav {
-			position: relative;
-			display: flex;
-			justify-content: center;
-		}
-
-		ul {
-			position: absolute;
-			padding: 0;
-			margin: 20px;
-			height: 3em;
-			display: flex;
-			justify-content: flex-start;
-			align-items: baseline;
-			flex-direction: column;
-			top: 40px;
-			left: 0px;
-		}
-	}
-
 	.material-symbols-outlined {
 		margin: 20px;
 		color: var(--color-text);
@@ -367,7 +360,7 @@
 	}
 
 	.logo-header {
-		width:174px;
+		width: 174px;
 		height: 50px;
 		margin: 20px;
 	}
