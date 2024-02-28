@@ -4,6 +4,10 @@
 	import { fade } from 'svelte/transition';
 
 	export let socialsincontact = false;
+	export let columnize = false;
+
+	let alignmailleft = false;
+	$: alignmailleft = columnize;
 
 	let isPhoneShown = false;
 	let isMailShown = false;
@@ -21,7 +25,7 @@
 	}
 </script>
 
-<ul class="socials" class:socialsincontact>
+<ul class="socials" class:socialsincontact class:columnize>
 	<li class="phone-container">
 		{#if isPhoneShown || socialsincontact}
 			<div class="phone-box" transition:fade={{ duration: 60 }}>+33 6 47 86 26 23</div>
@@ -35,7 +39,9 @@
 			<img class="mail-icon" src="/icons/mail.webp" alt="Mail Icon" />
 		</button>
 		{#if isMailShown || socialsincontact}
-			<div class="email-box" transition:fade={{ duration: 50 }}>erwanlepape@outlook.com</div>
+			<div class="email-box" class:alignmailleft transition:fade={{ duration: 50 }}>
+				erwanlepape@outlook.com
+			</div>
 		{/if}
 	</li>
 	<li>
@@ -51,17 +57,26 @@
 </ul>
 
 <style>
+	.alignmailleft {
+		left: -340% !important;
+		top: 50% !important;
+		transform: translate(0, -50%) !important;
+	}
+
+	.columnize {
+		flex-direction: column;
+	}
+
 	.phone-icon,
 	.mail-icon,
 	.soundcloud-icon,
 	.instagram-icon {
-		width: 32px; /* Adjust based on your preferred size */
-		height: 32px; /* Adjust based on your preferred size */
+		width: 32px;
+		height: 32px;
 		margin: auto; /* Center the icon */
-		display: block; /* Allows margin: auto to center the icon vertically */
+		display: block;
 	}
 
-	/* Ensure the buttons are styled to center their content */
 	.phone-icon-button,
 	.mail-icon-button,
 	.instagram-icon-link,
@@ -69,10 +84,11 @@
 		display: flex; /* Use flexbox to center content */
 		justify-content: center; /* Center horizontally */
 		align-items: center; /* Center vertically */
-		width: 50px; /* Adjust, ensure it's larger than the icon for padding */
-		height: 50px; /* Adjust, ensure it's larger than the icon for padding */
-		padding: 10px; /* Adjust or remove padding based on your design */
+		width: 50px; /* ensure it's larger than the icon for padding */
+		height: 50px; /* ensure it's larger than the icon for padding */
+		padding: 10px;
 	}
+
 	li.phone-container {
 		position: relative;
 		display: inline-flex;
@@ -91,10 +107,7 @@
 		position: absolute;
 		left: -100%;
 		top: 50%;
-		transform: translate(
-			-60%,
-			-50%
-		);
+		transform: translate(-60%, -50%);
 		font-size: larger;
 		white-space: nowrap;
 		opacity: 1;

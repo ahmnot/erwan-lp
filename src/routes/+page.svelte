@@ -6,8 +6,6 @@
 	import { underlineVisible } from '$lib/underlineVisibility';
 	import SocialBar from './SocialBar.svelte';
 
-	let socialsincontact = true;
-
 	onMount(() => {
 		underlineVisible.set(true);
 	});
@@ -49,7 +47,7 @@
 	<h1>Contact</h1>
 	<div class="contact-section-content">
 		<h2 class="contact-text">Let's talk! →</h2>
-		<SocialBar {socialsincontact} />
+		<SocialBar socialsincontact={true} />
 	</div>
 </section>
 

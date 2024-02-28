@@ -7,8 +7,8 @@
 
 	import SocialBar from './SocialBar.svelte';
 
-	let clickedLink = 'home'; 
-	let applyTransition = false; 
+	let clickedLink = 'home';
+	let applyTransition = false;
 	let underlineStyle = 'left: 0; width: 0; transition: none;';
 	let isResizing = false;
 
@@ -201,6 +201,10 @@
 		<div class="header-socials-show">
 			<SocialBar />
 		</div>
+
+		<div class="header-socials-column-show">
+			<SocialBar columnize={true} />
+		</div>
 	</nav>
 </header>
 <header class="header-small">
@@ -237,7 +241,6 @@
 </header>
 
 <style>
-
 	.logo-placeholder {
 		display: flex;
 		position: absolute;
@@ -248,16 +251,31 @@
 		justify-content: center;
 		align-items: center;
 	}
+	/* Base case: Assume small screens first */
+	.header-socials-column-show {
+		display: none; /* Hide by default */
+	}
+	.header-socials-show {
+		display: none; /* Hide by default */
+	}
 
-	@media (max-width: 1040px) {
+	/* Medium screens: Between 831px and 1040px */
+	@media (min-width: 831px) and (max-width: 1040px) {
+		.header-socials-column-show {
+			display: flex; /* Now show this for medium screens */
+		}
 		.header-socials-show {
-			display: none;
+			display: none; /* Hide the other one on medium screens */
 		}
 	}
 
+	/* Large screens: Above 1040px */
 	@media (min-width: 1041px) {
+		.header-socials-column-show {
+			display: none; /* Ensure this is hidden on large screens */
+		}
 		.header-socials-show {
-			display: flex;
+			display: flex; /* And this one is shown on large screens */
 		}
 	}
 
@@ -373,7 +391,7 @@
 		/*box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);*/
 		z-index: 999;
 		flex-direction: row;
-		justify-content: start; 
+		justify-content: start;
 		align-items: center;
 	}
 
@@ -385,6 +403,6 @@
 		position: absolute;
 		bottom: 0px;
 		height: 2px;
-		background-color: var(--color-theme-1); 
+		background-color: var(--color-theme-1);
 	}
 </style>
