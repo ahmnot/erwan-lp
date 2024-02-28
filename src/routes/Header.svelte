@@ -179,8 +179,8 @@
 		/>
 	</a>
 
-	<nav>
-		<ul>
+	<nav class="nav-header-large">
+		<ul class="ul-header-large">
 			<li>
 				<a id="homeId" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>Home</a>
 			</li>
@@ -209,7 +209,7 @@
 	</nav>
 </header>
 <header class="header-small">
-	<nav>
+	<nav class="nav-header-small">
 		<button class="material-symbols-outlined" on:click={hamburgerClickHandler}
 			>{isHamburgerExpanded ? 'close' : 'menu'}</button
 		>
@@ -224,7 +224,7 @@
 		</a>
 		{#if isHamburgerExpanded}
 
-			<ul id="toto" class="hamburger-menu" in:slide={{ duration: 300}} out:fade={{ duration: 60 }}>
+			<ul class="hamburger-menu" in:slide={{ duration: 300}} out:fade={{ duration: 60 }}>
 				<li>
 					<a id="homeId" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>Home</a>
 				</li>
@@ -293,13 +293,13 @@
 	}
 
 	@media (max-width: 600px) {
-		nav {
+		.nav-header-small {
 			position: relative;
 			display: flex;
 			justify-content: center;
 		}
 
-		ul {
+		ul.hamburger-menu {
 			position: absolute;
 			padding: 0;
 			margin: 20px;
@@ -310,6 +310,7 @@
 			flex-direction: column;
 			top: 40px;
 			left: 0px;
+			list-style: none;
 		}
 		.header-small {
 			display: flex;
@@ -328,13 +329,13 @@
 		}
 	}
 
-	nav {
+	.nav-header-large {
 		position: relative;
 		display: flex;
 		justify-content: center;
 	}
 
-	ul {
+	ul.ul-header-large {
 		position: relative;
 		padding: 0;
 		margin: 0;
