@@ -13,7 +13,6 @@
 
 	let innerWidth = 1080;
 	let innerWidthMenuLimit = 600;
-	let innerWidthSocialsLimit = 1050;
 
 	const sections = ['home', 'music', 'bio', 'contact'];
 
