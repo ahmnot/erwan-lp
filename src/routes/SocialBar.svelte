@@ -173,18 +173,6 @@
 		color: white;
 	}
 
-	.socials.socialsincontact {
-		position: absolute;
-		display: flex;
-		right: 10%;
-		opacity: 0.7;
-		margin: 0;
-		justify-content: center;
-		list-style: none;
-		background-size: contain;
-		background-color: transparent;
-	}
-
 	.socials {
 		display: flex;
 		position: fixed;
@@ -195,6 +183,16 @@
 		list-style: none;
 		background-size: contain;
 		background-color: transparent;
+	}
+
+	.socials.socialsincontact {
+		position: absolute;
+		right: 10%;
+	}
+
+	.socials.socialsincontact.columnize {
+		right: 50%;
+		transform: translate(194%);
 	}
 
 	li {

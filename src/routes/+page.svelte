@@ -77,20 +77,18 @@
 
 	.contact-section-content-column {
 		display: grid;
-		grid-template-columns: 1fr ;
-		grid-template-rows: 1fr ;
-		position: relative; 
-		justify-items: center;
+		grid-template-columns: 1fr;
 	}
 
 	.contact-text-column {
 		grid-row: 1; 
+  		justify-self: center;
 	}
 
 	.contact-icons-column {
 		grid-row: 2; 
+  		justify-self: center;
 	}
-
 
 	/* Above 1160px */
 	@media (min-width: 1160px) {
