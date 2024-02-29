@@ -4,7 +4,7 @@
 	import { mediaList } from '$lib/mediaList';
 	import { onMount } from 'svelte';
 	import { underlineVisible } from '$lib/underlineVisibility';
-	import SocialBar from './SocialBar.svelte';
+	import IconsBar from './IconsBar.svelte';
 
 	onMount(() => {
 		underlineVisible.set(true);
@@ -57,7 +57,7 @@
 	<div class="contact-section-content-row">
 		<h2 class="contact-text-row">Let's talk! →</h2>
 		<div class="contact-icons-row">
-			<SocialBar socialsincontact={true} />
+			<IconsBar iconsincontactsection={true} />
 		</div>
 	</div>
 
@@ -65,7 +65,7 @@
 		<h2 class="contact-text-column">Let's talk! ↓</h2>
 
 		<div class="contact-icons-column">
-			<SocialBar socialsincontact={true} columnize={true} />
+			<IconsBar iconsincontactsection={true} columnize={true} />
 		</div>
 	</div>
 </section>
