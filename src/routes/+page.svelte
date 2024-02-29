@@ -62,8 +62,8 @@
 	</div>
 
 	<div class="contact-section-content-column">
-		<h2 class="contact-text-column">Let's talk! ↓</h2>
-
+		<div class="contact-text-column">Let's talk!</div>
+		<h2 class="downwoard-arrow">↓</h2>
 		<div class="contact-icons-column">
 			<IconsBar iconsincontactsection={true} columnize={true} />
 		</div>
@@ -71,6 +71,12 @@
 </section>
 
 <style>
+	.downwoard-arrow {
+		grid-row: 2; 
+  		justify-self: center;
+		margin:10px;
+	}
+
 	.contact-section-content-row {
 		display: none;
 	}
@@ -81,12 +87,21 @@
 	}
 
 	.contact-text-column {
+		display: block;
+		font-size: xxx-large;
+		font-weight: 600;
+		grid-row-end: auto;
+		grid-row-start: 1;
+		height: 87px;
+		justify-self: center;
+		margin-inline-start: 40px;
+		margin-left: 40px;
 		grid-row: 1; 
   		justify-self: center;
 	}
 
 	.contact-icons-column {
-		grid-row: 2; 
+		grid-row: 3; 
   		justify-self: center;
 	}
 
@@ -103,6 +118,9 @@
 		.contact-icons-row {
 			display: flex;
 			align-items: center;
+		}
+		h2 {
+			margin-block-end: 0 !important;
 		}
 	}
 
@@ -224,8 +242,11 @@
 		}
 	}
 
-	@media (max-width: 540px) {
-	}
+@media (max-width: 450px) {
+		h1 {
+			font-size: 300%;
+		}
+}
 
 	@media (max-width: 280px) {
 		.media-grid {

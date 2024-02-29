@@ -218,15 +218,15 @@
 		transform: translate(194%);
 	}
 
-	@media (max-width: 375px) {
+	@media (max-width: 450px) {
 		.icon-bar-container.iconsincontactsection.columnize {
 			right: 0; /* Align with the parent container */
-			transform: translateX(-60%); /* Move it to the left to ensure visibility */
+			transform: translateX(-50%); /* Move it to the left to ensure visibility */
 			font-size: small;
 		}
 	}
 
-	@media (max-width: 300px) {
+	@media (max-width: 340px) {
 		.email-box .email-part:first-child {
 			display: block;
 		}
