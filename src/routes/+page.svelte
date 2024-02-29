@@ -16,11 +16,20 @@
 		<div class="titres">
 			<h1 id="main-title">Erwan Le Pape</h1>
 			<h2>Music Composer</h2>
-			<h3 id="bottom-text">For Film, TV, Performing Arts, Video Games.</h3>
+			<div class="signature-grid">
+				<h3 class="bottom-text">For Film, TV, Performing Arts, Video Games.</h3>
+				<div class="empty-rectangle-top-right"></div>
+				<div class="empty-rectangle-bottom-left"></div>
+				<img class="signature-presentation" src="/logo-3.webp" alt="logo" />
+			</div>
 		</div>
-		<img class="signature-presentation" src="/logo-3.webp" alt="logo" />
 
-		<img class="profile-picture" src="/photo-profil-7.webp" alt="Erwan's Presentation" style="color: transparent;" />
+		<img
+			class="profile-picture"
+			src="/photo-profil-7.webp"
+			alt="Erwan's Presentation"
+			style="color: transparent;"
+		/>
 	</div>
 </section>
 
@@ -52,6 +61,28 @@
 </section>
 
 <style>
+	.signature-grid {
+		display: grid;
+		grid-template-columns: auto auto; /* auto for the signature column */
+		grid-template-rows: auto auto; /* auto for the text row, auto for the signature row */
+		position: relative; /* This makes it a containing block for absolute positioning */
+		justify-content: start;
+		align-content: start;
+	}
+
+	.bottom-text {
+		grid-column: 1; /* This makes the text span all columns */
+		width: 150%; /* Adjust width as necessary, or use max-width */
+		grid-row: 1; /* This places the text in the first row */
+	}
+
+	.signature-presentation {
+		grid-column: 2;
+		grid-row: 2;
+		width: 100%; /* Adjust width as necessary, or use max-width */
+		min-width: 250px;
+		opacity: 0.7;
+	}
 
 	.contact-section-content {
 		display: flex;
@@ -85,14 +116,6 @@
 	h3,
 	p {
 		margin-left: 40px;
-	}
-
-	.signature-presentation {
-		position: absolute;
-		bottom: 60px;
-		left: 300px;
-		width: 30vw;
-		opacity: 0.7;
 	}
 
 	.titres {
@@ -143,7 +166,7 @@
 		}
 	}
 
-	@media (max-width: 550px) {
+	@media (max-width: 680px) {
 		#main-title {
 			font-weight: 800;
 			font-size: 540%;
@@ -153,17 +176,18 @@
 		}
 
 		.signature-presentation {
-			position: absolute;
-			bottom: -10px;
-			left: 200px;
-			width: 70%;
-			z-index: 1001;
+			grid-column: 2;
+			grid-row: 2;
+			width: 100%; /* Adjust width as necessary, or use max-width */
 			opacity: 0.7;
 		}
 		.profile-picture {
-			top: -145px;
-			right: 180px;
+			bottom:15px;
+			right: 170px;
 		}
+	}
+
+	@media (max-width: 540px) {
 	}
 
 	@media (max-width: 280px) {
