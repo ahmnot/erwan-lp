@@ -76,7 +76,7 @@
 
 <style>
 	.email-part, .phone-part {
-		display: inline; /* Default display */
+		display: inline;
 	}
 
 	.columnize {
@@ -224,6 +224,9 @@
 			transform: translateX(-60%); /* Move it to the left to ensure visibility */
 			font-size: small;
 		}
+	}
+
+	@media (max-width: 300px) {
 		.email-box .email-part:first-child {
 			display: block;
 		}
