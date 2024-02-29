@@ -6,7 +6,7 @@
 	import { fade, slide } from 'svelte/transition';
 	import { quintOut } from 'svelte/easing';
 
-	import SocialBar from './SocialBar.svelte';
+	import IconsBar from './IconsBar.svelte';
 
 	let clickedLink = 'home';
 	let applyTransition = false;
@@ -200,11 +200,11 @@
 		></div>
 
 		<div class="header-socials-show">
-			<SocialBar />
+			<IconsBar />
 		</div>
 
 		<div class="header-socials-column-show">
-			<SocialBar columnize={true} />
+			<IconsBar columnize={true} />
 		</div>
 	</nav>
 </header>
@@ -264,6 +264,7 @@
 		justify-content: center;
 		align-items: center;
 	}
+
 	/* Base case: Assume small screens first */
 	.header-socials-column-show {
 		display: none; /* Hide by default */

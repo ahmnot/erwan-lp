@@ -3,7 +3,7 @@
 
 	import { fade } from 'svelte/transition';
 
-	export let socialsincontact = false;
+	export let iconsincontactsection = false;
 	export let columnize = false;
 
 	let alignmailleft = false;
@@ -13,32 +13,40 @@
 	let isMailShown = false;
 
 	function phoneClickHandler() {
-		if (!socialsincontact) {
+		if (!iconsincontactsection) {
 			isPhoneShown = !isPhoneShown;
 		}
 	}
 
 	function mailClickHandler() {
-		if (!socialsincontact) {
+		if (!iconsincontactsection) {
 			isMailShown = !isMailShown;
 		}
 	}
 </script>
 
-<ul class="socials" class:socialsincontact class:columnize>
+<ul class="icon-bar-container" class:iconsincontactsection class:columnize>
 	<li class="phone-container">
-		{#if isPhoneShown || socialsincontact}
+		{#if isPhoneShown || iconsincontactsection}
 			<div class="phone-box" transition:fade={{ duration: 60 }}>+33 6 47 86 26 23</div>
 		{/if}
 		<button class="phone-icon-button" on:click={phoneClickHandler}>
-			<img class="phone-icon" src="/icons/phone.webp" alt="Phone Icon" />
+			{#if iconsincontactsection}
+				<img class="phone-icon-large" src="/icons/phone.webp" alt="Phone Icon" />
+			{:else}
+				<img class="phone-icon" src="/icons/phone.webp" alt="Phone Icon" />
+			{/if}
 		</button>
 	</li>
 	<li class="email-container">
 		<button class="mail-icon-button" on:click={mailClickHandler}>
-			<img class="mail-icon" src="/icons/mail.webp" alt="Mail Icon" />
+			{#if iconsincontactsection}
+				<img class="mail-icon-large" src="/icons/mail.webp" alt="Mail Icon" />
+			{:else}
+				<img class="mail-icon" src="/icons/mail.webp" alt="Mail Icon" />
+			{/if}
 		</button>
-		{#if isMailShown || socialsincontact}
+		{#if isMailShown || iconsincontactsection}
 			<div class="email-box" class:alignmailleft transition:fade={{ duration: 50 }}>
 				erwanlepape@outlook.com
 			</div>
@@ -46,12 +54,20 @@
 	</li>
 	<li>
 		<a class="soundcloud-icon-link" href="https://soundcloud.com/erwanlepape" target="_blank">
-			<img class="soundcloud-icon" src="/icons/soundcloud.webp" alt="Soundcloud Link" />
+			{#if iconsincontactsection}
+				<img class="soundcloud-icon-large" src="/icons/soundcloud.webp" alt="Soundcloud Link" />
+			{:else}
+				<img class="soundcloud-icon" src="/icons/soundcloud.webp" alt="Soundcloud Link" />
+			{/if}
 		</a>
 	</li>
 	<li>
 		<a class="instagram-icon-link" href="https://www.instagram.com/erwanklp/" target="_blank">
-			<img class="instagram-icon" src="/icons/instagram.webp" alt="Instagram Link" />
+			{#if iconsincontactsection}
+				<img class="instagram-icon-large" src="/icons/instagram.webp" alt="Instagram Link" />
+			{:else}
+				<img class="instagram-icon" src="/icons/instagram.webp" alt="Instagram Link" />
+			{/if}
 		</a>
 	</li>
 </ul>
@@ -67,6 +83,18 @@
 		flex-direction: column;
 	}
 
+	.phone-icon-large,
+	.mail-icon-large,
+	.soundcloud-icon-large,
+	.instagram-icon-large {
+		width: 48px;
+		height: 48px;
+		margin: auto; /* Center the icon */
+		display: block;
+		filter: grayscale(1);
+		transition: 0.1s filter linear;
+	}
+
 	.phone-icon,
 	.mail-icon,
 	.soundcloud-icon,
@@ -75,6 +103,8 @@
 		height: 32px;
 		margin: auto; /* Center the icon */
 		display: block;
+		filter: grayscale(1);
+		transition: 0.1s filter linear;
 	}
 
 	.phone-icon-button,
@@ -87,6 +117,24 @@
 		width: 50px; /* ensure it's larger than the icon for padding */
 		height: 50px; /* ensure it's larger than the icon for padding */
 		padding: 10px;
+	}
+
+	.phone-icon:hover,
+	.mail-icon:hover,
+	.phone-icon-large:hover,
+	.mail-icon-large:hover {
+		filter: grayscale(0);
+		cursor: pointer;
+	}
+
+	.instagram-icon:hover,
+	.soundcloud-icon:hover {
+		filter: grayscale(0);
+	}
+
+	.instagram-icon-large:hover,
+	.soundcloud-icon-large:hover {
+		filter: grayscale(0);
 	}
 
 	li.phone-container {
@@ -125,19 +173,7 @@
 		color: white;
 	}
 
-	.socials.socialsincontact {
-		position: absolute;
-		display: flex;
-		right: 10%;
-		opacity: 0.7;
-		margin: 0;
-		justify-content: center;
-		list-style: none;
-		background-size: contain;
-		background-color: transparent;
-	}
-
-	.socials {
+	.icon-bar-container {
 		display: flex;
 		position: fixed;
 		right: 0px;
@@ -149,29 +185,20 @@
 		background-color: transparent;
 	}
 
+	.icon-bar-container.iconsincontactsection {
+		position: absolute;
+		right: 10%;
+	}
+
+	.icon-bar-container.iconsincontactsection.columnize {
+		right: 50%;
+		transform: translate(194%);
+	}
+
 	li {
 		display: flex; /* This makes sure the content of li is centered if needed */
 		align-items: center; /* Center vertically in case of different heights */
 		justify-content: center; /* Center horizontally */
-	}
-
-	.phone-icon,
-	.mail-icon,
-	.instagram-icon,
-	.soundcloud-icon {
-		filter: grayscale(1);
-		transition: 0.1s filter linear;
-	}
-
-	.phone-icon:hover,
-	.mail-icon:hover {
-		filter: grayscale(0);
-		cursor: pointer;
-	}
-
-	.instagram-icon:hover,
-	.soundcloud-icon:hover {
-		filter: grayscale(0);
 	}
 
 	.phone-icon-button,
