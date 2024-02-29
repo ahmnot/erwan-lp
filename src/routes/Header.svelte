@@ -264,6 +264,7 @@
 		justify-content: center;
 		align-items: center;
 	}
+	
 	/* Base case: Assume small screens first */
 	.header-socials-column-show {
 		display: none; /* Hide by default */

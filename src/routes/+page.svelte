@@ -54,13 +54,60 @@
 
 <section id="contact">
 	<h1>Contact</h1>
-	<div class="contact-section-content">
-		<h2 class="contact-text">Let's talk! →</h2>
-		<SocialBar socialsincontact={true} />
+	<div class="contact-section-content-row">
+		<h2 class="contact-text-row">Let's talk! →</h2>
+		<div class="contact-icons-row">
+			<SocialBar socialsincontact={true} />
+		</div>
+	</div>
+
+	<div class="contact-section-content-column">
+		<h2 class="contact-text-column">Let's talk! ↓</h2>
+
+		<div class="contact-icons-column">
+			<SocialBar socialsincontact={true} columnize={true} />
+		</div>
 	</div>
 </section>
 
 <style>
+	.contact-section-content-row {
+		display: none;
+	}
+
+	.contact-section-content-column {
+		display: grid;
+		grid-template-columns: 1fr ;
+		grid-template-rows: 1fr ;
+		position: relative; 
+		justify-items: center;
+	}
+
+	.contact-text-column {
+		grid-row: 1; 
+	}
+
+	.contact-icons-column {
+		grid-row: 2; 
+	}
+
+
+	/* Above 1160px */
+	@media (min-width: 1160px) {
+		.contact-section-content-column {
+			display: none; /* Ensure this is hidden on large screens */
+		}
+		.contact-section-content-row {
+			display: flex; /* And this one is shown on large screens */
+			flex-direction: row;
+			justify-content: space-around;
+		}
+		.contact-icons-row {
+			display: flex;
+			align-items: center;
+		}
+	}
+
 	.signature-grid {
 		display: grid;
 		grid-template-columns: auto auto; /* auto for the signature column */
@@ -82,12 +129,6 @@
 		width: 100%; /* Adjust width as necessary, or use max-width */
 		min-width: 250px;
 		opacity: 0.7;
-	}
-
-	.contact-section-content {
-		display: flex;
-		flex-direction: row;
-		align-items: center;
 	}
 
 	h1 {
@@ -180,7 +221,7 @@
 			opacity: 0.7;
 		}
 		.profile-picture {
-			bottom:15px;
+			bottom: 15px;
 			right: 170px;
 		}
 	}
