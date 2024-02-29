@@ -43,6 +43,9 @@
 		align-items: center;
 		box-shadow: 0 -1px 0px rgba(255, 255, 255, 0.2);
 	}
+	footer p {
+		text-align: center;
+	}
 
 	@media (min-width: 480px) {
 		footer {
