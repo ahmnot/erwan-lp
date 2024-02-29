@@ -119,12 +119,10 @@
 	}
 
 	.titres {
-		position: relative; /* Add this line */
 		width: 100%;
 	}
 
 	.presentation {
-		position: relative;
 		display: flex;
 		justify-content: flex-start;
 		align-items: center;
