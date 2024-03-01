@@ -25,7 +25,7 @@
 	}
 </script>
 
-<h1>{mediaData?.title}</h1>
+<h1 class="main-title">{mediaData?.title} - {mediaData?.author}</h1>
 
 <div class="portfolio-gallery">
 	{#each mediaData?.images as image}
@@ -36,7 +36,7 @@
 	{#if mediaData?.youtube && mediaData?.youtube !== ''}
 		<div class="youtube-wrapper">
 			<iframe
-				class="youtube"
+				class="youtube-iframe"
 				src={mediaData?.youtube}
 				title="YouTube video player"
 				frameborder="0"
@@ -48,39 +48,21 @@
 	{#if mediaData?.soundcloud && mediaData?.soundcloud !== ''}
 		<div class="soundcloud-wrapper">
 			<iframe
-				width="100%"
-				height="300"
+				class="soundcloud-iframe"
 				scrolling="no"
 				frameborder="no"
 				allow="autoplay"
 				src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/{mediaData?.soundcloudAPINumber}&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
 				title="Soundcloud Player"
 			></iframe>
-			<div
-				style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"
-			>
-				<a
-					href="https://soundcloud.com/erwanlepape"
-					title="ErwanLP"
-					target="_blank"
-					style="color: #cccccc; text-decoration: none;">ErwanLP</a
-				>
-				·
-				<a
-					href={mediaData?.soundcloud}
-					title={mediaData?.title}
-					target="_blank"
-					style="color: #cccccc; text-decoration: none;">{mediaData?.title}</a
-				>
-			</div>
 		</div>
 	{/if}
-	<p class="about">
-		À propos <br />
-		Original music from<br />
-		director bla bla<br />
-		Bla bla bla<br />
-	</p>
+		<p class="about">
+			À propos <br />
+			Original music from<br />
+			director bla bla<br />
+			Bla bla bla<br />
+		</p>
 </div>
 
 <LightBox
@@ -91,10 +73,37 @@
 />
 
 <style>
+	.portfolio-gallery {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+		align-items: center;
+		margin: 60px;
+		margin-top: 0;
+	}
+
+	.main-title {
+		align-self: center;
+	}
+
+	.soundcloud-wrapper {
+		display: flex;
+		grid-row: 2;
+		grid-column: 1;
+		height: 100%;
+		margin: 20px;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.soundcloud-iframe {
+		width: 100%;
+		height: 75%;
+	}
+
 	h1 {
-		font-weight: 500;
-		font-size: 400%;
-		margin-left: 20px;
+		font-weight: 400;
+		font-size: 250%;
 	}
 
 	.youtube-wrapper {
@@ -104,25 +113,13 @@
 		height: 25%;
 	}
 
-	.soundcloud-wrapper {
-		grid-row: 2;
-		grid-column: 1;
-	}
-
-	.youtube {
+	.youtube-iframe {
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
 		max-width: 100%;
-	}
-
-	.portfolio-gallery {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 1fr 1fr;
-		align-items: center;
 	}
 
 	.image-wrapper {
@@ -148,7 +145,6 @@
 		flex-direction: row;
 		align-items: center;
 		justify-content: flex-end;
-		margin-right: 40px;
 		font-size: 150%;
 	}
 
