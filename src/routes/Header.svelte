@@ -4,7 +4,6 @@
 	import { underlineVisible } from '$lib/underlineVisibility';
 	import { goto } from '$app/navigation';
 	import { fade, slide } from 'svelte/transition';
-	import { quintOut } from 'svelte/easing';
 
 	import IconsBar from './IconsBar.svelte';
 
@@ -223,8 +222,7 @@
 			<img class="logo-header-centered" src="/logo-1.webp" alt="logo" />
 		</a>
 		{#if isHamburgerExpanded}
-
-			<ul class="hamburger-menu" in:slide={{ duration: 300}} out:fade={{ duration: 60 }}>
+			<ul class="hamburger-menu" in:slide={{ duration: 200 }} out:fade={{ duration: 50 }}>
 				<li>
 					<a id="homeId" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>Home</a>
 				</li>
@@ -243,16 +241,6 @@
 </header>
 
 <style>
-
-	.hamburger-menu {
-		position: absolute;
-		top: 90px; 
-		left: 20px;
-		margin: 0;
-		display: flex;
-		flex-direction: column;
-		align-items: baseline;
-	}
 
 	.logo-placeholder {
 		display: flex;
@@ -304,14 +292,15 @@
 			position: absolute;
 			padding: 0;
 			margin: 20px;
-			height: 3em;
+			height: 150%;
 			display: flex;
 			justify-content: flex-start;
 			align-items: baseline;
 			flex-direction: column;
-			top: 40px;
+			top: 50px;
 			left: 0px;
 			list-style: none;
+			background-color: rgb(0,0,0,0.9);
 		}
 		.header-small {
 			display: flex;

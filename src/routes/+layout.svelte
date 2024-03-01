@@ -1,5 +1,5 @@
 <script>
-// @ts-nocheck
+	// @ts-nocheck
 
 	import Header from './Header.svelte';
 	import './styles.css';
@@ -14,7 +14,9 @@
 	</main>
 
 	<footer>
-		<p>© Copyright 2024 - Erwan Le Pape - site by <a href="https://github.com/ahmnot">ahmnot</a></p>
+		<p>
+			© Copyright 2024 - Erwan Le Pape - site by <a href="https://github.com/ahmnot">ahmnot</a>
+		</p>
 	</footer>
 </div>
 
@@ -29,7 +31,7 @@
 		flex: 1;
 		display: flex;
 		flex-direction: column;
-		padding-top: 94.4px; /* Adjust based on the height of your header */
+		padding-top: 100px;
 		width: 100%;
 		margin: 0 auto;
 		box-sizing: border-box;
@@ -41,15 +43,9 @@
 		justify-content: center;
 		width: 100%;
 		align-items: center;
-		box-shadow: 0 -1px 0px rgba(255, 255, 255, 0.2);
-	}
-	footer p {
+		box-shadow: 0 -1px 0px rgba(255, 255, 255, 0.01);
+		padding: 0px 0;
 		text-align: center;
-	}
-
-	@media (min-width: 480px) {
-		footer {
-			padding: 12px 0;
-		}
+		font-size: small;
 	}
 </style>

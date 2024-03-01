@@ -72,9 +72,9 @@
 
 <style>
 	.downwoard-arrow {
-		grid-row: 2; 
-  		justify-self: center;
-		margin:10px;
+		grid-row: 2;
+		justify-self: center;
+		margin: 10px;
 	}
 
 	.contact-section-content-row {
@@ -88,36 +88,35 @@
 
 	.contact-text-column {
 		display: block;
+		grid-row: 1;
 		font-size: xxx-large;
 		font-weight: 600;
-		grid-row-end: auto;
-		grid-row-start: 1;
 		height: 87px;
 		justify-self: center;
 		margin-inline-start: 40px;
-		margin-left: 40px;
-		grid-row: 1; 
-  		justify-self: center;
+		margin-left: 0;
+		line-height: 300%; /*Used to remove space below the text */
 	}
 
 	.contact-icons-column {
-		grid-row: 3; 
-  		justify-self: center;
+		grid-row: 3;
+		justify-self: center;
 	}
 
 	/* Above 1160px */
-	@media (min-width: 1160px) {
+	@media (min-width: 1250px) {
 		.contact-section-content-column {
-			display: none; /* Ensure this is hidden on large screens */
+			display: none;
 		}
 		.contact-section-content-row {
-			display: flex; /* And this one is shown on large screens */
+			display: flex;
 			flex-direction: row;
 			justify-content: space-around;
 		}
 		.contact-icons-row {
 			display: flex;
 			align-items: center;
+			transform: translate(-50%);
 		}
 		h2 {
 			margin-block-end: 0 !important;
@@ -126,17 +125,17 @@
 
 	.signature-grid {
 		display: grid;
-		grid-template-columns: auto auto; /* auto for the signature column */
-		grid-template-rows: auto auto; /* auto for the text row, auto for the signature row */
-		position: relative; /* This makes it a containing block for absolute positioning */
+		grid-template-columns: auto auto;
+		grid-template-rows: auto auto;
+		position: relative;
 		justify-content: start;
 		align-content: start;
 	}
 
 	.bottom-text {
-		grid-column: 1; /* This makes the text span all columns */
-		width: 150%; /* Adjust width as necessary, or use max-width */
-		grid-row: 1; /* This places the text in the first row */
+		grid-column: 1;
+		width: 150%;
+		grid-row: 1;
 	}
 
 	.signature-presentation {
@@ -201,7 +200,7 @@
 	}
 
 	section {
-		padding-bottom: 800px;
+		padding-bottom: 500px;
 	}
 
 	#home {
@@ -242,11 +241,11 @@
 		}
 	}
 
-@media (max-width: 450px) {
+	@media (max-width: 450px) {
 		h1 {
 			font-size: 300%;
 		}
-}
+	}
 
 	@media (max-width: 280px) {
 		.media-grid {

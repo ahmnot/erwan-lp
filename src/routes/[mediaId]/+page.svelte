@@ -25,32 +25,45 @@
 	}
 </script>
 
-<h1>{mediaData?.title}</h1>
+<h1 class="main-title">{mediaData?.title} - {mediaData?.author}</h1>
 
 <div class="portfolio-gallery">
 	{#each mediaData?.images as image}
-		<a class="image-wrapper" on:click|preventDefault={() => openLightBox(image)}>
+		<button class="image-wrapper" on:click|preventDefault={() => openLightBox(image)}>
 			<img src={image} alt={mediaData?.title} class="image" />
-		</a>
+		</button>
 	{/each}
-	<div class="youtube-wrapper">
-		<iframe
-			class="youtube"
-			src={mediaData?.youtube}
-			title="YouTube video player"
-			frameborder="0"
-			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-			allowfullscreen
-		></iframe>
-	</div>
+	{#if mediaData?.youtube && mediaData?.youtube !== ''}
+		<div class="youtube-wrapper">
+			<iframe
+				class="youtube-iframe"
+				src={mediaData?.youtube}
+				title="YouTube video player"
+				frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				allowfullscreen
+			></iframe>
+		</div>
+	{/if}
+	{#if mediaData?.soundcloud && mediaData?.soundcloud !== ''}
+		<div class="soundcloud-wrapper">
+			<iframe
+				class="soundcloud-iframe"
+				scrolling="no"
+				frameborder="no"
+				allow="autoplay"
+				src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/{mediaData?.soundcloudAPINumber}&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+				title="Soundcloud Player"
+			></iframe>
+		</div>
+	{/if}
+		<p class="about">
+			À propos <br />
+			Original music from<br />
+			director bla bla<br />
+			Bla bla bla<br />
+		</p>
 </div>
-
-<p class="about">
-	À propos <br />
-	Original music from<br />
-	director bla bla<br />
-	Bla bla bla<br />
-</p>
 
 <LightBox
 	{selectedImage}
@@ -60,20 +73,47 @@
 />
 
 <style>
+	.portfolio-gallery {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+		align-items: center;
+		margin: 80px;
+		margin-top: 0;
+	}
+
+	.main-title {
+		align-self: center;
+	}
+
+	.soundcloud-wrapper {
+		display: flex;
+		grid-row: 2;
+		grid-column: 1;
+		height: 100%;
+		margin: 20px;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.soundcloud-iframe {
+		width: 100%;
+		height: 75%;
+	}
 
 	h1 {
-		font-weight: 500;
-		font-size: 400%;
-		margin-left: 20px;
+		font-weight: 400;
+		font-size: 250%;
 	}
 
 	.youtube-wrapper {
+		grid-row: 1;
+		grid-column: 2;
 		position: relative;
-		width: 100%; /* Adjust this to control the width */
-		padding-top: 56%; 
-		align-items: center;
+		height: 25%;
 	}
-	.youtube {
+
+	.youtube-iframe {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -82,14 +122,10 @@
 		max-width: 100%;
 	}
 
-	.portfolio-gallery {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
-
 	.image-wrapper {
 		margin: 20px;
+		border: 0;
+		background: 0;
 	}
 
 	.image {
@@ -101,29 +137,29 @@
 	}
 
 	.about {
+		grid-row: 2;
+		grid-column: 2;
 		display: flex;
 		flex-wrap: wrap;
 		align-content: center;
 		flex-direction: row;
 		align-items: center;
 		justify-content: flex-end;
-		margin-right: 40px;
 		font-size: 150%;
 	}
 
-/* Media query for larger screens */
-@media (min-width: 768px) {
-	.youtube-wrapper {
-		padding-top: 26%; 
-	}
-	
-	.portfolio-gallery {
-		flex-direction: row; 
-	}
+	/* Media query for larger screens */
+	@media (min-width: 768px) {
+		.youtube-wrapper {
+			padding-top: 26%;
+		}
 
-	.portfolio-gallery > * {
-		flex-basis: calc(50% - 40px);
-	}
+		.portfolio-gallery {
+			flex-direction: row;
+		}
 
-}
+		.portfolio-gallery > * {
+			flex-basis: calc(50% - 40px);
+		}
+	}
 </style>

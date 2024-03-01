@@ -210,7 +210,6 @@
 
 	.icon-bar-container.iconsincontactsection {
 		position: absolute;
-		right: 10%;
 	}
 
 	.icon-bar-container.iconsincontactsection.columnize {
