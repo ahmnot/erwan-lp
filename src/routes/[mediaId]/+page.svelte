@@ -78,7 +78,7 @@
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 1fr 1fr;
 		align-items: center;
-		margin: 60px;
+		margin: 80px;
 		margin-top: 0;
 	}
 
