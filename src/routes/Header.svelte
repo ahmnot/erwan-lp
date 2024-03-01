@@ -300,7 +300,7 @@
 			top: 50px;
 			left: 0px;
 			list-style: none;
-			background-color: rgb(0,0,0,0.85);
+			background-color: rgb(0,0,0,0.9);
 		}
 		.header-small {
 			display: flex;
