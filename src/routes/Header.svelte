@@ -4,7 +4,6 @@
 	import { underlineVisible } from '$lib/underlineVisibility';
 	import { goto } from '$app/navigation';
 	import { fade, slide } from 'svelte/transition';
-	import { quintOut } from 'svelte/easing';
 
 	import IconsBar from './IconsBar.svelte';
 

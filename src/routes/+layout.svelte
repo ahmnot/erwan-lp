@@ -43,8 +43,9 @@
 		justify-content: center;
 		width: 100%;
 		align-items: center;
-		box-shadow: 0 -1px 0px rgba(255, 255, 255, 0.1);
-		padding: 5px 0;
+		box-shadow: 0 -1px 0px rgba(255, 255, 255, 0.01);
+		padding: 0px 0;
 		text-align: center;
+		font-size: small;
 	}
 </style>

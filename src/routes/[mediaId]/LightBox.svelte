@@ -35,12 +35,12 @@
 </script>
 
 {#if isVisible}
-	<div class="lightbox-backdrop" on:click={closeModal}>
+	<button class="lightbox-backdrop" on:click={closeModal}>
 		<div class="lightbox-content" >
-			<img src={selectedImage} alt={title} on:click|stopPropagation/>
+			<img src={selectedImage} alt={title} />
 			<button class="close-button" on:click={closeModal}>×</button>
 		</div>
-	</div>
+	</button>
 {/if}
 
 <style>
@@ -55,6 +55,7 @@
 		justify-content: center;
 		align-items: center;
 		z-index: 1000;
+		border:none;
 	}
 
 	.lightbox-content {
@@ -75,7 +76,7 @@
 		border: none;
 		background-color: transparent;
 		color: white;
-		font-size: 24px;
+		font-size: 48px;
 		cursor: pointer;
 	}
 
