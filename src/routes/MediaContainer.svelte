@@ -10,6 +10,7 @@
 	export let work = '';
 	export let youtube = '';
 	export let soundcloud = '';
+	export let soundcloudAPINumber = '';
 	export let horizontalOffset = '0%';
 	export let verticalOffset = '0%';
 
@@ -35,6 +36,7 @@
 		// assignments just to remove the warnings
 		youtube = '';
 		soundcloud = '';
+		soundcloudAPINumber = '';
 		if (
 			imageElement &&
 			imageElement.complete &&

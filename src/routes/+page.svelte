@@ -94,7 +94,7 @@
 		height: 87px;
 		justify-self: center;
 		margin-inline-start: 40px;
-		margin-left: 40px;
+		margin-left: 0;
 		line-height: 300%; /*Used to remove space below the text */
 	}
 
@@ -104,7 +104,7 @@
 	}
 
 	/* Above 1160px */
-	@media (min-width: 1160px) {
+	@media (min-width: 1250px) {
 		.contact-section-content-column {
 			display: none;
 		}
@@ -200,7 +200,7 @@
 	}
 
 	section {
-		padding-bottom: 800px;
+		padding-bottom: 500px;
 	}
 
 	#home {
