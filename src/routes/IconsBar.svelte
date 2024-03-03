@@ -96,7 +96,7 @@
 		position: absolute;
 		top: 100%;
 		left: 38%;
-		transform: translate(-50%, 10px); /* Center it horizontally and move it 10px down */
+		transform: translate(-50%, -5px); /* Center it horizontally and move it 10px down */
 		font-size: larger;
 		opacity: 1;
 		color: white;

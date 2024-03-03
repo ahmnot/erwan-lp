@@ -57,12 +57,12 @@
 			></iframe>
 		</div>
 	{/if}
-		<p class="about">
-			À propos <br />
-			Original music from<br />
-			director bla bla<br />
-			Bla bla bla<br />
-		</p>
+	<p class="about">
+		À propos <br />
+		Original music from<br />
+		director bla bla<br />
+		Bla bla bla<br />
+	</p>
 </div>
 
 <LightBox
@@ -111,6 +111,7 @@
 		grid-column: 2;
 		position: relative;
 		height: 25%;
+		padding-top: 26%;
 	}
 
 	.youtube-iframe {
@@ -149,17 +150,32 @@
 	}
 
 	/* Media query for larger screens */
-	@media (min-width: 768px) {
-		.youtube-wrapper {
-			padding-top: 26%;
-		}
-
+	@media (max-width: 768px) {
 		.portfolio-gallery {
-			flex-direction: row;
+			grid-template-rows: 1fr 0.5fr 1fr;
+			grid-auto-rows: auto;
+			grid-template-columns: 1fr;
+			margin: 20px;
 		}
 
-		.portfolio-gallery > * {
-			flex-basis: calc(50% - 40px);
+		.image-wrapper {
+			grid-row: 1;
+			grid-column: 1;
+		}
+
+		.youtube-wrapper {
+			grid-row: 2;
+			grid-column: 1;
+		}
+
+		.soundcloud-wrapper {
+			grid-row: 3;
+			grid-column: 1;
+		}
+
+		.about {
+			grid-row: 4;
+			grid-column: 1;
 		}
 	}
 </style>
