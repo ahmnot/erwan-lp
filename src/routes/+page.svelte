@@ -5,13 +5,14 @@
 	import { onMount } from 'svelte';
 	import { underlineVisible } from '$lib/underlineVisibility';
 	import IconsBar from './IconsBar.svelte';
+	import { fade } from 'svelte/transition';
 
 	onMount(() => {
 		underlineVisible.set(true);
 	});
 </script>
 
-<section id="home">
+<section id="home" >
 	<div class="presentation">
 		<div class="titres">
 			<h1 id="main-title">Erwan Le Pape</h1>
@@ -34,7 +35,6 @@
 </section>
 
 <section id="music">
-	<h1>Music</h1>
 	<div class="media-grid">
 		{#each mediaList as media (media.id)}
 			<MediaContainer {...media} />
@@ -55,14 +55,14 @@
 <section id="contact">
 	<h1>Contact</h1>
 	<div class="contact-section-content-row">
-		<h2 class="contact-text-row">Let's talk! →</h2>
+		<h2 class="contact-text-row">Contact me →</h2>
 		<div class="contact-icons-row">
 			<IconsBar iconsincontactsection={true} />
 		</div>
 	</div>
 
 	<div class="contact-section-content-column">
-		<div class="contact-text-column">Let's talk!</div>
+		<div class="contact-text-column">Contact me</div>
 		<h2 class="downwoard-arrow">↓</h2>
 		<div class="contact-icons-column">
 			<IconsBar iconsincontactsection={true} columnize={true} />
@@ -84,6 +84,7 @@
 	.contact-section-content-column {
 		display: grid;
 		grid-template-columns: 1fr;
+		margin-bottom:100px;
 	}
 
 	.contact-text-column {
@@ -163,7 +164,7 @@
 
 	p {
 		font-size: 140%;
-		margin-right: 40px;
+		margin-right: 80px;
 		text-align: justify;
 	}
 
@@ -200,7 +201,7 @@
 	}
 
 	section {
-		padding-bottom: 500px;
+		margin-bottom: 50px;
 	}
 
 	#home {
