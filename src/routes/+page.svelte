@@ -1,11 +1,10 @@
 <script>
 	// @ts-nocheck
-	import MediaContainer from './MediaContainer.svelte';
+	import MediaSquareContainer from './MediaSquareContainer.svelte';
 	import { mediaList } from '$lib/mediaList';
 	import { onMount } from 'svelte';
 	import { underlineVisible } from '$lib/underlineVisibility';
 	import IconsBar from './IconsBar.svelte';
-	import { fade } from 'svelte/transition';
 
 	onMount(() => {
 		underlineVisible.set(true);
@@ -37,7 +36,7 @@
 <section id="music">
 	<div class="media-grid">
 		{#each mediaList as media (media.id)}
-			<MediaContainer {...media} />
+			<MediaSquareContainer {...media} />
 		{/each}
 	</div>
 </section>
