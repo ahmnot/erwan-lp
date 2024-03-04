@@ -210,11 +210,11 @@
 	}
 
 	section {
-		margin-bottom: 50px;
+		display:block;
+		padding-bottom: 180px;
 	}
 
 	#home {
-		display: block;
 		height: 100vh;
 	}
 
