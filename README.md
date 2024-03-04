@@ -1,1 +1,1 @@
-This is a portfolio website I made for a friend.
+This is a portfolio website I make and maintain for a friend.
