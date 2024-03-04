@@ -57,12 +57,12 @@
 			></iframe>
 		</div>
 	{/if}
-	<p class="about">
-		À propos <br />
-		Original music from<br />
-		director bla bla<br />
-		Bla bla bla<br />
-	</p>
+	<div class="about">
+		<h3>About</h3>
+		<div>{mediaData?.title}</div>
+		<div>{mediaData?.author}</div>
+		<div>{mediaData?.work}</div>
+	</div>
 </div>
 
 <LightBox
@@ -84,6 +84,7 @@
 
 	.main-title {
 		align-self: center;
+		margin-left: 20px;
 	}
 
 	.soundcloud-wrapper {
@@ -142,9 +143,9 @@
 		grid-column: 2;
 		display: flex;
 		flex-wrap: wrap;
-		align-content: center;
-		flex-direction: row;
-		align-items: center;
+		align-content: flex-end;
+		flex-direction: column;
+		align-items: flex-end;
 		justify-content: flex-end;
 		font-size: 150%;
 	}

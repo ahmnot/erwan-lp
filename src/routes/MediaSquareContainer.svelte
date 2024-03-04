@@ -6,7 +6,6 @@
 	export let images = [];
 	export let title = '';
 	export let author = '';
-	export let type = '';
 	export let work = '';
 	export let youtube = '';
 	export let soundcloud = '';
@@ -56,28 +55,27 @@
 	role="button"
 	tabindex="0"
 >
-		<div class="media-image-wrapper">
-			<img
-				bind:this={imageElement}
-				{id}
-				src={images[0]}
-				alt={title}
-				class="media-image"
-				style="--horizontal-offset: {horizontalOffset}; --vertical-offset: {verticalOffset}; opacity: {imageComplete
-					? 1
-					: 0}; transition: opacity 0.3s ease;"
-				on:load={handleImageLoading}
-			/>
-			{#if !imageComplete}
-				<div class="loading-placeholder"></div>
-			{/if}
-		</div>
-		<div class="media-info">
-			<a href="/{id}" class="media-title">{title}</a> -
-			<span class="media-author">{author}</span>
-			<div class="media-type">{type}</div>
-			<div class="media-work">{work}</div>
-		</div>
+	<div class="media-image-wrapper">
+		<img
+			bind:this={imageElement}
+			{id}
+			src={images[0]}
+			alt={title}
+			class="media-image"
+			style="--horizontal-offset: {horizontalOffset}; --vertical-offset: {verticalOffset}; opacity: {imageComplete
+				? 1
+				: 0}; transition: opacity 0.3s ease;"
+			on:load={handleImageLoading}
+		/>
+		{#if !imageComplete}
+			<div class="loading-placeholder"></div>
+		{/if}
+	</div>
+	<div class="media-info">
+		<a href="/{id}" class="media-title">{title}</a> -
+		<span class="media-author">{author}</span> - 
+		<div class="media-work">{work}</div>
+	</div>
 </a>
 
 <style>
