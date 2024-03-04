@@ -12,7 +12,7 @@
 	});
 </script>
 
-<section id="home" >
+<section id="home">
 	<div class="presentation">
 		<div class="titres">
 			<h1 id="main-title">Erwan Le Pape</h1>
@@ -84,7 +84,7 @@
 	.contact-section-content-column {
 		display: grid;
 		grid-template-columns: 1fr;
-		margin-bottom:100px;
+		margin-bottom: 100px;
 	}
 
 	.contact-text-column {
@@ -164,8 +164,18 @@
 
 	p {
 		font-size: 140%;
-		margin-right: 80px;
+		margin-right: 20px;
 		text-align: justify;
+	}
+
+	#bio {
+		margin-right: 20px;
+	}
+	/* This has to do with the top right header icons when in columns*/
+	@media (min-width: 831px) {
+		#bio {
+			margin-right: 80px;
+		}
 	}
 
 	h1,
@@ -218,6 +228,9 @@
 	@media (max-width: 768px) {
 		.media-grid {
 			grid-template-columns: 1fr 1fr;
+		}
+		.profile-picture {
+			display: none;
 		}
 	}
 
