@@ -15,21 +15,21 @@
 	<div class="presentation">
 		<div class="titres">
 			<h1 id="main-title">Erwan Le Pape</h1>
-			<h2>Music Composer</h2>
 			<div class="signature-grid">
-				<h3 class="bottom-text">For Film, TV, Performing Arts, Video Games.</h3>
+				<h2>Composer <br>Arranger <br> Pianist</h2>
+				<!-- <h3 class="bottom-text">For Film, TV, Performing Arts, Video Games.</h3>
 				<div class="empty-rectangle-top-right"></div>
-				<div class="empty-rectangle-bottom-left"></div>
+				<div class="empty-rectangle-bottom-left"></div> -->
 				<img class="signature-presentation" src="/logo-3.webp" alt="logo" />
 			</div>
 		</div>
 
-		<img
+		<!-- <img
 			class="profile-picture"
 			src="/photo-profil-7.webp"
 			alt="Erwan's Presentation"
 			style="color: transparent;"
-		/>
+		/> -->
 	</div>
 </section>
 
@@ -42,7 +42,7 @@
 </section>
 
 <section id="bio">
-	<h1>Who am I</h1>
+	<h1>Bio</h1>
 	<p>
 		Hi, my name is Erwan, I'm a young composer based in Lyon, France. I studied music and
 		composition at the conservatory and university and I'm currently doing a Master degree in music
@@ -132,12 +132,6 @@
 		align-content: start;
 	}
 
-	.bottom-text {
-		grid-column: 1;
-		width: 150%;
-		grid-row: 1;
-	}
-
 	.signature-presentation {
 		grid-column: 2;
 		grid-row: 2;
@@ -156,15 +150,10 @@
 		font-size: 400%;
 	}
 
-	h3 {
-		font-weight: 400;
-		font-size: 150%;
-	}
-
 	p {
 		font-size: 140%;
 		margin-right: 20px;
-		text-align: justify;
+		text-align: center;
 	}
 
 	#bio {
@@ -177,10 +166,7 @@
 		}
 	}
 
-	h1,
-	h2,
-	h3,
-	p {
+	h1 {
 		margin-left: 40px;
 	}
 
@@ -195,16 +181,9 @@
 		overflow: hidden;
 	}
 
-	.profile-picture {
-		position: relative;
-		margin: 20px;
-		width: 60%;
-		opacity: 0.95;
-		height: 87vh;
-		object-fit: contain;
-	}
-
 	.media-grid {
+		margin-left: 60px;
+		margin-right: 60px;
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr 1fr;
 	}
@@ -226,6 +205,8 @@
 
 	@media (max-width: 768px) {
 		.media-grid {
+			margin-left: 0;
+			margin-right: 0;
 			grid-template-columns: 1fr 1fr;
 		}
 		.profile-picture {
@@ -247,10 +228,6 @@
 			grid-row: 2;
 			width: 100%; /* Adjust width as necessary, or use max-width */
 			opacity: 0.7;
-		}
-		.profile-picture {
-			bottom: 15px;
-			right: 170px;
 		}
 	}
 
