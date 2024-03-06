@@ -349,8 +349,8 @@
 		align-items: center;
 		padding: 0 10px;
 		color: var(--color-text);
-		font-weight: 400;
-		font-size: 1.2rem;
+		font-weight: 500;
+		font-size: 1.3rem;
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
 		transition: color 0.2s linear;
@@ -406,7 +406,7 @@
 	.underline {
 		position: absolute;
 		bottom: 0px;
-		height: 2px;
+		height: 3px;
 		background-color: var(--color-theme-1);
 	}
 </style>
