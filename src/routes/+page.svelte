@@ -14,9 +14,9 @@
 <section id="home">
 	<div class="presentation">
 		<div class="titres">
-			<h1 id="main-title">Erwan Le Pape</h1>
+			<h1 id="main-title">ERWAN LE PAPE</h1>
 			<div class="signature-grid">
-				<h2>Composer <br>Arranger <br> Pianist</h2>
+				<h2>COMPOSER <br>ARRANGER <br> PIANIST</h2>
 				<!-- <h3 class="bottom-text">For Film, TV, Performing Arts, Video Games.</h3>
 				<div class="empty-rectangle-top-right"></div>
 				<div class="empty-rectangle-bottom-left"></div> -->
@@ -42,7 +42,7 @@
 </section>
 
 <section id="bio">
-	<h1>Bio</h1>
+	<h1>Biography</h1>
 	<p>
 		Hi, my name is Erwan, I'm a young composer based in Lyon, France. I studied music and
 		composition at the conservatory and university and I'm currently doing a Master degree in music
@@ -54,14 +54,14 @@
 <section id="contact">
 	<h1>Contact</h1>
 	<div class="contact-section-content-row">
-		<h2 class="contact-text-row">Contact me →</h2>
+		<h2 class="contact-text-row">→</h2>
 		<div class="contact-icons-row">
 			<IconsBar iconsincontactsection={true} />
 		</div>
 	</div>
 
 	<div class="contact-section-content-column">
-		<div class="contact-text-column">Contact me</div>
+		<!-- <div class="contact-text-column">Contact me</div> -->
 		<h2 class="downwoard-arrow">↓</h2>
 		<div class="contact-icons-column">
 			<IconsBar iconsincontactsection={true} columnize={true} />
@@ -70,6 +70,7 @@
 </section>
 
 <style>
+
 	.downwoard-arrow {
 		grid-row: 2;
 		justify-self: center;
@@ -84,18 +85,6 @@
 		display: grid;
 		grid-template-columns: 1fr;
 		margin-bottom: 100px;
-	}
-
-	.contact-text-column {
-		display: block;
-		grid-row: 1;
-		font-size: xxx-large;
-		font-weight: 600;
-		height: 87px;
-		justify-self: center;
-		margin-inline-start: 40px;
-		margin-left: 0;
-		line-height: 300%; /*Used to remove space below the text */
 	}
 
 	.contact-icons-column {
@@ -130,6 +119,7 @@
 		position: relative;
 		justify-content: start;
 		align-content: start;
+		margin-left: 40px;
 	}
 
 	.signature-presentation {
@@ -141,12 +131,12 @@
 	}
 
 	h1 {
-		font-weight: 800;
+		font-weight: 500;
 		font-size: 640%;
 	}
 
 	h2 {
-		font-weight: 600;
+		font-weight: 300;
 		font-size: 400%;
 	}
 
@@ -208,9 +198,6 @@
 			margin-left: 0;
 			margin-right: 0;
 			grid-template-columns: 1fr 1fr;
-		}
-		.profile-picture {
-			display: none;
 		}
 	}
 

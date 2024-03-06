@@ -349,7 +349,7 @@
 		align-items: center;
 		padding: 0 10px;
 		color: var(--color-text);
-		font-weight: 500;
+		font-weight: 400;
 		font-size: 1.2rem;
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
