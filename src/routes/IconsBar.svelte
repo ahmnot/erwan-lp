@@ -72,6 +72,24 @@
 			{/if}
 		</a>
 	</li>
+	<li>
+		<a class="discord-icon-link" href="https://discord.com/users/783996252018573332" target="_blank">
+			{#if iconsincontactsection}
+				<img class="discord-icon-large" src="/icons/discord.png" alt="Discord Link" />
+			{:else}
+				<img class="discord-icon" src="/icons/discord.png" alt="Discord Link" />
+			{/if}
+		</a>
+	</li>
+	<li>
+		<a class="facebook-icon-link" href="https://www.facebook.com/profile.php?id=61551473833966" target="_blank">
+			{#if iconsincontactsection}
+				<img class="facebook-icon-large" src="/icons/facebook.png" alt="Facebook Link" />
+			{:else}
+				<img class="facebook-icon" src="/icons/facebook.png" alt="Facebook Link" />
+			{/if}
+		</a>
+	</li>
 </ul>
 
 <style>
@@ -113,7 +131,9 @@
 	.phone-icon-large,
 	.mail-icon-large,
 	.soundcloud-icon-large,
-	.instagram-icon-large {
+	.instagram-icon-large,
+	.discord-icon-large,
+	.facebook-icon-large {
 		width: 48px;
 		height: 48px;
 		margin: auto; /* Center the icon */
@@ -125,7 +145,9 @@
 	.phone-icon,
 	.mail-icon,
 	.soundcloud-icon,
-	.instagram-icon {
+	.instagram-icon,
+	.discord-icon,
+	.facebook-icon {
 		width: 32px;
 		height: 32px;
 		margin: auto; /* Center the icon */
@@ -137,7 +159,9 @@
 	.phone-icon-button,
 	.mail-icon-button,
 	.instagram-icon-link,
-	.soundcloud-icon-link {
+	.soundcloud-icon-link,
+	.discord-icon-link,
+	.facebook-icon-link {
 		display: flex; /* Use flexbox to center content */
 		justify-content: center; /* Center horizontally */
 		align-items: center; /* Center vertically */
@@ -155,12 +179,13 @@
 	}
 
 	.instagram-icon:hover,
-	.soundcloud-icon:hover {
-		filter: grayscale(0);
-	}
-
+	.soundcloud-icon:hover,
+	.discord-icon:hover,
+	.facebook-icon:hover,
 	.instagram-icon-large:hover,
-	.soundcloud-icon-large:hover {
+	.soundcloud-icon-large:hover,
+	.discord-icon-large:hover,
+	.facebook-icon-large:hover {
 		filter: grayscale(0);
 	}
 
@@ -249,7 +274,9 @@
 	}
 
 	.instagram-icon-link,
-	.soundcloud-icon-link {
+	.soundcloud-icon-link,
+	.discord-icon-link,
+	.facebook-icon-link {
 		margin-right: 20px;
 		padding: 0px;
 	}
