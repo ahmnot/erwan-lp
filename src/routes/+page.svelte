@@ -16,7 +16,7 @@
 		<div class="titres">
 			<h1 id="main-title">ERWAN LE PAPE</h1>
 			<div class="signature-grid">
-				<h2>COMPOSER <br>ARRANGER <br> PIANIST</h2>
+				<h2>COMPOSER <br />ARRANGER <br /> PIANIST</h2>
 				<!-- <h3 class="bottom-text">For Film, TV, Performing Arts, Video Games.</h3>
 				<div class="empty-rectangle-top-right"></div>
 				<div class="empty-rectangle-bottom-left"></div> -->
@@ -43,12 +43,16 @@
 
 <section id="bio">
 	<h1>Biography</h1>
-	<p>
-		Hi, my name is Erwan, I'm a young composer based in Lyon, France. I studied music and
-		composition at the conservatory and university and I'm currently doing a Master degree in music
-		scoring for films, television and video games. My main influences span from neoclassical to
-		contemporary music with a special preference for orchestral music.
-	</p>
+	<div class="bio-centering-grid">
+		<div></div>
+		<p>
+			Hi, my name is Erwan, I'm a young composer based in Lyon, France. I studied music and
+			composition at the conservatory and university and I'm currently doing a Master degree in
+			music scoring for films, television and video games. My main influences span from neoclassical
+			to contemporary music with a special preference for orchestral music.
+		</p>
+		<div></div>
+	</div>
 </section>
 
 <section id="contact">
@@ -70,6 +74,10 @@
 </section>
 
 <style>
+	.bio-centering-grid {
+		display:grid;
+		grid-template-columns: 0.5fr 1fr 0.5fr;
+	}
 
 	.downwoard-arrow {
 		grid-row: 2;
@@ -127,7 +135,6 @@
 		grid-row: 2;
 		width: 100%; /* Adjust width as necessary, or use max-width */
 		min-width: 250px;
-		opacity: 0.7;
 	}
 
 	h1 {
@@ -138,22 +145,17 @@
 	h2 {
 		font-weight: 300;
 		font-size: 400%;
+		color: var(--color-theme-1);
 	}
 
 	p {
 		font-size: 140%;
-		margin-right: 20px;
 		text-align: center;
 	}
 
-	#bio {
-		margin-right: 20px;
-	}
 	/* This has to do with the top right header icons when in columns*/
 	@media (min-width: 831px) {
-		#bio {
-			margin-right: 80px;
-		}
+
 	}
 
 	h1 {
@@ -179,7 +181,7 @@
 	}
 
 	section {
-		display:block;
+		display: block;
 		padding-bottom: 180px;
 	}
 
@@ -203,11 +205,18 @@
 
 	@media (max-width: 680px) {
 		#main-title {
-			font-weight: 800;
 			font-size: 540%;
 		}
 		h1 {
 			font-size: 400%;
+		}
+
+		h2 {
+			font-size: 300%;
+		}
+		
+		.bio-centering-grid {
+		grid-template-columns: 0.1fr 1fr 0.1fr;
 		}
 
 		.signature-presentation {
@@ -221,6 +230,10 @@
 	@media (max-width: 450px) {
 		h1 {
 			font-size: 300%;
+		}
+
+		h2 {
+			font-size: 250%;
 		}
 	}
 
