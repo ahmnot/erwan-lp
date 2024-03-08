@@ -134,7 +134,7 @@
 
 <style>
 	.showreel {
-		margin: 40px;
+		margin-top: 40px;
 	}
 	.bio-centering-grid {
 		display: grid;
@@ -236,15 +236,15 @@
 	}
 
 	.media-grid {
-		margin-left: 60px;
-		margin-right: 60px;
+		margin-left: 40px;
+		margin-right: 40px;
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr 1fr;
 	}
 
 	section {
 		display: block;
-		margin-bottom:20px
+		margin-bottom:40px;
 	}
 
 	#home {
