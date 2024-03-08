@@ -26,7 +26,7 @@
 </script>
 
 <ul class="icon-bar-container" class:iconsincontactsection class:columnize>
-	<li class="phone-container">
+	<!-- <li class="phone-container">
 		{#if isPhoneShown || iconsincontactsection}
 			<div class="phone-box" transition:fade={{ duration: 60 }}>
 				<span class="phone-part">+33 6 47</span> <span class="phone-part">86 26 23</span>
@@ -39,7 +39,7 @@
 				<img class="icon-normal" src="/icons/phone.webp" alt="Phone Icon" />
 			{/if}
 		</button>
-	</li>
+	</li> -->
 	<li class="email-container">
 		<button class="icon-button-or-link" on:click={mailClickHandler}>
 			{#if iconsincontactsection}
@@ -113,7 +113,7 @@
 	.email-box {
 		position: absolute;
 		top: 100%;
-		left: 38%;
+		left: 27%;
 		transform: translate(-50%, -5px); /* Center it horizontally and move it 10px down */
 		font-size: larger;
 		opacity: 1;
@@ -129,8 +129,8 @@
 	}
 
 	.icon-large {
-		width: 60px;
-		height: 60px;
+		width: 50px;
+		height: 50px;
 		margin: auto; /* Center the icon */
 		display: block;
 		filter: grayscale(1);

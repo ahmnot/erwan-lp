@@ -25,7 +25,7 @@
 	}
 </script>
 
-<h1 class="main-title">{mediaData?.title} - {mediaData?.author}</h1>
+<h1 class="main-title"><div>{mediaData?.title}</div><div>{mediaData?.author}</div></h1>
 
 <div class="portfolio-gallery">
 	{#each mediaData?.images as image}
@@ -83,8 +83,11 @@
 	}
 
 	.main-title {
-		align-self: center;
-		margin-left: 20px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 20px;
 	}
 
 	.soundcloud-wrapper {

@@ -2,14 +2,48 @@
 	// @ts-nocheck
 	import MediaSquareContainer from './MediaSquareContainer.svelte';
 	import { mediaList } from '$lib/mediaList';
-	import { onMount } from 'svelte';
+	import { onMount, onDestroy } from 'svelte';
 	import { underlineVisible } from '$lib/underlineVisibility';
 	import IconsBar from './IconsBar.svelte';
+
+	$: innerWidth = 0;
+	$: innerHeight = 0;
+
+	let mediaGridElementWidth;
+	$: showreelWidth = mediaGridElementWidth/1.5;
+	$: showreelHeight = showreelWidth * 0.5625;
+
+	// function handleSubmit(event) {
+	// 	const formData = new FormData(event.target);
+	// 	const formProps = Object.fromEntries(formData);
+	// 	// Now formProps contains the form data
+
+	// 	// Example: send this data to your backend or an email API
+	// 	fetch('/api/send-email', {
+	// 		method: 'POST',
+	// 		headers: {
+	// 			'Content-Type': 'application/json'
+	// 		},
+	// 		body: JSON.stringify(formProps)
+	// 	})
+	// 		.then((response) => {
+	// 			if (response.ok) {
+	// 				// Handle successful email sending (e.g., show a success message)
+	// 				console.log('Email sent successfully');
+	// 			} else {
+	// 				// Handle errors (e.g., show an error message)
+	// 				console.log('Failed to send email');
+	// 			}
+	// 		})
+	// 		.catch((error) => console.error('Error:', error));
+	// }
 
 	onMount(() => {
 		underlineVisible.set(true);
 	});
 </script>
+
+<svelte:window bind:innerWidth bind:innerHeight />
 
 <section id="home">
 	<div class="presentation">
@@ -23,6 +57,17 @@
 				<img class="signature-presentation" src="/logo-3.webp" alt="logo" />
 			</div>
 		</div>
+		<div class="showreel">
+			<iframe
+				width={showreelWidth}
+				height={showreelHeight}
+				src="https://www.youtube.com/embed/BteChDYwoBs"
+				title="YouTube video player"
+				frameborder="0"
+				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+				allowfullscreen
+			></iframe>
+		</div>
 
 		<!-- <img
 			class="profile-picture"
@@ -34,7 +79,7 @@
 </section>
 
 <section id="music">
-	<div class="media-grid">
+	<div class="media-grid" bind:clientWidth={mediaGridElementWidth}>
 		{#each mediaList as media (media.id)}
 			<MediaSquareContainer {...media} />
 		{/each}
@@ -59,13 +104,27 @@
 	<h1>Contact</h1>
 	<div class="contact-section-content-row">
 		<h2 class="contact-text-row">→</h2>
+		<!-- <form on:submit|preventDefault={handleSubmit}>
+			<div>
+				<label for="email">Email:</label>
+				<input type="email" id="email" name="email" required />
+			</div>
+			<div>
+				<label for="subject">Subject:</label>
+				<input type="text" id="subject" name="subject" required />
+			</div>
+			<div>
+				<label for="message">Message:</label>
+				<textarea id="message" name="message" rows="4" required></textarea>
+			</div>
+			<button type="submit">Send</button>
+		</form> -->
 		<div class="contact-icons-row">
 			<IconsBar iconsincontactsection={true} />
 		</div>
 	</div>
 
 	<div class="contact-section-content-column">
-		<!-- <div class="contact-text-column">Contact me</div> -->
 		<h2 class="downwoard-arrow">↓</h2>
 		<div class="contact-icons-column">
 			<IconsBar iconsincontactsection={true} columnize={true} />
@@ -74,8 +133,11 @@
 </section>
 
 <style>
+	.showreel {
+		margin: 40px;
+	}
 	.bio-centering-grid {
-		display:grid;
+		display: grid;
 		grid-template-columns: 0.5fr 1fr 0.5fr;
 	}
 
@@ -155,7 +217,6 @@
 
 	/* This has to do with the top right header icons when in columns*/
 	@media (min-width: 831px) {
-
 	}
 
 	h1 {
@@ -171,6 +232,7 @@
 		justify-content: flex-start;
 		align-items: center;
 		overflow: hidden;
+		flex-direction: column;
 	}
 
 	.media-grid {
@@ -182,11 +244,11 @@
 
 	section {
 		display: block;
-		padding-bottom: 180px;
+		margin-bottom:20px
 	}
 
 	#home {
-		height: 100vh;
+		height: 100%;
 	}
 
 	@media (max-width: 900px) {
@@ -214,9 +276,9 @@
 		h2 {
 			font-size: 300%;
 		}
-		
+
 		.bio-centering-grid {
-		grid-template-columns: 0.1fr 1fr 0.1fr;
+			grid-template-columns: 0.1fr 1fr 0.1fr;
 		}
 
 		.signature-presentation {

@@ -139,10 +139,11 @@
 			visibility 0s,
 			opacity 0.2s ease;
 		padding: 10px;
+		font-size: x-large;
 	}
 
 	.media-container:hover .media-image {
-		opacity: 0.3;
+		opacity: 0.1;
 	}
 	.media-container:hover .media-info {
 		visibility: visible;

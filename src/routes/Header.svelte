@@ -262,7 +262,7 @@
 	}
 
 	/* Medium screens: Between 831px and 1040px */
-	@media (min-width: 831px) and (max-width: 1040px) {
+	@media (min-width: 910px) and (max-width: 1040px) {
 		.header-socials-column-show {
 			display: flex; /* Now show this for medium screens */
 		}
