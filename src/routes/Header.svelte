@@ -75,6 +75,9 @@
 			underlineStyle = `left: ${left - navLeft}px; width: ${width}px; ${transitionStyle}`;
 		}
 	}
+
+	let updateActiveSection = ()=>{};
+
 	// Debounced update function
 	const debouncedUpdate = debounce(() => {
 		updateActiveSection();
@@ -82,29 +85,6 @@
 
 	// We use a reactive statement to react to changes in scrollY, which is bound to window's scroll position.
 	$: scrollY, debouncedUpdate();
-
-	function updateActiveSection() {
-		let currentSection = '';
-
-		sections.forEach((section) => {
-			const element = document.getElementById(section);
-			if (!element) return;
-
-			const scrollPosition = scrollY;
-			if (
-				element.offsetTop - 100 <= scrollPosition &&
-				element.offsetTop + element.offsetHeight - 100 > scrollPosition
-			) {
-				currentSection = section;
-			}
-		});
-
-		if (clickedLink !== currentSection) {
-			clickedLink = currentSection;
-			const activeLink = document.querySelector(`a[href="/#${clickedLink}"]`);
-			if (activeLink) updateUnderlinePosition(activeLink);
-		}
-	}
 
 	onMount(async () => {
 		if (
@@ -126,6 +106,29 @@
 
 		await tick();
 		applyTransition = true;
+
+		updateActiveSection = () => {
+			let currentSection = '';
+
+			sections.forEach((section) => {
+				const element = document.getElementById(section);
+				if (!element) return;
+
+				const scrollPosition = scrollY;
+				if (
+					element.offsetTop - 100 <= scrollPosition &&
+					element.offsetTop + element.offsetHeight - 100 > scrollPosition
+				) {
+					currentSection = section;
+				}
+			});
+
+			if (clickedLink !== currentSection) {
+				clickedLink = currentSection;
+				const activeLink = document.querySelector(`a[href="/#${clickedLink}"]`);
+				if (activeLink) updateUnderlinePosition(activeLink);
+			}
+		}
 	});
 </script>
 

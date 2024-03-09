@@ -3,15 +3,13 @@
 	import { underlineVisible } from '$lib/underlineVisibility';
 	import { onMount } from 'svelte';
 	export let id = '';
-	export let images = [];
+	export let imageCarre = '';
 	export let title = '';
 	export let author = '';
 	export let work = '';
 	export let youtube = '';
 	export let soundcloud = '';
 	export let soundcloudAPINumber = '';
-	export let horizontalOffset = '0%';
-	export let verticalOffset = '0%';
 
 	let imageElement;
 
@@ -59,10 +57,10 @@
 		<img
 			bind:this={imageElement}
 			{id}
-			src={images[0]}
+			src={imageCarre}
 			alt={title}
 			class="media-image"
-			style="--horizontal-offset: {horizontalOffset}; --vertical-offset: {verticalOffset}; opacity: {imageComplete
+			style="opacity: {imageComplete
 				? 1
 				: 0}; transition: opacity 0.3s ease;"
 			on:load={handleImageLoading}
@@ -113,11 +111,9 @@
 	.media-image {
 		position: absolute;
 		object-fit: cover;
-		height: calc(100% + var(--vertical-offset));
-		width: calc(100% + var(--horizontal-offset));
+		height: 100%;
+		width: 100%;
 		transition: opacity 0.1s ease;
-		left: var(--horizontal-offset, 0%);
-		top: var(--vertical-offset, 0%);
 		overflow: visible;
 	}
 	.media-info {

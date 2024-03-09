@@ -51,7 +51,8 @@
 </section>
 
 <section id="music">
-	<div class="showreel">
+	<div class="youtube-showreel">
+
 		<iframe
 			width={showreelWidth}
 			height={showreelHeight}
@@ -175,7 +176,7 @@
 		grid-template-columns: 1fr;
 	}
 
-	.showreel {
+	.youtube-showreel {
 		justify-self: center;
 		margin-bottom: 20px;
 	}

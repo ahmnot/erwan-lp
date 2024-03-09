@@ -10,6 +10,7 @@
 	let mediaData = mediaList.find((media) => media.id === $page.params.mediaId);
 	let lightBoxVisible = false;
 	let selectedImage = '';
+	
 	onMount(() => {
 		underlineVisible.set(false);
 	});

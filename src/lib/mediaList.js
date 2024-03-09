@@ -1,11 +1,13 @@
 // @ts-nocheck
 // src/lib/mediaList.js
-let imagePath = '/affiches-court-metrages/';
+let detailsImagePath = '/affiches-court-metrages/';
+let squareImagePath = '/affiches-court-metrages/square-version/';
 
 export const mediaList = [
     {
         id: 'fantasy',
-        images: [imagePath + 'fantasy.webp'],
+        imageCarre: squareImagePath + 'fantasy-carre.jpg',
+        images: [detailsImagePath + 'fantasy.webp'],
         title: 'Fantasy',
         author: 'Erwan Le Pape',
         work: 'Original music',
@@ -15,7 +17,8 @@ export const mediaList = [
     },
     {
         id: 'sahara',
-        images: [imagePath + 'sahara.webp'],
+        imageCarre: squareImagePath + 'sahara-carre.webp',
+        images: [detailsImagePath + 'sahara.png'],
         title: 'SAHARA',
         author: 'A movie by MOPA',
         work: 'Rescoring',
@@ -25,7 +28,8 @@ export const mediaList = [
     },
     {
         id: 'nature-morte',
-        images: [imagePath + 'nature-morte.webp'],
+        imageCarre: squareImagePath + 'nature-morte-carre.jpg',
+        images: [detailsImagePath + 'nature-morte.webp'],
         title: 'nature morte',
         author: 'A movie by Alysée Lavallée-Imhof',
         work: 'UQAM contest',
@@ -35,29 +39,30 @@ export const mediaList = [
     },
     {
         id: 'time-trap',
-        images: [imagePath + 'time-trap.webp'],
+        imageCarre: squareImagePath + 'time-trap-carre.jpg',
+        images: [detailsImagePath + 'time-trap.webp'],
         title: 'Time Trap',
         author: 'A movie by Michael Shanks',
         work: 'IFMC contest',
         youtube: 'https://www.youtube.com/embed/5Z-sKX2BtoA',
         soundcloud: 'https://soundcloud.com/erwanlepape/ifmc-time-trap',
-        soundcloudAPINumber: 'tracks/1671134031',
-        verticalOffset: '-8%'
+        soundcloudAPINumber: 'tracks/1671134031'
     },
     {
         id: 'resistencia',
-        images: [imagePath + 'resistencia.webp'],
+        imageCarre: squareImagePath + 'resistencia-carre.jpg',
+        images: [detailsImagePath + 'resistencia.webp'],
         title: 'Resistencia',
         author: 'A movie by Flavia Carolliny Sena and Bruna Soares Pereira',
         work: 'Original scoring',
         youtube: 'https://www.youtube.com/embed/0KWvxGljza8',
         soundcloud: 'https://soundcloud.com/erwanlepape/sets/resistencia',
-        soundcloudAPINumber: 'playlists/1762686030',
-        verticalOffset: '6.5%'
+        soundcloudAPINumber: 'playlists/1762686030'
     },
     {
         id: 'le-bouquet',
-        images: [imagePath + 'le-bouquet.webp'],
+        imageCarre: squareImagePath + 'le-bouquet-carre.webp',
+        images: [detailsImagePath + 'le-bouquet.png'],
         title: 'Le bouquet',
         author: 'A movie by Anaïs Dusautois',
         work: 'Rescoring',
@@ -67,29 +72,30 @@ export const mediaList = [
     },
     {
         id: 'erinyes',
-        images: [imagePath + 'erinyes.webp'],
+        imageCarre: squareImagePath + 'erinyes-carre.jpg',
+        images: [detailsImagePath + 'erinyes.webp'],
         title: 'ERINYES',
         author: 'A videogame by Gamagora',
         work: 'Original Scoring, Sound Design',
         youtube: '',
         soundcloud: '',
-        soundcloudAPINumber: '',
-        horizontalOffset: '-5%'
+        soundcloudAPINumber: ''
     },
     {
         id: 'glory-to-dallas',
-        images: [imagePath + 'glory-to-dallas.webp'],
+        imageCarre: squareImagePath + 'glory-to-dallas-carre.jpg',
+        images: [detailsImagePath + 'glory-to-dallas.webp'],
         title: 'Glory To Dallas',
         author: 'A videogame by Brassart',
         work: 'Original Scoring, Sound Design',
         youtube: '',
         soundcloud: '',
-        soundcloudAPINumber: '',
-        verticalOffset: '-18%'
+        soundcloudAPINumber: ''
     },
     {
         id: 'bistro-belzebuth',
-        images: [imagePath + 'bistro-belzebuth.webp'],
+        imageCarre: squareImagePath + 'bistro-belzebuth-carre.webp',
+        images: [detailsImagePath + 'bistro-belzebuth.webp'],
         title: 'Toy Tinkers',
         author: 'An animation by Le Vieux Montréal',
         work: 'Original Scoring',
