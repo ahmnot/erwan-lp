@@ -93,7 +93,7 @@
 </ul>
 
 <style>
-	.email-part, .phone-part {
+	.email-part {
 		display: inline;
 	}
 
@@ -164,36 +164,11 @@
 		cursor: pointer;
 	}
 
-	li.phone-container {
-		position: relative;
-		display: inline-flex;
-		align-items: center;
-		justify-content: center;
-	}
-
 	li.email-container {
 		position: relative;
 		display: flex;
 		align-items: center;
 		justify-content: center;
-	}
-	.phone-container {
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		position: relative;
-	}
-
-	.phone-box {
-		position: absolute;
-		top: 50%;
-		transform: translate(-4%, -50%); /* Adjust vertically to truly center it relative to the icon */
-		font-size: larger;
-		white-space: nowrap;
-		opacity: 1;
-		color: white;
-		right: 100%; /* Position to the left of the icon when in column layout */
-		left: auto; /* Reset any left positioning to avoid conflict */
 	}
 
 	.icon-bar-container {
@@ -227,9 +202,6 @@
 
 	@media (max-width: 340px) {
 		.email-box .email-part:first-child {
-			display: block;
-		}
-		.phone-box .phone-part:first-child {
 			display: block;
 		}
 	}
