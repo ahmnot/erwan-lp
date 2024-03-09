@@ -131,7 +131,7 @@
 		justify-content: center;
 		align-items: center;
 		text-align: center;
-		background: rgba(0, 0, 0, 0.9);
+		background: rgba(0, 0, 0, 0.95);
 		color: white;
 		visibility: hidden;
 		opacity: 0;

@@ -25,32 +25,7 @@
 	} else {
 		soundcloudWidth = mediaGridElementWidth / 2;
 	}
-	$: soundcloudHeight = soundcloudWidth * 0.5625 *1.5;
-
-	// function handleSubmit(event) {
-	// 	const formData = new FormData(event.target);
-	// 	const formProps = Object.fromEntries(formData);
-	// 	// Now formProps contains the form data
-
-	// 	// Example: send this data to your backend or an email API
-	// 	fetch('/api/send-email', {
-	// 		method: 'POST',
-	// 		headers: {
-	// 			'Content-Type': 'application/json'
-	// 		},
-	// 		body: JSON.stringify(formProps)
-	// 	})
-	// 		.then((response) => {
-	// 			if (response.ok) {
-	// 				// Handle successful email sending (e.g., show a success message)
-	// 				console.log('Email sent successfully');
-	// 			} else {
-	// 				// Handle errors (e.g., show an error message)
-	// 				console.log('Failed to send email');
-	// 			}
-	// 		})
-	// 		.catch((error) => console.error('Error:', error));
-	// }
+	$: soundcloudHeight = soundcloudWidth * 0.5625 * 1.5;
 
 	onMount(() => {
 		underlineVisible.set(true);
@@ -71,13 +46,6 @@
 				<img class="signature-presentation" src="/logo-3.webp" alt="logo" />
 			</div>
 		</div>
-
-		<!-- <img
-			class="profile-picture"
-			src="/photo-profil-7.webp"
-			alt="Erwan's Presentation"
-			style="color: transparent;"
-		/> -->
 	</div>
 </section>
 
@@ -112,14 +80,18 @@
 <section id="bio">
 	<h1>Biography</h1>
 	<div class="bio-centering-grid">
-		<div></div>
-		<p>
+		<img
+			class="profile-picture"
+			src="/photo-profil-7.webp"
+			alt="Erwan's Presentation"
+			style="color: transparent;"
+		/>
+		<p class="bio-text">
 			Hi, my name is Erwan, I'm a young composer based in Lyon, France. I studied music and
 			composition at the conservatory and university and I'm currently doing a Master degree in
 			music scoring for films, television and video games. My main influences span from neoclassical
 			to contemporary music with a special preference for orchestral music.
 		</p>
-		<div></div>
 	</div>
 </section>
 
@@ -127,21 +99,6 @@
 	<h1>Contact</h1>
 	<div class="contact-section-content-row">
 		<h2 class="contact-text-row">→</h2>
-		<!-- <form on:submit|preventDefault={handleSubmit}>
-			<div>
-				<label for="email">Email:</label>
-				<input type="email" id="email" name="email" required />
-			</div>
-			<div>
-				<label for="subject">Subject:</label>
-				<input type="text" id="subject" name="subject" required />
-			</div>
-			<div>
-				<label for="message">Message:</label>
-				<textarea id="message" name="message" rows="4" required></textarea>
-			</div>
-			<button type="submit">Send</button>
-		</form> -->
 		<div class="contact-icons-row">
 			<IconsBar iconsincontactsection={true} />
 		</div>
@@ -156,6 +113,24 @@
 </section>
 
 <style>
+	.bio-centering-grid {
+		display: grid;
+		grid-template-rows: auto auto;
+		grid-template-columns: 0.5fr 1fr 0.5fr;
+	}
+
+	.profile-picture {
+		grid-row: 1;
+		grid-column: 2;
+		width:75%;
+		justify-self: center;
+		align-self: center;
+	}
+
+	.bio-text {
+		grid-row: 2;
+		grid-column: 2;
+	}
 
 	.soundcloudPlayer {
 		margin-top: 20px;
@@ -170,11 +145,6 @@
 	.showreel {
 		justify-self: center;
 		margin-bottom: 20px;
-	}
-
-	.bio-centering-grid {
-		display: grid;
-		grid-template-columns: 0.5fr 1fr 0.5fr;
 	}
 
 	.downwoard-arrow {
@@ -247,7 +217,7 @@
 	}
 
 	p {
-		font-size: 140%;
+		font-size: x-large;
 		text-align: center;
 	}
 
