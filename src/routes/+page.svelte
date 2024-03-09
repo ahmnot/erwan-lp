@@ -52,7 +52,6 @@
 
 <section id="music">
 	<div class="youtube-showreel">
-
 		<iframe
 			width={showreelWidth}
 			height={showreelHeight}
@@ -103,10 +102,27 @@
 	</div>
 	<div class="bio-centering-grid">
 		<p class="bio-text">
-			Hi, my name is Erwan, I'm a young composer based in Lyon, France. I studied music and
-			composition at the conservatory and university and I'm currently doing a Master degree in
-			music scoring for films, television and video games. My main influences span from neoclassical
-			to contemporary music with a special preference for orchestral music.
+			Hi, I'm Erwan, a young composer based in Lyon, France.<br /><br />
+			I studied music at the conservatory and college, and I'm currently pursuing a master's degree in
+			music scoring, specializing in the creation of nuanced soundtracks for films, television, video
+			games, and various multimedia platforms.<br /><br />
+			A pivotal chapter of my musical education was the three-year mentorship as a private student of
+			Yves Krier, a contemporary composer and conductor. I acquired most of my skills in composition
+			and orchestration from him.<br /><br />
+			While the piano remains my primary instrument, I can also play the guitar (both electric and acoustic),
+			bass guitar, violin, and the ngoni. My musical influences range from neoclassical to contemporary
+			music, with a particular affinity for orchestral arrangements. However, I'm not one to shy away
+			from experimentation, often blending traditional orchestral elements with electronic sounds to
+			create unique and dynamic compositions.
+		</p>
+		<p class="bio-skills">
+			Skills <br /><br />
+			
+			Piano, Guitar, Bass, Violin, Synthesizer, Ngoni Composition, Theory, Harmony,
+			Arrangement, Orchestration, Sound-Design. <br />
+			I use DAWs such as Logic Pro, Sibelius, Fl Studio. <br />
+			I work from my home studio. <br />
+			Easily reachable. <br />
 		</p>
 	</div>
 </section>
@@ -129,11 +145,16 @@
 </section>
 
 <style>
-	.downwoard-arrow-home{
+	.bio-skills {
+		grid-row: 2;
+		grid-column: 2;
+	}
+
+	.downwoard-arrow-home {
 		position: absolute;
-		left:50%;
+		left: 50%;
 		transform: translate(-50%);
-		top:75%;
+		top: 75%;
 		justify-self: center;
 		align-self: center;
 		color: var(--color-theme-1);
@@ -144,19 +165,21 @@
 		display: grid;
 		grid-template-rows: 1fr;
 		grid-template-columns: 1fr 1fr 1fr;
-		gap:20px;
-		padding-right:40px;
-		padding-left:40px;
+		gap: 20px;
+		padding-right: 40px;
+		padding-left: 40px;
 	}
 
 	.bio-centering-grid {
 		display: grid;
-		grid-template-rows: 1fr;
+		grid-template-rows: 1fr 1fr;
 		grid-template-columns: 0.5fr 1fr 0.5fr;
 	}
 
-	.musee-picture, .profile-picture, .ethnic-picture{
-		width:100%;
+	.musee-picture,
+	.profile-picture,
+	.ethnic-picture {
+		width: 100%;
 		justify-self: center;
 		align-self: center;
 	}
