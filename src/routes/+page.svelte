@@ -116,10 +116,10 @@
 			create unique and dynamic compositions.
 		</p>
 		<p class="bio-skills">
-			Skills <br /><br />
+			<b>Skills</b> <br /><br />
 			
-			Piano, Guitar, Bass, Violin, Synthesizer, Ngoni Composition, Theory, Harmony,
-			Arrangement, Orchestration, Sound-Design. <br />
+			Piano, Guitar, Bass, Violin, Synthesizer, Ngoni<br /> 
+			Composition, Theory, Harmony, Arrangement, Orchestration, Sound-Design. <br />
 			I use DAWs such as Logic Pro, Sibelius, Fl Studio. <br />
 			I work from my home studio. <br />
 			Easily reachable. <br />
