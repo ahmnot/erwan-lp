@@ -131,13 +131,13 @@
 		justify-content: center;
 		align-items: center;
 		text-align: center;
-		background: rgba(0, 0, 0, 0.5);
+		background: rgba(0, 0, 0, 0.9);
 		color: white;
 		visibility: hidden;
 		opacity: 0;
 		transition:
 			visibility 0s,
-			opacity 0.2s ease;
+			opacity 0.15s ease;
 		padding: 10px;
 		font-size: x-large;
 	}

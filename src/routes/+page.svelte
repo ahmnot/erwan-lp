@@ -10,8 +10,22 @@
 	$: innerHeight = 0;
 
 	let mediaGridElementWidth;
-	$: showreelWidth = mediaGridElementWidth/1.5;
+	let showreelWidth;
+	let showreelHeight;
+	let soundcloudWidth;
+	let soundcloudHeight;
+	$: if (innerWidth < 900) {
+		showreelWidth = mediaGridElementWidth / 1.25;
+	} else {
+		showreelWidth = mediaGridElementWidth / 2;
+	}
 	$: showreelHeight = showreelWidth * 0.5625;
+	$: if (innerWidth < 900) {
+		soundcloudWidth = mediaGridElementWidth / 1.25;
+	} else {
+		soundcloudWidth = mediaGridElementWidth / 2;
+	}
+	$: soundcloudHeight = soundcloudWidth * 0.5625 *1.5;
 
 	// function handleSubmit(event) {
 	// 	const formData = new FormData(event.target);
@@ -57,17 +71,6 @@
 				<img class="signature-presentation" src="/logo-3.webp" alt="logo" />
 			</div>
 		</div>
-		<div class="showreel">
-			<iframe
-				width={showreelWidth}
-				height={showreelHeight}
-				src="https://www.youtube.com/embed/BteChDYwoBs"
-				title="YouTube video player"
-				frameborder="0"
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-				allowfullscreen
-			></iframe>
-		</div>
 
 		<!-- <img
 			class="profile-picture"
@@ -79,10 +82,30 @@
 </section>
 
 <section id="music">
+	<div class="showreel">
+		<iframe
+			width={showreelWidth}
+			height={showreelHeight}
+			src="https://www.youtube.com/embed/BteChDYwoBs"
+			title="Erwan YouTube Showreel"
+			frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+			allowfullscreen
+		></iframe>
+	</div>
 	<div class="media-grid" bind:clientWidth={mediaGridElementWidth}>
 		{#each mediaList as media (media.id)}
 			<MediaSquareContainer {...media} />
 		{/each}
+	</div>
+	<div class="soundcloudPlayer">
+		<iframe
+			width={soundcloudWidth}
+			height={soundcloudHeight}
+			frameborder="no"
+			title="Erwan Soundcloud Showreel"
+			src="https://w.soundcloud.com/player/?visual=false&amp;url=https%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F1728038148&amp;show_artwork=true&amp;maxheight=1000&amp;maxwidth=1200&amp;auto_play=false&amp;buying=true&amp;liking=true&amp;download=true&amp;sharing=true&amp;show_comments=true&amp;show_playcount=true&amp;show_user=true&amp;color"
+		></iframe>
 	</div>
 </section>
 
@@ -133,9 +156,22 @@
 </section>
 
 <style>
-	.showreel {
-		margin-top: 40px;
+
+	.soundcloudPlayer {
+		margin-top: 20px;
+		justify-self: center;
 	}
+
+	#music {
+		display: grid;
+		grid-template-columns: 1fr;
+	}
+
+	.showreel {
+		justify-self: center;
+		margin-bottom: 20px;
+	}
+
 	.bio-centering-grid {
 		display: grid;
 		grid-template-columns: 0.5fr 1fr 0.5fr;
@@ -236,15 +272,15 @@
 	}
 
 	.media-grid {
-		margin-left: 40px;
-		margin-right: 40px;
+		/* margin-left: 40px;
+		margin-right: 40px; */
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr 1fr;
 	}
 
 	section {
 		display: block;
-		margin-bottom:40px;
+		margin-bottom: 40px;
 	}
 
 	#home {
