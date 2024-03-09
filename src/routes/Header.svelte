@@ -7,10 +7,10 @@
 
 	import IconsBar from './IconsBar.svelte';
 
+	let scrollY;
 	let clickedLink = 'home';
 	let applyTransition = false;
 	let underlineStyle = 'left: 0; width: 0; transition: none;';
-	let isResizing = false;
 
 	let navElement; // Caching the nav element
 	let logoImageElement;
@@ -27,18 +27,6 @@
 		isHamburgerExpanded = !isHamburgerExpanded;
 	}
 
-	// Function to update the underline position
-	function continuousUpdateUnderline() {
-		if (!isResizing) return; // Stop the loop if resizing has ended
-
-		const activeLink = document.querySelector(`a[href="/#${clickedLink}"]`);
-		if (activeLink) {
-			updateUnderlinePosition(activeLink, false); // Use your existing function to update the position
-		}
-
-		requestAnimationFrame(continuousUpdateUnderline); // Continue the loop
-	}
-
 	// Debounce function limits the rate of execution of updateActiveSection to enhance performance and ensure smooth UI updates on scroll.
 	// It waits for "wait" milliseconds of inactivity before executing, reducing excessive processing and improving responsiveness.
 	function debounce(func, wait) {
@@ -51,19 +39,7 @@
 		};
 	}
 
-	// Use the debounce function to detect the end of resizing
-	const onResizeEnd = debounce(() => {
-		isResizing = false; // Reset the flag
-	}, 100);
-
-	const resizeBegins = () => {
-		if (!isResizing) {
-			isResizing = true; // Mark as resizing
-			requestAnimationFrame(continuousUpdateUnderline); // Start the loop
-		}
-	};
-
-	async function handleAnchorClick(event, linkId) {
+	async function handleAnchorClick(event) {
 		underlineVisible.set(true);
 		event.preventDefault();
 		const link = event.currentTarget;
@@ -99,10 +75,38 @@
 			underlineStyle = `left: ${left - navLeft}px; width: ${width}px; ${transitionStyle}`;
 		}
 	}
+	// Debounced update function
+	const debouncedUpdate = debounce(() => {
+		updateActiveSection();
+	}, 20); // Adjust delay as needed
+
+	// We use a reactive statement to react to changes in scrollY, which is bound to window's scroll position.
+	$: scrollY, debouncedUpdate();
+
+	function updateActiveSection() {
+		let currentSection = '';
+
+		sections.forEach((section) => {
+			const element = document.getElementById(section);
+			if (!element) return;
+
+			const scrollPosition = scrollY;
+			if (
+				element.offsetTop - 100 <= scrollPosition &&
+				element.offsetTop + element.offsetHeight - 100 > scrollPosition
+			) {
+				currentSection = section;
+			}
+		});
+
+		if (clickedLink !== currentSection) {
+			clickedLink = currentSection;
+			const activeLink = document.querySelector(`a[href="/#${clickedLink}"]`);
+			if (activeLink) updateUnderlinePosition(activeLink);
+		}
+	}
 
 	onMount(async () => {
-		navElement = document.querySelector('nav'); // Cache nav element once
-
 		if (
 			logoImageElement &&
 			logoImageElement.complete &&
@@ -113,58 +117,22 @@
 		}
 		underlineVisible.set(true);
 		const initialLink = document.querySelector('a[href="/#home"]');
+
+		navElement = document.querySelector('nav');
+
 		if (initialLink) {
 			updateUnderlinePosition(initialLink);
 		}
 
-		// Use next tick to ensure the DOM updates are applied
 		await tick();
-		// After setting the initial position, enable transitions for future updates
 		applyTransition = true;
-
-		function updateActiveSection() {
-			let currentSection = '';
-
-			sections.forEach((section) => {
-				const element = document.getElementById(section);
-				if (!element) return;
-
-				const scrollPosition = window.scrollY;
-				if (
-					element.offsetTop - 110 <= scrollPosition &&
-					element.offsetTop + element.offsetHeight - 110 > scrollPosition
-				) {
-					currentSection = section;
-				}
-			});
-
-			if (clickedLink !== currentSection) {
-				clickedLink = currentSection;
-				const activeLink = document.querySelector(`a[href="/#${clickedLink}"]`);
-				if (activeLink) updateUnderlinePosition(activeLink); // Update underline for scrolled section
-			}
-		}
-
-		// Debounced update function
-		const debouncedUpdate = debounce(updateActiveSection, 20); // Adjust delay as needed
-
-		window.addEventListener('scroll', debouncedUpdate);
-
-		// Enhanced resize event listener using requestAnimationFrame
-		window.addEventListener('resize', resizeBegins);
-
-		window.addEventListener('resize', onResizeEnd);
-
-		return () => {
-			window.removeEventListener('scroll', debouncedUpdate);
-			window.removeEventListener('resize', resizeBegins);
-			window.removeEventListener('resize', onResizeEnd);
-		};
 	});
 </script>
 
+<svelte:window bind:scrollY />
+
 <header class="header-large">
-	<a id="logo-header-id" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>
+	<a id="logo-header-id" href="/#home" on:click={(e) => handleAnchorClick(e)}>
 		<!-- !logoImageComplete -->
 		{#if !logoImageComplete}
 			<div transition:fade={{ duration: 150 }} class="logo-placeholder"></div>
@@ -181,16 +149,16 @@
 	<nav class="nav-header-large">
 		<ul class="ul-header-large">
 			<li>
-				<a id="homeId" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>Home</a>
+				<a id="homeId" href="/#home" on:click={(e) => handleAnchorClick(e)}>Home</a>
 			</li>
 			<li>
-				<a href="/#music" on:click={(e) => handleAnchorClick(e, 'music')}>Music</a>
+				<a href="/#music" on:click={(e) => handleAnchorClick(e)}>Music</a>
 			</li>
 			<li>
-				<a href="/#bio" on:click={(e) => handleAnchorClick(e, 'bio')}>Bio</a>
+				<a href="/#bio" on:click={(e) => handleAnchorClick(e)}>Bio</a>
 			</li>
 			<li>
-				<a href="/#contact" on:click={(e) => handleAnchorClick(e, 'contact')}>Contact</a>
+				<a href="/#contact" on:click={(e) => handleAnchorClick(e)}>Contact</a>
 			</li>
 		</ul>
 		<div
@@ -241,7 +209,6 @@
 </header>
 
 <style>
-
 	.logo-placeholder {
 		display: flex;
 		position: absolute;
@@ -300,7 +267,7 @@
 			top: 50px;
 			left: 0px;
 			list-style: none;
-			background-color: rgb(0,0,0,0.9);
+			background-color: rgb(0, 0, 0, 0.9);
 		}
 		.header-small {
 			display: flex;

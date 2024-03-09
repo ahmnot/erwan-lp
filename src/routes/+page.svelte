@@ -177,7 +177,7 @@
 
 	.showreel {
 		justify-self: center;
-		margin-bottom: 40px;
+		margin-bottom: 20px;
 	}
 
 	.downwoard-arrow {
