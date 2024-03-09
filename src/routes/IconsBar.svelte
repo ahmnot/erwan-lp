@@ -43,9 +43,9 @@
 	<li class="email-container">
 		<button class="icon-button-or-link" on:click={mailClickHandler}>
 			{#if iconsincontactsection}
-				<img class="icon-large" src="/icons/mail.webp" alt="Mail Icon" />
+				<img class="icon-large" src="/icons/mail.png" alt="Mail Icon" />
 			{:else}
-				<img class="icon-normal" src="/icons/mail.webp" alt="Mail Icon" />
+				<img class="icon-normal" src="/icons/mail.png" alt="Mail Icon" />
 			{/if}
 		</button>
 		{#if isMailShown || iconsincontactsection}
@@ -57,18 +57,18 @@
 	<li>
 		<a class="icon-button-or-link" href="https://soundcloud.com/erwanlepape" target="_blank">
 			{#if iconsincontactsection}
-				<img class="icon-large" src="/icons/soundcloud.webp" alt="Soundcloud Link" />
+				<img class="icon-large" src="/icons/soundcloud.png" alt="Soundcloud Link" />
 			{:else}
-				<img class="icon-normal" src="/icons/soundcloud.webp" alt="Soundcloud Link" />
+				<img class="icon-normal" src="/icons/soundcloud.png" alt="Soundcloud Link" />
 			{/if}
 		</a>
 	</li>
 	<li>
 		<a class="icon-button-or-link" href="https://www.instagram.com/erwanklp/" target="_blank">
 			{#if iconsincontactsection}
-				<img class="icon-large" src="/icons/instagram.webp" alt="Instagram Link" />
+				<img class="icon-large" src="/icons/instagram.png" alt="Instagram Link" />
 			{:else}
-				<img class="icon-normal" src="/icons/instagram.webp" alt="Instagram Link" />
+				<img class="icon-normal" src="/icons/instagram.png" alt="Instagram Link" />
 			{/if}
 		</a>
 	</li>
