@@ -200,7 +200,7 @@
 		display: flex;
 		position: fixed;
 		right: 0px;
-		opacity: 0.7;
+		opacity: 1;
 		margin: 0;
 		justify-content: center;
 		list-style: none;

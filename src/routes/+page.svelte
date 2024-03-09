@@ -47,6 +47,7 @@
 			</div>
 		</div>
 	</div>
+	<div class="downwoard-arrow-home">↓</div>
 </section>
 
 <section id="music">
@@ -79,13 +80,27 @@
 
 <section id="bio">
 	<h1>Biography</h1>
-	<div class="bio-centering-grid">
+	<div class="bio-image-grid">
+		<img
+			class="musee-picture"
+			src="/erwan-musee-carre.jpg"
+			alt="Erwan Talking About His"
+			style="color: transparent;"
+		/>
+		<img
+			class="ethnic-picture"
+			src="/erwan-ethnic-carre.png"
+			alt="Erwan With A Nice Instrument"
+			style="color: transparent;"
+		/>
 		<img
 			class="profile-picture"
-			src="/photo-profil-7.webp"
+			src="/erwan-piano-carre.png"
 			alt="Erwan's Presentation"
 			style="color: transparent;"
 		/>
+	</div>
+	<div class="bio-centering-grid">
 		<p class="bio-text">
 			Hi, my name is Erwan, I'm a young composer based in Lyon, France. I studied music and
 			composition at the conservatory and university and I'm currently doing a Master degree in
@@ -113,22 +128,40 @@
 </section>
 
 <style>
+	.downwoard-arrow-home{
+		position: absolute;
+		left:50%;
+		transform: translate(-50%);
+		top:75%;
+		justify-self: center;
+		align-self: center;
+		color: var(--color-theme-1);
+		font-size: 600%;
+	}
+
+	.bio-image-grid {
+		display: grid;
+		grid-template-rows: 1fr;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap:20px;
+		padding-right:40px;
+		padding-left:40px;
+	}
+
 	.bio-centering-grid {
 		display: grid;
-		grid-template-rows: auto auto;
+		grid-template-rows: 1fr;
 		grid-template-columns: 0.5fr 1fr 0.5fr;
 	}
 
-	.profile-picture {
-		grid-row: 1;
-		grid-column: 2;
-		width:75%;
+	.musee-picture, .profile-picture, .ethnic-picture{
+		width:100%;
 		justify-self: center;
 		align-self: center;
 	}
 
 	.bio-text {
-		grid-row: 2;
+		grid-row: 1;
 		grid-column: 2;
 	}
 
@@ -250,11 +283,10 @@
 
 	section {
 		display: block;
-		margin-bottom: 40px;
 	}
 
 	#home {
-		height: 100%;
+		height: 100vh;
 	}
 
 	@media (max-width: 900px) {
@@ -291,7 +323,6 @@
 			grid-column: 2;
 			grid-row: 2;
 			width: 100%; /* Adjust width as necessary, or use max-width */
-			opacity: 0.7;
 		}
 	}
 
