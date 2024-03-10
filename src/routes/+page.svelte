@@ -197,6 +197,7 @@
 	}
 
 	#contact {
+		border-top: 1px solid white;
 		padding-bottom: 100px;
 	}
 
