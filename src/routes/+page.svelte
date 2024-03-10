@@ -85,22 +85,19 @@
 			class="musee-picture"
 			src="/erwan-musee-carre.jpg"
 			alt="Erwan Talking About His"
-			style="color: transparent;"
 		/>
 		<img
 			class="ethnic-picture"
 			src="/erwan-ethnic-carre.png"
 			alt="Erwan With A Nice Instrument"
-			style="color: transparent;"
 		/>
 		<img
 			class="profile-picture"
 			src="/erwan-piano-carre.png"
 			alt="Erwan's Presentation"
-			style="color: transparent;"
 		/>
 	</div>
-	<div class="bio-centering-grid">
+	<div class="bio-text-grid">
 		<p class="bio-text">
 			Hi, I'm Erwan, a young composer based in Lyon, France.<br /><br />
 			I studied music at the conservatory and college, and I'm currently pursuing a master's degree in
@@ -125,6 +122,40 @@
 			Easily reachable. <br />
 		</p>
 	</div>
+	<div class="logos-grid-wrapper">
+		<div></div>
+		<div class="logos-grid">
+			<img
+				src="/logos-ecoles/brassart.jpg"
+				alt="Brassart logo"
+			/>
+			<img
+				src="/logos-ecoles/esad-amiens.png"
+				alt="Brassart logo"
+			/>
+			<img
+				src="/logos-ecoles/gamagora.png"
+				alt="Brassart logo"
+			/>
+			<img
+				src="/logos-ecoles/maaav.png"
+				alt="Brassart logo"
+			/>
+			<img
+				src="/logos-ecoles/mba-lyon.png"
+				alt="Brassart logo"
+			/>
+			<img
+				src="/logos-ecoles/univlyon2.png"
+				alt="Brassart logo"
+			/>
+			<img
+				src="/logos-ecoles/vieux-montreal.png"
+				alt="Brassart logo"
+			/>
+		</div>
+		<div></div>
+	</div>
 </section>
 
 <section id="contact">
@@ -145,6 +176,30 @@
 </section>
 
 <style>
+	.logos-grid-wrapper {
+		display: grid;
+		grid-template-rows: auto;
+		grid-template-columns:  0.25fr 1fr 0.25fr;
+		padding-right: 40px;
+		padding-left: 40px;
+	}
+
+	.logos-grid img {
+		width: 100%;
+		height: 100%;
+	}
+
+	.logos-grid {
+		display: grid;
+		grid-template-rows: 1fr 0;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+		gap: 20px;
+	}
+
+	#contact {
+		padding-bottom: 100px;
+	}
+
 	.bio-skills {
 		grid-row: 2;
 		grid-column: 2;
@@ -170,10 +225,12 @@
 		padding-left: 40px;
 	}
 
-	.bio-centering-grid {
+	.bio-text-grid {
 		display: grid;
-		grid-template-rows: 1fr 1fr;
-		grid-template-columns: 0.5fr 1fr 0.5fr;
+		grid-template-rows: 1fr auto;
+		height: 100%;
+		grid-template-columns: 0.25fr 1fr 0.25fr;
+		gap: 20px;
 	}
 
 	.musee-picture,
@@ -325,6 +382,10 @@
 			margin-right: 0;
 			grid-template-columns: 1fr 1fr;
 		}
+		.logos-grid {
+			grid-template-rows: 1fr 1fr 0;
+			grid-template-columns: 1fr 1fr 1fr;
+		}
 	}
 
 	@media (max-width: 680px) {
@@ -339,7 +400,7 @@
 			font-size: 300%;
 		}
 
-		.bio-centering-grid {
+		.bio-text-grid {
 			grid-template-columns: 0.1fr 1fr 0.1fr;
 		}
 
