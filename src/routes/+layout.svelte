@@ -47,6 +47,6 @@
 		padding: 0px 0;
 		margin-top: 100px;
 		text-align: center;
-		font-size: small;
+		font-size: medium;
 	}
 </style>

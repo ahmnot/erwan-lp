@@ -2,66 +2,137 @@
 	// @ts-nocheck
 	import MediaSquareContainer from './MediaSquareContainer.svelte';
 	import { mediaList } from '$lib/mediaList';
-	import { onMount } from 'svelte';
+	import { onMount, onDestroy } from 'svelte';
 	import { underlineVisible } from '$lib/underlineVisibility';
 	import IconsBar from './IconsBar.svelte';
+
+	$: innerWidth = 0;
+	$: innerHeight = 0;
+
+	let mediaGridElementWidth;
+	let showreelWidth;
+	let showreelHeight;
+	let soundcloudWidth;
+	let soundcloudHeight;
+	$: if (innerWidth < 900) {
+		showreelWidth = mediaGridElementWidth / 1.25;
+	} else {
+		showreelWidth = mediaGridElementWidth / 2;
+	}
+	$: showreelHeight = showreelWidth * 0.5625;
+	$: if (innerWidth < 900) {
+		soundcloudWidth = mediaGridElementWidth / 1.25;
+	} else {
+		soundcloudWidth = mediaGridElementWidth / 2;
+	}
+	$: soundcloudHeight = soundcloudWidth * 0.5625 * 1.5;
 
 	onMount(() => {
 		underlineVisible.set(true);
 	});
 </script>
 
+<svelte:window bind:innerWidth bind:innerHeight />
+
 <section id="home">
 	<div class="presentation">
 		<div class="titres">
-			<h1 id="main-title">Erwan Le Pape</h1>
+			<h1 id="main-title">ERWAN LE PAPE</h1>
 			<div class="signature-grid">
-				<h2>Composer <br>Arranger <br> Pianist</h2>
-				<!-- <h3 class="bottom-text">For Film, TV, Performing Arts, Video Games.</h3>
-				<div class="empty-rectangle-top-right"></div>
-				<div class="empty-rectangle-bottom-left"></div> -->
+				<h2>COMPOSER <br />ARRANGER <br /> PIANIST</h2>
 				<img class="signature-presentation" src="/logo-3.webp" alt="logo" />
 			</div>
 		</div>
-
-		<!-- <img
-			class="profile-picture"
-			src="/photo-profil-7.webp"
-			alt="Erwan's Presentation"
-			style="color: transparent;"
-		/> -->
+		<img class="home-profile-picture" src="/erwan-home-cercle.png" alt="Erwan's Presentation" />
+		<div class="downwoard-arrow-home">↓</div>
 	</div>
 </section>
 
 <section id="music">
-	<div class="media-grid">
+	<div class="youtube-showreel">
+		<iframe
+			width={showreelWidth}
+			height={showreelHeight}
+			src="https://www.youtube.com/embed/BteChDYwoBs"
+			title="Erwan YouTube Showreel"
+			frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+			allowfullscreen
+		></iframe>
+	</div>
+	<div class="media-grid" bind:clientWidth={mediaGridElementWidth}>
 		{#each mediaList as media (media.id)}
 			<MediaSquareContainer {...media} />
 		{/each}
 	</div>
+	<div class="soundcloudPlayer">
+		<iframe
+			width={soundcloudWidth}
+			height={soundcloudHeight}
+			frameborder="no"
+			title="Erwan Soundcloud Showreel"
+			src="https://w.soundcloud.com/player/?visual=false&amp;url=https%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F1728038148&amp;show_artwork=true&amp;maxheight=1000&amp;maxwidth=1200&amp;auto_play=false&amp;buying=true&amp;liking=true&amp;download=true&amp;sharing=true&amp;show_comments=true&amp;show_playcount=true&amp;show_user=true&amp;color"
+		></iframe>
+	</div>
 </section>
 
 <section id="bio">
-	<h1>Bio</h1>
-	<p>
-		Hi, my name is Erwan, I'm a young composer based in Lyon, France. I studied music and
-		composition at the conservatory and university and I'm currently doing a Master degree in music
-		scoring for films, television and video games. My main influences span from neoclassical to
-		contemporary music with a special preference for orchestral music.
-	</p>
+	<h1>Biography</h1>
+	<div class="bio-image-grid">
+		<img class="musee-picture" src="/erwan-musee-carre.jpg" alt="Erwan Talking About His" />
+		<img class="ethnic-picture" src="/erwan-ethnic-carre.png" alt="Erwan With A Nice Instrument" />
+		<img class="profile-picture" src="/erwan-piano-carre.png" alt="Erwan's Presentation" />
+	</div>
+	<div class="bio-text-grid">
+		<p class="bio-text">
+			Hi, I'm Erwan, a young composer based in Lyon, France.<br /><br />
+			I studied music at the conservatory and college, and I'm currently pursuing a master's degree in
+			music scoring, specializing in the creation of nuanced soundtracks for films, television, video
+			games, and various multimedia platforms.<br /><br />
+			A pivotal chapter of my musical education was the three-year mentorship as a private student of
+			Yves Krier, a contemporary composer and conductor. I acquired most of my skills in composition
+			and orchestration from him.<br /><br />
+			While the piano remains my primary instrument, I can also play the guitar (both electric and acoustic),
+			bass guitar, violin, and the ngoni. My musical influences range from neoclassical to contemporary
+			music, with a particular affinity for orchestral arrangements. However, I'm not one to shy away
+			from experimentation, often blending traditional orchestral elements with electronic sounds to
+			create unique and dynamic compositions.
+		</p>
+		<p class="bio-skills">
+			<b>Skills</b> <br /><br />
+
+			Piano, Guitar, Bass, Violin, Synthesizer, Ngoni<br />
+			Composition, Theory, Harmony, Arrangement, Orchestration, Sound-Design. <br />
+			I use DAWs such as Logic Pro, Sibelius, Fl Studio. <br />
+			I work from my home studio. <br />
+			Easily reachable. <br />
+		</p>
+	</div>
+	<div class="logos-grid-wrapper">
+		<div></div>
+		<div class="logos-grid">
+			<img src="/logos-ecoles/brassart.jpg" alt="Brassart logo" />
+			<img src="/logos-ecoles/esad-amiens.png" alt="Brassart logo" />
+			<img src="/logos-ecoles/gamagora.png" alt="Brassart logo" />
+			<img src="/logos-ecoles/maaav.png" alt="Brassart logo" />
+			<img src="/logos-ecoles/mba-lyon.png" alt="Brassart logo" />
+			<img src="/logos-ecoles/univlyon2.png" alt="Brassart logo" />
+			<img src="/logos-ecoles/vieux-montreal.png" alt="Brassart logo" />
+		</div>
+		<div></div>
+	</div>
 </section>
 
 <section id="contact">
 	<h1>Contact</h1>
 	<div class="contact-section-content-row">
-		<h2 class="contact-text-row">Contact me →</h2>
+		<h2 class="contact-text-row">→</h2>
 		<div class="contact-icons-row">
 			<IconsBar iconsincontactsection={true} />
 		</div>
 	</div>
 
 	<div class="contact-section-content-column">
-		<div class="contact-text-column">Contact me</div>
 		<h2 class="downwoard-arrow">↓</h2>
 		<div class="contact-icons-column">
 			<IconsBar iconsincontactsection={true} columnize={true} />
@@ -70,6 +141,98 @@
 </section>
 
 <style>
+	.home-profile-picture {
+		margin: 20px;
+		width: 90%;
+		align-self: center;
+		justify-self: end;
+		object-fit: contain;
+	}
+
+	.logos-grid-wrapper {
+		display: grid;
+		grid-template-rows: auto;
+		grid-template-columns: 0.25fr 1fr 0.25fr;
+		padding-right: 40px;
+		padding-left: 40px;
+	}
+
+	.logos-grid img {
+		width: 100%;
+		height: 100%;
+	}
+
+	.logos-grid {
+		display: grid;
+		grid-template-rows: 1fr 0;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+		gap: 20px;
+	}
+
+	#contact {
+		border-top: 1px solid white;
+		padding-bottom: 100px;
+	}
+
+	.bio-skills {
+		grid-row: 2;
+		grid-column: 2;
+	}
+
+	.downwoard-arrow-home {
+		grid-column: span 2;
+		grid-row: 2;
+		justify-self: center;
+		align-self: center;
+		color: var(--color-theme-1);
+		font-size: 600%;
+	}
+
+	.bio-image-grid {
+		display: grid;
+		grid-template-rows: 1fr;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: 20px;
+		padding-right: 40px;
+		padding-left: 40px;
+	}
+
+	.bio-text-grid {
+		display: grid;
+		grid-template-rows: 1fr auto;
+		height: 100%;
+		grid-template-columns: 0.25fr 1fr 0.25fr;
+		gap: 20px;
+	}
+
+	.musee-picture,
+	.profile-picture,
+	.ethnic-picture {
+		width: 100%;
+		justify-self: center;
+		align-self: center;
+	}
+
+	.bio-text {
+		grid-row: 1;
+		grid-column: 2;
+	}
+
+	.soundcloudPlayer {
+		margin-top: 20px;
+		justify-self: center;
+	}
+
+	#music {
+		display: grid;
+		grid-template-columns: 1fr;
+	}
+
+	.youtube-showreel {
+		justify-self: center;
+		margin-bottom: 20px;
+	}
+
 	.downwoard-arrow {
 		grid-row: 2;
 		justify-self: center;
@@ -84,18 +247,6 @@
 		display: grid;
 		grid-template-columns: 1fr;
 		margin-bottom: 100px;
-	}
-
-	.contact-text-column {
-		display: block;
-		grid-row: 1;
-		font-size: xxx-large;
-		font-weight: 600;
-		height: 87px;
-		justify-self: center;
-		margin-inline-start: 40px;
-		margin-left: 0;
-		line-height: 300%; /*Used to remove space below the text */
 	}
 
 	.contact-icons-column {
@@ -130,6 +281,7 @@
 		position: relative;
 		justify-content: start;
 		align-content: start;
+		margin-left: 40px;
 	}
 
 	.signature-presentation {
@@ -137,33 +289,26 @@
 		grid-row: 2;
 		width: 100%; /* Adjust width as necessary, or use max-width */
 		min-width: 250px;
-		opacity: 0.7;
 	}
 
 	h1 {
-		font-weight: 800;
+		font-weight: 500;
 		font-size: 640%;
 	}
 
 	h2 {
-		font-weight: 600;
+		font-weight: 300;
 		font-size: 400%;
+		color: var(--color-theme-1);
 	}
 
 	p {
-		font-size: 140%;
-		margin-right: 20px;
+		font-size: x-large;
 		text-align: center;
 	}
 
-	#bio {
-		margin-right: 20px;
-	}
 	/* This has to do with the top right header icons when in columns*/
 	@media (min-width: 831px) {
-		#bio {
-			margin-right: 80px;
-		}
 	}
 
 	h1 {
@@ -175,22 +320,20 @@
 	}
 
 	.presentation {
-		display: flex;
-		justify-content: flex-start;
-		align-items: center;
-		overflow: hidden;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr auto;
 	}
 
 	.media-grid {
-		margin-left: 60px;
-		margin-right: 60px;
+		/* margin-left: 40px;
+		margin-right: 40px; */
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr 1fr;
 	}
 
 	section {
-		display:block;
-		padding-bottom: 180px;
+		display: block;
 	}
 
 	#home {
@@ -209,31 +352,42 @@
 			margin-right: 0;
 			grid-template-columns: 1fr 1fr;
 		}
-		.profile-picture {
-			display: none;
+		.logos-grid {
+			grid-template-rows: 1fr 1fr 0;
+			grid-template-columns: 1fr 1fr 1fr;
 		}
 	}
 
 	@media (max-width: 680px) {
 		#main-title {
-			font-weight: 800;
 			font-size: 540%;
 		}
 		h1 {
 			font-size: 400%;
 		}
 
+		h2 {
+			font-size: 300%;
+		}
+
+		.bio-text-grid {
+			grid-template-columns: 0.1fr 1fr 0.1fr;
+		}
+
 		.signature-presentation {
 			grid-column: 2;
 			grid-row: 2;
 			width: 100%; /* Adjust width as necessary, or use max-width */
-			opacity: 0.7;
 		}
 	}
 
 	@media (max-width: 450px) {
 		h1 {
 			font-size: 300%;
+		}
+
+		h2 {
+			font-size: 250%;
 		}
 	}
 
