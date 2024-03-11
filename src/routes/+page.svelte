@@ -35,7 +35,7 @@
 <svelte:window bind:innerWidth bind:innerHeight />
 
 <section id="home">
-	<div class="presentation">
+	<div class="presentation-grid">
 		<div class="titres">
 			<h1 id="main-title">ERWAN LE PAPE</h1>
 			<div class="signature-grid">
@@ -141,9 +141,15 @@
 </section>
 
 <style>
+	.presentation-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr auto;
+	}
+
 	.home-profile-picture {
-		margin: 20px;
-		width: 90%;
+		margin: 40px;
+		width: 80%;
 		align-self: center;
 		justify-self: end;
 		object-fit: contain;
@@ -274,6 +280,8 @@
 		}
 	}
 
+	
+
 	.signature-grid {
 		display: grid;
 		grid-template-columns: auto auto;
@@ -308,7 +316,10 @@
 	}
 
 	/* This has to do with the top right header icons when in columns*/
-	@media (min-width: 831px) {
+	@media (max-width: 910px) {
+		.home-profile-picture {
+			display:none;
+		}
 	}
 
 	h1 {
@@ -317,12 +328,6 @@
 
 	.titres {
 		width: 100%;
-	}
-
-	.presentation {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 1fr auto;
 	}
 
 	.media-grid {
