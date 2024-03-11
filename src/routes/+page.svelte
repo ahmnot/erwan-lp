@@ -40,14 +40,12 @@
 			<h1 id="main-title">ERWAN LE PAPE</h1>
 			<div class="signature-grid">
 				<h2>COMPOSER <br />ARRANGER <br /> PIANIST</h2>
-				<!-- <h3 class="bottom-text">For Film, TV, Performing Arts, Video Games.</h3>
-				<div class="empty-rectangle-top-right"></div>
-				<div class="empty-rectangle-bottom-left"></div> -->
 				<img class="signature-presentation" src="/logo-3.webp" alt="logo" />
 			</div>
 		</div>
+		<img class="home-profile-picture" src="/erwan-home-cercle.png" alt="Erwan's Presentation" />
+		<div class="downwoard-arrow-home">↓</div>
 	</div>
-	<div class="downwoard-arrow-home">↓</div>
 </section>
 
 <section id="music">
@@ -81,21 +79,9 @@
 <section id="bio">
 	<h1>Biography</h1>
 	<div class="bio-image-grid">
-		<img
-			class="musee-picture"
-			src="/erwan-musee-carre.jpg"
-			alt="Erwan Talking About His"
-		/>
-		<img
-			class="ethnic-picture"
-			src="/erwan-ethnic-carre.png"
-			alt="Erwan With A Nice Instrument"
-		/>
-		<img
-			class="profile-picture"
-			src="/erwan-piano-carre.png"
-			alt="Erwan's Presentation"
-		/>
+		<img class="musee-picture" src="/erwan-musee-carre.jpg" alt="Erwan Talking About His" />
+		<img class="ethnic-picture" src="/erwan-ethnic-carre.png" alt="Erwan With A Nice Instrument" />
+		<img class="profile-picture" src="/erwan-piano-carre.png" alt="Erwan's Presentation" />
 	</div>
 	<div class="bio-text-grid">
 		<p class="bio-text">
@@ -114,8 +100,8 @@
 		</p>
 		<p class="bio-skills">
 			<b>Skills</b> <br /><br />
-			
-			Piano, Guitar, Bass, Violin, Synthesizer, Ngoni<br /> 
+
+			Piano, Guitar, Bass, Violin, Synthesizer, Ngoni<br />
 			Composition, Theory, Harmony, Arrangement, Orchestration, Sound-Design. <br />
 			I use DAWs such as Logic Pro, Sibelius, Fl Studio. <br />
 			I work from my home studio. <br />
@@ -125,34 +111,13 @@
 	<div class="logos-grid-wrapper">
 		<div></div>
 		<div class="logos-grid">
-			<img
-				src="/logos-ecoles/brassart.jpg"
-				alt="Brassart logo"
-			/>
-			<img
-				src="/logos-ecoles/esad-amiens.png"
-				alt="Brassart logo"
-			/>
-			<img
-				src="/logos-ecoles/gamagora.png"
-				alt="Brassart logo"
-			/>
-			<img
-				src="/logos-ecoles/maaav.png"
-				alt="Brassart logo"
-			/>
-			<img
-				src="/logos-ecoles/mba-lyon.png"
-				alt="Brassart logo"
-			/>
-			<img
-				src="/logos-ecoles/univlyon2.png"
-				alt="Brassart logo"
-			/>
-			<img
-				src="/logos-ecoles/vieux-montreal.png"
-				alt="Brassart logo"
-			/>
+			<img src="/logos-ecoles/brassart.jpg" alt="Brassart logo" />
+			<img src="/logos-ecoles/esad-amiens.png" alt="Brassart logo" />
+			<img src="/logos-ecoles/gamagora.png" alt="Brassart logo" />
+			<img src="/logos-ecoles/maaav.png" alt="Brassart logo" />
+			<img src="/logos-ecoles/mba-lyon.png" alt="Brassart logo" />
+			<img src="/logos-ecoles/univlyon2.png" alt="Brassart logo" />
+			<img src="/logos-ecoles/vieux-montreal.png" alt="Brassart logo" />
 		</div>
 		<div></div>
 	</div>
@@ -176,10 +141,18 @@
 </section>
 
 <style>
+	.home-profile-picture {
+		margin: 20px;
+		width: 90%;
+		align-self: center;
+		justify-self: end;
+		object-fit: contain;
+	}
+
 	.logos-grid-wrapper {
 		display: grid;
 		grid-template-rows: auto;
-		grid-template-columns:  0.25fr 1fr 0.25fr;
+		grid-template-columns: 0.25fr 1fr 0.25fr;
 		padding-right: 40px;
 		padding-left: 40px;
 	}
@@ -207,10 +180,8 @@
 	}
 
 	.downwoard-arrow-home {
-		position: absolute;
-		left: 50%;
-		transform: translate(-50%);
-		top: 75%;
+		grid-column: span 2;
+		grid-row: 2;
 		justify-self: center;
 		align-self: center;
 		color: var(--color-theme-1);
@@ -349,11 +320,9 @@
 	}
 
 	.presentation {
-		display: flex;
-		justify-content: flex-start;
-		align-items: center;
-		overflow: hidden;
-		flex-direction: column;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr auto;
 	}
 
 	.media-grid {
