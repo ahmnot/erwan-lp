@@ -197,18 +197,20 @@
 	.bio-image-grid {
 		display: grid;
 		grid-template-rows: 1fr;
-		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 		gap: 20px;
-		padding-right: 40px;
-		padding-left: 40px;
+		padding-right: 20px;
 	}
 
 	.bio-text-grid {
 		display: grid;
 		grid-template-rows: 1fr auto;
 		height: 100%;
-		grid-template-columns: 0.25fr 1fr 0.25fr;
+		grid-template-columns: 0.5fr 1fr 0.5fr;
 		gap: 20px;
+	}
+	.musee-picture {
+		grid-column: 2;
 	}
 
 	.musee-picture,
@@ -361,7 +363,7 @@
 			grid-template-columns: 1fr 1fr 1fr;
 		}
 		.bio-image-grid {
-			grid-template-columns: 1fr 1fr;
+			grid-template-columns: 0 1fr 1fr;
 		}
 		.piano-picture {
 			display: none;
@@ -384,12 +386,6 @@
 		.bio-text-grid {
 			grid-template-columns: 0.1fr 1fr 0.1fr;
 		}
-
-		.bio-image-grid {
-			padding-right: 20px;
-			padding-left: 20px;
-		}
-
 		.signature-presentation {
 			grid-column: 2;
 			grid-row: 2;
