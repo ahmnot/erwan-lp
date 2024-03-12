@@ -135,28 +135,28 @@
 </section>
 
 <style>
+	.media-grid, .soundcloud-player, .youtube-showreel {
+		grid-column: 2 / span 3;
+	}
+
 	.media-grid {
-		grid-column: 2 / span 2;
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
 		gap: 20px;
 	}
 
 	.soundcloud-player {
-		grid-column: 2 / span 2;
 		margin-top: 20px;
-		justify-self: center;
 	}
 
 	.youtube-showreel {
-		grid-column: 2 / span 2;
 		justify-self: center;
 		margin-bottom: 20px;
 	}
 
 	#music {
 		display: grid;
-		grid-template-columns: 0.75fr 1fr 1fr 0.75fr;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	}
 
 	.presentation-grid {
@@ -344,12 +344,15 @@
 		}
 		.media-grid {
 			grid-template-columns: 1fr 1fr 1fr;
-			gap:0px;
+			gap:20px;
 		}
 
 		#music {
 			display: grid;
-			grid-template-columns: 0fr 1fr 1fr 0fr;
+			grid-template-columns: 20px 1fr 1fr 1fr 20px;
+		}
+		.bio-image-grid {
+			grid-template-columns: 0 1fr 1fr;
 		}
 	}
 
@@ -360,9 +363,6 @@
 		.logos-grid {
 			grid-template-rows: 1fr 1fr 0;
 			grid-template-columns: 1fr 1fr 1fr;
-		}
-		.bio-image-grid {
-			grid-template-columns: 0 1fr 1fr;
 		}
 		.piano-picture {
 			display: none;
