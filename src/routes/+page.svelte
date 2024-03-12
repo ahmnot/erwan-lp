@@ -336,6 +336,9 @@
 	}
 
 	@media (max-width: 900px) {
+		.bio-text,.bio-skills {
+			font-size: medium;
+		}
 		.home-profile-picture {
 			display: none;
 		}
