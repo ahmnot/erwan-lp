@@ -90,6 +90,15 @@
 			{/if}
 		</a>
 	</li>
+	<li>
+		<a class="icon-button-or-link" href="https://www.linkedin.com/in/erwan-le-pape-9b80372ba/" target="_blank">
+			{#if iconsincontactsection}
+				<img class="icon-large" src="/icons/linkedin.png" alt="Linkedin Link" />
+			{:else}
+				<img class="icon-normal" src="/icons/linkedin.png" alt="Linkedin Link" />
+			{/if}
+		</a>
+	</li>
 </ul>
 
 <style>
@@ -147,12 +156,12 @@
 	}
 
 	.icon-button-or-link {
-		display: flex; /* Use flexbox to center content */
-		justify-content: center; /* Center horizontally */
-		align-items: center; /* Center vertically */
-		width: 50px; /* ensure it's larger than the icon for padding */
-		height: 50px; /* ensure it's larger than the icon for padding */
-		margin-right: 40px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 50px;
+		height: 50px; 
+		margin-right: 20px;
 		padding: 0px;
 		background: none;
 		border: none;

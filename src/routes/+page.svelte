@@ -81,7 +81,7 @@
 	<div class="bio-image-grid">
 		<img class="musee-picture" src="/erwan-musee-carre.jpg" alt="Erwan Talking About His" />
 		<img class="ethnic-picture" src="/erwan-ethnic-carre.png" alt="Erwan With A Nice Instrument" />
-		<img class="profile-picture" src="/erwan-piano-carre.png" alt="Erwan's Presentation" />
+		<img class="piano-picture" src="/erwan-piano-carre.png" alt="Erwan's Presentation" />
 	</div>
 	<div class="bio-text-grid">
 		<p class="bio-text">
@@ -177,7 +177,7 @@
 
 	#contact {
 		border-top: 1px solid white;
-		padding-bottom: 100px;
+		padding-bottom: 140px;
 	}
 
 	.bio-skills {
@@ -212,7 +212,7 @@
 	}
 
 	.musee-picture,
-	.profile-picture,
+	.piano-picture,
 	.ethnic-picture {
 		width: 100%;
 		justify-self: center;
@@ -280,8 +280,6 @@
 		}
 	}
 
-	
-
 	.signature-grid {
 		display: grid;
 		grid-template-columns: auto auto;
@@ -295,13 +293,14 @@
 	.signature-presentation {
 		grid-column: 2;
 		grid-row: 2;
-		width: 100%; /* Adjust width as necessary, or use max-width */
+		width: 100%;
 		min-width: 250px;
 	}
 
 	h1 {
 		font-weight: 500;
 		font-size: 640%;
+		word-break: break-word;
 	}
 
 	h2 {
@@ -318,7 +317,7 @@
 	/* This has to do with the top right header icons when in columns*/
 	@media (max-width: 910px) {
 		.home-profile-picture {
-			display:none;
+			display: none;
 		}
 	}
 
@@ -361,12 +360,19 @@
 			grid-template-rows: 1fr 1fr 0;
 			grid-template-columns: 1fr 1fr 1fr;
 		}
+		.bio-image-grid {
+			grid-template-columns: 1fr 1fr;
+		}
+		.piano-picture {
+			display: none;
+		}
+		.logos-grid-wrapper {
+			padding-left: 0;
+			padding-right: 0;
+		}
 	}
 
 	@media (max-width: 680px) {
-		#main-title {
-			font-size: 540%;
-		}
 		h1 {
 			font-size: 400%;
 		}
@@ -379,10 +385,25 @@
 			grid-template-columns: 0.1fr 1fr 0.1fr;
 		}
 
+		.bio-image-grid {
+			padding-right: 20px;
+			padding-left: 20px;
+		}
+
 		.signature-presentation {
 			grid-column: 2;
 			grid-row: 2;
 			width: 100%; /* Adjust width as necessary, or use max-width */
+			min-width: 0;
+		}
+	}
+
+	@media (max-width: 600px) {
+		.signature-presentation {
+			grid-column: 1;
+		}
+		.signature-grid {
+			grid-template-columns: 1fr;
 		}
 	}
 
