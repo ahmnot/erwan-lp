@@ -14,18 +14,12 @@
 	let showreelHeight;
 	let soundcloudWidth;
 	let soundcloudHeight;
-	$: if (innerWidth < 900) {
-		showreelWidth = mediaGridElementWidth / 1.25;
-	} else {
-		showreelWidth = mediaGridElementWidth / 2;
+	$: {
+		showreelWidth = mediaGridElementWidth;
+		soundcloudWidth = mediaGridElementWidth;
+		showreelHeight = showreelWidth * 0.5625;
+		soundcloudHeight = soundcloudWidth * 0.5625 * 1.5;
 	}
-	$: showreelHeight = showreelWidth * 0.5625;
-	$: if (innerWidth < 900) {
-		soundcloudWidth = mediaGridElementWidth / 1.25;
-	} else {
-		soundcloudWidth = mediaGridElementWidth / 2;
-	}
-	$: soundcloudHeight = soundcloudWidth * 0.5625 * 1.5;
 
 	onMount(() => {
 		underlineVisible.set(true);
@@ -35,7 +29,7 @@
 <svelte:window bind:innerWidth bind:innerHeight />
 
 <section id="home">
-	<div class="presentation">
+	<div class="presentation-grid">
 		<div class="titres">
 			<h1 id="main-title">ERWAN LE PAPE</h1>
 			<div class="signature-grid">
@@ -65,7 +59,7 @@
 			<MediaSquareContainer {...media} />
 		{/each}
 	</div>
-	<div class="soundcloudPlayer">
+	<div class="soundcloud-player">
 		<iframe
 			width={soundcloudWidth}
 			height={soundcloudHeight}
@@ -81,7 +75,7 @@
 	<div class="bio-image-grid">
 		<img class="musee-picture" src="/erwan-musee-carre.jpg" alt="Erwan Talking About His" />
 		<img class="ethnic-picture" src="/erwan-ethnic-carre.png" alt="Erwan With A Nice Instrument" />
-		<img class="profile-picture" src="/erwan-piano-carre.png" alt="Erwan's Presentation" />
+		<img class="piano-picture" src="/erwan-piano-carre.png" alt="Erwan's Presentation" />
 	</div>
 	<div class="bio-text-grid">
 		<p class="bio-text">
@@ -141,9 +135,39 @@
 </section>
 
 <style>
+	.media-grid, .soundcloud-player, .youtube-showreel {
+		grid-column: 2 / span 3;
+	}
+
+	.media-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: 20px;
+	}
+
+	.soundcloud-player {
+		margin-top: 20px;
+	}
+
+	.youtube-showreel {
+		justify-self: center;
+		margin-bottom: 20px;
+	}
+
+	#music {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	}
+
+	.presentation-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr auto;
+	}
+
 	.home-profile-picture {
-		margin: 20px;
-		width: 90%;
+		margin: 40px;
+		width: 80%;
 		align-self: center;
 		justify-self: end;
 		object-fit: contain;
@@ -171,7 +195,7 @@
 
 	#contact {
 		border-top: 1px solid white;
-		padding-bottom: 100px;
+		padding-bottom: 140px;
 	}
 
 	.bio-skills {
@@ -191,22 +215,24 @@
 	.bio-image-grid {
 		display: grid;
 		grid-template-rows: 1fr;
-		grid-template-columns: 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 		gap: 20px;
-		padding-right: 40px;
-		padding-left: 40px;
+		padding-right: 20px;
 	}
 
 	.bio-text-grid {
 		display: grid;
 		grid-template-rows: 1fr auto;
 		height: 100%;
-		grid-template-columns: 0.25fr 1fr 0.25fr;
+		grid-template-columns: 0.5fr 1fr 0.5fr;
 		gap: 20px;
+	}
+	.musee-picture {
+		grid-column: 2;
 	}
 
 	.musee-picture,
-	.profile-picture,
+	.piano-picture,
 	.ethnic-picture {
 		width: 100%;
 		justify-self: center;
@@ -216,21 +242,6 @@
 	.bio-text {
 		grid-row: 1;
 		grid-column: 2;
-	}
-
-	.soundcloudPlayer {
-		margin-top: 20px;
-		justify-self: center;
-	}
-
-	#music {
-		display: grid;
-		grid-template-columns: 1fr;
-	}
-
-	.youtube-showreel {
-		justify-self: center;
-		margin-bottom: 20px;
 	}
 
 	.downwoard-arrow {
@@ -287,13 +298,14 @@
 	.signature-presentation {
 		grid-column: 2;
 		grid-row: 2;
-		width: 100%; /* Adjust width as necessary, or use max-width */
+		width: 100%;
 		min-width: 250px;
 	}
 
 	h1 {
 		font-weight: 500;
 		font-size: 640%;
+		word-break: break-word;
 	}
 
 	h2 {
@@ -307,29 +319,12 @@
 		text-align: center;
 	}
 
-	/* This has to do with the top right header icons when in columns*/
-	@media (min-width: 831px) {
-	}
-
 	h1 {
 		margin-left: 40px;
 	}
 
 	.titres {
 		width: 100%;
-	}
-
-	.presentation {
-		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 1fr auto;
-	}
-
-	.media-grid {
-		/* margin-left: 40px;
-		margin-right: 40px; */
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr;
 	}
 
 	section {
@@ -341,27 +336,44 @@
 	}
 
 	@media (max-width: 900px) {
+		.bio-text,.bio-skills {
+			font-size: medium;
+		}
+		.home-profile-picture {
+			display: none;
+		}
 		.media-grid {
 			grid-template-columns: 1fr 1fr 1fr;
+			gap:20px;
+		}
+
+		#music {
+			display: grid;
+			grid-template-columns: 20px 1fr 1fr 1fr 20px;
+		}
+		.bio-image-grid {
+			grid-template-columns: 0 1fr 1fr;
 		}
 	}
 
 	@media (max-width: 768px) {
 		.media-grid {
-			margin-left: 0;
-			margin-right: 0;
 			grid-template-columns: 1fr 1fr;
 		}
 		.logos-grid {
 			grid-template-rows: 1fr 1fr 0;
 			grid-template-columns: 1fr 1fr 1fr;
 		}
+		.piano-picture {
+			display: none;
+		}
+		.logos-grid-wrapper {
+			padding-left: 0;
+			padding-right: 0;
+		}
 	}
 
 	@media (max-width: 680px) {
-		#main-title {
-			font-size: 540%;
-		}
 		h1 {
 			font-size: 400%;
 		}
@@ -373,11 +385,20 @@
 		.bio-text-grid {
 			grid-template-columns: 0.1fr 1fr 0.1fr;
 		}
-
 		.signature-presentation {
 			grid-column: 2;
 			grid-row: 2;
 			width: 100%; /* Adjust width as necessary, or use max-width */
+			min-width: 0;
+		}
+	}
+
+	@media (max-width: 600px) {
+		.signature-presentation {
+			grid-column: 1;
+		}
+		.signature-grid {
+			grid-template-columns: 1fr;
 		}
 	}
 
