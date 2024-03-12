@@ -144,14 +144,14 @@
 
 	.soundcloud-player {
 		grid-column: 2 / span 2;
-		margin-top: 40px;
+		margin-top: 20px;
 		justify-self: center;
 	}
 
 	.youtube-showreel {
 		grid-column: 2 / span 2;
 		justify-self: center;
-		margin-bottom: 40px;
+		margin-bottom: 20px;
 	}
 
 	#music {
@@ -319,13 +319,6 @@
 		text-align: center;
 	}
 
-	/* This has to do with the top right header icons when in columns*/
-	@media (max-width: 910px) {
-		.home-profile-picture {
-			display: none;
-		}
-	}
-
 	h1 {
 		margin-left: 40px;
 	}
@@ -343,8 +336,17 @@
 	}
 
 	@media (max-width: 900px) {
+		.home-profile-picture {
+			display: none;
+		}
 		.media-grid {
 			grid-template-columns: 1fr 1fr 1fr;
+			gap:0px;
+		}
+
+		#music {
+			display: grid;
+			grid-template-columns: 0fr 1fr 1fr 0fr;
 		}
 	}
 
