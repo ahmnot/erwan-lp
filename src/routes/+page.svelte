@@ -14,18 +14,12 @@
 	let showreelHeight;
 	let soundcloudWidth;
 	let soundcloudHeight;
-	$: if (innerWidth < 900) {
-		showreelWidth = mediaGridElementWidth / 1.25;
-	} else {
-		showreelWidth = mediaGridElementWidth / 2;
+	$: {
+		showreelWidth = mediaGridElementWidth;
+		soundcloudWidth = mediaGridElementWidth;
+		showreelHeight = showreelWidth * 0.5625;
+		soundcloudHeight = soundcloudWidth * 0.5625 * 1.5;
 	}
-	$: showreelHeight = showreelWidth * 0.5625;
-	$: if (innerWidth < 900) {
-		soundcloudWidth = mediaGridElementWidth / 1.25;
-	} else {
-		soundcloudWidth = mediaGridElementWidth / 2;
-	}
-	$: soundcloudHeight = soundcloudWidth * 0.5625 * 1.5;
 
 	onMount(() => {
 		underlineVisible.set(true);
@@ -65,7 +59,7 @@
 			<MediaSquareContainer {...media} />
 		{/each}
 	</div>
-	<div class="soundcloudPlayer">
+	<div class="soundcloud-player">
 		<iframe
 			width={soundcloudWidth}
 			height={soundcloudHeight}
@@ -141,6 +135,30 @@
 </section>
 
 <style>
+	.media-grid {
+		grid-column: 2 / span 2;
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		gap: 20px;
+	}
+
+	.soundcloud-player {
+		grid-column: 2 / span 2;
+		margin-top: 40px;
+		justify-self: center;
+	}
+
+	.youtube-showreel {
+		grid-column: 2 / span 2;
+		justify-self: center;
+		margin-bottom: 40px;
+	}
+
+	#music {
+		display: grid;
+		grid-template-columns: 0.75fr 1fr 1fr 0.75fr;
+	}
+
 	.presentation-grid {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
@@ -224,21 +242,6 @@
 	.bio-text {
 		grid-row: 1;
 		grid-column: 2;
-	}
-
-	.soundcloudPlayer {
-		margin-top: 20px;
-		justify-self: center;
-	}
-
-	#music {
-		display: grid;
-		grid-template-columns: 1fr;
-	}
-
-	.youtube-showreel {
-		justify-self: center;
-		margin-bottom: 20px;
 	}
 
 	.downwoard-arrow {
@@ -331,13 +334,6 @@
 		width: 100%;
 	}
 
-	.media-grid {
-		/* margin-left: 40px;
-		margin-right: 40px; */
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr;
-	}
-
 	section {
 		display: block;
 	}
@@ -354,8 +350,6 @@
 
 	@media (max-width: 768px) {
 		.media-grid {
-			margin-left: 0;
-			margin-right: 0;
 			grid-template-columns: 1fr 1fr;
 		}
 		.logos-grid {
