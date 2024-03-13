@@ -136,7 +136,6 @@
 
 <header class="header-large">
 	<a id="logo-header-id" href="/#home" on:click={(e) => handleAnchorClick(e)}>
-		<!-- !logoImageComplete -->
 		{#if !logoImageComplete}
 			<div transition:fade={{ duration: 150 }} class="logo-placeholder"></div>
 		{/if}
@@ -384,6 +383,7 @@
 		top: 0;
 		right: 0;
 		width: 100%;
+		height:70px;
 		background-color: black;
 		/*box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);*/
 		z-index: 999;

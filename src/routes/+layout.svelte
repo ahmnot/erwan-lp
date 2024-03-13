@@ -51,6 +51,6 @@
 		font-size: medium;
 	}
 	p {
-		opacity: 0.75;
+		opacity: 0.9;
 	}
 </style>

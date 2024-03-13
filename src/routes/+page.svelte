@@ -103,18 +103,20 @@
 			I use DAWs such as Logic Pro, Sibelius, Fl Studio. <br />
 			I work from my home studio. <br />
 			Easily reachable. <br />
+			<br />
+			I worked with them: <br />
 		</p>
 	</div>
 	<div class="logos-grid-wrapper">
 		<div></div>
 		<div class="logos-grid">
 			<img src="/logos-ecoles/brassart.jpg" alt="Brassart logo" />
-			<img src="/logos-ecoles/esad-amiens.png" alt="Brassart logo" />
-			<img src="/logos-ecoles/gamagora.png" alt="Brassart logo" />
-			<img src="/logos-ecoles/maaav.png" alt="Brassart logo" />
-			<img src="/logos-ecoles/mba-lyon.png" alt="Brassart logo" />
-			<img src="/logos-ecoles/univlyon2.png" alt="Brassart logo" />
-			<img src="/logos-ecoles/vieux-montreal.png" alt="Brassart logo" />
+			<img src="/logos-ecoles/esad-amiens.png" alt="Esad logo" />
+			<img src="/logos-ecoles/gamagora.png" alt="Gamagora logo" />
+			<img src="/logos-ecoles/maaav.png" alt="MAAAV logo" />
+			<img src="/logos-ecoles/mba-lyon.png" alt="MBA Lyon logo" />
+			<img src="/logos-ecoles/univlyon2.png" alt="Lyon 2 University logo" />
+			<img src="/logos-ecoles/vieux-montreal.png" alt="Vieux Montreal logo" />
 		</div>
 		<div></div>
 	</div>
