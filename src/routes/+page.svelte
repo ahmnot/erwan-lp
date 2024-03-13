@@ -2,9 +2,10 @@
 	// @ts-nocheck
 	import MediaSquareContainer from './MediaSquareContainer.svelte';
 	import { mediaList } from '$lib/mediaList';
-	import { onMount, onDestroy } from 'svelte';
+	import { onMount } from 'svelte';
 	import { underlineVisible } from '$lib/underlineVisibility';
 	import IconsBar from './IconsBar.svelte';
+	import LightYoutube from './LightYoutube.svelte';
 
 	$: innerWidth = 0;
 	$: innerHeight = 0;
@@ -44,7 +45,9 @@
 
 <section id="music">
 	<div class="youtube-showreel">
-		<iframe
+		
+		<LightYoutube videoId='BteChDYwoBs'></LightYoutube>
+		<!-- <iframe
 			width={showreelWidth}
 			height={showreelHeight}
 			src="https://www.youtube.com/embed/BteChDYwoBs"
@@ -52,7 +55,7 @@
 			frameborder="0"
 			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
 			allowfullscreen
-		></iframe>
+		></iframe> -->
 	</div>
 	<div class="media-grid" bind:clientWidth={mediaGridElementWidth}>
 		{#each mediaList as media (media.id)}
@@ -150,7 +153,6 @@
 	}
 
 	.youtube-showreel {
-		justify-self: center;
 		margin-bottom: 20px;
 	}
 

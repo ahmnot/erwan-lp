@@ -6,6 +6,7 @@
 	import { onMount } from 'svelte';
 	import { underlineVisible } from '$lib/underlineVisibility';
 	import LightBox from './LightBox.svelte';
+	import LightYoutube from '../LightYoutube.svelte';
 
 	let mediaData = mediaList.find((media) => media.id === $page.params.mediaId);
 	let lightBoxVisible = false;
@@ -26,7 +27,7 @@
 	}
 </script>
 
-<h1 class="main-title"><div>{mediaData?.title}</div><div>{mediaData?.author}</div></h1>
+<h1 class="main-title"><div class="colored">{mediaData?.title}</div><div>{mediaData?.author}</div></h1>
 
 <div class="portfolio-gallery">
 	{#each mediaData?.images as image}
@@ -36,14 +37,7 @@
 	{/each}
 	{#if mediaData?.youtube && mediaData?.youtube !== ''}
 		<div class="youtube-wrapper">
-			<iframe
-				class="youtube-iframe"
-				src={mediaData?.youtube}
-				title="YouTube video player"
-				frameborder="0"
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-				allowfullscreen
-			></iframe>
+			<LightYoutube videoId={mediaData?.youtube}></LightYoutube>
 		</div>
 	{/if}
 	{#if mediaData?.soundcloud && mediaData?.soundcloud !== ''}
@@ -60,7 +54,7 @@
 	{/if}
 	<div class="about">
 		<h3>About</h3>
-		<div>{mediaData?.title}</div>
+		<div class="colored">{mediaData?.title}</div>
 		<div>{mediaData?.author}</div>
 		<div>{mediaData?.work}</div>
 	</div>
@@ -74,6 +68,10 @@
 />
 
 <style>
+	.colored {
+		color: var(--color-theme-1);
+	}
+
 	.portfolio-gallery {
 		display: grid;
 		grid-template-columns: 1fr 1fr;
@@ -114,18 +112,6 @@
 	.youtube-wrapper {
 		grid-row: 1;
 		grid-column: 2;
-		position: relative;
-		height: 25%;
-		padding-top: 26%;
-	}
-
-	.youtube-iframe {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		max-width: 100%;
 	}
 
 	.image-wrapper {

@@ -11,7 +11,7 @@ export const mediaList = [
         title: 'Fantasy',
         author: 'Erwan Le Pape',
         work: 'Original music',
-        youtube: 'https://www.youtube.com/embed/9VjncpK4dV8',
+        youtube: '9VjncpK4dV8',
         soundcloud: 'https://soundcloud.com/erwanlepape/sets/fantasy-1',
         soundcloudAPINumber: 'playlists/1772144829'
     },
@@ -22,7 +22,7 @@ export const mediaList = [
         title: 'SAHARA',
         author: 'A movie by MOPA',
         work: 'Rescoring',
-        youtube: 'https://www.youtube.com/embed/iI65zBAHOpg',
+        youtube: 'iI65zBAHOpg',
         soundcloud: 'https://soundcloud.com/erwanlepape/sets/sahara',
         soundcloudAPINumber: 'playlists/1763727072'
     },
@@ -33,7 +33,7 @@ export const mediaList = [
         title: 'nature morte',
         author: 'A movie by Alysée Lavallée-Imhof',
         work: 'UQAM contest',
-        youtube: 'https://www.youtube.com/embed/aA2WnaCvRvw',
+        youtube: 'aA2WnaCvRvw',
         soundcloud: 'https://soundcloud.com/erwanlepape/nature-morte',
         soundcloudAPINumber: 'tracks/1671138273'
     },
@@ -44,7 +44,7 @@ export const mediaList = [
         title: 'Time Trap',
         author: 'A movie by Michael Shanks',
         work: 'IFMC contest',
-        youtube: 'https://www.youtube.com/embed/5Z-sKX2BtoA',
+        youtube: '5Z-sKX2BtoA',
         soundcloud: 'https://soundcloud.com/erwanlepape/ifmc-time-trap',
         soundcloudAPINumber: 'tracks/1671134031'
     },
@@ -55,7 +55,7 @@ export const mediaList = [
         title: 'Resistencia',
         author: 'A movie by Flavia Carolliny Sena and Bruna Soares Pereira',
         work: 'Original scoring',
-        youtube: 'https://www.youtube.com/embed/0KWvxGljza8',
+        youtube: '0KWvxGljza8',
         soundcloud: 'https://soundcloud.com/erwanlepape/sets/resistencia',
         soundcloudAPINumber: 'playlists/1762686030'
     },
@@ -66,7 +66,7 @@ export const mediaList = [
         title: 'Le bouquet',
         author: 'A movie by Anaïs Dusautois',
         work: 'Rescoring',
-        youtube: 'https://www.youtube.com/embed/vMpwETdpQgs',
+        youtube: 'vMpwETdpQgs',
         soundcloud: 'https://soundcloud.com/erwanlepape/le-bouquet',
         soundcloudAPINumber: 'tracks/1671137550'
     },
@@ -110,7 +110,7 @@ export const mediaList = [
         title: 'Toy Tinkers',
         author: 'Erwan le Pape',
         work: 'Rescoring',
-        youtube: 'https://www.youtube.com/embed/ayva2UZY9bo',
+        youtube: 'ayva2UZY9bo',
         soundcloud: '',
         soundcloudAPINumber: ''
     },
@@ -121,7 +121,7 @@ export const mediaList = [
         title: 'Élégie pour quatuor à cordes',
         author: 'Erwan le Pape',
         work: 'Original Music',
-        youtube: 'https://www.youtube.com/embed/rSTwZIGPxUs',
+        youtube: 'rSTwZIGPxUs',
         soundcloud: 'https://soundcloud.com/erwanlepape/sets/elegie-pour-quatuor-a-cordes',
         soundcloudAPINumber: 'playlists/1777302918'
     }
