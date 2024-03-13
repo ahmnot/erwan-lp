@@ -76,7 +76,7 @@
 		}
 	}
 
-	let updateActiveSection = ()=>{};
+	let updateActiveSection = () => {};
 
 	// Debounced update function
 	const debouncedUpdate = debounce(() => {
@@ -128,7 +128,7 @@
 				const activeLink = document.querySelector(`a[href="/#${clickedLink}"]`);
 				if (activeLink) updateUnderlinePosition(activeLink);
 			}
-		}
+		};
 	});
 </script>
 
@@ -180,9 +180,13 @@
 </header>
 <header class="header-small">
 	<nav class="nav-header-small">
-		<button class="material-symbols-outlined" on:click={hamburgerClickHandler}
-			>{isHamburgerExpanded ? 'close' : 'menu'}</button
-		>
+		<button class="icon-button-or-link" on:click={hamburgerClickHandler}>
+			<img
+				class="icon-normal"
+				src="/icons/{isHamburgerExpanded ? 'close' : 'menu'}.png"
+				alt="menu"
+			/>
+		</button>
 
 		<a
 			id="logo-header-id"
@@ -212,6 +216,34 @@
 </header>
 
 <style>
+	.icon-button-or-link {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 40px;
+		height: 40px;
+		margin: 20px;
+		padding: 0px;
+		background: none;
+		border: none;
+		cursor: pointer;
+	}
+
+	.icon-normal {
+		width: 40px;
+		height: 40px;
+		margin: auto; /* Center the icon */
+		display: block;
+		filter: grayscale(1);
+		transition: 0.1s filter linear;
+		cursor: pointer;
+	}
+
+	.icon-normal:hover {
+		filter: grayscale(0.5);
+		cursor: pointer;
+	}
+
 	.logo-placeholder {
 		display: flex;
 		position: absolute;
@@ -324,15 +356,6 @@
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
 		transition: color 0.2s linear;
-	}
-
-	.material-symbols-outlined {
-		margin: 20px;
-		color: var(--color-text);
-		background-color: var(--color-bg-0);
-		border: none;
-		cursor: pointer;
-		font-size: xx-large;
 	}
 
 	.link-header-centered {
