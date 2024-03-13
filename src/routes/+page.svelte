@@ -14,12 +14,11 @@
 	let showreelWidth;
 	let showreelHeight;
 	let soundcloudWidth;
-	let soundcloudHeight;
 	$: {
 		showreelWidth = mediaGridElementWidth;
-		soundcloudWidth = mediaGridElementWidth;
 		showreelHeight = showreelWidth * 0.5625;
-		soundcloudHeight = soundcloudWidth * 0.5625 * 1.5;
+
+		soundcloudWidth = mediaGridElementWidth;
 	}
 
 	onMount(() => {
@@ -45,17 +44,7 @@
 
 <section id="music">
 	<div class="youtube-showreel">
-		
-		<LightYoutube videoId='BteChDYwoBs'></LightYoutube>
-		<!-- <iframe
-			width={showreelWidth}
-			height={showreelHeight}
-			src="https://www.youtube.com/embed/BteChDYwoBs"
-			title="Erwan YouTube Showreel"
-			frameborder="0"
-			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-			allowfullscreen
-		></iframe> -->
+		<LightYoutube videoId="BteChDYwoBs"></LightYoutube>
 	</div>
 	<div class="media-grid" bind:clientWidth={mediaGridElementWidth}>
 		{#each mediaList as media (media.id)}
@@ -65,7 +54,7 @@
 	<div class="soundcloud-player">
 		<iframe
 			width={soundcloudWidth}
-			height={soundcloudHeight}
+			height="450px"
 			frameborder="no"
 			title="Erwan Soundcloud Showreel"
 			src="https://w.soundcloud.com/player/?visual=false&amp;url=https%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F1728038148&amp;show_artwork=true&amp;maxheight=1000&amp;maxwidth=1200&amp;auto_play=false&amp;buying=true&amp;liking=true&amp;download=true&amp;sharing=true&amp;show_comments=true&amp;show_playcount=true&amp;show_user=true&amp;color"
@@ -140,7 +129,9 @@
 </section>
 
 <style>
-	.media-grid, .soundcloud-player, .youtube-showreel {
+	.media-grid,
+	.soundcloud-player,
+	.youtube-showreel {
 		grid-column: 2 / span 3;
 	}
 
@@ -336,11 +327,12 @@
 	}
 
 	#home {
-		height: 100vh;
+		min-height: 100vh;
 	}
 
 	@media (max-width: 900px) {
-		.bio-text,.bio-skills {
+		.bio-text,
+		.bio-skills {
 			font-size: medium;
 		}
 		.home-profile-picture {
@@ -348,7 +340,7 @@
 		}
 		.media-grid {
 			grid-template-columns: 1fr 1fr 1fr;
-			gap:20px;
+			gap: 20px;
 		}
 
 		#music {

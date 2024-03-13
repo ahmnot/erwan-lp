@@ -287,6 +287,7 @@
 			position: relative;
 			display: flex;
 			justify-content: center;
+			align-items: center;
 		}
 
 		ul.hamburger-menu {
@@ -385,7 +386,6 @@
 		width: 100%;
 		height:70px;
 		background-color: black;
-		/*box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);*/
 		z-index: 999;
 		flex-direction: row;
 		justify-content: start;

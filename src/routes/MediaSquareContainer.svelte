@@ -4,7 +4,7 @@
 	import { onMount } from 'svelte';
 	export let id = '';
 	export let imageCarre = '';
-	export const images = '';
+	export let images = '';
 	export let title = '';
 	export let author = '';
 	export let work = '';
