@@ -96,11 +96,33 @@ export const mediaList = [
         id: 'bistro-belzebuth',
         imageCarre: squareImagePath + 'bistro-belzebuth-carre.webp',
         images: [detailsImagePath + 'bistro-belzebuth.webp'],
-        title: 'Toy Tinkers',
+        title: 'Le Bistro de Belzebuth',
         author: 'An animation by Le Vieux Montréal',
         work: 'Original Scoring',
         youtube: '',
         soundcloud: '',
         soundcloudAPINumber: ''
+    },
+    {
+        id: 'toy-tinkers',
+        imageCarre: squareImagePath + 'toy-tinkers-carre.jpg',
+        images: [detailsImagePath + 'toy-tinkers.webp'],
+        title: 'Toy Tinkers',
+        author: 'Erwan le Pape',
+        work: 'Rescoring',
+        youtube: 'https://www.youtube.com/embed/ayva2UZY9bo',
+        soundcloud: '',
+        soundcloudAPINumber: ''
+    },
+    {
+        id: 'elegie-quatuor',
+        imageCarre: squareImagePath + 'elegie-quatuor-carre.jpg',
+        images: [detailsImagePath + 'elegie-quatuor.jpg'],
+        title: 'Élégie pour quatuor à cordes',
+        author: 'Erwan le Pape',
+        work: 'Original Music',
+        youtube: 'https://www.youtube.com/embed/rSTwZIGPxUs',
+        soundcloud: 'https://soundcloud.com/erwanlepape/sets/elegie-pour-quatuor-a-cordes',
+        soundcloudAPINumber: 'playlists/1777302918'
     }
 ];
