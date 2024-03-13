@@ -53,7 +53,7 @@ export const mediaList = [
         imageCarre: squareImagePath + 'resistencia-carre.jpg',
         images: [detailsImagePath + 'resistencia.webp'],
         title: 'Resistencia',
-        author: 'A movie by Flavia Carolliny Sena and Bruna Soares Pereira',
+        author: 'A movie by F. Carolliny Sena and B. Soares Pereira',
         work: 'Original scoring',
         youtube: '0KWvxGljza8',
         soundcloud: 'https://soundcloud.com/erwanlepape/sets/resistencia',
