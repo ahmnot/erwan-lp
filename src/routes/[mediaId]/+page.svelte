@@ -124,6 +124,7 @@
 	}
 
 	.youtube-wrapper {
+		margin-top: 20px;
 		grid-row: 1;
 	}
 

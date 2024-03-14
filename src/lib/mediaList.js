@@ -71,6 +71,28 @@ export const mediaList = [
         soundcloudAPINumber: 'tracks/1671137550'
     },
     {
+        id: 'toy-tinkers',
+        imageCarre: squareImagePath + 'toy-tinkers-carre.jpg',
+        images: [detailsImagePath + 'toy-tinkers.webp'],
+        title: 'Toy Tinkers',
+        author: 'Erwan le Pape',
+        work: 'Rescoring',
+        youtube: 'ayva2UZY9bo',
+        soundcloud: '',
+        soundcloudAPINumber: ''
+    },
+    {
+        id: 'elegie-quatuor',
+        imageCarre: squareImagePath + 'elegie-quatuor-carre.jpg',
+        images: [detailsImagePath + 'elegie-quatuor.jpg'],
+        title: 'Élégie pour quatuor à cordes',
+        author: 'Erwan le Pape',
+        work: 'Original Music',
+        youtube: 'rSTwZIGPxUs',
+        soundcloud: 'https://soundcloud.com/erwanlepape/sets/elegie-pour-quatuor-a-cordes',
+        soundcloudAPINumber: 'playlists/1777302918'
+    },
+    {
         id: 'erinyes',
         imageCarre: squareImagePath + 'erinyes-carre.jpg',
         images: [detailsImagePath + 'erinyes.webp'],
@@ -102,27 +124,5 @@ export const mediaList = [
         youtube: '',
         soundcloud: '',
         soundcloudAPINumber: ''
-    },
-    {
-        id: 'toy-tinkers',
-        imageCarre: squareImagePath + 'toy-tinkers-carre.jpg',
-        images: [detailsImagePath + 'toy-tinkers.webp'],
-        title: 'Toy Tinkers',
-        author: 'Erwan le Pape',
-        work: 'Rescoring',
-        youtube: 'ayva2UZY9bo',
-        soundcloud: '',
-        soundcloudAPINumber: ''
-    },
-    {
-        id: 'elegie-quatuor',
-        imageCarre: squareImagePath + 'elegie-quatuor-carre.jpg',
-        images: [detailsImagePath + 'elegie-quatuor.jpg'],
-        title: 'Élégie pour quatuor à cordes',
-        author: 'Erwan le Pape',
-        work: 'Original Music',
-        youtube: 'rSTwZIGPxUs',
-        soundcloud: 'https://soundcloud.com/erwanlepape/sets/elegie-pour-quatuor-a-cordes',
-        soundcloudAPINumber: 'playlists/1777302918'
     }
 ];

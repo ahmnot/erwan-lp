@@ -351,8 +351,8 @@
 		align-items: center;
 		padding: 0 10px;
 		color: var(--color-text);
-		font-weight: 500;
-		font-size: 1.3rem;
+		font-weight: 400;
+		font-size: 1.2rem;
 		text-transform: uppercase;
 		letter-spacing: 0.1em;
 		transition: color 0.2s linear;
