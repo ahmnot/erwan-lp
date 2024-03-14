@@ -279,6 +279,7 @@
 		}
 		.header-socials-show {
 			display: flex; /* And this one is shown on large screens */
+			margin-right: 40px;
 		}
 	}
 
@@ -349,7 +350,7 @@
 		display: flex;
 		height: 100%;
 		align-items: center;
-		padding: 0 10px;
+		padding: 0 30px;
 		color: var(--color-text);
 		font-weight: 400;
 		font-size: 1.2rem;
@@ -376,6 +377,8 @@
 		width: 174px;
 		height: 50px;
 		margin: 20px;
+		margin-left:80px;
+		margin-right:80px;
 	}
 
 	header {
@@ -384,7 +387,7 @@
 		top: 0;
 		right: 0;
 		width: 100%;
-		height:70px;
+		height:100px;
 		background-color: black;
 		z-index: 999;
 		flex-direction: row;

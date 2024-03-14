@@ -82,6 +82,15 @@
 		</a>
 	</li>
 	<li>
+		<a class="icon-button-or-link" href="https://www.youtube.com/@ErwanKLP" target="_blank">
+			{#if iconsincontactsection}
+				<img class="icon-large" src="/icons/youtube.png" alt="youtube Link" />
+			{:else}
+				<img class="icon-normal" src="/icons/youtube.png" alt="youtube Link" />
+			{/if}
+		</a>
+	</li>
+	<!-- <li>
 		<a class="icon-button-or-link" href="https://www.facebook.com/profile.php?id=61551473833966" target="_blank">
 			{#if iconsincontactsection}
 				<img class="icon-large" src="/icons/facebook.png" alt="Facebook Link" />
@@ -89,8 +98,8 @@
 				<img class="icon-normal" src="/icons/facebook.png" alt="Facebook Link" />
 			{/if}
 		</a>
-	</li>
-	<li>
+	</li> -->
+	<!-- <li>
 		<a class="icon-button-or-link" href="https://www.linkedin.com/in/erwan-le-pape-9b80372ba/" target="_blank">
 			{#if iconsincontactsection}
 				<img class="icon-large" src="/icons/linkedin.png" alt="Linkedin Link" />
@@ -98,7 +107,7 @@
 				<img class="icon-normal" src="/icons/linkedin.png" alt="Linkedin Link" />
 			{/if}
 		</a>
-	</li>
+	</li> -->
 </ul>
 
 <style>
@@ -147,8 +156,8 @@
 	}
 
 	.icon-normal {
-		width: 40px;
-		height: 40px;
+		width: 35px;
+		height: 35px;
 		margin: auto; /* Center the icon */
 		display: block;
 		filter: grayscale(1);
@@ -161,7 +170,7 @@
 		align-items: center;
 		width: 50px;
 		height: 50px; 
-		margin-right: 20px;
+		margin-right: 40px;
 		padding: 0px;
 		background: none;
 		border: none;
@@ -186,6 +195,7 @@
 		right: 0px;
 		opacity: 1;
 		margin: 0;
+		margin-right: 40px;
 		justify-content: center;
 		list-style: none;
 		background-size: contain;

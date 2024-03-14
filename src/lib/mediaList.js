@@ -16,6 +16,17 @@ export const mediaList = [
         soundcloudAPINumber: 'playlists/1772144829'
     },
     {
+        id: 'elegie-quatuor',
+        imageCarre: squareImagePath + 'elegie-quatuor-carre.jpg',
+        images: [detailsImagePath + 'elegie-quatuor.jpg'],
+        title: 'Élégie pour quatuor à cordes',
+        author: 'Erwan le Pape',
+        work: 'Original Music',
+        youtube: 'rSTwZIGPxUs',
+        soundcloud: 'https://soundcloud.com/erwanlepape/sets/elegie-pour-quatuor-a-cordes',
+        soundcloudAPINumber: 'playlists/1777302918'
+    },
+    {
         id: 'sahara',
         imageCarre: squareImagePath + 'sahara-carre.webp',
         images: [detailsImagePath + 'sahara.png'],
@@ -49,6 +60,17 @@ export const mediaList = [
         soundcloudAPINumber: 'tracks/1671134031'
     },
     {
+        id: 'toy-tinkers',
+        imageCarre: squareImagePath + 'toy-tinkers-carre.jpg',
+        images: [detailsImagePath + 'toy-tinkers.webp'],
+        title: 'Toy Tinkers',
+        author: 'Erwan le Pape',
+        work: 'Rescoring',
+        youtube: 'ayva2UZY9bo',
+        soundcloud: '',
+        soundcloudAPINumber: ''
+    },
+    {
         id: 'resistencia',
         imageCarre: squareImagePath + 'resistencia-carre.jpg',
         images: [detailsImagePath + 'resistencia.webp'],
@@ -69,28 +91,6 @@ export const mediaList = [
         youtube: 'vMpwETdpQgs',
         soundcloud: 'https://soundcloud.com/erwanlepape/le-bouquet',
         soundcloudAPINumber: 'tracks/1671137550'
-    },
-    {
-        id: 'toy-tinkers',
-        imageCarre: squareImagePath + 'toy-tinkers-carre.jpg',
-        images: [detailsImagePath + 'toy-tinkers.webp'],
-        title: 'Toy Tinkers',
-        author: 'Erwan le Pape',
-        work: 'Rescoring',
-        youtube: 'ayva2UZY9bo',
-        soundcloud: '',
-        soundcloudAPINumber: ''
-    },
-    {
-        id: 'elegie-quatuor',
-        imageCarre: squareImagePath + 'elegie-quatuor-carre.jpg',
-        images: [detailsImagePath + 'elegie-quatuor.jpg'],
-        title: 'Élégie pour quatuor à cordes',
-        author: 'Erwan le Pape',
-        work: 'Original Music',
-        youtube: 'rSTwZIGPxUs',
-        soundcloud: 'https://soundcloud.com/erwanlepape/sets/elegie-pour-quatuor-a-cordes',
-        soundcloudAPINumber: 'playlists/1777302918'
     },
     {
         id: 'erinyes',

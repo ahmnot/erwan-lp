@@ -33,8 +33,8 @@
 		<div class="titres">
 			<h1 id="main-title">ERWAN LE PAPE</h1>
 			<div class="signature-grid">
-				<h2>COMPOSER <br />ARRANGER <br /> PIANIST</h2>
-				<img class="signature-presentation" src="/logo-3.webp" alt="logo" />
+				<h2 class="sous-titres">COMPOSER <br />ARRANGER <br /> PIANIST</h2>
+				<!-- <img class="signature-presentation" src="/logo-3.webp" alt="logo" /> -->
 			</div>
 		</div>
 		<img class="home-profile-picture" src="/erwan-home-cercle.png" alt="Erwan's Presentation" />
@@ -43,13 +43,13 @@
 </section>
 
 <section id="music">
-	<div class="youtube-showreel">
-		<LightYoutube videoId="BteChDYwoBs"></LightYoutube>
-	</div>
 	<div class="media-grid" bind:clientWidth={mediaGridElementWidth}>
 		{#each mediaList as media (media.id)}
 			<MediaSquareContainer {...media} />
 		{/each}
+	</div>
+	<div class="youtube-showreel">
+		<LightYoutube videoId="BteChDYwoBs"></LightYoutube>
 	</div>
 	<div class="soundcloud-player">
 		<iframe
@@ -63,7 +63,7 @@
 </section>
 
 <section id="bio">
-	<h1>Biography</h1>
+	<div class="bio-title-grid"><h1>Biography</h1></div>
 	<div class="bio-image-grid">
 		<img class="musee-picture" src="/erwan-musee-carre.jpg" alt="Erwan Talking About His" />
 		<img class="ethnic-picture" src="/erwan-ethnic-carre.png" alt="Erwan With A Nice Instrument" />
@@ -87,32 +87,29 @@
 		<p class="bio-skills">
 			<b>Skills</b> <br /><br />
 
-			Piano, Guitar, Bass, Violin, Synthesizer, Ngoni<br />
+			Piano, Guitar, Bass, Violin, Synthesizer<br />
 			Composition, Theory, Harmony, Arrangement, Orchestration, Sound-Design. <br />
 			I use DAWs such as Logic Pro, Sibelius, Fl Studio. <br />
 			I work from my home studio. <br />
 			Easily reachable. <br />
 			<br />
-			I worked with them: <br />
 		</p>
 	</div>
+	<div class="credits-titre-grid"><h2>CREDITS</h2></div>
 	<div class="logos-grid-wrapper">
-		<div></div>
-		<div class="logos-grid">
-			<img src="/logos-ecoles/brassart.jpg" alt="Brassart logo" />
-			<img src="/logos-ecoles/esad-amiens.png" alt="Esad logo" />
-			<img src="/logos-ecoles/gamagora.png" alt="Gamagora logo" />
-			<img src="/logos-ecoles/maaav.png" alt="MAAAV logo" />
-			<img src="/logos-ecoles/mba-lyon.png" alt="MBA Lyon logo" />
-			<img src="/logos-ecoles/univlyon2.png" alt="Lyon 2 University logo" />
-			<img src="/logos-ecoles/vieux-montreal.png" alt="Vieux Montreal logo" />
-		</div>
-		<div></div>
+		<img src="/logos-ecoles/brassart.jpg" alt="Brassart logo" />
+		<img src="/logos-ecoles/esad-amiens.png" style="filter:invert(1);" alt="Esad logo" />
+		<img src="/logos-ecoles/gamagora.png" alt="Gamagora logo" />
+		<img src="/logos-ecoles/maaav.png" alt="MAAAV logo" />
+		<img src="/logos-ecoles/mba-lyon.png" alt="MBA Lyon logo" />
+		<img src="/logos-ecoles/univlyon2.png" alt="Lyon 2 University logo" />
+		<img src="/logos-ecoles/vieux-montreal.png" style="filter:invert(1);" alt="Vieux Montreal logo" />
+		<img src="/logos-ecoles/ENAAI.png" alt="ENAAI logo" />
 	</div>
 </section>
 
 <section id="contact">
-	<h1>Contact</h1>
+	<div class="contact-title-grid"><h1>Contact</h1></div>
 	<div class="contact-section-content-row">
 		<h2 class="contact-text-row">→</h2>
 		<div class="contact-icons-row">
@@ -129,6 +126,33 @@
 </section>
 
 <style>
+	.bio-title-grid,
+	.credits-titre-grid,
+	.contact-title-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	}
+
+	#bio h1,
+	.credits-titre-grid h2,
+	.contact-title-grid h1 {
+		grid-column: 2 / span 3;
+		margin-left: 0;
+	}
+
+	.credits-titre-grid h2 {
+		margin: 0;
+	}
+
+	#main-title {
+		margin-bottom: 40px;
+		margin-left: 200px;
+	}
+
+	.sous-titres {
+		margin-top: 0;
+	}
+
 	.media-grid,
 	.soundcloud-player,
 	.youtube-showreel {
@@ -141,12 +165,9 @@
 		gap: 20px;
 	}
 
-	.soundcloud-player {
-		margin-top: 20px;
-	}
-
+	.soundcloud-player,
 	.youtube-showreel {
-		margin-bottom: 20px;
+		margin-top: 150px;
 	}
 
 	#music {
@@ -171,31 +192,32 @@
 	.logos-grid-wrapper {
 		display: grid;
 		grid-template-rows: auto;
-		grid-template-columns: 0.25fr 1fr 0.25fr;
-		padding-right: 40px;
-		padding-left: 40px;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+		gap: 20px;
 	}
 
-	.logos-grid img {
+	.logos-grid-wrapper img {
 		width: 100%;
 		height: 100%;
 	}
 
-	.logos-grid {
-		display: grid;
-		grid-template-rows: 1fr 0;
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-		gap: 20px;
-	}
 
 	#contact {
 		border-top: 1px solid white;
 		padding-bottom: 140px;
+		height: 50vh;
 	}
 
 	.bio-skills {
 		grid-row: 2;
-		grid-column: 2;
+		grid-column: 2 / span 3;
+		text-align: left;
+	}
+
+	.bio-text {
+		grid-row: 1;
+		grid-column: 2 / span 3;
+		text-align: left;
 	}
 
 	.downwoard-arrow-home {
@@ -219,8 +241,9 @@
 		display: grid;
 		grid-template-rows: 1fr auto;
 		height: 100%;
-		grid-template-columns: 0.5fr 1fr 0.5fr;
+		grid-template-columns: 1fr 1fr 1fr 0.75fr 0.25fr 1fr;
 		gap: 20px;
+		margin-top: 100px;
 	}
 	.musee-picture {
 		grid-column: 2;
@@ -232,11 +255,6 @@
 		width: 100%;
 		justify-self: center;
 		align-self: center;
-	}
-
-	.bio-text {
-		grid-row: 1;
-		grid-column: 2;
 	}
 
 	.downwoard-arrow {
@@ -287,7 +305,8 @@
 		position: relative;
 		justify-content: start;
 		align-content: start;
-		margin-left: 40px;
+		margin-left: 200px;
+		margin-top: 0;
 	}
 
 	.signature-presentation {
@@ -319,6 +338,7 @@
 	}
 
 	.titres {
+		align-self: center;
 		width: 100%;
 	}
 
