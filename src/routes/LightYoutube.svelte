@@ -1,6 +1,7 @@
 <script>
 	// @ts-nocheck
 	export let videoId = '';
+	export let image = '';
 
 	function loadIframe(div, videoId) {
 		var iframe = document.createElement('iframe');
@@ -20,7 +21,11 @@
 
 <div class="youtube-player">
 	<button on:click={loadIframe(this, videoId)}>
+		{#if image !== ''}
+		<img src="{image}" alt="" />
+		{:else}
 		<img src="//i.ytimg.com/vi/{videoId}/hqdefault.jpg" alt="" />
+		{/if}
 		<div class="playButton"></div>
 	</button>
 </div>

@@ -48,7 +48,7 @@
 		{/each}
 	</div>
 	<div class="youtube-showreel">
-		<LightYoutube videoId="BteChDYwoBs"></LightYoutube>
+		<LightYoutube videoId="BteChDYwoBs" image='/image-showreel.jpg'></LightYoutube>
 	</div>
 	<div class="soundcloud-player">
 		<iframe
