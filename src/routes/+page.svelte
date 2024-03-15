@@ -30,11 +30,10 @@
 
 <section id="home">
 	<div class="presentation-grid">
-		<div class="titres">
+		<div class="texte-home">
 			<h1 id="main-title">ERWAN LE PAPE</h1>
-			<div class="signature-grid">
+			<div class="sous-titres-wrapper">
 				<h2 class="sous-titres">COMPOSER <br />ARRANGER <br /> PIANIST</h2>
-				<!-- <img class="signature-presentation" src="/logo-3.webp" alt="logo" /> -->
 			</div>
 		</div>
 		<img class="home-profile-picture" src="/erwan-home-cercle.png" alt="Erwan's Presentation" />
@@ -97,35 +96,108 @@
 	</div>
 	<div class="credits-titre-grid"><h2>CREDITS</h2></div>
 	<div class="logos-grid-wrapper">
-		<img src="/logos-ecoles/brassart.jpg" alt="Brassart logo" />
-		<img src="/logos-ecoles/esad-amiens.png" style="filter:invert(1);" alt="Esad logo" />
-		<img src="/logos-ecoles/gamagora.png" alt="Gamagora logo" />
-		<img src="/logos-ecoles/maaav.png" alt="MAAAV logo" />
-		<img src="/logos-ecoles/mba-lyon.png" alt="MBA Lyon logo" />
-		<img src="/logos-ecoles/univlyon2.png" alt="Lyon 2 University logo" />
-		<img src="/logos-ecoles/vieux-montreal.png" style="filter:invert(1);" alt="Vieux Montreal logo" />
-		<img src="/logos-ecoles/ENAAI.png" alt="ENAAI logo" />
+		<div></div>
+		<div class="logos-grid-imgs">
+			<img src="/logos-ecoles/brassart.jpg" alt="Brassart logo" />
+			<img src="/logos-ecoles/esad-amiens.png" style="filter:invert(1);" alt="Esad logo" />
+			<img src="/logos-ecoles/gamagora.png" alt="Gamagora logo" />
+			<img src="/logos-ecoles/maaav.png" alt="MAAAV logo" />
+			<img src="/logos-ecoles/mba-lyon.png" alt="MBA Lyon logo" />
+			<img src="/logos-ecoles/univlyon2.png" alt="Lyon 2 University logo" />
+			<img src="/logos-ecoles/vieux-montreal.png" style="filter:invert(1);" alt="Vieux Montreal logo" />
+			<img src="/logos-ecoles/ENAAI.png" alt="ENAAI logo" />
+		</div>
+		<div></div>
 	</div>
 </section>
 
 <section id="contact">
 	<div class="contact-title-grid"><h1>Contact</h1></div>
-	<div class="contact-section-content-row">
-		<h2 class="contact-text-row">→</h2>
-		<div class="contact-icons-row">
-			<IconsBar iconsincontactsection={true} />
+	<div class="icon-bar-grid">
+		<div class="email-box">
+			erwanlepape@outlook.com
 		</div>
-	</div>
-
-	<div class="contact-section-content-column">
-		<h2 class="downwoard-arrow">↓</h2>
-		<div class="contact-icons-column">
-			<IconsBar iconsincontactsection={true} columnize={true} />
+		<div class="icon-button-or-link">
+			<img class="icon-large" src="/icons/mail.png" alt="Mail Icon" />
 		</div>
+		<a class="icon-button-or-link" href="https://www.instagram.com/erwanklp/" target="_blank">
+			<img class="icon-large" src="/icons/instagram.png" alt="Instagram Link" />
+		</a>
+		<a class="icon-button-or-link" href="https://discord.com/users/783996252018573332" target="_blank">
+			<img class="icon-large" src="/icons/discord.png" alt="Discord Link" />
+		</a>
+		<a class="icon-button-or-link" href="https://www.facebook.com/profile.php?id=61551473833966" target="_blank">
+			<img class="icon-large" src="/icons/facebook.png" alt="Facebook Link" />
+		</a>
+		<a class="icon-button-or-link" href="https://www.linkedin.com/in/erwan-le-pape-9b80372ba/" target="_blank">
+			<img class="icon-large" src="/icons/linkedin.png" alt="Linkedin Link" />
+		</a>
 	</div>
 </section>
 
 <style>
+	.email-box {
+		font-size: x-large;
+		color: var(--color-theme-1);
+	}
+
+	.icon-bar-grid {
+		display: grid;
+		justify-items: center;
+		gap:40px;
+	}
+
+	.icon-large {
+		width: 60px;
+		height: 60px;
+		margin: auto; /* Center the icon */
+		display: block;
+		filter: grayscale(1);
+		transition: 0.1s filter linear;
+	}
+
+	.icon-button-or-link {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 50px;
+		height: 50px; 
+		margin-right: 40px;
+		padding: 0px;
+		background: none;
+		border: none;
+	}
+
+	.icon-large:hover {
+		filter: grayscale(0);
+		cursor: pointer;
+	}
+
+	.logos-grid-wrapper {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	}
+
+	.logos-grid-imgs {
+		grid-column: 2 / span 3;
+		display: grid;
+		grid-template-rows: 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		gap:20px;
+		margin-bottom: 20px;
+	}
+
+	.logos-grid-imgs img {
+		width: 100%;
+		height: 100%;
+	}
+
+	.texte-home {
+		align-self: center;
+		width: 100%;
+		margin-left:80px;
+	}
+
 	.bio-title-grid,
 	.credits-titre-grid,
 	.contact-title-grid {
@@ -146,7 +218,10 @@
 
 	#main-title {
 		margin-bottom: 40px;
-		margin-left: 200px;
+		margin-left:0;
+	}
+	.sous-titres-wrapper {
+		display: flex;
 	}
 
 	.sous-titres {
@@ -188,19 +263,6 @@
 		justify-self: end;
 		object-fit: contain;
 	}
-
-	.logos-grid-wrapper {
-		display: grid;
-		grid-template-rows: auto;
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-		gap: 20px;
-	}
-
-	.logos-grid-wrapper img {
-		width: 100%;
-		height: 100%;
-	}
-
 
 	#contact {
 		border-top: 1px solid white;
@@ -257,63 +319,11 @@
 		align-self: center;
 	}
 
-	.downwoard-arrow {
-		grid-row: 2;
-		justify-self: center;
-		margin: 10px;
-	}
-
-	.contact-section-content-row {
-		display: none;
-	}
-
-	.contact-section-content-column {
-		display: grid;
-		grid-template-columns: 1fr;
-		margin-bottom: 100px;
-	}
-
-	.contact-icons-column {
-		grid-row: 3;
-		justify-self: center;
-	}
-
 	/* Above 1160px */
 	@media (min-width: 1250px) {
-		.contact-section-content-column {
-			display: none;
-		}
-		.contact-section-content-row {
-			display: flex;
-			flex-direction: row;
-			justify-content: space-around;
-		}
-		.contact-icons-row {
-			display: flex;
-			align-items: center;
-			transform: translate(-50%);
-		}
 		h2 {
 			margin-block-end: 0 !important;
 		}
-	}
-
-	.signature-grid {
-		display: grid;
-		grid-template-columns: auto auto;
-		grid-template-rows: auto auto;
-		position: relative;
-		justify-content: start;
-		align-content: start;
-		margin-left: 200px;
-		margin-top: 0;
-	}
-
-	.signature-presentation {
-		grid-column: 2;
-		grid-row: 2;
-		width: 100%;
-		min-width: 250px;
 	}
 
 	h1 {
@@ -335,11 +345,6 @@
 
 	h1 {
 		margin-left: 40px;
-	}
-
-	.titres {
-		align-self: center;
-		width: 100%;
 	}
 
 	section {
@@ -376,10 +381,6 @@
 		.media-grid {
 			grid-template-columns: 1fr 1fr;
 		}
-		.logos-grid {
-			grid-template-rows: 1fr 1fr 0;
-			grid-template-columns: 1fr 1fr 1fr;
-		}
 		.piano-picture {
 			display: none;
 		}
@@ -400,21 +401,6 @@
 
 		.bio-text-grid {
 			grid-template-columns: 0.1fr 1fr 0.1fr;
-		}
-		.signature-presentation {
-			grid-column: 2;
-			grid-row: 2;
-			width: 100%; /* Adjust width as necessary, or use max-width */
-			min-width: 0;
-		}
-	}
-
-	@media (max-width: 600px) {
-		.signature-presentation {
-			grid-column: 1;
-		}
-		.signature-grid {
-			grid-template-columns: 1fr;
 		}
 	}
 
