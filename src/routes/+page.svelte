@@ -278,10 +278,11 @@
 	}
 
 	.downwoard-arrow-home {
+		position: absolute;
+		bottom: 20px; /* Adjust this value as needed for margin from bottom */
 		grid-column: span 2;
-		grid-row: 2;
 		justify-self: center;
-		align-self: center;
+		align-self: end; 
 		color: var(--color-theme-1);
 		font-size: 600%;
 	}
@@ -374,8 +375,17 @@
 			display: grid;
 			grid-template-columns: 20px 1fr 1fr 1fr 20px;
 		}
+
 		.bio-image-grid {
 			grid-template-columns: 0 1fr 1fr;
+		}
+
+		.bio-text-grid {
+			grid-template-columns: 20px 1fr 1fr 1fr 20px;
+		}
+
+		.logos-grid-wrapper {
+			grid-template-columns: 0.2fr 1fr 1fr 1fr 0.2fr;
 		}
 	}
 
@@ -399,10 +409,6 @@
 
 		h2 {
 			font-size: 300%;
-		}
-
-		.bio-text-grid {
-			grid-template-columns: 0.1fr 1fr 0.1fr;
 		}
 	}
 

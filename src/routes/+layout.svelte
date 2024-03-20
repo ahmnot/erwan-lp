@@ -51,6 +51,7 @@
 		font-size: medium;
 	}
 	p {
+		margin: 10px;
 		opacity: 0.9;
 	}
 </style>
