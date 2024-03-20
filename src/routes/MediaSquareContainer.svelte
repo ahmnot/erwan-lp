@@ -128,7 +128,7 @@
 		justify-content: center;
 		align-items: center;
 		text-align: center;
-		background: rgba(0, 0, 0, 0.95);
+		background: rgba(0, 0, 0, 0.9);
 		color: white;
 		visibility: hidden;
 		opacity: 0;
@@ -146,4 +146,11 @@
 		visibility: visible;
 		opacity: 1;
 	}
+
+	@media(max-width:1200px) {
+		.media-info {
+			font-size: small;
+		}
+	}
+
 </style>

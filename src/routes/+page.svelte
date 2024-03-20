@@ -2,9 +2,10 @@
 	// @ts-nocheck
 	import MediaSquareContainer from './MediaSquareContainer.svelte';
 	import { mediaList } from '$lib/mediaList';
-	import { onMount, onDestroy } from 'svelte';
+	import { onMount } from 'svelte';
 	import { underlineVisible } from '$lib/underlineVisibility';
 	import IconsBar from './IconsBar.svelte';
+	import LightYoutube from './LightYoutube.svelte';
 
 	$: innerWidth = 0;
 	$: innerHeight = 0;
@@ -13,12 +14,11 @@
 	let showreelWidth;
 	let showreelHeight;
 	let soundcloudWidth;
-	let soundcloudHeight;
 	$: {
 		showreelWidth = mediaGridElementWidth;
-		soundcloudWidth = mediaGridElementWidth;
 		showreelHeight = showreelWidth * 0.5625;
-		soundcloudHeight = soundcloudWidth * 0.5625 * 1.5;
+
+		soundcloudWidth = mediaGridElementWidth;
 	}
 
 	onMount(() => {
@@ -30,11 +30,10 @@
 
 <section id="home">
 	<div class="presentation-grid">
-		<div class="titres">
+		<div class="texte-home">
 			<h1 id="main-title">ERWAN LE PAPE</h1>
-			<div class="signature-grid">
-				<h2>COMPOSER <br />ARRANGER <br /> PIANIST</h2>
-				<img class="signature-presentation" src="/logo-3.webp" alt="logo" />
+			<div class="sous-titres-wrapper">
+				<h2 class="sous-titres">COMPOSER <br />ARRANGER <br /> PIANIST</h2>
 			</div>
 		</div>
 		<img class="home-profile-picture" src="/erwan-home-cercle.png" alt="Erwan's Presentation" />
@@ -43,26 +42,18 @@
 </section>
 
 <section id="music">
-	<div class="youtube-showreel">
-		<iframe
-			width={showreelWidth}
-			height={showreelHeight}
-			src="https://www.youtube.com/embed/BteChDYwoBs"
-			title="Erwan YouTube Showreel"
-			frameborder="0"
-			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-			allowfullscreen
-		></iframe>
-	</div>
 	<div class="media-grid" bind:clientWidth={mediaGridElementWidth}>
 		{#each mediaList as media (media.id)}
 			<MediaSquareContainer {...media} />
 		{/each}
 	</div>
+	<div class="youtube-showreel">
+		<LightYoutube videoId="BteChDYwoBs" image='/image-showreel.jpg'></LightYoutube>
+	</div>
 	<div class="soundcloud-player">
 		<iframe
 			width={soundcloudWidth}
-			height={soundcloudHeight}
+			height="450px"
 			frameborder="no"
 			title="Erwan Soundcloud Showreel"
 			src="https://w.soundcloud.com/player/?visual=false&amp;url=https%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F1728038148&amp;show_artwork=true&amp;maxheight=1000&amp;maxwidth=1200&amp;auto_play=false&amp;buying=true&amp;liking=true&amp;download=true&amp;sharing=true&amp;show_comments=true&amp;show_playcount=true&amp;show_user=true&amp;color"
@@ -71,7 +62,7 @@
 </section>
 
 <section id="bio">
-	<h1>Biography</h1>
+	<div class="bio-title-grid"><h1>Biography</h1></div>
 	<div class="bio-image-grid">
 		<img class="musee-picture" src="/erwan-musee-carre.jpg" alt="Erwan Talking About His" />
 		<img class="ethnic-picture" src="/erwan-ethnic-carre.png" alt="Erwan With A Nice Instrument" />
@@ -95,47 +86,146 @@
 		<p class="bio-skills">
 			<b>Skills</b> <br /><br />
 
-			Piano, Guitar, Bass, Violin, Synthesizer, Ngoni<br />
+			Piano, Guitar, Bass, Violin, Synthesizer<br />
 			Composition, Theory, Harmony, Arrangement, Orchestration, Sound-Design. <br />
 			I use DAWs such as Logic Pro, Sibelius, Fl Studio. <br />
 			I work from my home studio. <br />
 			Easily reachable. <br />
+			<br />
 		</p>
 	</div>
+	<div class="credits-titre-grid"><h2>CREDITS</h2></div>
 	<div class="logos-grid-wrapper">
 		<div></div>
-		<div class="logos-grid">
+		<div class="logos-grid-imgs">
 			<img src="/logos-ecoles/brassart.jpg" alt="Brassart logo" />
-			<img src="/logos-ecoles/esad-amiens.png" alt="Brassart logo" />
-			<img src="/logos-ecoles/gamagora.png" alt="Brassart logo" />
-			<img src="/logos-ecoles/maaav.png" alt="Brassart logo" />
-			<img src="/logos-ecoles/mba-lyon.png" alt="Brassart logo" />
-			<img src="/logos-ecoles/univlyon2.png" alt="Brassart logo" />
-			<img src="/logos-ecoles/vieux-montreal.png" alt="Brassart logo" />
+			<img src="/logos-ecoles/esad-amiens.png" style="filter:invert(1);" alt="Esad logo" />
+			<img src="/logos-ecoles/gamagora.png" alt="Gamagora logo" />
+			<img src="/logos-ecoles/maaav.png" alt="MAAAV logo" />
+			<img src="/logos-ecoles/mba-lyon.png" alt="MBA Lyon logo" />
+			<img src="/logos-ecoles/univlyon2.png" alt="Lyon 2 University logo" />
+			<img src="/logos-ecoles/vieux-montreal.png" style="filter:invert(1);" alt="Vieux Montreal logo" />
+			<img src="/logos-ecoles/ENAAI.png" alt="ENAAI logo" />
 		</div>
 		<div></div>
 	</div>
 </section>
 
 <section id="contact">
-	<h1>Contact</h1>
-	<div class="contact-section-content-row">
-		<h2 class="contact-text-row">→</h2>
-		<div class="contact-icons-row">
-			<IconsBar iconsincontactsection={true} />
+	<div class="contact-title-grid"><h1>Contact</h1></div>
+	<div class="icon-bar-grid">
+		<div class="email-box">
+			erwanlepape@outlook.com
 		</div>
-	</div>
-
-	<div class="contact-section-content-column">
-		<h2 class="downwoard-arrow">↓</h2>
-		<div class="contact-icons-column">
-			<IconsBar iconsincontactsection={true} columnize={true} />
-		</div>
+		<a class="icon-button-or-link" href="https://www.instagram.com/erwanklp/" target="_blank">
+			<img class="icon-large" src="/icons/instagram.png" alt="Instagram Link" />
+		</a>
+		<a class="icon-button-or-link" href="https://discord.com/users/783996252018573332" target="_blank">
+			<img class="icon-large" src="/icons/discord.png" alt="Discord Link" />
+		</a>
+		<a class="icon-button-or-link" href="https://www.facebook.com/profile.php?id=61551473833966" target="_blank">
+			<img class="icon-large" src="/icons/facebook.png" alt="Facebook Link" />
+		</a>
+		<a class="icon-button-or-link" href="https://www.linkedin.com/in/erwan-le-pape-9b80372ba/" target="_blank">
+			<img class="icon-large" src="/icons/linkedin.png" alt="Linkedin Link" />
+		</a>
 	</div>
 </section>
 
 <style>
-	.media-grid, .soundcloud-player, .youtube-showreel {
+	.email-box {
+		font-size: x-large;
+		color: var(--color-theme-1);
+	}
+
+	.icon-bar-grid {
+		display: grid;
+		justify-items: center;
+		gap:40px;
+	}
+
+	.icon-large {
+		width: 60px;
+		height: 60px;
+		margin: auto; /* Center the icon */
+		display: block;
+		filter: grayscale(1);
+		transition: 0.1s filter linear;
+	}
+
+	.icon-button-or-link {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 50px;
+		height: 50px; 
+		background: none;
+		border: none;
+	}
+
+	.icon-large:hover {
+		filter: grayscale(0);
+		cursor: pointer;
+	}
+
+	.logos-grid-wrapper {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	}
+
+	.logos-grid-imgs {
+		grid-column: 2 / span 3;
+		display: grid;
+		grid-template-rows: 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		gap:20px;
+		margin-bottom: 20px;
+	}
+
+	.logos-grid-imgs img {
+		width: 100%;
+		height: 100%;
+	}
+
+	.texte-home {
+		align-self: center;
+		width: 100%;
+		margin-left:80px;
+	}
+
+	.bio-title-grid,
+	.credits-titre-grid,
+	.contact-title-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	}
+
+	#bio h1,
+	.credits-titre-grid h2,
+	.contact-title-grid h1 {
+		grid-column: 2 / span 3;
+		margin-left: 0;
+	}
+
+	.credits-titre-grid h2 {
+		margin: 0;
+	}
+
+	#main-title {
+		margin-bottom: 40px;
+		margin-left:0;
+	}
+	.sous-titres-wrapper {
+		display: flex;
+	}
+
+	.sous-titres {
+		margin-top: 0;
+	}
+
+	.media-grid,
+	.soundcloud-player,
+	.youtube-showreel {
 		grid-column: 2 / span 3;
 	}
 
@@ -145,18 +235,15 @@
 		gap: 20px;
 	}
 
-	.soundcloud-player {
-		margin-top: 20px;
-	}
-
+	.soundcloud-player,
 	.youtube-showreel {
-		justify-self: center;
-		margin-bottom: 20px;
+		margin-top: 150px;
 	}
 
 	#music {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+		padding-top: 100px;
 	}
 
 	.presentation-grid {
@@ -173,41 +260,29 @@
 		object-fit: contain;
 	}
 
-	.logos-grid-wrapper {
-		display: grid;
-		grid-template-rows: auto;
-		grid-template-columns: 0.25fr 1fr 0.25fr;
-		padding-right: 40px;
-		padding-left: 40px;
-	}
-
-	.logos-grid img {
-		width: 100%;
-		height: 100%;
-	}
-
-	.logos-grid {
-		display: grid;
-		grid-template-rows: 1fr 0;
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-		gap: 20px;
-	}
-
 	#contact {
 		border-top: 1px solid white;
-		padding-bottom: 140px;
+		height: 70vh;
 	}
 
 	.bio-skills {
 		grid-row: 2;
-		grid-column: 2;
+		grid-column: 2 / span 3;
+		text-align: left;
+	}
+
+	.bio-text {
+		grid-row: 1;
+		grid-column: 2 / span 3;
+		text-align: left;
 	}
 
 	.downwoard-arrow-home {
+		position: absolute;
+		bottom: 20px; /* Adjust this value as needed for margin from bottom */
 		grid-column: span 2;
-		grid-row: 2;
 		justify-self: center;
-		align-self: center;
+		align-self: end; 
 		color: var(--color-theme-1);
 		font-size: 600%;
 	}
@@ -224,8 +299,9 @@
 		display: grid;
 		grid-template-rows: 1fr auto;
 		height: 100%;
-		grid-template-columns: 0.5fr 1fr 0.5fr;
+		grid-template-columns: 1fr 1fr 1fr 0.75fr 0.25fr 1fr;
 		gap: 20px;
+		margin-top: 100px;
 	}
 	.musee-picture {
 		grid-column: 2;
@@ -239,67 +315,11 @@
 		align-self: center;
 	}
 
-	.bio-text {
-		grid-row: 1;
-		grid-column: 2;
-	}
-
-	.downwoard-arrow {
-		grid-row: 2;
-		justify-self: center;
-		margin: 10px;
-	}
-
-	.contact-section-content-row {
-		display: none;
-	}
-
-	.contact-section-content-column {
-		display: grid;
-		grid-template-columns: 1fr;
-		margin-bottom: 100px;
-	}
-
-	.contact-icons-column {
-		grid-row: 3;
-		justify-self: center;
-	}
-
 	/* Above 1160px */
 	@media (min-width: 1250px) {
-		.contact-section-content-column {
-			display: none;
-		}
-		.contact-section-content-row {
-			display: flex;
-			flex-direction: row;
-			justify-content: space-around;
-		}
-		.contact-icons-row {
-			display: flex;
-			align-items: center;
-			transform: translate(-50%);
-		}
 		h2 {
 			margin-block-end: 0 !important;
 		}
-	}
-
-	.signature-grid {
-		display: grid;
-		grid-template-columns: auto auto;
-		grid-template-rows: auto auto;
-		position: relative;
-		justify-content: start;
-		align-content: start;
-		margin-left: 40px;
-	}
-
-	.signature-presentation {
-		grid-column: 2;
-		grid-row: 2;
-		width: 100%;
-		min-width: 250px;
 	}
 
 	h1 {
@@ -323,10 +343,6 @@
 		margin-left: 40px;
 	}
 
-	.titres {
-		width: 100%;
-	}
-
 	section {
 		display: block;
 	}
@@ -335,34 +351,62 @@
 		height: 100vh;
 	}
 
-	@media (max-width: 900px) {
-		.bio-text,.bio-skills {
+	.downwoard-arrow-home {
+		display: none;
+	}
+	
+	@media (max-width: 840px) {
+
+		.downwoard-arrow-home {
+					display: block;
+			position: absolute;
+			bottom: 20px; /* Adjust this value as needed for margin from bottom */
+			grid-column: span 2;
+			justify-self: center;
+			align-self: end; 
+			color: var(--color-theme-1);
+			font-size: 600%;
+		}
+		.bio-text,
+		.bio-skills {
 			font-size: medium;
+		}
+		.presentation-grid {
+			grid-template-columns: 1fr ;
+			margin-left: 20px;
+		}
+		.texte-home {
+			margin-left: 0;
 		}
 		.home-profile-picture {
 			display: none;
 		}
 		.media-grid {
 			grid-template-columns: 1fr 1fr 1fr;
-			gap:20px;
+			gap: 20px;
 		}
 
 		#music {
 			display: grid;
 			grid-template-columns: 20px 1fr 1fr 1fr 20px;
 		}
+
 		.bio-image-grid {
 			grid-template-columns: 0 1fr 1fr;
+		}
+
+		.bio-text-grid {
+			grid-template-columns: 20px 1fr 1fr 1fr 20px;
+		}
+
+		.logos-grid-wrapper {
+			grid-template-columns: 0.2fr 1fr 1fr 1fr 0.2fr;
 		}
 	}
 
 	@media (max-width: 768px) {
 		.media-grid {
 			grid-template-columns: 1fr 1fr;
-		}
-		.logos-grid {
-			grid-template-rows: 1fr 1fr 0;
-			grid-template-columns: 1fr 1fr 1fr;
 		}
 		.piano-picture {
 			display: none;
@@ -381,25 +425,6 @@
 		h2 {
 			font-size: 300%;
 		}
-
-		.bio-text-grid {
-			grid-template-columns: 0.1fr 1fr 0.1fr;
-		}
-		.signature-presentation {
-			grid-column: 2;
-			grid-row: 2;
-			width: 100%; /* Adjust width as necessary, or use max-width */
-			min-width: 0;
-		}
-	}
-
-	@media (max-width: 600px) {
-		.signature-presentation {
-			grid-column: 1;
-		}
-		.signature-grid {
-			grid-template-columns: 1fr;
-		}
 	}
 
 	@media (max-width: 450px) {
@@ -409,6 +434,9 @@
 
 		h2 {
 			font-size: 250%;
+		}
+		.email-box {
+			font-size: large;
 		}
 	}
 

@@ -7,6 +7,7 @@
 
 	import IconsBar from './IconsBar.svelte';
 
+	let innerHeight;
 	let scrollY;
 	let clickedLink = 'home';
 	let applyTransition = false;
@@ -45,12 +46,21 @@
 		const link = event.currentTarget;
 		const anchorId = new URL(link.href).hash.replace('#', '');
 		const anchor = document.getElementById(anchorId);
+
 		if (anchor) {
+			if (anchorId === 'home') {
+				// If the anchor ID is 'home', scroll to the top of the window
+				window.scrollTo({
+					top: 0,
+					behavior: 'smooth'
+				});
+			} else {
 			// If the anchor exists in the current document, scroll to it
 			window.scrollTo({
-				top: anchor.offsetTop - 100,
+				top: anchor.offsetTop,
 				behavior: 'smooth'
 			});
+		}
 		} else {
 			// If the anchor doesn't exist, use goto to navigate to the target page
 			// Assuming the link's href attribute contains the path to navigate to
@@ -76,7 +86,7 @@
 		}
 	}
 
-	let updateActiveSection = ()=>{};
+	let updateActiveSection = () => {};
 
 	// Debounced update function
 	const debouncedUpdate = debounce(() => {
@@ -85,7 +95,6 @@
 
 	// We use a reactive statement to react to changes in scrollY, which is bound to window's scroll position.
 	$: scrollY, debouncedUpdate();
-
 	onMount(async () => {
 		if (
 			logoImageElement &&
@@ -110,6 +119,10 @@
 		updateActiveSection = () => {
 			let currentSection = '';
 
+			if (innerHeight + scrollY >= document.body.offsetHeight - 1) {
+				// If the user has scrolled to the bottom of the page, set 'contact' as the current section
+				currentSection = 'contact';
+    		} else {
 			sections.forEach((section) => {
 				const element = document.getElementById(section);
 				if (!element) return;
@@ -122,21 +135,21 @@
 					currentSection = section;
 				}
 			});
+		}
 
 			if (clickedLink !== currentSection) {
 				clickedLink = currentSection;
 				const activeLink = document.querySelector(`a[href="/#${clickedLink}"]`);
 				if (activeLink) updateUnderlinePosition(activeLink);
 			}
-		}
+		};
 	});
 </script>
 
-<svelte:window bind:scrollY />
+<svelte:window bind:innerHeight bind:scrollY />
 
 <header class="header-large">
 	<a id="logo-header-id" href="/#home" on:click={(e) => handleAnchorClick(e)}>
-		<!-- !logoImageComplete -->
 		{#if !logoImageComplete}
 			<div transition:fade={{ duration: 150 }} class="logo-placeholder"></div>
 		{/if}
@@ -180,9 +193,13 @@
 </header>
 <header class="header-small">
 	<nav class="nav-header-small">
-		<button class="material-symbols-outlined" on:click={hamburgerClickHandler}
-			>{isHamburgerExpanded ? 'close' : 'menu'}</button
-		>
+		<button class="icon-button-or-link" on:click={hamburgerClickHandler}>
+			<img
+				class="icon-normal"
+				src="/icons/{isHamburgerExpanded ? 'close' : 'menu'}.png"
+				alt="menu"
+			/>
+		</button>
 
 		<a
 			id="logo-header-id"
@@ -212,6 +229,34 @@
 </header>
 
 <style>
+	.icon-button-or-link {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 40px;
+		height: 40px;
+		margin: 20px;
+		padding: 0px;
+		background: none;
+		border: none;
+		cursor: pointer;
+	}
+
+	.icon-normal {
+		width: 40px;
+		height: 40px;
+		margin: auto; /* Center the icon */
+		display: block;
+		filter: grayscale(1);
+		transition: 0.1s filter linear;
+		cursor: pointer;
+	}
+
+	.icon-normal:hover {
+		filter: grayscale(0.5);
+		cursor: pointer;
+	}
+
 	.logo-placeholder {
 		display: flex;
 		position: absolute;
@@ -232,7 +277,7 @@
 	}
 
 	/* Medium screens: Between 831px and 1040px */
-	@media (min-width: 910px) and (max-width: 1040px) {
+	@media (min-width: 1200px) and (max-width: 1330px) {
 		.header-socials-column-show {
 			display: flex; /* Now show this for medium screens */
 		}
@@ -242,29 +287,33 @@
 	}
 
 	/* Large screens: Above 1040px */
-	@media (min-width: 1041px) {
+	@media (min-width: 1331px) {
 		.header-socials-column-show {
 			display: none; /* Ensure this is hidden on large screens */
 		}
 		.header-socials-show {
 			display: flex; /* And this one is shown on large screens */
+			margin-right: 40px;
 		}
 	}
 
-	@media (max-width: 600px) {
+	@media (max-width: 840px) {
 		.nav-header-small {
 			position: relative;
 			display: flex;
 			justify-content: center;
+			align-items: center;
 		}
 
 		ul.hamburger-menu {
 			position: absolute;
-			padding: 0;
-			margin: 20px;
+			margin:0;
+			padding-top: 20px;
+			padding-bottom: 20px;
+			padding-left: 0;
 			height: 150%;
 			display: flex;
-			justify-content: flex-start;
+			justify-content: center;
 			align-items: baseline;
 			flex-direction: column;
 			top: 50px;
@@ -273,6 +322,7 @@
 			background-color: rgb(0, 0, 0, 0.9);
 		}
 		.header-small {
+			height: 80px;
 			display: flex;
 		}
 		.header-large {
@@ -280,7 +330,7 @@
 		}
 	}
 
-	@media (min-width: 601px) {
+	@media (min-width: 841px) {
 		.header-small {
 			display: none;
 		}
@@ -317,22 +367,12 @@
 		display: flex;
 		height: 100%;
 		align-items: center;
-		padding: 0 10px;
+		padding: 0 30px;
 		color: var(--color-text);
-		font-weight: 500;
+		font-weight: 400;
 		font-size: 1.3rem;
 		text-transform: uppercase;
-		letter-spacing: 0.1em;
 		transition: color 0.2s linear;
-	}
-
-	.material-symbols-outlined {
-		margin: 20px;
-		color: var(--color-text);
-		background-color: var(--color-bg-0);
-		border: none;
-		cursor: pointer;
-		font-size: xx-large;
 	}
 
 	.link-header-centered {
@@ -353,6 +393,8 @@
 		width: 174px;
 		height: 50px;
 		margin: 20px;
+		margin-left:80px;
+		margin-right:80px;
 	}
 
 	header {
@@ -361,8 +403,8 @@
 		top: 0;
 		right: 0;
 		width: 100%;
+		height:100px;
 		background-color: black;
-		/*box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);*/
 		z-index: 999;
 		flex-direction: row;
 		justify-content: start;

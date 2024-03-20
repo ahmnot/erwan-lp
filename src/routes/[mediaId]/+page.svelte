@@ -6,11 +6,12 @@
 	import { onMount } from 'svelte';
 	import { underlineVisible } from '$lib/underlineVisibility';
 	import LightBox from './LightBox.svelte';
+	import LightYoutube from '../LightYoutube.svelte';
 
 	let mediaData = mediaList.find((media) => media.id === $page.params.mediaId);
 	let lightBoxVisible = false;
 	let selectedImage = '';
-	
+
 	onMount(() => {
 		underlineVisible.set(false);
 	});
@@ -26,43 +27,47 @@
 	}
 </script>
 
-<h1 class="main-title"><div>{mediaData?.title}</div><div>{mediaData?.author}</div></h1>
+<h1 class="main-title">
+	<div class="colored">{mediaData?.title}</div>
+</h1>
 
 <div class="portfolio-gallery">
-	{#each mediaData?.images as image}
-		<button class="image-wrapper" on:click|preventDefault={() => openLightBox(image)}>
-			<img src={image} alt={mediaData?.title} class="image" />
-		</button>
-	{/each}
-	{#if mediaData?.youtube && mediaData?.youtube !== ''}
-		<div class="youtube-wrapper">
-			<iframe
-				class="youtube-iframe"
-				src={mediaData?.youtube}
-				title="YouTube video player"
-				frameborder="0"
-				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-				allowfullscreen
-			></iframe>
+	<div class="portfolio-gallery-first-column">
+		{#each mediaData?.images as image}
+			<button class="image-wrapper" on:click|preventDefault={() => openLightBox(image)}>
+				<img src={image} alt={mediaData?.title} class="image" />
+			</button>
+		{/each}
+	</div>
+
+	<div class="portfolio-gallery-second-column">
+		{#if mediaData?.youtube && mediaData?.youtube !== ''}
+			<div class="youtube-wrapper">
+				<LightYoutube videoId={mediaData?.youtube}></LightYoutube>
+			</div>
+		{/if}
+		<div class="about">
+			<h3>About</h3>
+			<div class="colored">{mediaData?.title}</div>
+			<div>{mediaData?.author}</div>
+			<div>{mediaData?.work}</div>
+			{#if mediaData?.descriptiveText && mediaData?.descriptiveText !== ''}
+				<br>
+				<div class="smaller-text">{mediaData?.descriptiveText}</div>
+			{/if}
 		</div>
-	{/if}
-	{#if mediaData?.soundcloud && mediaData?.soundcloud !== ''}
-		<div class="soundcloud-wrapper">
-			<iframe
-				class="soundcloud-iframe"
-				scrolling="no"
-				frameborder="no"
-				allow="autoplay"
-				src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/{mediaData?.soundcloudAPINumber}&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
-				title="Soundcloud Player"
-			></iframe>
-		</div>
-	{/if}
-	<div class="about">
-		<h3>About</h3>
-		<div>{mediaData?.title}</div>
-		<div>{mediaData?.author}</div>
-		<div>{mediaData?.work}</div>
+		{#if mediaData?.soundcloud && mediaData?.soundcloud !== ''}
+			<div class="soundcloud-wrapper">
+				<iframe
+					class="soundcloud-iframe"
+					scrolling="no"
+					frameborder="no"
+					allow="autoplay"
+					src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/{mediaData?.soundcloudAPINumber}&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
+					title="Soundcloud Player"
+				></iframe>
+			</div>
+		{/if}
 	</div>
 </div>
 
@@ -74,13 +79,29 @@
 />
 
 <style>
+	.smaller-text {
+		font-size: medium;
+	}
+
+	.portfolio-gallery-first-column {
+		grid-column: 2;
+		display: grid;
+	}
+	.portfolio-gallery-second-column {
+		grid-column: 3;
+		display: grid;
+		grid-template-rows: auto;
+		gap: 20px;
+	}
+	.colored {
+		color: var(--color-theme-1);
+	}
+
 	.portfolio-gallery {
 		display: grid;
-		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 1fr 1fr;
-		align-items: center;
-		margin: 80px;
+		grid-template-columns: 0.75fr 1fr 1fr 0.75fr;
 		margin-top: 0;
+		align-items: start;
 	}
 
 	.main-title {
@@ -92,46 +113,31 @@
 	}
 
 	.soundcloud-wrapper {
-		display: flex;
-		grid-row: 2;
+		grid-row: 3;
 		grid-column: 1;
 		height: 100%;
-		margin: 20px;
 		align-items: center;
 		justify-content: center;
 	}
 
 	.soundcloud-iframe {
 		width: 100%;
-		height: 75%;
+		height: 400px;
 	}
 
 	h1 {
 		font-weight: 400;
-		font-size: 250%;
 	}
 
 	.youtube-wrapper {
+		margin-top: 20px;
 		grid-row: 1;
-		grid-column: 2;
-		position: relative;
-		height: 25%;
-		padding-top: 26%;
-	}
-
-	.youtube-iframe {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%;
-		height: 100%;
-		max-width: 100%;
 	}
 
 	.image-wrapper {
-		margin: 20px;
 		border: 0;
 		background: 0;
+		padding: 20px;
 	}
 
 	.image {
@@ -144,31 +150,42 @@
 
 	.about {
 		grid-row: 2;
-		grid-column: 2;
 		display: flex;
 		flex-wrap: wrap;
 		align-content: flex-end;
 		flex-direction: column;
 		align-items: flex-end;
-		justify-content: flex-end;
-		font-size: 150%;
+		justify-content: flex-start;
+		text-align: end;
+		font-size: x-large;
 	}
 
-	/* Media query for larger screens */
+	/* Media query for smaller screens */
 	@media (max-width: 768px) {
-		.portfolio-gallery {
-			grid-template-rows: 1fr 0.5fr 1fr;
-			grid-auto-rows: auto;
+		.portfolio-gallery-first-column {
+			grid-row: 2;
+			grid-column: 1;
 			grid-template-columns: 1fr;
+			grid-template-rows: auto;
+		}
+		.portfolio-gallery-second-column {
+			grid-row: 1;
+			grid-column: 1;
+			grid-template-columns: 1fr;
+			grid-template-rows: auto;
+		}
+		.portfolio-gallery {
+			grid-template-columns: 1fr;
+			grid-template-rows: auto;
 			margin: 20px;
 		}
 
-		.image-wrapper {
+		.youtube-wrapper {
 			grid-row: 1;
 			grid-column: 1;
 		}
 
-		.youtube-wrapper {
+		.about {
 			grid-row: 2;
 			grid-column: 1;
 		}
@@ -178,7 +195,7 @@
 			grid-column: 1;
 		}
 
-		.about {
+		.image-wrapper {
 			grid-row: 4;
 			grid-column: 1;
 		}
