@@ -52,10 +52,7 @@
 	.email-part {
 		display: inline;
 	}
-
-	.columnize {
-		flex-direction: column;
-	}
+	
 
 	/* Adjust the email-box positioning when columnize is true */
 	.email-box.alignmailleft {
@@ -128,6 +125,11 @@
 		list-style: none;
 		background-size: contain;
 		background-color: transparent;
+	}
+
+	.columnize {
+		flex-direction: column;
+		margin-right: 0;
 	}
 
 	@media (max-width: 340px) {

@@ -268,7 +268,7 @@
 	}
 
 	/* Medium screens: Between 831px and 1040px */
-	@media (min-width: 910px) and (max-width: 1040px) {
+	@media (min-width: 1200px) and (max-width: 1330px) {
 		.header-socials-column-show {
 			display: flex; /* Now show this for medium screens */
 		}
@@ -278,7 +278,7 @@
 	}
 
 	/* Large screens: Above 1040px */
-	@media (min-width: 1041px) {
+	@media (min-width: 1331px) {
 		.header-socials-column-show {
 			display: none; /* Ensure this is hidden on large screens */
 		}
@@ -288,7 +288,7 @@
 		}
 	}
 
-	@media (max-width: 600px) {
+	@media (max-width: 840px) {
 		.nav-header-small {
 			position: relative;
 			display: flex;
@@ -321,7 +321,7 @@
 		}
 	}
 
-	@media (min-width: 601px) {
+	@media (min-width: 841px) {
 		.header-small {
 			display: none;
 		}

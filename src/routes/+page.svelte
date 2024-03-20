@@ -117,9 +117,6 @@
 		<div class="email-box">
 			erwanlepape@outlook.com
 		</div>
-		<div class="icon-button-or-link">
-			<img class="icon-large" src="/icons/mail.png" alt="Mail Icon" />
-		</div>
 		<a class="icon-button-or-link" href="https://www.instagram.com/erwanklp/" target="_blank">
 			<img class="icon-large" src="/icons/instagram.png" alt="Instagram Link" />
 		</a>
@@ -353,10 +350,17 @@
 		height: 100vh;
 	}
 
-	@media (max-width: 900px) {
+	@media (max-width: 840px) {
 		.bio-text,
 		.bio-skills {
 			font-size: medium;
+		}
+		.presentation-grid {
+			grid-template-columns: 1fr ;
+			margin-left: 20px;
+		}
+		.texte-home {
+			margin-left: 0;
 		}
 		.home-profile-picture {
 			display: none;
@@ -409,6 +413,9 @@
 
 		h2 {
 			font-size: 250%;
+		}
+		.email-box {
+			font-size: large;
 		}
 	}
 
