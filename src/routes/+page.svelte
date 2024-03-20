@@ -63,9 +63,9 @@
 <section id="bio">
 	<div class="bio-title-grid"><h1>Biography</h1></div>
 	<div class="bio-image-grid">
-		<img class="musee-picture" src="/erwan-musee-carre.webp" alt="Erwan Talking About His" />
-		<img class="ethnic-picture" src="/erwan-ethnic-carre.webp" alt="Erwan With A Nice Instrument" />
-		<img class="piano-picture" src="/erwan-piano-carre.webp" alt="Erwan's Presentation" />
+		<img class="musee-picture" src="/erwan-musee-carre.webp" alt="Erwan Presenting Elegie" />
+		<img class="ethnic-picture" src="/erwan-ethnic-carre.webp" alt="Erwan With an Ngoni" />
+		<img class="piano-picture" src="/erwan-piano-carre.webp" alt="Erwan Playing Piano" />
 	</div>
 	<div class="bio-text-grid">
 		<p class="bio-text">
