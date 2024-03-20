@@ -73,7 +73,7 @@
 	async function updateUnderlinePosition(clickedElement, applyTransitionFlag = true) {
 		if (clickedElement !== null) {
 			await tick();
-			if (clickedElement.id === 'logo-header-id') {
+			if (clickedElement.id === 'logo-header-id-large' || clickedElement.id === 'logo-header-id-small') {
 				clickedElement = document.getElementById('homeId');
 			}
 			const { left, width } = clickedElement.getBoundingClientRect();
@@ -149,7 +149,7 @@
 <svelte:window bind:innerHeight bind:scrollY />
 
 <header class="header-large">
-	<a id="logo-header-id" href="/#home" on:click={(e) => handleAnchorClick(e)}>
+	<a id="logo-header-id-large" href="/#home" on:click={(e) => handleAnchorClick(e)}>
 		{#if !logoImageComplete}
 			<div transition:fade={{ duration: 150 }} class="logo-placeholder"></div>
 		{/if}
@@ -196,13 +196,13 @@
 		<button class="icon-button-or-link" on:click={hamburgerClickHandler}>
 			<img
 				class="icon-normal"
-				src="/icons/{isHamburgerExpanded ? 'close' : 'menu'}.png"
+				src="/icons/{isHamburgerExpanded ? 'close' : 'menu'}.webp"
 				alt="menu"
 			/>
 		</button>
 
 		<a
-			id="logo-header-id"
+			id="logo-header-id-small"
 			href="/#home"
 			on:click={(e) => handleAnchorClick(e, 'home')}
 			class="link-header-centered"
@@ -316,7 +316,7 @@
 			justify-content: center;
 			align-items: baseline;
 			flex-direction: column;
-			top: 50px;
+			top: 60px;
 			left: 0px;
 			list-style: none;
 			background-color: rgb(0, 0, 0, 0.9);

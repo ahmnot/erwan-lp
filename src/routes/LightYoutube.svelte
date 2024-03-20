@@ -29,7 +29,7 @@
 			style='position: absolute; top: 0; left: 0; width: 100%;height: 100%;z-index: 100;background: transparent;'
 		></iframe>
 	{:else}
-		<button on:click={loadIframe(this, videoId)}>
+		<button on:click={loadIframe(this, videoId)} aria-label="YouTube Player Button">
 			{#if image !== ''}
 				<img src={image} alt="" />
 			{:else}
@@ -82,7 +82,7 @@
 		margin-left: -34px;
 		margin-top: -24px;
 		position: absolute;
-		background: url('/youtube.png') no-repeat;
+		background: url('/youtube.webp') no-repeat;
 		cursor: pointer;
 	}
 </style>

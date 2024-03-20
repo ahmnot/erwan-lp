@@ -18,7 +18,7 @@
 <ul class="icon-bar-container" class:columnize>
 	<li class="email-container">
 		<button class="icon-button-or-link" on:click={mailClickHandler}>
-				<img class="icon-normal" src="/icons/mail.png" alt="Mail Icon" />
+				<img class="icon-normal" src="/icons/mail.webp" alt="Mail Icon" />
 		</button>
 		{#if isMailShown}
 			<div class="email-box" class:alignmailleft class:columnize transition:fade={{ duration: 50 }}>
@@ -28,22 +28,22 @@
 	</li>
 	<li>
 		<a class="icon-button-or-link" href="https://soundcloud.com/erwanlepape" target="_blank">
-				<img class="icon-normal" src="/icons/soundcloud.png" alt="Soundcloud Link" />
+				<img class="icon-normal" src="/icons/soundcloud.webp" alt="Soundcloud Link" />
 		</a>
 	</li>
 	<li>
 		<a class="icon-button-or-link" href="https://www.instagram.com/erwanklp/" target="_blank">
-				<img class="icon-normal" src="/icons/instagram.png" alt="Instagram Link" />
+				<img class="icon-normal" src="/icons/instagram.webp" alt="Instagram Link" />
 		</a>
 	</li>
 	<li>
 		<a class="icon-button-or-link" href="https://discord.com/users/783996252018573332" target="_blank">
-				<img class="icon-normal" src="/icons/discord.png" alt="Discord Link" />
+				<img class="icon-normal" src="/icons/discord.webp" alt="Discord Link" />
 		</a>
 	</li>
 	<li>
 		<a class="icon-button-or-link" href="https://www.youtube.com/@ErwanKLP" target="_blank">
-				<img class="icon-normal" src="/icons/youtube.png" alt="youtube Link" />
+				<img class="icon-normal" src="/icons/youtube.webp" alt="youtube Link" />
 		</a>
 	</li>
 </ul>

@@ -6,7 +6,7 @@ let squareImagePath = '/affiches-court-metrages/square-version/';
 export const mediaList = [
     {
         id: 'fantasy',
-        imageCarre: squareImagePath + 'fantasy-carre.jpg',
+        imageCarre: squareImagePath + 'fantasy-carre.webp',
         images: [detailsImagePath + 'fantasy.webp'],
         title: 'Fantasy',
         author: 'Erwan Le Pape',
@@ -18,8 +18,8 @@ export const mediaList = [
     },
     {
         id: 'elegie-quatuor',
-        imageCarre: squareImagePath + 'elegie-quatuor-carre.jpg',
-        images: [detailsImagePath + 'elegie-quatuor.jpg'],
+        imageCarre: squareImagePath + 'elegie-quatuor-carre.webp',
+        images: [detailsImagePath + 'elegie-quatuor.webp'],
         title: 'Élégie pour quatuor à cordes',
         author: 'Erwan le Pape',
         work: 'Original Music',
@@ -31,7 +31,7 @@ export const mediaList = [
     {
         id: 'sahara',
         imageCarre: squareImagePath + 'sahara-carre.webp',
-        images: [detailsImagePath + 'sahara.png'],
+        images: [detailsImagePath + 'sahara.webp'],
         title: 'SAHARA',
         author: 'A movie by MOPA',
         work: 'Rescoring',
@@ -41,7 +41,7 @@ export const mediaList = [
     },
     {
         id: 'nature-morte',
-        imageCarre: squareImagePath + 'nature-morte-carre.jpg',
+        imageCarre: squareImagePath + 'nature-morte-carre.webp',
         images: [detailsImagePath + 'nature-morte.webp'],
         title: 'nature morte',
         author: 'A movie by Alysée Lavallée-Imhof',
@@ -52,7 +52,7 @@ export const mediaList = [
     },
     {
         id: 'time-trap',
-        imageCarre: squareImagePath + 'time-trap-carre.jpg',
+        imageCarre: squareImagePath + 'time-trap-carre.webp',
         images: [detailsImagePath + 'time-trap.webp'],
         title: 'Time Trap',
         author: 'A movie by Michael Shanks',
@@ -63,7 +63,7 @@ export const mediaList = [
     },
     {
         id: 'toy-tinkers',
-        imageCarre: squareImagePath + 'toy-tinkers-carre.jpg',
+        imageCarre: squareImagePath + 'toy-tinkers-carre.webp',
         images: [detailsImagePath + 'toy-tinkers.webp'],
         title: 'Toy Tinkers',
         author: 'Erwan le Pape',
@@ -74,7 +74,7 @@ export const mediaList = [
     },
     {
         id: 'resistencia',
-        imageCarre: squareImagePath + 'resistencia-carre.jpg',
+        imageCarre: squareImagePath + 'resistencia-carre.webp',
         images: [detailsImagePath + 'resistencia.webp'],
         title: 'Resistencia',
         author: 'A movie by F. Carolliny Sena and B. Soares Pereira',
@@ -86,7 +86,7 @@ export const mediaList = [
     {
         id: 'le-bouquet',
         imageCarre: squareImagePath + 'le-bouquet-carre.webp',
-        images: [detailsImagePath + 'le-bouquet.png'],
+        images: [detailsImagePath + 'le-bouquet.webp'],
         title: 'Le bouquet',
         author: 'A movie by Anaïs Dusautois',
         work: 'Rescoring',
@@ -96,7 +96,7 @@ export const mediaList = [
     },
     {
         id: 'erinyes',
-        imageCarre: squareImagePath + 'erinyes-carre.jpg',
+        imageCarre: squareImagePath + 'erinyes-carre.webp',
         images: [detailsImagePath + 'erinyes.webp'],
         title: 'ERINYES',
         author: 'A videogame by Gamagora',
@@ -108,7 +108,7 @@ export const mediaList = [
     },
     {
         id: 'glory-to-dallas',
-        imageCarre: squareImagePath + 'glory-to-dallas-carre.jpg',
+        imageCarre: squareImagePath + 'glory-to-dallas-carre.webp',
         images: [detailsImagePath + 'glory-to-dallas.webp'],
         title: 'Glory To Dallas',
         author: 'A videogame by Brassart',
