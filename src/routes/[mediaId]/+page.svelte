@@ -29,7 +29,6 @@
 
 <h1 class="main-title">
 	<div class="colored">{mediaData?.title}</div>
-	<div>{mediaData?.author}</div>
 </h1>
 
 <div class="portfolio-gallery">
@@ -52,6 +51,10 @@
 			<div class="colored">{mediaData?.title}</div>
 			<div>{mediaData?.author}</div>
 			<div>{mediaData?.work}</div>
+			{#if mediaData?.descriptiveText && mediaData?.descriptiveText !== ''}
+				<br>
+				<div class="smaller-text">{mediaData?.descriptiveText}</div>
+			{/if}
 		</div>
 		{#if mediaData?.soundcloud && mediaData?.soundcloud !== ''}
 			<div class="soundcloud-wrapper">
@@ -76,6 +79,10 @@
 />
 
 <style>
+	.smaller-text {
+		font-size: medium;
+	}
+
 	.portfolio-gallery-first-column {
 		grid-column: 2;
 		display: grid;
@@ -120,7 +127,6 @@
 
 	h1 {
 		font-weight: 400;
-		font-size: 250%;
 	}
 
 	.youtube-wrapper {
@@ -151,7 +157,7 @@
 		align-items: flex-end;
 		justify-content: flex-start;
 		text-align: end;
-		font-size: 150%;
+		font-size: x-large;
 	}
 
 	/* Media query for smaller screens */

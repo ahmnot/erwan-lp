@@ -353,9 +353,8 @@
 		padding: 0 30px;
 		color: var(--color-text);
 		font-weight: 400;
-		font-size: 1.2rem;
+		font-size: 1.3rem;
 		text-transform: uppercase;
-		letter-spacing: 0.1em;
 		transition: color 0.2s linear;
 	}
 
