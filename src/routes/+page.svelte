@@ -351,7 +351,22 @@
 		height: 100vh;
 	}
 
+	.downwoard-arrow-home {
+		display: none;
+	}
+	
 	@media (max-width: 840px) {
+
+		.downwoard-arrow-home {
+					display: block;
+			position: absolute;
+			bottom: 20px; /* Adjust this value as needed for margin from bottom */
+			grid-column: span 2;
+			justify-self: center;
+			align-self: end; 
+			color: var(--color-theme-1);
+			font-size: 600%;
+		}
 		.bio-text,
 		.bio-skills {
 			font-size: medium;
