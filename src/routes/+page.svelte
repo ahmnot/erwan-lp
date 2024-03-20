@@ -162,8 +162,6 @@
 		align-items: center;
 		width: 50px;
 		height: 50px; 
-		margin-right: 40px;
-		padding: 0px;
 		background: none;
 		border: none;
 	}
@@ -248,6 +246,7 @@
 	#music {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+		padding-top: 100px;
 	}
 
 	.presentation-grid {
