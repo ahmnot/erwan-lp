@@ -11,6 +11,7 @@
 	export let youtube = '';
 	export let soundcloud = '';
 	export let soundcloudAPINumber = '';
+	export let descriptiveText = '';
 
 	let imageElement;
 
@@ -115,7 +116,6 @@
 		height: 100%;
 		width: 100%;
 		transition: opacity 0.1s ease;
-		overflow: visible;
 	}
 	.media-info {
 		position: absolute;

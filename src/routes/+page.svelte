@@ -4,7 +4,6 @@
 	import { mediaList } from '$lib/mediaList';
 	import { onMount } from 'svelte';
 	import { underlineVisible } from '$lib/underlineVisibility';
-	import IconsBar from './IconsBar.svelte';
 	import LightYoutube from './LightYoutube.svelte';
 
 	$: innerWidth = 0;
@@ -36,7 +35,7 @@
 				<h2 class="sous-titres">COMPOSER <br />ARRANGER <br /> PIANIST</h2>
 			</div>
 		</div>
-		<img class="home-profile-picture" src="/erwan-home-cercle.png" alt="Erwan's Presentation" />
+		<img class="home-profile-picture" src="/erwan-home-cercle.webp" alt="Erwan's Presentation" />
 		<div class="downwoard-arrow-home">↓</div>
 	</div>
 </section>
@@ -48,7 +47,7 @@
 		{/each}
 	</div>
 	<div class="youtube-showreel">
-		<LightYoutube videoId="BteChDYwoBs" image='/image-showreel.jpg'></LightYoutube>
+		<LightYoutube videoId="BteChDYwoBs" image='/image-showreel.webp'></LightYoutube>
 	</div>
 	<div class="soundcloud-player">
 		<iframe
@@ -64,9 +63,9 @@
 <section id="bio">
 	<div class="bio-title-grid"><h1>Biography</h1></div>
 	<div class="bio-image-grid">
-		<img class="musee-picture" src="/erwan-musee-carre.jpg" alt="Erwan Talking About His" />
-		<img class="ethnic-picture" src="/erwan-ethnic-carre.png" alt="Erwan With A Nice Instrument" />
-		<img class="piano-picture" src="/erwan-piano-carre.png" alt="Erwan's Presentation" />
+		<img class="musee-picture" src="/erwan-musee-carre.webp" alt="Erwan Talking About His" />
+		<img class="ethnic-picture" src="/erwan-ethnic-carre.webp" alt="Erwan With A Nice Instrument" />
+		<img class="piano-picture" src="/erwan-piano-carre.webp" alt="Erwan's Presentation" />
 	</div>
 	<div class="bio-text-grid">
 		<p class="bio-text">
@@ -98,14 +97,14 @@
 	<div class="logos-grid-wrapper">
 		<div></div>
 		<div class="logos-grid-imgs">
-			<img src="/logos-ecoles/brassart.jpg" alt="Brassart logo" />
-			<img src="/logos-ecoles/esad-amiens.png" style="filter:invert(1);" alt="Esad logo" />
-			<img src="/logos-ecoles/gamagora.png" alt="Gamagora logo" />
-			<img src="/logos-ecoles/maaav.png" alt="MAAAV logo" />
-			<img src="/logos-ecoles/mba-lyon.png" alt="MBA Lyon logo" />
-			<img src="/logos-ecoles/univlyon2.png" alt="Lyon 2 University logo" />
-			<img src="/logos-ecoles/vieux-montreal.png" style="filter:invert(1);" alt="Vieux Montreal logo" />
-			<img src="/logos-ecoles/ENAAI.png" alt="ENAAI logo" />
+			<img src="/logos-ecoles/brassart.webp" alt="Brassart logo" />
+			<img src="/logos-ecoles/esad-amiens.webp" style="filter:invert(1);" alt="Esad logo" />
+			<img src="/logos-ecoles/gamagora.webp" alt="Gamagora logo" />
+			<img src="/logos-ecoles/maaav.webp" alt="MAAAV logo" />
+			<img src="/logos-ecoles/mba-lyon.webp" alt="MBA Lyon logo" />
+			<img src="/logos-ecoles/univlyon2.webp" alt="Lyon 2 University logo" />
+			<img src="/logos-ecoles/vieux-montreal.webp" style="filter:invert(1);" alt="Vieux Montreal logo" />
+			<img src="/logos-ecoles/ENAAI.webp" alt="ENAAI logo" />
 		</div>
 		<div></div>
 	</div>
@@ -120,16 +119,16 @@
 				erwanlepape@outlook.com
 			</div>
 			<a class="icon-button-or-link" href="https://www.instagram.com/erwanklp/" target="_blank">
-				<img class="icon-large" src="/icons/instagram.png" alt="Instagram Link" />
+				<img class="icon-large" src="/icons/instagram.webp" alt="Instagram Link" />
 			</a>
 			<a class="icon-button-or-link" href="https://discord.com/users/783996252018573332" target="_blank">
-				<img class="icon-large" src="/icons/discord.png" alt="Discord Link" />
+				<img class="icon-large" src="/icons/discord.webp" alt="Discord Link" />
 			</a>
 			<a class="icon-button-or-link" href="https://www.facebook.com/profile.php?id=61551473833966" target="_blank">
-				<img class="icon-large" src="/icons/facebook.png" alt="Facebook Link" />
+				<img class="icon-large" src="/icons/facebook.webp" alt="Facebook Link" />
 			</a>
 			<a class="icon-button-or-link" href="https://www.linkedin.com/in/erwan-le-pape-9b80372ba/" target="_blank">
-				<img class="icon-large" src="/icons/linkedin.png" alt="Linkedin Link" />
+				<img class="icon-large" src="/icons/linkedin.webp" alt="Linkedin Link" />
 			</a>
 		</div>
 		<div></div>
