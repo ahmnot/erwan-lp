@@ -5,7 +5,6 @@
 
 	function loadIframe(div, videoId) {
 		var iframe = document.createElement('iframe');
-
 		iframe.setAttribute('src', 'https://www.youtube.com/embed/' + videoId + '?autoplay=1');
 		iframe.setAttribute('frameborder', '0');
 		iframe.setAttribute('allowfullscreen', '1');
@@ -20,18 +19,28 @@
 </script>
 
 <div class="youtube-player">
-	<button on:click={loadIframe(this, videoId)}>
-		{#if image !== ''}
-		<img src="{image}" alt="" />
-		{:else}
-		<img src="//i.ytimg.com/vi/{videoId}/hqdefault.jpg" alt="" />
-		{/if}
-		<div class="playButton"></div>
-	</button>
+	{#if videoId.includes('videoseries')}
+		<iframe
+			src="https://www.youtube.com/embed/{videoId}"
+			title="YouTube video player"
+			frameborder="0"
+			allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+			allowfullscreen
+			style='position: absolute; top: 0; left: 0; width: 100%;height: 100%;z-index: 100;background: transparent;'
+		></iframe>
+	{:else}
+		<button on:click={loadIframe(this, videoId)}>
+			{#if image !== ''}
+				<img src={image} alt="" />
+			{:else}
+				<img src="//i.ytimg.com/vi/{videoId}/hqdefault.jpg" alt="" />
+			{/if}
+			<div class="playButton"></div>
+		</button>
+	{/if}
 </div>
 
 <style>
-
 	.youtube-player {
 		position: relative;
 		padding-bottom: 56.25%;

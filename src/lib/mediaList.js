@@ -11,7 +11,7 @@ export const mediaList = [
         title: 'Fantasy',
         author: 'Erwan Le Pape',
         work: 'Original music',
-        youtube: '9VjncpK4dV8',
+        youtube: 'videoseries?list=PLnSR0k45boRO_gLmRJklVPcyDbfaOy4bg',
         soundcloud: 'https://soundcloud.com/erwanlepape/sets/fantasy-1',
         soundcloudAPINumber: 'playlists/1772144829',
         descriptiveText: "This collection of compositions, inspired by Skyrim's original soundtrack, captures the essence of what could be the musical landscape of a fantastical realm."
@@ -23,7 +23,7 @@ export const mediaList = [
         title: 'Élégie pour quatuor à cordes',
         author: 'Erwan le Pape',
         work: 'Original Music',
-        youtube: 'rSTwZIGPxUs',
+        youtube: 'videoseries?list=PLnSR0k45boRM79S-MtMypxco_QZ7JdPW-',
         soundcloud: 'https://soundcloud.com/erwanlepape/sets/elegie-pour-quatuor-a-cordes',
         soundcloudAPINumber: 'playlists/1777302918',
         descriptiveText:"This composition, inspired by Bartholomé's sculpture 'Monument aux Morts,' was performed by the Anthemis Quartet at the Museum of Fine Arts in Lyon. It portrays death not merely as a tragedy but rather as a liberating force."
