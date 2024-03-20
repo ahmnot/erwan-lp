@@ -52,7 +52,6 @@
 			<div>{mediaData?.author}</div>
 			<div>{mediaData?.work}</div>
 			{#if mediaData?.descriptiveText && mediaData?.descriptiveText !== ''}
-				<br>
 				<div class="smaller-text">{mediaData?.descriptiveText}</div>
 			{/if}
 		</div>
@@ -80,6 +79,7 @@
 
 <style>
 	.smaller-text {
+		margin-top: 20px;
 		font-size: medium;
 	}
 
