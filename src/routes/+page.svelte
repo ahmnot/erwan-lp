@@ -265,8 +265,7 @@
 
 	#contact {
 		border-top: 1px solid white;
-		padding-bottom: 140px;
-		height: 50vh;
+		height: 70vh;
 	}
 
 	.bio-skills {

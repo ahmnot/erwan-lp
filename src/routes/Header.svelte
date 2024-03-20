@@ -7,6 +7,7 @@
 
 	import IconsBar from './IconsBar.svelte';
 
+	let innerHeight;
 	let scrollY;
 	let clickedLink = 'home';
 	let applyTransition = false;
@@ -85,7 +86,6 @@
 
 	// We use a reactive statement to react to changes in scrollY, which is bound to window's scroll position.
 	$: scrollY, debouncedUpdate();
-
 	onMount(async () => {
 		if (
 			logoImageElement &&
@@ -110,6 +110,10 @@
 		updateActiveSection = () => {
 			let currentSection = '';
 
+			if (innerHeight + scrollY >= document.body.offsetHeight - 1) {
+			// If the user has scrolled to the bottom of the page, set 'contact' as the current section
+			currentSection = 'contact';
+    		} else {
 			sections.forEach((section) => {
 				const element = document.getElementById(section);
 				if (!element) return;
@@ -122,6 +126,7 @@
 					currentSection = section;
 				}
 			});
+		}
 
 			if (clickedLink !== currentSection) {
 				clickedLink = currentSection;
@@ -132,7 +137,7 @@
 	});
 </script>
 
-<svelte:window bind:scrollY />
+<svelte:window bind:innerHeight bind:scrollY />
 
 <header class="header-large">
 	<a id="logo-header-id" href="/#home" on:click={(e) => handleAnchorClick(e)}>
