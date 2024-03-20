@@ -111,8 +111,8 @@
 			let currentSection = '';
 
 			if (innerHeight + scrollY >= document.body.offsetHeight - 1) {
-			// If the user has scrolled to the bottom of the page, set 'contact' as the current section
-			currentSection = 'contact';
+				// If the user has scrolled to the bottom of the page, set 'contact' as the current section
+				currentSection = 'contact';
     		} else {
 			sections.forEach((section) => {
 				const element = document.getElementById(section);
