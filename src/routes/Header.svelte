@@ -298,11 +298,13 @@
 
 		ul.hamburger-menu {
 			position: absolute;
-			padding: 0;
-			margin: 20px;
+			margin:0;
+			padding-top: 20px;
+			padding-bottom: 20px;
+			padding-left: 0;
 			height: 150%;
 			display: flex;
-			justify-content: flex-start;
+			justify-content: center;
 			align-items: baseline;
 			flex-direction: column;
 			top: 50px;
@@ -311,6 +313,7 @@
 			background-color: rgb(0, 0, 0, 0.9);
 		}
 		.header-small {
+			height: 80px;
 			display: flex;
 		}
 		.header-large {
