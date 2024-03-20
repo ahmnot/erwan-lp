@@ -46,12 +46,21 @@
 		const link = event.currentTarget;
 		const anchorId = new URL(link.href).hash.replace('#', '');
 		const anchor = document.getElementById(anchorId);
+
 		if (anchor) {
+			if (anchorId === 'home') {
+				// If the anchor ID is 'home', scroll to the top of the window
+				window.scrollTo({
+					top: 0,
+					behavior: 'smooth'
+				});
+			} else {
 			// If the anchor exists in the current document, scroll to it
 			window.scrollTo({
 				top: anchor.offsetTop,
 				behavior: 'smooth'
 			});
+		}
 		} else {
 			// If the anchor doesn't exist, use goto to navigate to the target page
 			// Assuming the link's href attribute contains the path to navigate to

@@ -53,5 +53,6 @@
 	p {
 		margin: 10px;
 		opacity: 0.9;
+		font-size: small;
 	}
 </style>

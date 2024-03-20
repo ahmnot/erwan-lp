@@ -103,7 +103,8 @@ export const mediaList = [
         work: 'Original Scoring, Sound Design',
         youtube: '',
         soundcloud: '',
-        soundcloudAPINumber: ''
+        soundcloudAPINumber: '',
+        descriptiveText: "Work in progress."
     },
     {
         id: 'glory-to-dallas',
@@ -114,7 +115,8 @@ export const mediaList = [
         work: 'Original Scoring, Sound Design',
         youtube: '',
         soundcloud: '',
-        soundcloudAPINumber: ''
+        soundcloudAPINumber: '',
+        descriptiveText: "Work in progress."
     },
     {
         id: 'bistro-belzebuth',
@@ -125,6 +127,7 @@ export const mediaList = [
         work: 'Original Scoring',
         youtube: '',
         soundcloud: '',
-        soundcloudAPINumber: ''
+        soundcloudAPINumber: '',
+        descriptiveText: "Work in progress."
     }
 ];

@@ -146,4 +146,11 @@
 		visibility: visible;
 		opacity: 1;
 	}
+
+	@media(max-width:1200px) {
+		.media-info {
+			font-size: small;
+		}
+	}
+
 </style>
