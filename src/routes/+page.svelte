@@ -113,33 +113,46 @@
 
 <section id="contact">
 	<div class="contact-title-grid"><h1>Contact</h1></div>
-	<div class="icon-bar-grid">
-		<div class="email-box">
-			erwanlepape@outlook.com
+	<div class="icon-bar-grid-wrapper">
+		<div></div>
+		<div class="icon-bar-grid">
+			<div class="email-box">
+				erwanlepape@outlook.com
+			</div>
+			<a class="icon-button-or-link" href="https://www.instagram.com/erwanklp/" target="_blank">
+				<img class="icon-large" src="/icons/instagram.png" alt="Instagram Link" />
+			</a>
+			<a class="icon-button-or-link" href="https://discord.com/users/783996252018573332" target="_blank">
+				<img class="icon-large" src="/icons/discord.png" alt="Discord Link" />
+			</a>
+			<a class="icon-button-or-link" href="https://www.facebook.com/profile.php?id=61551473833966" target="_blank">
+				<img class="icon-large" src="/icons/facebook.png" alt="Facebook Link" />
+			</a>
+			<a class="icon-button-or-link" href="https://www.linkedin.com/in/erwan-le-pape-9b80372ba/" target="_blank">
+				<img class="icon-large" src="/icons/linkedin.png" alt="Linkedin Link" />
+			</a>
 		</div>
-		<a class="icon-button-or-link" href="https://www.instagram.com/erwanklp/" target="_blank">
-			<img class="icon-large" src="/icons/instagram.png" alt="Instagram Link" />
-		</a>
-		<a class="icon-button-or-link" href="https://discord.com/users/783996252018573332" target="_blank">
-			<img class="icon-large" src="/icons/discord.png" alt="Discord Link" />
-		</a>
-		<a class="icon-button-or-link" href="https://www.facebook.com/profile.php?id=61551473833966" target="_blank">
-			<img class="icon-large" src="/icons/facebook.png" alt="Facebook Link" />
-		</a>
-		<a class="icon-button-or-link" href="https://www.linkedin.com/in/erwan-le-pape-9b80372ba/" target="_blank">
-			<img class="icon-large" src="/icons/linkedin.png" alt="Linkedin Link" />
-		</a>
+		<div></div>
 	</div>
 </section>
 
 <style>
+	.icon-bar-grid-wrapper {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+
 	.email-box {
 		font-size: x-large;
 		color: var(--color-theme-1);
+		grid-row:1;
+		grid-column: 2 / span 2;
 	}
 
 	.icon-bar-grid {
 		display: grid;
+		grid-template-rows: 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
 		justify-items: center;
 		gap:40px;
 	}
@@ -147,13 +160,14 @@
 	.icon-large {
 		width: 60px;
 		height: 60px;
-		margin: auto; /* Center the icon */
+		margin: auto;
 		display: block;
 		filter: grayscale(1);
 		transition: 0.1s filter linear;
 	}
 
 	.icon-button-or-link {
+		grid-row: 2;
 		display: flex;
 		justify-content: center;
 		align-items: center;
@@ -441,6 +455,12 @@
 	}
 
 	@media (max-width: 280px) {
+
+		.icon-button-or-link {
+			width: 20px;
+			height: 20px; 
+		}
+		
 		.media-grid {
 			grid-template-columns: 1fr;
 		}
