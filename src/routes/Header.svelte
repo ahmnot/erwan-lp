@@ -6,6 +6,7 @@
 	import { fade, slide } from 'svelte/transition';
 
 	import IconsBar from './IconsBar.svelte';
+	let hamburgerMenuElement;
 
 	let innerHeight;
 	let scrollY;
@@ -27,6 +28,13 @@
 	function hamburgerClickHandler() {
 		isHamburgerExpanded = !isHamburgerExpanded;
 	}
+
+	function closeHamburgerMenuOnOutsideClick(event) {
+		if (isHamburgerExpanded && (!hamburgerMenuElement.contains(event.target) && !event.target.closest('.icon-button-or-link'))) {
+			hamburgerClickHandler();
+		}
+	}
+
 
 	// Debounce function limits the rate of execution of updateActiveSection to enhance performance and ensure smooth UI updates on scroll.
 	// It waits for "wait" milliseconds of inactivity before executing, reducing excessive processing and improving responsiveness.
@@ -143,6 +151,9 @@
 				if (activeLink) updateUnderlinePosition(activeLink);
 			}
 		};
+
+		document.addEventListener('click', closeHamburgerMenuOnOutsideClick);
+
 	});
 </script>
 
@@ -210,7 +221,7 @@
 			<img class="logo-header-centered" src="/logo-1.webp" alt="logo" />
 		</a>
 		{#if isHamburgerExpanded}
-			<ul class="hamburger-menu" in:slide={{ duration: 200 }} out:fade={{ duration: 50 }}>
+			<ul class="hamburger-menu" in:slide={{ duration: 200 }} out:fade={{ duration: 50 }} bind:this={hamburgerMenuElement}>
 				<li>
 					<a id="homeId" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>Home</a>
 				</li>
