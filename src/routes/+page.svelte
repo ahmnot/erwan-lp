@@ -6,16 +6,9 @@
 	import { underlineVisible } from '$lib/underlineVisibility';
 	import LightYoutube from './LightYoutube.svelte';
 
-	$: innerWidth = 0;
-	$: innerHeight = 0;
-
 	let mediaGridElementWidth;
-	let showreelWidth;
-	let showreelHeight;
 	let soundcloudWidth;
 	$: {
-		showreelWidth = mediaGridElementWidth;
-		showreelHeight = showreelWidth * 0.5625;
 
 		soundcloudWidth = mediaGridElementWidth;
 	}
@@ -24,8 +17,6 @@
 		underlineVisible.set(true);
 	});
 </script>
-
-<svelte:window bind:innerWidth bind:innerHeight />
 
 <section id="home">
 	<div class="presentation-grid">
@@ -36,7 +27,7 @@
 			</div>
 		</div>
 		<img class="home-profile-picture" src="/erwan-home-cercle.webp" alt="Erwan's Presentation" />
-		<div class="downwoard-arrow-home">↓</div>
+		<!-- <div class="downwoard-arrow-home">↓</div> -->
 	</div>
 </section>
 
@@ -218,6 +209,7 @@
 	.contact-title-grid h1 {
 		grid-column: 2 / span 3;
 		margin-left: 0;
+		text-wrap: nowrap;
 	}
 
 	.credits-titre-grid h2 {
@@ -290,16 +282,6 @@
 		text-align: left;
 	}
 
-	.downwoard-arrow-home {
-		position: absolute;
-		bottom: 20px; /* Adjust this value as needed for margin from bottom */
-		grid-column: span 2;
-		justify-self: center;
-		align-self: end; 
-		color: var(--color-theme-1);
-		font-size: 600%;
-	}
-
 	.bio-image-grid {
 		display: grid;
 		grid-template-rows: 1fr;
@@ -364,22 +346,8 @@
 		height: 100vh;
 	}
 
-	.downwoard-arrow-home {
-		display: none;
-	}
 	
 	@media (max-width: 840px) {
-
-		.downwoard-arrow-home {
-					display: block;
-			position: absolute;
-			bottom: 20px; /* Adjust this value as needed for margin from bottom */
-			grid-column: span 2;
-			justify-self: center;
-			align-self: end; 
-			color: var(--color-theme-1);
-			font-size: 600%;
-		}
 		.bio-text,
 		.bio-skills {
 			font-size: medium;
@@ -400,7 +368,6 @@
 		}
 
 		#music {
-			display: grid;
 			grid-template-columns: 20px 1fr 1fr 1fr 20px;
 		}
 
@@ -414,6 +381,13 @@
 
 		.logos-grid-wrapper {
 			grid-template-columns: 0.2fr 1fr 1fr 1fr 0.2fr;
+		}
+		
+
+		.bio-title-grid,
+		.credits-titre-grid,
+		.contact-title-grid {
+			grid-template-columns: 20px 1fr 1fr 1fr 20px;
 		}
 	}
 
