@@ -65,7 +65,7 @@
 			} else {
 			// If the anchor exists in the current document, scroll to it
 			window.scrollTo({
-				top: anchor.offsetTop,
+				top: anchor.offsetTop-40,
 				behavior: 'smooth'
 			});
 		}

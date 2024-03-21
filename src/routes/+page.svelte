@@ -296,7 +296,7 @@
 		height: 100%;
 		grid-template-columns: 1fr 1fr 1fr 0.75fr 0.25fr 1fr;
 		gap: 20px;
-		margin-top: 100px;
+		margin-top: 60px;
 	}
 	.musee-picture {
 		grid-column: 2;
