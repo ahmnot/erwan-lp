@@ -6,6 +6,7 @@
 	import { underlineVisible } from '$lib/underlineVisibility';
 	import LightYoutube from './LightYoutube.svelte';
 
+	let soundcloudIframe;
 	let mediaGridElementWidth;
 	let soundcloudWidth;
 	$: {
@@ -15,6 +16,18 @@
 
 	onMount(() => {
 		underlineVisible.set(true);
+
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting && !soundcloudIframe.src) {
+					soundcloudIframe.src = "https://w.soundcloud.com/player/?visual=false&url=https%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F1728038148&show_artwork=true&maxheight=1000&maxwidth=1200&auto_play=false&buying=true&liking=true&download=true&sharing=true&show_comments=true&show_playcount=true&show_user=true&color";
+				}
+			});
+		}, {
+			rootMargin: '100px' // Adjusts the distance from the viewport at which the iframe loads
+		});
+
+		observer.observe(soundcloudIframe);
 	});
 </script>
 
@@ -42,11 +55,11 @@
 	</div>
 	<div class="soundcloud-player">
 		<iframe
+			bind:this={soundcloudIframe}
 			width={soundcloudWidth}
 			height="450px"
 			frameborder="no"
 			title="Erwan Soundcloud Showreel"
-			src="https://w.soundcloud.com/player/?visual=false&amp;url=https%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F1728038148&amp;show_artwork=true&amp;maxheight=1000&amp;maxwidth=1200&amp;auto_play=false&amp;buying=true&amp;liking=true&amp;download=true&amp;sharing=true&amp;show_comments=true&amp;show_playcount=true&amp;show_user=true&amp;color"
 		></iframe>
 	</div>
 </section>
