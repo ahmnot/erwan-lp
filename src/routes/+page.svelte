@@ -24,7 +24,7 @@
 				}
 			});
 		}, {
-			rootMargin: '100px' // Adjusts the distance from the viewport at which the iframe loads
+			rootMargin: '1000px' // Adjusts the distance from the viewport at which the iframe loads
 		});
 
 		observer.observe(soundcloudIframe);
