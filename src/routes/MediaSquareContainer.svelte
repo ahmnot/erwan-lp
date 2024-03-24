@@ -86,7 +86,7 @@
 		border: 1px solid black;
 		top: 0;
 		left: 0;
-		background-color: #f0f0f000; /* Light grey color */
+		background-color: #f0f0f000;
 		animation: pulseAnimation 2s infinite ease-in-out;
 	}
 

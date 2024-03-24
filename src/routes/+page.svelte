@@ -9,6 +9,7 @@
 	let soundcloudIframe;
 	let mediaGridElementWidth;
 	let soundcloudWidth;
+ 	let isLoading = true; 
 	$: {
 
 		soundcloudWidth = mediaGridElementWidth;
@@ -17,17 +18,19 @@
 	onMount(() => {
 		underlineVisible.set(true);
 
-		const observer = new IntersectionObserver((entries) => {
-			entries.forEach(entry => {
-				if (entry.isIntersecting && !soundcloudIframe.src) {
-					soundcloudIframe.src = "https://w.soundcloud.com/player/?visual=false&url=https%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F1728038148&show_artwork=true&maxheight=1000&maxwidth=1200&auto_play=false&buying=true&liking=true&download=true&sharing=true&show_comments=true&show_playcount=true&show_user=true&color";
-				}
+		if (!soundcloudIframe.src) {
+			const observer = new IntersectionObserver((entries) => {
+				entries.forEach(entry => {
+					if (entry.isIntersecting && !soundcloudIframe.src) {
+						soundcloudIframe.src = "https://w.soundcloud.com/player/?visual=false&url=https%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F1728038148&show_artwork=true&maxheight=1000&maxwidth=1200&auto_play=false&buying=true&liking=true&download=true&sharing=true&show_comments=true&show_playcount=true&show_user=true&color";
+					}
+				});
+			}, {
+				rootMargin: '1000px' // Adjusts the distance from the viewport at which the iframe loads
 			});
-		}, {
-			rootMargin: '1000px' // Adjusts the distance from the viewport at which the iframe loads
-		});
 
-		observer.observe(soundcloudIframe);
+			observer.observe(soundcloudIframe);
+		}
 	});
 </script>
 
@@ -54,13 +57,18 @@
 		<LightYoutube videoId="BteChDYwoBs" image='/image-showreel.webp'></LightYoutube>
 	</div>
 	<div class="soundcloud-player">
+		{#if isLoading}
+		  <div class="loading-placeholder"></div>
+		{/if}
 		<iframe
+			on:load={() => {isLoading = false;console.log("Iframe loaded");}}
 			bind:this={soundcloudIframe}
 			width={soundcloudWidth}
 			height="450px"
 			frameborder="no"
 			title="Erwan Soundcloud Showreel"
-		></iframe>
+		>
+	</iframe>
 	</div>
 </section>
 
@@ -140,6 +148,28 @@
 </section>
 
 <style>
+	.loading-placeholder {
+		width:100%;
+		height:100%;
+		position: relative;
+		top:0%;
+		border-radius: 5px;
+		background-color: #f0f0f000;
+		animation: pulseAnimation 2s infinite ease-in-out;
+	}
+
+@keyframes pulseAnimation {
+	0% {
+		background-color: #a8a8a828;
+	}
+	50% {
+		background-color: #2929293a;
+	}
+	100% {
+		background-color: #a8a8a828;
+	}
+}
+
 	.icon-bar-grid-wrapper {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr;
