@@ -160,13 +160,13 @@
 
 @keyframes pulseAnimation {
 	0% {
-		background-color: #a8a8a828;
+		background-color: #a8a8a86e;
 	}
 	50% {
 		background-color: #2929293a;
 	}
 	100% {
-		background-color: #a8a8a828;
+		background-color: #a8a8a86e;
 	}
 }
 
