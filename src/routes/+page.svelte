@@ -453,7 +453,7 @@
 
 	@media (max-width: 680px) {
 		h1 {
-			font-size: 400%;
+			font-size: 500%;
 		}
 
 		h2 {
@@ -462,6 +462,9 @@
 	}
 
 	@media (max-width: 450px) {
+		#home h1 {
+			font-size: 400%;
+		}
 		h1 {
 			font-size: 300%;
 		}
