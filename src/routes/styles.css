@@ -2,9 +2,9 @@
 	--font-body: 'Poppins';
 	--font-mono: 'Fira Mono';
 	--color-bg-0: #0D0D0D;
-	--color-bg-0t: #0D0D0Dee;
-	--color-bg-1: #0D0D0D;
-	--color-bg-2: #0D0D0D;
+	--color-bg-0t: #0d0d0dfa;
+	--color-bg-1: var(--color-bg-0);
+	--color-bg-2: var(--color-bg-0);
 	--color-theme-1: #ffd489;
 	--color-theme-2: #4075a6;
 	--color-text: rgba(255, 255, 255, 0.9);
@@ -13,26 +13,6 @@
 	font-family: var(--font-body);
 	color: var(--color-text);
 }
-
-/* For WebKit browsers such as Chrome, Safari, and newer versions of Edge */
-/*::-webkit-scrollbar {
-	width: 0px;
-}
-
-::-webkit-scrollbar-thumb {
-	background: #888;
-	border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-	background: #555;
-}
-
-html {
-	scrollbar-width: none;
-	scrollbar-color: #888 #888;
-}
-*/
 
 body {
 	min-height: 100vh;

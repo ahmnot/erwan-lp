@@ -110,7 +110,7 @@
 		<div></div>
 		<div class="logos-grid-imgs">
 			<img src="/logos-ecoles/brassart.webp" alt="Brassart logo" />
-			<img src="/logos-ecoles/esad-amiens.webp" style="filter:invert(1);" alt="Esad logo" />
+			<img src="/logos-ecoles/esad-amiens.webp" alt="Esad logo" />
 			<img src="/logos-ecoles/gamagora.webp" alt="Gamagora logo" />
 			<img src="/logos-ecoles/maaav.webp" alt="MAAAV logo" />
 			<img src="/logos-ecoles/mba-lyon.webp" alt="MBA Lyon logo" />
