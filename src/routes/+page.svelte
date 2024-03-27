@@ -158,17 +158,17 @@
 		animation: pulseAnimation 2s infinite ease-in-out;
 	}
 
-@keyframes pulseAnimation {
-	0% {
-		background-color: #a8a8a86e;
+	@keyframes pulseAnimation {
+		0% {
+			background-color: #a8a8a86e;
+		}
+		50% {
+			background-color: #2929293a;
+		}
+		100% {
+			background-color: #a8a8a86e;
+		}
 	}
-	50% {
-		background-color: #2929293a;
-	}
-	100% {
-		background-color: #a8a8a86e;
-	}
-}
 
 	.icon-bar-grid-wrapper {
 		display: grid;
@@ -291,7 +291,6 @@
 	#music {
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-		padding-top: 100px;
 	}
 
 	.presentation-grid {
@@ -391,6 +390,11 @@
 
 	
 	@media (max-width: 840px) {
+
+		#home {
+			height: 100%;
+		}
+
 		.bio-text,
 		.bio-skills {
 			font-size: medium;
@@ -449,7 +453,7 @@
 
 	@media (max-width: 680px) {
 		h1 {
-			font-size: 400%;
+			font-size: 500%;
 		}
 
 		h2 {
@@ -458,6 +462,9 @@
 	}
 
 	@media (max-width: 450px) {
+		#home h1 {
+			font-size: 400%;
+		}
 		h1 {
 			font-size: 300%;
 		}
