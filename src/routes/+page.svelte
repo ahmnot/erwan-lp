@@ -57,17 +57,17 @@
 		<LightYoutube videoId="BteChDYwoBs" image='/image-showreel.webp'></LightYoutube>
 	</div>
 	<div class="soundcloud-player">
-		{#if isLoading}
+		{#if true}
 		  <div class="loading-placeholder"></div>
 		{/if}
-		<iframe
-			on:load={() => {isLoading = false;console.log("Iframe loaded");}}
-			bind:this={soundcloudIframe}
-			width={soundcloudWidth}
-			height="450px"
-			frameborder="no"
-			title="Erwan Soundcloud Showreel"
-		>
+			<iframe
+				on:load={() => {isLoading = false;console.log("Iframe loaded");}}
+				bind:this={soundcloudIframe}
+				width={soundcloudWidth}
+				height="450px"
+				frameborder="no"
+				title="Erwan Soundcloud Showreel"
+			>
 	</iframe>
 	</div>
 </section>
@@ -271,6 +271,10 @@
 		margin-top: 0;
 	}
 
+	.soundcloud-player {
+		display:grid;
+	}
+
 	.media-grid,
 	.soundcloud-player,
 	.youtube-showreel {
@@ -289,6 +293,7 @@
 	}
 
 	#music {
+		padding-top:60px;
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	}
@@ -340,6 +345,7 @@
 		gap: 20px;
 		margin-top: 60px;
 	}
+
 	.musee-picture {
 		grid-column: 2;
 	}
