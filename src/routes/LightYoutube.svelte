@@ -31,9 +31,9 @@
 	{:else}
 		<button on:click={loadIframe(this, videoId)} aria-label="YouTube Player Button">
 			{#if image !== ''}
-				<img src={image} alt="" />
+				<img src={image} alt="YouTube Preview" />
 			{:else}
-				<img src="//i.ytimg.com/vi/{videoId}/hqdefault.jpg" alt="" />
+				<img src="//i.ytimg.com/vi/{videoId}/hqdefault.jpg" alt="YouTube Preview" />
 			{/if}
 			<div class="playButton"></div>
 		</button>
@@ -41,13 +41,17 @@
 </div>
 
 <style>
+	button {
+		background: 0;
+		border: 0;
+	}
+
 	.youtube-player {
 		position: relative;
 		padding-bottom: 56.25%;
 		height: 0;
 		overflow: hidden;
 		max-width: 100%;
-		background: #000;
 	}
 
 	.youtube-player img {

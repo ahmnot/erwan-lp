@@ -330,7 +330,7 @@
 			top: 60px;
 			left: 0px;
 			list-style: none;
-			background-color: rgb(0, 0, 0, 0.9);
+			background-color: var(--color-bg-0t);
 		}
 		.header-small {
 			height: 80px;
@@ -415,7 +415,7 @@
 		right: 0;
 		width: 100%;
 		height:100px;
-		background-color: black;
+		background-color: var(--color-bg-0);
 		z-index: 999;
 		flex-direction: row;
 		justify-content: start;
