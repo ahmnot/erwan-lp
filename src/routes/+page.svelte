@@ -81,7 +81,7 @@
 	</div>
 	<div class="bio-text-grid">
 		<p class="bio-text">
-			Hi, I'm Erwan, a young composer based in Lyon, France.<br /><br />
+			Hi, I'm Erwan, a young composer based in Lyon and Rennes, France.<br /><br />
 			I studied music at the conservatory and college, and I'm currently pursuing a master's degree in
 			music scoring, specializing in the creation of nuanced soundtracks for films, television, video
 			games, and various multimedia platforms.<br /><br />
@@ -97,7 +97,7 @@
 		<p class="bio-skills">
 			<b>Skills</b> <br /><br />
 
-			Piano, Guitar, Bass, Violin, Synthesizer<br />
+			Piano, Guitar, Bass, Violin, Synthesizers<br />
 			Composition, Theory, Harmony, Arrangement, Orchestration, Sound-Design. <br />
 			I use DAWs such as Logic Pro, Sibelius, Fl Studio. <br />
 			I work from my home studio. <br />
