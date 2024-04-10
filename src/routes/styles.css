@@ -1,7 +1,7 @@
 :root {
 	--font-body: 'Poppins';
 	--font-mono: 'Fira Mono';
-	--color-bg-0: #0D0D0D;
+	--color-bg-0: #323232;
 	--color-bg-0t: #0d0d0dfa;
 	--color-bg-1: var(--color-bg-0);
 	--color-bg-2: var(--color-bg-0);
