@@ -33,13 +33,15 @@
 		}
 	});
 </script>
-
+	
 <section id="home">
 	<div class="presentation-grid">
 		<div class="texte-home">
-			<h1 id="main-title">ERWAN LE PAPE</h1>
+			<h1 id="main-title">ERWAN <span class="le-pape">LE PAPE</span></h1>
 			<div class="sous-titres-wrapper">
-				<h2 class="sous-titres">COMPOSER <br />ARRANGER <br /> PIANIST</h2>
+				<h2>COMPOSER</h2>
+				<h2>ARRANGER</h2>
+				<h2>PIANIST</h2>
 			</div>
 		</div>
 		<img class="home-profile-picture" src="/erwan-home-cercle.webp" alt="Erwan's Presentation" />
@@ -148,6 +150,10 @@
 </section>
 
 <style>
+	.le-pape {
+		white-space: nowrap;
+	}
+
 	.loading-placeholder {
 		width:100%;
 		height:100%;
@@ -260,16 +266,22 @@
 	}
 
 	#main-title {
-		margin-bottom: 40px;
+		display:block;
+		margin-bottom: 30px;
+		margin-bottom: 30px;
 		margin-left:0;
 	}
+
 	.sous-titres-wrapper {
-		display: flex;
+		display: block;
+	}
+	
+	.sous-titres-wrapper h2 {
+		margin-top: 0;
+		margin-bottom: 0;
 	}
 
-	.sous-titres {
-		margin-top: 0;
-	}
+
 
 	.soundcloud-player {
 		display:grid;
@@ -373,7 +385,7 @@
 
 	h2 {
 		font-weight: 300;
-		font-size: 400%;
+		font-size: 380%;
 		color: var(--color-theme-1);
 	}
 
