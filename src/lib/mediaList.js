@@ -17,6 +17,18 @@ export const mediaList = [
         descriptiveText: "This collection of compositions, inspired by Skyrim's original soundtrack, captures the essence of what could be the musical landscape of a fantastical realm."
     },
     {
+        id: 'bistro-belzebuth',
+        imageCarre: squareImagePath + 'bistro-belzebuth-carre.webp',
+        images: [detailsImagePath + 'bistro-belzebuth.webp'],
+        title: 'Le Bistro de Belzebuth',
+        author: 'An animation by Animation Vieux Montréal',
+        work: 'Original Scoring',
+        youtube: '',
+        soundcloud: '',
+        soundcloudAPINumber: '',
+        descriptiveText: "Work in progress."
+    },
+    {
         id: 'elegie-quatuor',
         imageCarre: squareImagePath + 'elegie-quatuor-carre.webp',
         images: [detailsImagePath + 'elegie-quatuor.webp'],
@@ -62,6 +74,18 @@ export const mediaList = [
         soundcloudAPINumber: 'tracks/1671134031'
     },
     {
+        id: 'erinyes',
+        imageCarre: squareImagePath + 'erinyes-carre.webp',
+        images: [detailsImagePath + 'erinyes.webp'],
+        title: 'ERINYES',
+        author: 'A videogame by Gamagora',
+        work: 'Original Scoring, Sound Design',
+        youtube: '',
+        soundcloud: '',
+        soundcloudAPINumber: '',
+        descriptiveText: "Work in progress."
+    },
+    {
         id: 'toy-tinkers',
         imageCarre: squareImagePath + 'toy-tinkers-carre.webp',
         images: [detailsImagePath + 'toy-tinkers.webp'],
@@ -95,36 +119,12 @@ export const mediaList = [
         soundcloudAPINumber: 'tracks/1671137550'
     },
     {
-        id: 'erinyes',
-        imageCarre: squareImagePath + 'erinyes-carre.webp',
-        images: [detailsImagePath + 'erinyes.webp'],
-        title: 'ERINYES',
-        author: 'A videogame by Gamagora',
-        work: 'Original Scoring, Sound Design',
-        youtube: '',
-        soundcloud: '',
-        soundcloudAPINumber: '',
-        descriptiveText: "Work in progress."
-    },
-    {
         id: 'tomorrows-day',
         imageCarre: squareImagePath + 'glory-to-dallas-carre.webp',
         images: [detailsImagePath + 'glory-to-dallas.webp'],
         title: 'Glory To Dallas',
         author: 'A videogame by Brassart',
         work: 'Original Scoring, Sound Design',
-        youtube: '',
-        soundcloud: '',
-        soundcloudAPINumber: '',
-        descriptiveText: "Work in progress."
-    },
-    {
-        id: 'bistro-belzebuth',
-        imageCarre: squareImagePath + 'bistro-belzebuth-carre.webp',
-        images: [detailsImagePath + 'bistro-belzebuth.webp'],
-        title: 'Le Bistro de Belzebuth',
-        author: 'An animation by Animation Vieux Montréal',
-        work: 'Original Scoring',
         youtube: '',
         soundcloud: '',
         soundcloudAPINumber: '',
