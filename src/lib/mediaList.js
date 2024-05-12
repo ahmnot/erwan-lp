@@ -123,7 +123,7 @@ export const mediaList = [
         imageCarre: squareImagePath + 'bistro-belzebuth-carre.webp',
         images: [detailsImagePath + 'bistro-belzebuth.webp'],
         title: 'Le Bistro de Belzebuth',
-        author: 'An animation by Le Vieux Montréal',
+        author: 'An animation by Animation Vieux Montréal',
         work: 'Original Scoring',
         youtube: '',
         soundcloud: '',
