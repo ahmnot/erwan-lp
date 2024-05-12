@@ -107,7 +107,7 @@ export const mediaList = [
         descriptiveText: "Work in progress."
     },
     {
-        id: 'glory-to-dallas',
+        id: 'tomorrows-day',
         imageCarre: squareImagePath + 'glory-to-dallas-carre.webp',
         images: [detailsImagePath + 'glory-to-dallas.webp'],
         title: 'Glory To Dallas',
