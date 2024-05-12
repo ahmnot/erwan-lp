@@ -41,17 +41,6 @@ export const mediaList = [
         descriptiveText:"This composition, inspired by Bartholomé's sculpture 'Monument aux Morts,' was performed by the Anthemis Quartet at the Museum of Fine Arts in Lyon. It portrays death not merely as a tragedy but rather as a liberating force."
     },
     {
-        id: 'sahara',
-        imageCarre: squareImagePath + 'sahara-carre.webp',
-        images: [detailsImagePath + 'sahara.webp'],
-        title: 'SAHARA',
-        author: 'A movie by MOPA',
-        work: 'Rescoring',
-        youtube: 'iI65zBAHOpg',
-        soundcloud: 'https://soundcloud.com/erwanlepape/sets/sahara',
-        soundcloudAPINumber: 'playlists/1763727072'
-    },
-    {
         id: 'erinyes',
         imageCarre: squareImagePath + 'erinyes-carre.webp',
         images: [detailsImagePath + 'erinyes.webp'],
@@ -62,6 +51,17 @@ export const mediaList = [
         soundcloud: '',
         soundcloudAPINumber: '',
         descriptiveText: "Work in progress."
+    },
+    {
+        id: 'sahara',
+        imageCarre: squareImagePath + 'sahara-carre.webp',
+        images: [detailsImagePath + 'sahara.webp'],
+        title: 'SAHARA',
+        author: 'A movie by MOPA',
+        work: 'Rescoring',
+        youtube: 'iI65zBAHOpg',
+        soundcloud: 'https://soundcloud.com/erwanlepape/sets/sahara',
+        soundcloudAPINumber: 'playlists/1763727072'
     },
     {
         id: 'time-trap',
