@@ -52,15 +52,16 @@ export const mediaList = [
         soundcloudAPINumber: 'playlists/1763727072'
     },
     {
-        id: 'nature-morte',
-        imageCarre: squareImagePath + 'nature-morte-carre.webp',
-        images: [detailsImagePath + 'nature-morte.webp'],
-        title: 'nature morte',
-        author: 'A movie by Alysée Lavallée-Imhof',
-        work: 'UQAM contest',
-        youtube: 'aA2WnaCvRvw',
-        soundcloud: 'https://soundcloud.com/erwanlepape/nature-morte',
-        soundcloudAPINumber: 'tracks/1671138273'
+        id: 'erinyes',
+        imageCarre: squareImagePath + 'erinyes-carre.webp',
+        images: [detailsImagePath + 'erinyes.webp'],
+        title: 'ERINYES',
+        author: 'A videogame by Gamagora',
+        work: 'Original Scoring, Sound Design',
+        youtube: '',
+        soundcloud: '',
+        soundcloudAPINumber: '',
+        descriptiveText: "Work in progress."
     },
     {
         id: 'time-trap',
@@ -74,16 +75,15 @@ export const mediaList = [
         soundcloudAPINumber: 'tracks/1671134031'
     },
     {
-        id: 'erinyes',
-        imageCarre: squareImagePath + 'erinyes-carre.webp',
-        images: [detailsImagePath + 'erinyes.webp'],
-        title: 'ERINYES',
-        author: 'A videogame by Gamagora',
-        work: 'Original Scoring, Sound Design',
-        youtube: '',
-        soundcloud: '',
-        soundcloudAPINumber: '',
-        descriptiveText: "Work in progress."
+        id: 'nature-morte',
+        imageCarre: squareImagePath + 'nature-morte-carre.webp',
+        images: [detailsImagePath + 'nature-morte.webp'],
+        title: 'nature morte',
+        author: 'A movie by Alysée Lavallée-Imhof',
+        work: 'UQAM contest',
+        youtube: 'aA2WnaCvRvw',
+        soundcloud: 'https://soundcloud.com/erwanlepape/nature-morte',
+        soundcloudAPINumber: 'tracks/1671138273'
     },
     {
         id: 'toy-tinkers',
