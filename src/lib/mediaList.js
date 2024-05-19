@@ -21,7 +21,7 @@ export const mediaList = [
         imageCarre: squareImagePath + 'the-peasants-carre.webp',
         images: [detailsImagePath + 'the-peasants.webp'],
         title: 'The Peasants',
-        author: 'Erwan Le Pape',
+        author: 'A movie directed and written by DK Welchman and Hugh Welchman',
         work: 'Rescoring',
         youtube: '0e3OWpEC_bQ',
         soundcloud: 'https://on.soundcloud.com/VLfgv6km11dB55vg7',
