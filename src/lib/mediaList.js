@@ -5,6 +5,30 @@ let squareImagePath = '/affiches-court-metrages/square-version/';
 
 export const mediaList = [
     {
+        id: 'bistro-belzebuth',
+        imageCarre: squareImagePath + 'bistro-belzebuth-carre.webp',
+        images: [detailsImagePath + 'bistro-belzebuth.webp'],
+        title: 'Le Bistro de Belzebuth',
+        author: 'An animation by Animation Vieux Montréal',
+        work: 'Original Scoring',
+        youtube: 'Dzz299ZDfG4',
+        soundcloud: 'https://soundcloud.com/erwanlepape/sets/le-bistro-de-belzebuth',
+        soundcloudAPINumber: '',
+        descriptiveText: "Video coming soon"
+    },
+    {
+        id: 'the-peasants',
+        imageCarre: squareImagePath + 'the-peasants-carre.webp',
+        images: [detailsImagePath + 'the-peasants.webp'],
+        title: 'The Peasants',
+        author: 'Erwan Le Pape',
+        work: 'Rescoring',
+        youtube: '0e3OWpEC_bQ',
+        soundcloud: 'https://soundcloud.com/erwanlepape/sets/the-peasants',
+        soundcloudAPINumber: 'playlists/1772144829',
+        descriptiveText: ""
+    },
+    {
         id: 'fantasy',
         imageCarre: squareImagePath + 'fantasy-carre.webp',
         images: [detailsImagePath + 'fantasy.webp'],
@@ -15,18 +39,6 @@ export const mediaList = [
         soundcloud: 'https://soundcloud.com/erwanlepape/sets/fantasy-1',
         soundcloudAPINumber: 'playlists/1772144829',
         descriptiveText: "This collection of compositions, inspired by Skyrim's original soundtrack, captures the essence of what could be the musical landscape of a fantastical realm."
-    },
-    {
-        id: 'bistro-belzebuth',
-        imageCarre: squareImagePath + 'bistro-belzebuth-carre.webp',
-        images: [detailsImagePath + 'bistro-belzebuth.webp'],
-        title: 'Le Bistro de Belzebuth',
-        author: 'An animation by Animation Vieux Montréal',
-        work: 'Original Scoring',
-        youtube: '',
-        soundcloud: '',
-        soundcloudAPINumber: '',
-        descriptiveText: "Work in progress."
     },
     {
         id: 'elegie-quatuor',
@@ -48,9 +60,9 @@ export const mediaList = [
         author: 'A videogame by Gamagora',
         work: 'Original Scoring, Sound Design',
         youtube: '',
-        soundcloud: '',
+        soundcloud: 'https://soundcloud.com/erwanlepape/sets/erinyes-video-game',
         soundcloudAPINumber: '',
-        descriptiveText: "Work in progress."
+        descriptiveText: ""
     },
     {
         id: 'sahara',
