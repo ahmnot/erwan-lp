@@ -13,7 +13,7 @@ export const mediaList = [
         work: 'Original Scoring',
         youtube: 'Dzz299ZDfG4',
         soundcloud: 'https://on.soundcloud.com/SArJnmmf1iAqP1Te8',
-        soundcloudAPINumber: '',
+        soundcloudAPINumber: 'playlists/1825386888',
         descriptiveText: "Video coming soon"
     },
     {
@@ -25,7 +25,7 @@ export const mediaList = [
         work: 'Rescoring',
         youtube: '0e3OWpEC_bQ',
         soundcloud: 'https://on.soundcloud.com/VLfgv6km11dB55vg7',
-        soundcloudAPINumber: '',
+        soundcloudAPINumber: 'playlists/1825400793',
         descriptiveText: ""
     },
     {
@@ -61,7 +61,7 @@ export const mediaList = [
         work: 'Original Scoring, Sound Design',
         youtube: '',
         soundcloud: 'https://on.soundcloud.com/FkgU8HBn8jAGNJzv6',
-        soundcloudAPINumber: '',
+        soundcloudAPINumber: 'playlists/1825381395',
         descriptiveText: ""
     },
     {
