@@ -12,7 +12,7 @@ export const mediaList = [
         author: 'An animation by Animation Vieux Montréal',
         work: 'Original Scoring',
         youtube: 'Dzz299ZDfG4',
-        soundcloud: 'https://soundcloud.com/erwanlepape/sets/le-bistro-de-belzebuth',
+        soundcloud: 'https://on.soundcloud.com/SArJnmmf1iAqP1Te8',
         soundcloudAPINumber: '',
         descriptiveText: "Video coming soon"
     },
@@ -24,8 +24,8 @@ export const mediaList = [
         author: 'Erwan Le Pape',
         work: 'Rescoring',
         youtube: '0e3OWpEC_bQ',
-        soundcloud: 'https://soundcloud.com/erwanlepape/sets/the-peasants',
-        soundcloudAPINumber: 'playlists/1772144829',
+        soundcloud: 'https://on.soundcloud.com/VLfgv6km11dB55vg7',
+        soundcloudAPINumber: '',
         descriptiveText: ""
     },
     {
@@ -60,7 +60,7 @@ export const mediaList = [
         author: 'A videogame by Gamagora',
         work: 'Original Scoring, Sound Design',
         youtube: '',
-        soundcloud: 'https://soundcloud.com/erwanlepape/sets/erinyes-video-game',
+        soundcloud: 'https://on.soundcloud.com/FkgU8HBn8jAGNJzv6',
         soundcloudAPINumber: '',
         descriptiveText: ""
     },
