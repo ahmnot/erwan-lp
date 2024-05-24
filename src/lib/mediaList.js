@@ -101,7 +101,7 @@ export const mediaList = [
         id: 'tomorrows-day',
         imageCarre: squareImagePath + 'tomorrows-day-carre.webp',
         images: [detailsImagePath + 'tomorrows-day.webp'],
-        title: 'Tomorrow's Day',
+        title: 'Tomorrows Day',
         author: 'A videogame by Brassart',
         work: 'Original Scoring, Sound Design',
         youtube: '',
