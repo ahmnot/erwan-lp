@@ -98,6 +98,18 @@ export const mediaList = [
         soundcloudAPINumber: 'playlists/1762686030'
     },
     {
+        id: 'tomorrows-day',
+        imageCarre: squareImagePath + 'tomorrows-day-carre.webp',
+        images: [detailsImagePath + 'tomorrows-day.webp'],
+        title: 'Tomorrows Day',
+        author: 'A videogame by Brassart',
+        work: 'Original Scoring, Sound Design',
+        youtube: '',
+        soundcloud: 'https://on.soundcloud.com/tCcQXBY2MpPGhCgDA',
+        soundcloudAPINumber: 'tracks/1829523999',
+        descriptiveText: ""
+    },
+    {
         id: 'time-trap',
         imageCarre: squareImagePath + 'time-trap-carre.webp',
         images: [detailsImagePath + 'time-trap.webp'],
@@ -129,17 +141,5 @@ export const mediaList = [
         youtube: 'ayva2UZY9bo',
         soundcloud: '',
         soundcloudAPINumber: ''
-    },
-    {
-        id: 'tomorrows-day',
-        imageCarre: squareImagePath + 'glory-to-dallas-carre.webp',
-        images: [detailsImagePath + 'glory-to-dallas.webp'],
-        title: 'Glory To Dallas',
-        author: 'A videogame by Brassart',
-        work: 'Original Scoring, Sound Design',
-        youtube: '',
-        soundcloud: '',
-        soundcloudAPINumber: '',
-        descriptiveText: "Work in progress."
     }
 ];
