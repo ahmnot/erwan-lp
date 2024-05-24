@@ -57,7 +57,7 @@ export const mediaList = [
         imageCarre: squareImagePath + 'sahara-carre.webp',
         images: [detailsImagePath + 'sahara.webp'],
         title: 'SAHARA',
-        author: 'A movie by MOPA',
+        author: 'An animation by MOPA',
         work: 'Rescoring',
         youtube: 'iI65zBAHOpg',
         soundcloud: 'https://soundcloud.com/erwanlepape/sets/sahara',
@@ -129,17 +129,6 @@ export const mediaList = [
         youtube: 'ayva2UZY9bo',
         soundcloud: '',
         soundcloudAPINumber: ''
-    },
-    {
-        id: 'le-bouquet',
-        imageCarre: squareImagePath + 'le-bouquet-carre.webp',
-        images: [detailsImagePath + 'le-bouquet.webp'],
-        title: 'Le bouquet',
-        author: 'A movie by Anaïs Dusautois',
-        work: 'Rescoring',
-        youtube: 'vMpwETdpQgs',
-        soundcloud: 'https://soundcloud.com/erwanlepape/le-bouquet',
-        soundcloudAPINumber: 'tracks/1671137550'
     },
     {
         id: 'tomorrows-day',
