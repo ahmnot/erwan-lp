@@ -46,23 +46,11 @@ export const mediaList = [
         images: [detailsImagePath + 'elegie-quatuor.webp'],
         title: 'Élégie pour quatuor à cordes',
         author: 'Erwan le Pape',
-        work: 'Original Music',
+        work: 'Original Composition',
         youtube: 'videoseries?list=PLnSR0k45boRM79S-MtMypxco_QZ7JdPW-',
         soundcloud: 'https://soundcloud.com/erwanlepape/sets/elegie-pour-quatuor-a-cordes',
         soundcloudAPINumber: 'playlists/1777302918',
         descriptiveText:"This composition, inspired by Bartholomé's sculpture 'Monument aux Morts,' was performed by the Anthemis Quartet at the Museum of Fine Arts in Lyon. It portrays death not merely as a tragedy but rather as a liberating force."
-    },
-    {
-        id: 'erinyes',
-        imageCarre: squareImagePath + 'erinyes-carre.webp',
-        images: [detailsImagePath + 'erinyes.webp'],
-        title: 'ERINYES',
-        author: 'A videogame by Gamagora',
-        work: 'Original Scoring, Sound Design',
-        youtube: '',
-        soundcloud: 'https://on.soundcloud.com/FkgU8HBn8jAGNJzv6',
-        soundcloudAPINumber: 'playlists/1825381395',
-        descriptiveText: ""
     },
     {
         id: 'sahara',
@@ -74,6 +62,40 @@ export const mediaList = [
         youtube: 'iI65zBAHOpg',
         soundcloud: 'https://soundcloud.com/erwanlepape/sets/sahara',
         soundcloudAPINumber: 'playlists/1763727072'
+    },
+    {
+        id: 'erinyes',
+        imageCarre: squareImagePath + 'erinyes-carre.webp',
+        images: [detailsImagePath + 'erinyes.webp'],
+        title: 'ERINYES',
+        author: 'A videogame by Gamagora',
+        work: 'Original Scoring',
+        youtube: '',
+        soundcloud: 'https://on.soundcloud.com/FkgU8HBn8jAGNJzv6',
+        soundcloudAPINumber: 'playlists/1825381395',
+        descriptiveText: ""
+    },
+    {
+        id: 'le-champ-de-roseaux',
+        imageCarre: squareImagePath + 'champ-de-roseaux-carre.webp',
+        images: [detailsImagePath + 'champ-de-roseaux.webp'],
+        title: 'Le Champ de Roseaux',
+        author: 'An animation by Jordane Cisse',
+        work: 'Original scoring',
+        youtube: '',
+        soundcloud: 'https://on.soundcloud.com/N1xRjM8KPvRmQ91Z7',
+        soundcloudAPINumber: 'tracks/1827289374'
+    },
+    {
+        id: 'resistencia',
+        imageCarre: squareImagePath + 'resistencia-carre.webp',
+        images: [detailsImagePath + 'resistencia.webp'],
+        title: 'Resistencia',
+        author: 'A movie by F. Carolliny Sena and B. Soares Pereira',
+        work: 'Original scoring',
+        youtube: '',
+        soundcloud: 'https://soundcloud.com/erwanlepape/sets/resistencia',
+        soundcloudAPINumber: 'playlists/1762686030'
     },
     {
         id: 'time-trap',
@@ -107,17 +129,6 @@ export const mediaList = [
         youtube: 'ayva2UZY9bo',
         soundcloud: '',
         soundcloudAPINumber: ''
-    },
-    {
-        id: 'resistencia',
-        imageCarre: squareImagePath + 'resistencia-carre.webp',
-        images: [detailsImagePath + 'resistencia.webp'],
-        title: 'Resistencia',
-        author: 'A movie by F. Carolliny Sena and B. Soares Pereira',
-        work: 'Original scoring',
-        youtube: '0KWvxGljza8',
-        soundcloud: 'https://soundcloud.com/erwanlepape/sets/resistencia',
-        soundcloudAPINumber: 'playlists/1762686030'
     },
     {
         id: 'le-bouquet',
