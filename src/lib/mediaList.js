@@ -87,6 +87,17 @@ export const mediaList = [
         soundcloudAPINumber: 'tracks/1827289374'
     },
     {
+        id: 'resistencia',
+        imageCarre: squareImagePath + 'resistencia-carre.webp',
+        images: [detailsImagePath + 'resistencia.webp'],
+        title: 'Resistencia',
+        author: 'A movie by F. Carolliny Sena and B. Soares Pereira',
+        work: 'Original scoring',
+        youtube: '',
+        soundcloud: 'https://soundcloud.com/erwanlepape/sets/resistencia',
+        soundcloudAPINumber: 'playlists/1762686030'
+    },
+    {
         id: 'time-trap',
         imageCarre: squareImagePath + 'time-trap-carre.webp',
         images: [detailsImagePath + 'time-trap.webp'],
@@ -118,17 +129,6 @@ export const mediaList = [
         youtube: 'ayva2UZY9bo',
         soundcloud: '',
         soundcloudAPINumber: ''
-    },
-    {
-        id: 'resistencia',
-        imageCarre: squareImagePath + 'resistencia-carre.webp',
-        images: [detailsImagePath + 'resistencia.webp'],
-        title: 'Resistencia',
-        author: 'A movie by F. Carolliny Sena and B. Soares Pereira',
-        work: 'Original scoring',
-        youtube: '0KWvxGljza8',
-        soundcloud: 'https://soundcloud.com/erwanlepape/sets/resistencia',
-        soundcloudAPINumber: 'playlists/1762686030'
     },
     {
         id: 'le-bouquet',
