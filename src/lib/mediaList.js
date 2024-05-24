@@ -97,7 +97,7 @@ export const mediaList = [
         soundcloud: 'https://soundcloud.com/erwanlepape/sets/resistencia',
         soundcloudAPINumber: 'playlists/1762686030'
     },
-        {
+    {
         id: 'tomorrows-day',
         imageCarre: squareImagePath + 'tomorrows-day-carre.webp',
         images: [detailsImagePath + 'tomorrows-day.webp'],
