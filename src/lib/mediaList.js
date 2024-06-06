@@ -64,6 +64,17 @@ export const mediaList = [
         soundcloudAPINumber: 'playlists/1763727072'
     },
     {
+        id: 'VTE',
+        imageCarre: squareImagePath + 'VTE-carre.webp',
+        images: [detailsImagePath + 'VTE.webp'],
+        title: 'Vogue The Explorer',
+        author: 'Erwan le Pape',
+        work: 'Alternative Soundtrack',
+        youtube: '',
+        soundcloud: 'https://on.soundcloud.com/ChjsRW3iE3R8rJPE9',
+        soundcloudAPINumber: 'playlists/1833864339'
+    },
+    {
         id: 'erinyes',
         imageCarre: squareImagePath + 'erinyes-carre.webp',
         images: [detailsImagePath + 'erinyes.webp'],
@@ -130,16 +141,5 @@ export const mediaList = [
         youtube: 'aA2WnaCvRvw',
         soundcloud: 'https://soundcloud.com/erwanlepape/nature-morte',
         soundcloudAPINumber: 'tracks/1671138273'
-    },
-    {
-        id: 'toy-tinkers',
-        imageCarre: squareImagePath + 'toy-tinkers-carre.webp',
-        images: [detailsImagePath + 'toy-tinkers.webp'],
-        title: 'Toy Tinkers',
-        author: 'Erwan le Pape',
-        work: 'Rescoring',
-        youtube: 'ayva2UZY9bo',
-        soundcloud: '',
-        soundcloudAPINumber: ''
     }
 ];
