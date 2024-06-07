@@ -45,7 +45,7 @@
 		align-items: center;
 		box-shadow: 0 -1px 0px rgba(255, 255, 255, 0.15);
 		padding: 0px 0;
-		margin-top: 20px;
+		margin-top: 0;
 		height: 40px;
 		text-align: center;
 		font-size: medium;
