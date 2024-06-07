@@ -70,7 +70,7 @@
 				frameborder="no"
 				title="Erwan Soundcloud Showreel"
 			> 
-	</iframe>
+		</iframe>
 	</div>
 </section>
 
@@ -301,6 +301,7 @@
 
 	.soundcloud-player,
 	.youtube-showreel {
+		display: none;
 		margin-top: 150px;
 	}
 
