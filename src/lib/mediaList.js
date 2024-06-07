@@ -23,7 +23,7 @@ export const mediaList = [
         title: 'The Peasants',
         author: 'A movie directed and written by DK Welchman and Hugh Welchman',
         work: 'Rescoring',
-        youtube: '0e3OWpEC_bQ',
+        youtube: '',
         soundcloud: 'https://on.soundcloud.com/VLfgv6km11dB55vg7',
         soundcloudAPINumber: 'playlists/1825400793',
         descriptiveText: ""
@@ -65,8 +65,8 @@ export const mediaList = [
     },
     {
         id: 'VTE',
-        imageCarre: squareImagePath + 'VTE-carre.webp',
-        images: [detailsImagePath + 'VTE.webp'],
+        imageCarre: squareImagePath + 'VTE-affiche-carre.webp',
+        images: [detailsImagePath + 'VTE-affiche.webp'],
         title: 'Vogue The Explorer',
         author: 'Erwan le Pape',
         work: 'Alternative Soundtrack',
@@ -128,8 +128,8 @@ export const mediaList = [
         author: 'A movie by Michael Shanks',
         work: 'IFMC contest',
         youtube: '5Z-sKX2BtoA',
-        soundcloud: 'https://soundcloud.com/erwanlepape/ifmc-time-trap',
-        soundcloudAPINumber: 'tracks/1671134031'
+        soundcloud: '',
+        soundcloudAPINumber: ''
     },
     {
         id: 'nature-morte',
