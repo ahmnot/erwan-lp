@@ -70,7 +70,7 @@ export const mediaList = [
         title: 'Vogue The Explorer',
         author: 'A video game by Mihai Morosanu',
         work: 'Alternative Soundtrack',
-        youtube: '',
+        youtube: 'TpOPmr-UZOc',
         soundcloud: 'https://on.soundcloud.com/ChjsRW3iE3R8rJPE9',
         soundcloudAPINumber: 'playlists/1833864339'
     },
