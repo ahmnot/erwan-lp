@@ -21,7 +21,7 @@ export const mediaList = [
         imageCarre: squareImagePath + 'the-peasants-carre.webp',
         images: [detailsImagePath + 'the-peasants.webp'],
         title: 'The Peasants',
-        author: 'A movie directed and written by DK Welchman and Hugh Welchman',
+        author: 'A movie by DK Welchman and Hugh Welchman',
         work: 'Alternative Soundtrack',
         youtube: '',
         soundcloud: 'https://on.soundcloud.com/VLfgv6km11dB55vg7',
