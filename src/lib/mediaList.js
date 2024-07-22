@@ -41,6 +41,17 @@ export const mediaList = [
         descriptiveText: "This collection of compositions, inspired by Skyrim's original soundtrack, captures the essence of what could be the musical landscape of a fantastical realm."
     },
     {
+        id: 'inside-my-world',
+        imageCarre: squareImagePath + 'inside-my-world-carre.webp',
+        images: [detailsImagePath + 'inside-my-world.webp'],
+        title: 'Inside my world',
+        author: 'Erwan Le Pape',
+        work: 'A Soundtrack for the OST JAM 7 contest',
+        youtube: '',
+        soundcloud: 'https://on.soundcloud.com/KLHvweE4WG8MAzPm9',
+        soundcloudAPINumber: 'playlists/1852788867'
+    },
+    {
         id: 'elegie-quatuor',
         imageCarre: squareImagePath + 'elegie-quatuor-carre.webp',
         images: [detailsImagePath + 'elegie-quatuor.webp'],
@@ -130,16 +141,5 @@ export const mediaList = [
         youtube: '',
         soundcloud: 'https://on.soundcloud.com/QueQNR8VR8GnoP5R6',
         soundcloudAPINumber: 'playlists/1846274562'
-    },
-    {
-        id: 'nature-morte',
-        imageCarre: squareImagePath + 'nature-morte-carre.webp',
-        images: [detailsImagePath + 'nature-morte.webp'],
-        title: 'nature morte',
-        author: 'A movie by Alysée Lavallée-Imhof',
-        work: 'UQAM scoring contest',
-        youtube: 'aA2WnaCvRvw',
-        soundcloud: 'https://soundcloud.com/erwanlepape/nature-morte',
-        soundcloudAPINumber: 'tracks/1671138273'
     }
 ];
