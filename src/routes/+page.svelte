@@ -231,14 +231,26 @@
 		display: grid;
 		grid-template-rows: 1fr 1fr;
 		grid-template-columns: 1fr 1fr 1fr 1fr;
-		gap:20px;
+		gap: 20px;
 		margin-bottom: 20px;
+		height: auto; /* Ensure height is auto */
 	}
 
 	.logos-grid-imgs img {
 		width: 100%;
-		height: 100%;
+		height: auto; /* Set height to auto to maintain aspect ratio */
+		object-fit: contain; /* Ensure images fit their container while maintaining aspect ratio */
 	}
+
+	/* Safari-specific CSS */
+	@media not all and (min-resolution:.001dpcm) {
+		@supports (-webkit-appearance:none) {
+			.logos-grid-imgs img {
+				height: auto; /* Adjust height specifically for Safari */
+			}
+		}
+	}
+
 
 	.texte-home {
 		align-self: center;
