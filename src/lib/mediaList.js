@@ -86,16 +86,16 @@ export const mediaList = [
         soundcloudAPINumber: 'playlists/1833864339'
     },
     {
-        id: 'erinyes',
-        imageCarre: squareImagePath + 'erinyes-carre.webp',
-        images: [detailsImagePath + 'erinyes.webp'],
-        title: 'ERINYES',
-        author: 'A video game by Gamagora',
-        work: 'Original Soundtrack',
+        id: 'shift',
+        imageCarre: squareImagePath + 'shift-carre.webp',
+        images: [detailsImagePath + 'shift.webp'],
+        title: 'Shift',
+        author: 'A movie by Chen Sing Yap',
+        work: 'Rescoring',
         youtube: '',
-        soundcloud: 'https://on.soundcloud.com/FkgU8HBn8jAGNJzv6',
-        soundcloudAPINumber: 'playlists/1825381395',
-        descriptiveText: ""
+        soundcloud: 'https://on.soundcloud.com/roMsNBt6p8Cmspkz7',
+        soundcloudAPINumber: 'tracks/1881829086',
+        descriptiveText: "This film is about a nurse who, during a pandemic, is caught between her duty as a frontline worker and her duty to her son (who is extra vulnerable to COVID)."
     },
     {
         id: 'le-champ-de-roseaux',
