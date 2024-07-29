@@ -14,7 +14,7 @@ export const mediaList = [
         youtube: 'ORlNFLSYQmw',
         soundcloud: 'https://on.soundcloud.com/SArJnmmf1iAqP1Te8',
         soundcloudAPINumber: 'playlists/1825386888',
-        descriptiveText: "Video coming soon"
+        descriptiveText: "This animation received the first prize upon graduation from the Animation School of Vieux-Montréal."
     },
     {
         id: 'the-peasants',
