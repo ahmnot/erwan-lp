@@ -11,7 +11,7 @@ export const mediaList = [
         title: 'Le Bistro de Belzebuth',
         author: 'An animation by Billie Calmeau',
         work: 'Original Soundtrack',
-        youtube: 'Dzz299ZDfG4',
+        youtube: 'ORlNFLSYQmw',
         soundcloud: 'https://on.soundcloud.com/SArJnmmf1iAqP1Te8',
         soundcloudAPINumber: 'playlists/1825386888',
         descriptiveText: "Video coming soon"
