@@ -6,7 +6,7 @@ let squareImagePath = '/affiches-court-metrages/square-version/';
 export const mediaList = [
     {
         id: 'bistro-belzebuth',
-        imageCarre: squareImagePath + 'bistro-belzebuth-carre-2.webp',
+        imageCarre: squareImagePath + 'bistro-belzebuth-carre-3.webp',
         images: [detailsImagePath + 'bistro-belzebuth.webp'],
         title: 'Le Bistro de Belzebuth',
         author: 'An animation by Billie Calmeau',
