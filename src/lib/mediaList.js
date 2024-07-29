@@ -49,7 +49,7 @@ export const mediaList = [
         work: 'A Soundtrack for the OST JAM 7 contest',
         youtube: '',
         soundcloud: 'https://on.soundcloud.com/KLHvweE4WG8MAzPm9',
-        soundcloudAPINumber: 'playlists/1852788867'
+        soundcloudAPINumber: 'playlists/1852788867',
         descriptiveText: "A soundtrack of an imaginary game I composed for the OST Composing JAM 7 contest. The main theme that was given was this art and the phrase 'Inside my world'"
     },
     {
@@ -84,7 +84,7 @@ export const mediaList = [
         work: 'Alternative Soundtrack',
         youtube: 'TpOPmr-UZOc',
         soundcloud: 'https://on.soundcloud.com/ChjsRW3iE3R8rJPE9',
-        soundcloudAPINumber: 'playlists/1833864339'
+        soundcloudAPINumber: 'playlists/1833864339',
         descriptiveText:"This is a collaborative work I did with sound-designers, remaking the entire audio of the game. It's a 3rd person sci-fi video game about exploring a new planet with ancient ruins of a lost civilization."
 
     },
@@ -98,7 +98,7 @@ export const mediaList = [
         youtube: '',
         soundcloud: 'https://on.soundcloud.com/roMsNBt6p8Cmspkz7',
         soundcloudAPINumber: 'tracks/1881829086',
-        descriptiveText: "This film is about a nurse who, during a pandemic, is caught between her duty as a frontline worker and her duty to her son (who is extra vulnerable to COVID)."
+        descriptiveText:"This film is about a nurse who, during a pandemic, is caught between her duty as a frontline worker and her duty to her son (who is extra vulnerable to COVID)."
     },
     {
         id: 'le-champ-de-roseaux',
@@ -109,7 +109,8 @@ export const mediaList = [
         work: 'Original Soundtrack',
         youtube: '',
         soundcloud: 'https://on.soundcloud.com/N1xRjM8KPvRmQ91Z7',
-        soundcloudAPINumber: 'tracks/1827289374'
+        soundcloudAPINumber: 'tracks/1827289374',
+        descriptiveText:"video coming soon"
     },
     {
         id: 'resistencia',
@@ -120,8 +121,8 @@ export const mediaList = [
         work: 'Original Soundtrack',
         youtube: '',
         soundcloud: 'https://soundcloud.com/erwanlepape/sets/resistencia',
-        soundcloudAPINumber: 'playlists/1762686030'
-        descriptiveText: "In 'Resistance', Marie, a passionate activist for environmental justice, fights to prove her innocence and save the world from forces that seek to silence her. Despite her considerable political influence, we follow her through an episode of depression following significant burnout. This explores how the collective impacts the individual, highlighting the personal and emotional consequences of the fight for justice."
+        soundcloudAPINumber: 'playlists/1762686030',
+        descriptiveText:"In 'Resistance', Marie, a passionate activist for environmental justice fights to prove her innocence and save the world from forces that seek to silence her. Despite her considerable political influence, we follow her through an episode of depression following significant burnout. This explores how the collective impacts the individual, highlighting the personal and emotional consequences of the fight for justice."
     },
     {
         id: 'tomorrows-day',
@@ -144,7 +145,7 @@ export const mediaList = [
         work: 'Original Soundtrack',
         youtube: '',
         soundcloud: 'https://on.soundcloud.com/QueQNR8VR8GnoP5R6',
-        soundcloudAPINumber: 'playlists/1846274562'
-        descriptiveText: "35 Mai is a short animation that vividly depicts the historic events of the 1989 Tiananmen Square protests through the eyes and memories of Jian, a present-day Chinese individual. As Jian recalls the turmoil and courage of that pivotal time, the animation brings to life the personal and collective struggles for freedom and justice."
+        soundcloudAPINumber: 'playlists/1846274562',
+        descriptiveText:"35 Mai is a short animation that vividly depicts the historic events of the 1989 Tiananmen Square protests through the eyes and memories of Jian, a present-day Chinese individual. As Jian recalls the turmoil and courage of that pivotal time, the animation brings to life the personal and collective struggles for freedom and justice."
     }
 ];
