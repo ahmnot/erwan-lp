@@ -26,7 +26,7 @@ export const mediaList = [
         youtube: '',
         soundcloud: 'https://on.soundcloud.com/VLfgv6km11dB55vg7',
         soundcloudAPINumber: 'playlists/1825400793',
-        descriptiveText: ""
+        descriptiveText: "The Peasants tells the story of Jagna, a young woman determined to forge her own path within the confines of a late 19th century Polish village - a hotbed of gossip and on-going feuds, held together, rich and poor, by pride in their land, adherence to colorful traditions and deep-rooted patriarchy. When Jagna finds herself caught between the conflicting desires of the village's richest farmer, his eldest son, and other leading men of the community, her resistance puts her on a tragic collision course with the community around her."
     },
     {
         id: 'fantasy',
@@ -50,6 +50,7 @@ export const mediaList = [
         youtube: '',
         soundcloud: 'https://on.soundcloud.com/KLHvweE4WG8MAzPm9',
         soundcloudAPINumber: 'playlists/1852788867'
+        descriptiveText: "A soundtrack of an imaginary game I composed for the OST Composing JAM 7 contest. The main theme that was given was this art and the phrase 'Inside my world'"
     },
     {
         id: 'elegie-quatuor',
@@ -84,6 +85,8 @@ export const mediaList = [
         youtube: 'TpOPmr-UZOc',
         soundcloud: 'https://on.soundcloud.com/ChjsRW3iE3R8rJPE9',
         soundcloudAPINumber: 'playlists/1833864339'
+        descriptiveText:"This is a collaborative work I did with sound-designers, remaking the entire audio of the game. It's a 3rd person sci-fi video game about exploring a new planet with ancient ruins of a lost civilization."
+
     },
     {
         id: 'shift',
@@ -91,7 +94,7 @@ export const mediaList = [
         images: [detailsImagePath + 'shift.webp'],
         title: 'Shift',
         author: 'A movie by Chen Sing Yap',
-        work: 'Rescoring',
+        work: 'Alternative Soundtrack',
         youtube: '',
         soundcloud: 'https://on.soundcloud.com/roMsNBt6p8Cmspkz7',
         soundcloudAPINumber: 'tracks/1881829086',
@@ -118,6 +121,7 @@ export const mediaList = [
         youtube: '',
         soundcloud: 'https://soundcloud.com/erwanlepape/sets/resistencia',
         soundcloudAPINumber: 'playlists/1762686030'
+        descriptiveText: "In 'Resistance', Marie, a passionate activist for environmental justice, fights to prove her innocence and save the world from forces that seek to silence her. Despite her considerable political influence, we follow her through an episode of depression following significant burnout. This explores how the collective impacts the individual, highlighting the personal and emotional consequences of the fight for justice."
     },
     {
         id: 'tomorrows-day',
@@ -129,7 +133,7 @@ export const mediaList = [
         youtube: '',
         soundcloud: 'https://on.soundcloud.com/tCcQXBY2MpPGhCgDA',
         soundcloudAPINumber: 'tracks/1829523999',
-        descriptiveText: ""
+        descriptiveText: "Tomorrow's Day is an alternate history video game based on George Orwell's book 1984, which begins with the assassination of John Fitzgerald Kennedy. In the city of Dallas, you play as James Steel, a homeland security agent tasked with investigating a list of suspects through video archives from surveillance cameras scattered in every corner of the city."
     },
     {
         id: '35Mai',
@@ -141,5 +145,6 @@ export const mediaList = [
         youtube: '',
         soundcloud: 'https://on.soundcloud.com/QueQNR8VR8GnoP5R6',
         soundcloudAPINumber: 'playlists/1846274562'
+        descriptiveText: "35 Mai is a short animation that vividly depicts the historic events of the 1989 Tiananmen Square protests through the eyes and memories of Jian, a present-day Chinese individual. As Jian recalls the turmoil and courage of that pivotal time, the animation brings to life the personal and collective struggles for freedom and justice."
     }
 ];
