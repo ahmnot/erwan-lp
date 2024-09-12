@@ -35,10 +35,10 @@ export const mediaList = [
         title: 'Fantasy',
         author: 'Erwan Le Pape',
         work: 'Original music',
-        youtube: '',
+        youtube: 'AkRZHpBrjaA?si=-_jU6pFSaJSVxtz-',
         soundcloud: 'https://soundcloud.com/erwanlepape/sets/fantasy-1',
         soundcloudAPINumber: 'playlists/1772144829',
-        descriptiveText: "This collection of compositions, inspired by Skyrim's original soundtrack, captures the essence of what could be the musical landscape of a fantastical realm."
+        descriptiveText: "This collection of 6 music compositions, inspired by Skyrim's original soundtrack, captures the essence of what could be the musical landscape of a fantastical realm."
     },
     {
         id: 'tomorrows-day',
