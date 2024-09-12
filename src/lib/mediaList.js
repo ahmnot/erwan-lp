@@ -47,7 +47,7 @@ export const mediaList = [
         title: 'Tomorrows Day',
         author: 'A video game by Brassart',
         work: 'Original Soundtrack, Sound Design',
-        youtube: 'RKvabsdKIuY',
+        youtube: '-oWTTdX986Y',
         soundcloud: 'https://on.soundcloud.com/tCcQXBY2MpPGhCgDA',
         soundcloudAPINumber: 'tracks/1829523999',
         descriptiveText: "BRASSART Lyon Award Winner. Tomorrow's Day is an alternate history video game based on George Orwell's book 1984, which begins with the assassination of John Fitzgerald Kennedy. In the city of Dallas, you play as James Steel, a homeland security agent tasked with investigating a list of suspects through video archives from surveillance cameras scattered in every corner of the city."
