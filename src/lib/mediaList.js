@@ -41,16 +41,16 @@ export const mediaList = [
         descriptiveText: "This collection of compositions, inspired by Skyrim's original soundtrack, captures the essence of what could be the musical landscape of a fantastical realm."
     },
     {
-        id: 'inside-my-world',
-        imageCarre: squareImagePath + 'inside-my-world-carre.webp',
-        images: [detailsImagePath + 'inside-my-world.webp'],
-        title: 'Inside my world',
-        author: 'Erwan Le Pape',
-        work: 'A Soundtrack for the OST JAM 7 contest',
-        youtube: '',
-        soundcloud: 'https://on.soundcloud.com/KLHvweE4WG8MAzPm9',
-        soundcloudAPINumber: 'playlists/1852788867',
-        descriptiveText: "A soundtrack of an imaginary game I composed for the OST Composing JAM 7 contest. The main theme that was given was this art and the phrase 'Inside my world'"
+        id: 'tomorrows-day',
+        imageCarre: squareImagePath + 'tomorrows-day-carre.webp',
+        images: [detailsImagePath + 'tomorrows-day.webp'],
+        title: 'Tomorrows Day',
+        author: 'A video game by Brassart',
+        work: 'Original Soundtrack, Sound Design',
+        youtube: 'RKvabsdKIuY',
+        soundcloud: 'https://on.soundcloud.com/tCcQXBY2MpPGhCgDA',
+        soundcloudAPINumber: 'tracks/1829523999',
+        descriptiveText: "BRASSART Lyon Award Winner. Tomorrow's Day is an alternate history video game based on George Orwell's book 1984, which begins with the assassination of John Fitzgerald Kennedy. In the city of Dallas, you play as James Steel, a homeland security agent tasked with investigating a list of suspects through video archives from surveillance cameras scattered in every corner of the city."
     },
     {
         id: 'elegie-quatuor',
@@ -100,17 +100,17 @@ export const mediaList = [
         soundcloudAPINumber: 'tracks/1881829086',
         descriptiveText:"This film is about a nurse who, during a pandemic, is caught between her duty as a frontline worker and her duty to her son (who is extra vulnerable to COVID)."
     },
-        {
-        id: 'tomorrows-day',
-        imageCarre: squareImagePath + 'tomorrows-day-carre.webp',
-        images: [detailsImagePath + 'tomorrows-day.webp'],
-        title: 'Tomorrows Day',
-        author: 'A video game by Brassart',
-        work: 'Original Soundtrack, Sound Design',
-        youtube: 'RKvabsdKIuY',
-        soundcloud: 'https://on.soundcloud.com/tCcQXBY2MpPGhCgDA',
-        soundcloudAPINumber: 'tracks/1829523999',
-        descriptiveText: "BRASSART Lyon Award Winner. Tomorrow's Day is an alternate history video game based on George Orwell's book 1984, which begins with the assassination of John Fitzgerald Kennedy. In the city of Dallas, you play as James Steel, a homeland security agent tasked with investigating a list of suspects through video archives from surveillance cameras scattered in every corner of the city."
+    {
+        id: 'inside-my-world',
+        imageCarre: squareImagePath + 'inside-my-world-carre.webp',
+        images: [detailsImagePath + 'inside-my-world.webp'],
+        title: 'Inside my world',
+        author: 'Erwan Le Pape',
+        work: 'A Soundtrack for the OST JAM 7 contest',
+        youtube: 'WR5mPBApPW4',
+        soundcloud: 'https://on.soundcloud.com/KLHvweE4WG8MAzPm9',
+        soundcloudAPINumber: 'playlists/1852788867',
+        descriptiveText: "A soundtrack of an imaginary game I composed for the OST Composing JAM 7 contest. The main theme that was given was this art and the phrase 'Inside my world'"
     },
     {
         id: 'le-champ-de-roseaux',
