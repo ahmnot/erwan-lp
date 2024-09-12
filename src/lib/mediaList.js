@@ -23,7 +23,7 @@ export const mediaList = [
         title: 'The Peasants',
         author: 'A movie by DK Welchman and Hugh Welchman',
         work: 'Alternative Soundtrack',
-        youtube: '',
+        youtube: '0e3OWpEC_bQ',
         soundcloud: 'https://on.soundcloud.com/VLfgv6km11dB55vg7',
         soundcloudAPINumber: 'playlists/1825400793',
         descriptiveText: "The Peasants tells the story of Jagna, a young woman determined to forge her own path within the confines of a late 19th century Polish village - a hotbed of gossip and on-going feuds, held together, rich and poor, by pride in their land, adherence to colorful traditions and deep-rooted patriarchy. When Jagna finds herself caught between the conflicting desires of the village's richest farmer, his eldest son, and other leading men of the community, her resistance puts her on a tragic collision course with the community around her."
@@ -95,10 +95,22 @@ export const mediaList = [
         title: 'Shift',
         author: 'A movie by Chen Sing Yap',
         work: 'Alternative Soundtrack',
-        youtube: '',
+        youtube: 'zqUw4Iwf5Zg',
         soundcloud: 'https://on.soundcloud.com/roMsNBt6p8Cmspkz7',
         soundcloudAPINumber: 'tracks/1881829086',
         descriptiveText:"This film is about a nurse who, during a pandemic, is caught between her duty as a frontline worker and her duty to her son (who is extra vulnerable to COVID)."
+    },
+        {
+        id: 'tomorrows-day',
+        imageCarre: squareImagePath + 'tomorrows-day-carre.webp',
+        images: [detailsImagePath + 'tomorrows-day.webp'],
+        title: 'Tomorrows Day',
+        author: 'A video game by Brassart',
+        work: 'Original Soundtrack, Sound Design',
+        youtube: 'RKvabsdKIuY',
+        soundcloud: 'https://on.soundcloud.com/tCcQXBY2MpPGhCgDA',
+        soundcloudAPINumber: 'tracks/1829523999',
+        descriptiveText: "BRASSART Lyon Award Winner. Tomorrow's Day is an alternate history video game based on George Orwell's book 1984, which begins with the assassination of John Fitzgerald Kennedy. In the city of Dallas, you play as James Steel, a homeland security agent tasked with investigating a list of suspects through video archives from surveillance cameras scattered in every corner of the city."
     },
     {
         id: 'le-champ-de-roseaux',
@@ -110,7 +122,7 @@ export const mediaList = [
         youtube: '',
         soundcloud: 'https://on.soundcloud.com/N1xRjM8KPvRmQ91Z7',
         soundcloudAPINumber: 'tracks/1827289374',
-        descriptiveText:"video coming soon"
+        descriptiveText:""
     },
     {
         id: 'resistencia',
@@ -122,19 +134,7 @@ export const mediaList = [
         youtube: '',
         soundcloud: 'https://soundcloud.com/erwanlepape/sets/resistencia',
         soundcloudAPINumber: 'playlists/1762686030',
-        descriptiveText:"In 'Resistance', Marie, a passionate activist for environmental justice fights to prove her innocence and save the world from forces that seek to silence her. Despite her considerable political influence, we follow her through an episode of depression following significant burnout. This explores how the collective impacts the individual, highlighting the personal and emotional consequences of the fight for justice."
-    },
-    {
-        id: 'tomorrows-day',
-        imageCarre: squareImagePath + 'tomorrows-day-carre.webp',
-        images: [detailsImagePath + 'tomorrows-day.webp'],
-        title: 'Tomorrows Day',
-        author: 'A video game by Brassart',
-        work: 'Original Soundtrack, Sound Design',
-        youtube: '',
-        soundcloud: 'https://on.soundcloud.com/tCcQXBY2MpPGhCgDA',
-        soundcloudAPINumber: 'tracks/1829523999',
-        descriptiveText: "Tomorrow's Day is an alternate history video game based on George Orwell's book 1984, which begins with the assassination of John Fitzgerald Kennedy. In the city of Dallas, you play as James Steel, a homeland security agent tasked with investigating a list of suspects through video archives from surveillance cameras scattered in every corner of the city."
+        descriptiveText:"In 'Resistancia', Marie, a passionate activist for environmental justice fights to prove her innocence and save the world from forces that seek to silence her. Despite her considerable political influence, we follow her through an episode of depression following significant burnout. This explores how the collective impacts the individual, highlighting the personal and emotional consequences of the fight for justice."
     },
     {
         id: '35Mai',
