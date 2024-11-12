@@ -14,7 +14,7 @@ export const mediaList = [
         youtube: 'ORlNFLSYQmw',
         soundcloud: 'https://on.soundcloud.com/SArJnmmf1iAqP1Te8',
         soundcloudAPINumber: 'playlists/1825386888',
-        descriptiveText: "This animation received the first prize upon graduation from the school Animation Vieux Montréal."
+        descriptiveText: "Late at night, a cook prepares food for a hungry demon. As he brings the main course, things get tense. This animation received the first prize upon graduation from the school Animation Vieux Montréal and the honorable mention at the Hollywood Shortsfest."
     },
     {
         id: 'the-peasants',
