@@ -55,18 +55,19 @@
 		justify-content: center;
 		align-items: center;
 		z-index: 1000;
-		border:none;
+		border: none;
 	}
 
 	.lightbox-content {
 		position: relative;
 		padding: 0px;
 		box-sizing: border-box;
-		max-width: 100%;
-		max-height: 100%;
+		max-width: 100dvw; /* Use dynamic viewport width */
+		max-height: 100dvh; /* Use dynamic viewport height */
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		overflow: auto;
 	}
 
 	.close-button {
@@ -81,8 +82,9 @@
 	}
 
 	img {
-		max-width: 75%;
-		max-height: 75%;
-		display: block; /* Ensures no extra space below the image */
+		max-width: 90dvw; /* Constrain width to dynamic viewport width */
+		max-height: 90dvh; /* Constrain height to dynamic viewport height */
+		display: block;
+		object-fit: contain;
 	}
 </style>
