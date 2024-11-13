@@ -37,8 +37,8 @@
 		</a>
 	</li>
 	<li>
-		<a class="icon-button-or-link" href="https://discord.com/users/783996252018573332" target="_blank">
-				<img class="icon-normal" src="/icons/discord.webp" alt="Discord Link" />
+		<a class="icon-button-or-link" href="https://www.imdb.com/name/nm16474305/" target="_blank">
+				<img class="icon-normal icon-bigger" src="/icons/imdb.webp" alt="Discord Link" />
 		</a>
 	</li>
 	<li>
@@ -79,6 +79,11 @@
 		align-items: center;
 		justify-content: center;
 		position: relative;
+	}
+
+	.icon-bigger {
+		width: 40px !important;
+		height: 40px !important;
 	}
 
 	.icon-normal {
