@@ -27,6 +27,11 @@
 		{/if}
 	</li>
 	<li>
+		<a class="icon-button-or-link" href="https://www.imdb.com/name/nm16474305/" target="_blank">
+				<img class="icon-normal icon-bigger" src="/icons/imdb.webp" alt="Discord Link" />
+		</a>
+	</li>
+	<li>
 		<a class="icon-button-or-link" href="https://soundcloud.com/erwanlepape" target="_blank">
 				<img class="icon-normal" src="/icons/soundcloud.webp" alt="Soundcloud Link" />
 		</a>
@@ -34,11 +39,6 @@
 	<li>
 		<a class="icon-button-or-link" href="https://www.instagram.com/erwanklp/" target="_blank">
 				<img class="icon-normal" src="/icons/instagram.webp" alt="Instagram Link" />
-		</a>
-	</li>
-	<li>
-		<a class="icon-button-or-link" href="https://www.imdb.com/name/nm16474305/" target="_blank">
-				<img class="icon-normal icon-bigger" src="/icons/imdb.webp" alt="Discord Link" />
 		</a>
 	</li>
 	<li>
