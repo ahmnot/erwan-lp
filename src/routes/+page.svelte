@@ -85,13 +85,15 @@
 		<p class="bio-text">
 			Hi, I'm Erwan, a young composer based in Lyon and Rennes, France.<br /><br />
 			I studied music at the conservatory and college, and I'm currently pursuing a master's degree in
-			music scoring, specializing in the creation of nuanced soundtracks for films, television, video
-			games, and various multimedia platforms.<br /><br />
+			music scoring, specializing in the creation of nuanced soundtracks for various multimedia platforms.<br /><br />
+			I have already worked on several short films, animations and video games, collaborating closely with 
+			directors, producers, and creative teams. These experiences taught me the importance of collaboration, 
+			where clear communication is key towards achieving a shared goal.<br /><br />
 			A pivotal chapter of my musical education was the three-year mentorship as a private student of
 			Yves Krier, a contemporary composer and conductor. I acquired most of my skills in composition
 			and orchestration from him.<br /><br />
 			While the piano remains my primary instrument, I can also play the guitar (both electric and acoustic),
-			bass guitar, violin, and the ngoni. My musical influences range from neoclassical to contemporary
+			bass guitar, violin, the ngoni, the soprano and tenor recorder flute. My musical influences range from neoclassical to contemporary
 			music, with a particular affinity for orchestral arrangements. However, I'm not one to shy away
 			from experimentation, often blending traditional orchestral elements with electronic sounds to
 			create unique and dynamic compositions.
@@ -99,9 +101,9 @@
 		<p class="bio-skills">
 			<b>Skills</b> <br /><br />
 
-			Piano, Guitar, Bass, Violin, Synthesizers<br />
+			Piano, Guitar, Bass, Ngoni, Sop. and Tenor recorder flute, Synthesizers<br />
 			Composition, Theory, Harmony, Arrangement, Orchestration, Sound-Design. <br />
-			I use DAWs such as Logic Pro, Sibelius, Fl Studio. <br />
+			I use DAWs such as Logic Pro, Sibelius, OpenMusic. <br />
 			I work from my home studio. <br />
 			Easily reachable. <br />
 			<br />
