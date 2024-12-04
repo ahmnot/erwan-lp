@@ -17,16 +17,16 @@ export const mediaList = [
         descriptiveText: "Late at night, a cook prepares food for a hungry demon. As he brings the main course, things get tense. This animation received the first prize upon graduation from the school Animation Vieux Montréal and the honorable mention at the Hollywood Shortsfest."
     },
     {
-        id: 'the-peasants',
-        imageCarre: squareImagePath + 'the-peasants-carre.webp',
-        images: [detailsImagePath + 'the-peasants.webp'],
-        title: 'The Peasants',
-        author: 'A movie by DK Welchman and Hugh Welchman',
-        work: 'Alternative Soundtrack',
-        youtube: '0e3OWpEC_bQ',
-        soundcloud: 'https://on.soundcloud.com/VLfgv6km11dB55vg7',
-        soundcloudAPINumber: 'playlists/1825400793',
-        descriptiveText: "The Peasants tells the story of Jagna, a young woman determined to forge her own path within the confines of a late 19th century Polish village - a hotbed of gossip and on-going feuds, held together, rich and poor, by pride in their land, adherence to colorful traditions and deep-rooted patriarchy. When Jagna finds herself caught between the conflicting desires of the village's richest farmer, his eldest son, and other leading men of the community, her resistance puts her on a tragic collision course with the community around her."
+        id: 'elegie-quatuor',
+        imageCarre: squareImagePath + 'elegie-quatuor-carre.webp',
+        images: [detailsImagePath + 'elegie-quatuor.webp'],
+        title: 'Élégie pour quatuor à cordes',
+        author: 'Erwan le Pape',
+        work: 'Original Composition',
+        youtube: 'videoseries?list=PLnSR0k45boRM79S-MtMypxco_QZ7JdPW-',
+        soundcloud: 'https://soundcloud.com/erwanlepape/sets/elegie-pour-quatuor-a-cordes',
+        soundcloudAPINumber: 'playlists/1777302918',
+        descriptiveText:"This composition, inspired by Bartholomé's sculpture 'Monument aux Morts,' was performed by the Anthemis Quartet at the Museum of Fine Arts in Lyon. It portrays death not merely as a tragedy but rather as a liberating force."
     },
     {
         id: 'fantasy',
@@ -53,16 +53,16 @@ export const mediaList = [
         descriptiveText: "BRASSART Lyon Award Winner. Tomorrow's Day is an alternate history video game based on George Orwell's book 1984, which begins with the assassination of John Fitzgerald Kennedy. In the city of Dallas, you play as James Steel, a homeland security agent tasked with investigating a list of suspects through video archives from surveillance cameras scattered in every corner of the city."
     },
     {
-        id: 'elegie-quatuor',
-        imageCarre: squareImagePath + 'elegie-quatuor-carre.webp',
-        images: [detailsImagePath + 'elegie-quatuor.webp'],
-        title: 'Élégie pour quatuor à cordes',
-        author: 'Erwan le Pape',
-        work: 'Original Composition',
-        youtube: 'videoseries?list=PLnSR0k45boRM79S-MtMypxco_QZ7JdPW-',
-        soundcloud: 'https://soundcloud.com/erwanlepape/sets/elegie-pour-quatuor-a-cordes',
-        soundcloudAPINumber: 'playlists/1777302918',
-        descriptiveText:"This composition, inspired by Bartholomé's sculpture 'Monument aux Morts,' was performed by the Anthemis Quartet at the Museum of Fine Arts in Lyon. It portrays death not merely as a tragedy but rather as a liberating force."
+        id: 'the-peasants',
+        imageCarre: squareImagePath + 'the-peasants-carre.webp',
+        images: [detailsImagePath + 'the-peasants.webp'],
+        title: 'The Peasants',
+        author: 'A movie by DK Welchman and Hugh Welchman',
+        work: 'Alternative Soundtrack',
+        youtube: '0e3OWpEC_bQ',
+        soundcloud: 'https://on.soundcloud.com/VLfgv6km11dB55vg7',
+        soundcloudAPINumber: 'playlists/1825400793',
+        descriptiveText: "The Peasants tells the story of Jagna, a young woman determined to forge her own path within the confines of a late 19th century Polish village - a hotbed of gossip and on-going feuds, held together, rich and poor, by pride in their land, adherence to colorful traditions and deep-rooted patriarchy. When Jagna finds herself caught between the conflicting desires of the village's richest farmer, his eldest son, and other leading men of the community, her resistance puts her on a tragic collision course with the community around her."
     },
     {
         id: 'sahara',
