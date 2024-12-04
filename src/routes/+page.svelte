@@ -101,7 +101,7 @@
 		<p class="bio-skills">
 			<b>Skills</b> <br /><br />
 
-			Piano, Guitar, Bass, Ngoni, Sop. and Tenor recorder flute, Synthesizers<br />
+			Piano, Guitar, Bass, Ngoni, Sop. and Tenor recorder, Synthesizers<br />
 			Composition, Theory, Harmony, Arrangement, Orchestration, Sound-Design. <br />
 			I use DAWs such as Logic Pro, Sibelius, OpenMusic. <br />
 			I work from my home studio. <br />
