@@ -137,15 +137,15 @@ export const mediaList = [
         descriptiveText:"In 'Resistancia', Marie, a passionate activist for environmental justice fights to prove her innocence and save the world from forces that seek to silence her. Despite her considerable political influence, we follow her through an episode of depression following significant burnout. This explores how the collective impacts the individual, highlighting the personal and emotional consequences of the fight for justice."
     },
     {
-        id: '35Mai',
-        imageCarre: squareImagePath + '35Mai-carre.webp',
-        images: [detailsImagePath + '35Mai.webp'],
-        title: '35 Mai',
-        author: 'An animation by Thibault Hazebroucq',
-        work: 'Original Soundtrack',
+        id: 'willtbeats',
+        imageCarre: squareImagePath + 'willtbeats-carre.webp',
+        images: [detailsImagePath + 'willtbeats.webp'],
+        title: 'Beatmaking',
+        author: 'Produced by me aka Will T Beats',
+        work: 'Original Music',
         youtube: '',
-        soundcloud: 'https://on.soundcloud.com/QueQNR8VR8GnoP5R6',
-        soundcloudAPINumber: 'playlists/1846274562',
-        descriptiveText:"35 Mai is a short animation that vividly depicts the historic events of the 1989 Tiananmen Square protests through the eyes and memories of Jian, a present-day Chinese individual. As Jian recalls the turmoil and courage of that pivotal time, the animation brings to life the personal and collective struggles for freedom and justice."
+        soundcloud: 'https://on.soundcloud.com/ZuLQYALNVrt9p2ur6',
+        soundcloudAPINumber: 'playlists/1918213487',
+        descriptiveText:"This is my beatmaking account or... here ar some of my other music."
     }
 ];
