@@ -85,7 +85,7 @@
 		<p class="bio-text">
 			Hi, I'm Erwan, a young composer based in Lyon and Rennes, France.<br /><br />
 			I studied music at the conservatory and college, and I'm currently pursuing a master's degree in
-			music scoring, specializing in the creation of nuanced soundtracks for various multimedia platforms.<br /><br />
+			music scoring, specializing in the creation of nuanced soundtracks for various multimedia platforms.
 			I have already worked on several short films, animations and video games, collaborating closely with 
 			directors, producers, and creative teams. These experiences taught me the importance of collaboration, 
 			where clear communication is key towards achieving a shared goal.<br /><br />
