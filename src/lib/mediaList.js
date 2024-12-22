@@ -148,4 +148,4 @@ export const mediaList = [
         soundcloudAPINumber: 'playlists/1762686030',
         descriptiveText:"In 'Resistancia', Marie, a passionate activist for environmental justice fights to prove her innocence and save the world from forces that seek to silence her. Despite her considerable political influence, we follow her through an episode of depression following significant burnout. This explores how the collective impacts the individual, highlighting the personal and emotional consequences of the fight for justice."
     }
-    ;
+]
