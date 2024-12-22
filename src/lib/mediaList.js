@@ -5,6 +5,18 @@ let squareImagePath = '/affiches-court-metrages/square-version/';
 
 export const mediaList = [
     {
+        id: 'lueur',
+        imageCarre: squareImagePath + 'lueur-carre.webp',
+        images: [detailsImagePath + 'lueur.webp'],
+        title: 'Lueur, Sonata for Violin and Piano',
+        author: 'Erwan Le Pape',
+        work: 'Concert Music',
+        youtube: '_Knp9oviskI',
+        soundcloud: 'https://on.soundcloud.com/4ghMszUirvYyGUP99',
+        soundcloudAPINumber: 'track/1986476391',
+        descriptiveText:"A Violin Sonata in a neo-romantic burst"
+    },
+    {
         id: 'bistro-belzebuth',
         imageCarre: squareImagePath + 'bistro-belzebuth-carre-3.webp',
         images: [detailsImagePath + 'bistro-belzebuth.webp'],
@@ -22,7 +34,7 @@ export const mediaList = [
         images: [detailsImagePath + 'elegie-quatuor.webp'],
         title: 'Élégie pour quatuor à cordes',
         author: 'Erwan le Pape',
-        work: 'Original Composition',
+        work: 'Concert Music',
         youtube: 'videoseries?list=PLnSR0k45boRM79S-MtMypxco_QZ7JdPW-',
         soundcloud: 'https://soundcloud.com/erwanlepape/sets/elegie-pour-quatuor-a-cordes',
         soundcloudAPINumber: 'playlists/1777302918',
@@ -135,17 +147,4 @@ export const mediaList = [
         soundcloud: 'https://soundcloud.com/erwanlepape/sets/resistencia',
         soundcloudAPINumber: 'playlists/1762686030',
         descriptiveText:"In 'Resistancia', Marie, a passionate activist for environmental justice fights to prove her innocence and save the world from forces that seek to silence her. Despite her considerable political influence, we follow her through an episode of depression following significant burnout. This explores how the collective impacts the individual, highlighting the personal and emotional consequences of the fight for justice."
-    },
-    {
-        id: 'willtbeats',
-        imageCarre: squareImagePath + 'willtbeats-carre.webp',
-        images: [detailsImagePath + 'willtbeats.webp'],
-        title: 'Beatmaking',
-        author: 'Produced by me aka Will T Beats',
-        work: 'Original Music',
-        youtube: '',
-        soundcloud: 'https://on.soundcloud.com/ZuLQYALNVrt9p2ur6',
-        soundcloudAPINumber: 'playlists/1918213487',
-        descriptiveText:"This is my beatmaking account or... here ar some of my other music."
     }
-];
