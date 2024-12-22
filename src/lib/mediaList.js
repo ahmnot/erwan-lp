@@ -13,8 +13,8 @@ export const mediaList = [
         work: 'Concert Music',
         youtube: '_Knp9oviskI',
         soundcloud: 'https://on.soundcloud.com/4ghMszUirvYyGUP99',
-        soundcloudAPINumber: 'track/1986476391',
-        descriptiveText:"A Violin Sonata in a neo-romantic burst"
+        soundcloudAPINumber: 'tracks/1986476391',
+        descriptiveText:"A Violin Sonata in a neo-romantic burst."
     },
     {
         id: 'bistro-belzebuth',
