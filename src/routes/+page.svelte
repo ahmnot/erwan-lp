@@ -114,13 +114,13 @@
 		<div></div>
 		<div class="logos-grid-imgs">
 			<img src="/logos-ecoles/brassart.webp" alt="Brassart logo" />
-			<img src="/logos-ecoles/esad-amiens.webp" alt="Esad logo" />
+			<img src="/logos-ecoles/bellecour.webp" alt="Bellecour École logo" />
 			<img src="/logos-ecoles/gamagora.webp" alt="Gamagora logo" />
 			<img src="/logos-ecoles/maaav.webp" alt="MAAAV logo" />
 			<img src="/logos-ecoles/mba-lyon.webp" alt="MBA Lyon logo" />
-			<img src="/logos-ecoles/univlyon2.webp" alt="Lyon 2 University logo" />
+			<img src="/logos-ecoles/artfx.webp" alt="Art FX School of Digital Arts logo" />
 			<img src="/logos-ecoles/vieux-montreal.webp" style="filter:invert(1);" alt="Vieux Montreal logo" />
-			<img src="/logos-ecoles/ENAAI.webp" alt="ENAAI logo" />
+			<img src="/logos-ecoles/ecv.webp" alt="ECV Bordeaux logo" />
 		</div>
 		<div></div>
 	</div>
@@ -234,6 +234,7 @@
 		grid-template-rows: 1fr 1fr;
 		grid-template-columns: 1fr 1fr 1fr 1fr;
 		gap: 20px;
+		row-gap: 20px;
 		margin-bottom: 20px;
 		height: auto; /* Ensure height is auto */
 	}
