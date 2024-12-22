@@ -11,7 +11,7 @@
 	let isMailShown = false;
 
 	function mailClickHandler() {
-			isMailShown = !isMailShown;
+		isMailShown = !isMailShown;
 	}
 </script>
 
