@@ -13,7 +13,7 @@ export const mediaList = [
         work: 'Original music',
         youtube: 'videoseries?list=OLAK5uy_kMX0AB9Lsp0xy_tTrTFoMwvS9_lrmAc40&si=zuYMsTfkgYoADYkM',
         soundcloud: '',
-        soundcloudAPINumber: 'playlists/1772144829',
+        soundcloudAPINumber: '',
         descriptiveText: "This album, made of 9 compositions, captures the essence of what could be the musical landscape of a fantastical realm."
     },
     {
