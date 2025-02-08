@@ -5,16 +5,16 @@ let squareImagePath = '/affiches-court-metrages/square-version/';
 
 export const mediaList = [
     {
-        id: 'lueur',
-        imageCarre: squareImagePath + 'lueur-carre.webp',
-        images: [detailsImagePath + 'lueur.webp'],
-        title: 'Lueur, Sonata for Violin and Piano',
+        id: 'fantasy',
+        imageCarre: squareImagePath + 'fantasy-carre.webp',
+        images: [detailsImagePath + 'fantasy.webp'],
+        title: 'Fantasy',
         author: 'Erwan Le Pape',
-        work: 'Concert Music',
-        youtube: '_Knp9oviskI',
-        soundcloud: 'https://on.soundcloud.com/4ghMszUirvYyGUP99',
-        soundcloudAPINumber: 'tracks/1986476391',
-        descriptiveText:"A Violin Sonata in a neo-romantic burst."
+        work: 'Original music',
+        youtube: 'videoseries?list=OLAK5uy_kMX0AB9Lsp0xy_tTrTFoMwvS9_lrmAc40&si=zuYMsTfkgYoADYkM',
+        soundcloud: 'https://soundcloud.com/erwanlepape/sets/fantasy-1',
+        soundcloudAPINumber: 'playlists/1772144829',
+        descriptiveText: "This collection of 6 music compositions, inspired by Skyrim's original soundtrack, captures the essence of what could be the musical landscape of a fantastical realm."
     },
     {
         id: 'bistro-belzebuth',
@@ -41,18 +41,6 @@ export const mediaList = [
         descriptiveText:"This composition, inspired by Bartholomé's sculpture 'Monument aux Morts,' was performed by the Anthemis Quartet at the Museum of Fine Arts in Lyon. It portrays death not merely as a tragedy but rather as a liberating force."
     },
     {
-        id: 'fantasy',
-        imageCarre: squareImagePath + 'fantasy-carre.webp',
-        images: [detailsImagePath + 'fantasy.webp'],
-        title: 'Fantasy',
-        author: 'Erwan Le Pape',
-        work: 'Original music',
-        youtube: 'ENTYOF48WXA',
-        soundcloud: 'https://soundcloud.com/erwanlepape/sets/fantasy-1',
-        soundcloudAPINumber: 'playlists/1772144829',
-        descriptiveText: "This collection of 6 music compositions, inspired by Skyrim's original soundtrack, captures the essence of what could be the musical landscape of a fantastical realm."
-    },
-    {
         id: 'tomorrows-day',
         imageCarre: squareImagePath + 'tomorrows-day-carre.webp',
         images: [detailsImagePath + 'tomorrows-day.webp'],
@@ -63,6 +51,18 @@ export const mediaList = [
         soundcloud: 'https://on.soundcloud.com/tCcQXBY2MpPGhCgDA',
         soundcloudAPINumber: 'tracks/1829523999',
         descriptiveText: "BRASSART Lyon Award Winner. Tomorrow's Day is an alternate history video game based on George Orwell's book 1984, which begins with the assassination of John Fitzgerald Kennedy. In the city of Dallas, you play as James Steel, a homeland security agent tasked with investigating a list of suspects through video archives from surveillance cameras scattered in every corner of the city."
+    },
+    {
+        id: 'lueur',
+        imageCarre: squareImagePath + 'lueur-carre.webp',
+        images: [detailsImagePath + 'lueur.webp'],
+        title: 'Lueur, Sonata for Violin and Piano',
+        author: 'Erwan Le Pape',
+        work: 'Concert Music',
+        youtube: '_Knp9oviskI',
+        soundcloud: 'https://on.soundcloud.com/4ghMszUirvYyGUP99',
+        soundcloudAPINumber: 'tracks/1986476391',
+        descriptiveText:"A Violin Sonata that unfolds in a neo-romantic surge, blending lyrical elegance with bold harmonic twists. The piece draws from classical traditions while embracing modern sensibilities, creating a dynamic dialogue between nostalgia and fresh perspectives."
     },
     {
         id: 'the-peasants',
