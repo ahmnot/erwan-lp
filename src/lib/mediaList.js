@@ -12,9 +12,9 @@ export const mediaList = [
         author: 'Erwan Le Pape',
         work: 'Original music',
         youtube: 'videoseries?list=OLAK5uy_kMX0AB9Lsp0xy_tTrTFoMwvS9_lrmAc40&si=zuYMsTfkgYoADYkM',
-        soundcloud: 'https://soundcloud.com/erwanlepape/sets/fantasy-1',
+        soundcloud: '',
         soundcloudAPINumber: 'playlists/1772144829',
-        descriptiveText: "This collection of 6 music compositions, inspired by Skyrim's original soundtrack, captures the essence of what could be the musical landscape of a fantastical realm."
+        descriptiveText: "This album, made of 9 compositions, captures the essence of what could be the musical landscape of a fantastical realm."
     },
     {
         id: 'bistro-belzebuth',
