@@ -65,27 +65,28 @@ export const mediaList = [
         descriptiveText:"A Violin Sonata that unfolds in a neo-romantic surge, blending lyrical elegance with bold harmonic twists. The piece draws from classical traditions while embracing modern sensibilities, creating a dynamic dialogue between nostalgia and fresh perspectives."
     },
     {
-        id: 'the-peasants',
-        imageCarre: squareImagePath + 'the-peasants-carre.webp',
-        images: [detailsImagePath + 'the-peasants.webp'],
-        title: 'The Peasants',
-        author: 'A movie by DK Welchman and Hugh Welchman',
-        work: 'Alternative Soundtrack',
-        youtube: '0e3OWpEC_bQ',
-        soundcloud: 'https://on.soundcloud.com/VLfgv6km11dB55vg7',
-        soundcloudAPINumber: 'playlists/1825400793',
-        descriptiveText: "The Peasants tells the story of Jagna, a young woman determined to forge her own path within the confines of a late 19th century Polish village - a hotbed of gossip and on-going feuds, held together, rich and poor, by pride in their land, adherence to colorful traditions and deep-rooted patriarchy. When Jagna finds herself caught between the conflicting desires of the village's richest farmer, his eldest son, and other leading men of the community, her resistance puts her on a tragic collision course with the community around her."
-    },
-    {
         id: 'sahara',
         imageCarre: squareImagePath + 'sahara-carre.webp',
         images: [detailsImagePath + 'sahara.webp'],
         title: 'SAHARA',
         author: 'An animation by MOPA',
-        work: 'Alternative Soundtrack',
+        work: 'Soundtrack',
         youtube: 'iI65zBAHOpg',
         soundcloud: 'https://soundcloud.com/erwanlepape/sets/sahara',
         soundcloudAPINumber: 'playlists/1763727072'
+        descriptiveText:"Sahara is an evocative animated short from MOPA that follows a young boy as he wanders through the haunting remains of past wars in his homeland. The film explores themes of memory, resilience, and the silent scars left behind by conflict."
+    },
+    {
+        id: 'the-peasants',
+        imageCarre: squareImagePath + 'the-peasants-carre.webp',
+        images: [detailsImagePath + 'the-peasants.webp'],
+        title: 'The Peasants',
+        author: 'A movie by DK Welchman and Hugh Welchman',
+        work: 'Contest/Soundtrack',
+        youtube: '',
+        soundcloud: 'https://on.soundcloud.com/VLfgv6km11dB55vg7',
+        soundcloudAPINumber: 'playlists/1825400793',
+        descriptiveText: "The Peasants tells the story of Jagna, a young woman determined to forge her own path within the confines of a late 19th century Polish village - a hotbed of gossip and on-going feuds, held together, rich and poor, by pride in their land, adherence to colorful traditions and deep-rooted patriarchy. When Jagna finds herself caught between the conflicting desires of the village's richest farmer, his eldest son, and other leading men of the community, her resistance puts her on a tragic collision course with the community around her."
     },
     {
         id: 'VTE',
@@ -93,12 +94,11 @@ export const mediaList = [
         images: [detailsImagePath + 'VTE-affiche.webp'],
         title: 'Vogue The Explorer',
         author: 'A video game by Mihai Morosanu',
-        work: 'Alternative Soundtrack',
+        work: 'Video Game Soundtrack',
         youtube: 'TpOPmr-UZOc',
         soundcloud: 'https://on.soundcloud.com/ChjsRW3iE3R8rJPE9',
         soundcloudAPINumber: 'playlists/1833864339',
         descriptiveText:"This is a collaborative work I did with sound-designers, remaking the entire audio of the game. It's a 3rd person sci-fi video game about exploring a new planet with ancient ruins of a lost civilization."
-
     },
     {
         id: 'shift',
@@ -106,7 +106,7 @@ export const mediaList = [
         images: [detailsImagePath + 'shift.webp'],
         title: 'Shift',
         author: 'A movie by Chen Sing Yap',
-        work: 'Alternative Soundtrack',
+        work: 'Contest/Soundtrack',
         youtube: 'zqUw4Iwf5Zg',
         soundcloud: 'https://on.soundcloud.com/roMsNBt6p8Cmspkz7',
         soundcloudAPINumber: 'tracks/1881829086',
@@ -118,7 +118,7 @@ export const mediaList = [
         images: [detailsImagePath + 'inside-my-world.webp'],
         title: 'Inside my world',
         author: 'Erwan Le Pape',
-        work: 'A Soundtrack for the OST JAM 7 contest',
+        work: 'Video Game Soundtrack',
         youtube: 'WR5mPBApPW4',
         soundcloud: 'https://on.soundcloud.com/KLHvweE4WG8MAzPm9',
         soundcloudAPINumber: 'playlists/1852788867',

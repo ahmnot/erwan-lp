@@ -92,7 +92,7 @@
 	</div>
 	<div class="bio-text-grid">
 		<p class="bio-text">
-			Hi, I'm Erwan, a young composer based in Lyon and Rennes, France.<br /><br />
+			Hi, I'm Erwan, a young composer based in France.<br /><br />
 			I studied music at the conservatory and college and I have a master's degree in
 			music scoring, specializing in the creation of nuanced soundtracks for various multimedia platforms.
 			I have already worked on several short films, animations and video games, collaborating closely with 
@@ -115,6 +115,7 @@
 			I use DAWs such as Logic Pro, Sibelius, OpenMusic. <br />
 			I work from my home studio. <br />
 			Easily reachable. <br />
+			Finalist for Best Music at the Clermont-Ferrand Festival. <br />
 			<br />
 		</p>
 	</div>
