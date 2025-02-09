@@ -73,7 +73,7 @@ export const mediaList = [
         work: 'Soundtrack',
         youtube: 'iI65zBAHOpg',
         soundcloud: 'https://soundcloud.com/erwanlepape/sets/sahara',
-        soundcloudAPINumber: 'playlists/1763727072'
+        soundcloudAPINumber: 'playlists/1763727072',
         descriptiveText:"Sahara is an evocative animated short from MOPA that follows a young boy as he wanders through the haunting remains of past wars in his homeland. The film explores themes of memory, resilience, and the silent scars left behind by conflict."
     },
     {
