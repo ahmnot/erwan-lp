@@ -10,13 +10,11 @@
 	let soundcloudIframe;
 	let mediaGridElementWidth;
 	let soundcloudWidth;
- 	let isLoading = true; 
+	let isLoading = true;
 	$: {
-
 		soundcloudWidth = mediaGridElementWidth;
 	}
 
-	
 	let aligndiscordbottom = false;
 	let isDiscordNameShown = false;
 
@@ -28,21 +26,25 @@
 		underlineVisible.set(true);
 
 		if (!soundcloudIframe.src) {
-			const observer = new IntersectionObserver((entries) => {
-				entries.forEach(entry => {
-					if (entry.isIntersecting && !soundcloudIframe.src) {
-						soundcloudIframe.src = "https://w.soundcloud.com/player/?visual=false&url=https%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F1728038148&show_artwork=true&maxheight=1000&maxwidth=1200&auto_play=false&buying=true&liking=true&download=true&sharing=true&show_comments=true&show_playcount=true&show_user=true&color";
-					}
-				});
-			}, {
-				rootMargin: '1000px' // Adjusts the distance from the viewport at which the iframe loads
-			});
+			const observer = new IntersectionObserver(
+				(entries) => {
+					entries.forEach((entry) => {
+						if (entry.isIntersecting && !soundcloudIframe.src) {
+							soundcloudIframe.src =
+								'https://w.soundcloud.com/player/?visual=false&url=https%3A%2F%2Fapi.soundcloud.com%2Fplaylists%2F1728038148&show_artwork=true&maxheight=1000&maxwidth=1200&auto_play=false&buying=true&liking=true&download=true&sharing=true&show_comments=true&show_playcount=true&show_user=true&color';
+						}
+					});
+				},
+				{
+					rootMargin: '1000px' // Adjusts the distance from the viewport at which the iframe loads
+				}
+			);
 
 			observer.observe(soundcloudIframe);
 		}
 	});
 </script>
-	
+
 <section id="home">
 	<div class="presentation-grid">
 		<div class="texte-home">
@@ -53,8 +55,6 @@
 				<h2>PIANIST</h2>
 			</div>
 		</div>
-		<img class="home-profile-picture" src="/erwan-home-cercle.webp" alt="Erwan's Presentation" />
-		<!-- <div class="downwoard-arrow-home">↓</div> -->
 	</div>
 </section>
 
@@ -65,20 +65,23 @@
 		{/each}
 	</div>
 	<div class="youtube-showreel">
-		<LightYoutube videoId="BteChDYwoBs" image='/image-showreel.webp'></LightYoutube>
+		<LightYoutube videoId="BteChDYwoBs" image="/image-showreel.webp"></LightYoutube>
 	</div>
 	<div class="soundcloud-player">
 		{#if true}
-		  <div class="loading-placeholder"></div>
+			<div class="loading-placeholder"></div>
 		{/if}
-			<iframe
-				on:load={() => {isLoading = false;console.log("Iframe loaded");}}
-				bind:this={soundcloudIframe}
-				width={soundcloudWidth}
-				height="450px"
-				frameborder="no"
-				title="Erwan Soundcloud Showreel"
-			> 
+		<iframe
+			on:load={() => {
+				isLoading = false;
+				console.log('Iframe loaded');
+			}}
+			bind:this={soundcloudIframe}
+			width={soundcloudWidth}
+			height="450px"
+			frameborder="no"
+			title="Erwan Soundcloud Showreel"
+		>
 		</iframe>
 	</div>
 </section>
@@ -93,19 +96,19 @@
 	<div class="bio-text-grid">
 		<p class="bio-text">
 			Hi, I'm Erwan, a young composer based in France.<br /><br />
-			I studied music at the conservatory and college and I have a master's degree in
-			music scoring, specializing in the creation of nuanced soundtracks for various multimedia platforms.
-			I have already worked on several short films, animations and video games, collaborating closely with 
-			directors, producers, and creative teams. These experiences taught me the importance of collaboration, 
-			where clear communication is key towards achieving a shared goal.<br /><br />
+			I studied music at the conservatory and college and I have a master's degree in music scoring,
+			specializing in the creation of nuanced soundtracks for various multimedia platforms. I have already
+			worked on several short films, animations and video games, collaborating closely with directors,
+			producers, and creative teams. These experiences taught me the importance of collaboration, where
+			clear communication is key towards achieving a shared goal.<br /><br />
 			A pivotal chapter of my musical education was the three-year mentorship as a private student of
 			Yves Krier, a contemporary composer and conductor. I acquired most of my skills in composition
 			and orchestration from him.<br /><br />
 			While the piano remains my primary instrument, I can also play the guitar (both electric and acoustic),
-			bass guitar, violin, the ngoni, the soprano and tenor recorder flute. My musical influences range from neoclassical to contemporary
-			music, with a particular affinity for orchestral arrangements. However, I'm not one to shy away
-			from experimentation, often blending traditional orchestral elements with electronic sounds to
-			create unique and dynamic compositions.
+			bass guitar, violin, the ngoni, the soprano and tenor recorder flute. My musical influences range
+			from neoclassical to contemporary music, with a particular affinity for orchestral arrangements.
+			However, I'm not one to shy away from experimentation, often blending traditional orchestral elements
+			with electronic sounds to create unique and dynamic compositions.
 		</p>
 		<p class="bio-skills">
 			<b>Skills</b> <br /><br />
@@ -129,7 +132,11 @@
 			<img src="/logos-ecoles/maaav.webp" alt="MAAAV logo" />
 			<img src="/logos-ecoles/mba-lyon.webp" alt="MBA Lyon logo" />
 			<img src="/logos-ecoles/artfx.webp" alt="Art FX School of Digital Arts logo" />
-			<img src="/logos-ecoles/vieux-montreal.webp" style="filter:invert(1);" alt="Vieux Montreal logo" />
+			<img
+				src="/logos-ecoles/vieux-montreal.webp"
+				style="filter:invert(1);"
+				alt="Vieux Montreal logo"
+			/>
 			<img src="/logos-ecoles/ecv.webp" alt="ECV Bordeaux logo" />
 		</div>
 		<div></div>
@@ -141,9 +148,7 @@
 	<div class="icon-bar-grid-wrapper">
 		<div></div>
 		<div class="icon-bar-grid">
-			<div class="email-box">
-				erwanlepape@outlook.com
-			</div>
+			<div class="email-box">erwanlepape@outlook.com</div>
 
 			<a class="icon-button-or-link" href="https://www.instagram.com/erwanklp/" target="_blank">
 				<img class="icon-large" src="/icons/instagram.webp" alt="Instagram Link" />
@@ -158,10 +163,18 @@
 				{/if}
 			</button>
 
-			<a class="icon-button-or-link" href="https://www.facebook.com/profile.php?id=61551473833966" target="_blank">
+			<a
+				class="icon-button-or-link"
+				href="https://www.facebook.com/profile.php?id=61551473833966"
+				target="_blank"
+			>
 				<img class="icon-large" src="/icons/facebook.webp" alt="Facebook Link" />
 			</a>
-			<a class="icon-button-or-link" href="https://www.linkedin.com/in/erwan-le-pape-9b80372ba/" target="_blank">
+			<a
+				class="icon-button-or-link"
+				href="https://www.linkedin.com/in/erwan-le-pape-9b80372ba/"
+				target="_blank"
+			>
 				<img class="icon-large" src="/icons/linkedin.webp" alt="Linkedin Link" />
 			</a>
 		</div>
@@ -170,6 +183,26 @@
 </section>
 
 <style>
+	/* Gradient sombre à gauche */
+	#home::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		width: 50%; /* ou ajustez selon l’effet désiré */
+		background: linear-gradient(to right, rgba(0, 0, 0, 0.6), transparent);
+		pointer-events: none;
+		z-index: 0;
+	}
+
+	/* Vos textes doivent rester au-dessus */
+	.presentation-grid,
+	.texte-home {
+		position: relative;
+		z-index: 1;
+	}
+
 	.discord-name-box {
 		position: absolute;
 		left: -27%;
@@ -191,10 +224,10 @@
 	}
 
 	.loading-placeholder {
-		width:100%;
-		height:100%;
+		width: 100%;
+		height: 100%;
 		position: relative;
-		top:0%;
+		top: 0%;
 		border-radius: 5px;
 		background-color: #f0f0f000;
 		animation: pulseAnimation 2s infinite ease-in-out;
@@ -220,7 +253,7 @@
 	.email-box {
 		font-size: x-large;
 		color: var(--color-theme-1);
-		grid-row:1;
+		grid-row: 1;
 		grid-column: 2 / span 2;
 	}
 
@@ -229,7 +262,7 @@
 		grid-template-rows: 1fr 1fr;
 		grid-template-columns: 1fr 1fr 1fr 1fr;
 		justify-items: center;
-		gap:40px;
+		gap: 40px;
 	}
 
 	.icon-large {
@@ -247,7 +280,7 @@
 		justify-content: center;
 		align-items: center;
 		width: 50px;
-		height: 50px; 
+		height: 50px;
 		background: none;
 		border: none;
 		position: relative;
@@ -272,7 +305,7 @@
 		row-gap: 20px;
 		margin-bottom: 20px;
 		height: auto; /* Ensure height is auto */
-    	align-items: center;
+		align-items: center;
 	}
 
 	.logos-grid-imgs img {
@@ -282,19 +315,18 @@
 	}
 
 	/* Safari-specific CSS */
-	@media not all and (min-resolution:.001dpcm) {
-		@supports (-webkit-appearance:none) {
+	@media not all and (min-resolution: 0.001dpcm) {
+		@supports (-webkit-appearance: none) {
 			.logos-grid-imgs img {
 				height: auto; /* Adjust height specifically for Safari */
 			}
 		}
 	}
 
-
 	.texte-home {
 		align-self: center;
 		width: 100%;
-		margin-left:80px;
+		margin-left: 80px;
 	}
 
 	.bio-title-grid,
@@ -317,25 +349,23 @@
 	}
 
 	#main-title {
-		display:block;
+		display: block;
 		margin-bottom: 30px;
 		margin-bottom: 30px;
-		margin-left:0;
+		margin-left: 0;
 	}
 
 	.sous-titres-wrapper {
 		display: block;
 	}
-	
+
 	.sous-titres-wrapper h2 {
 		margin-top: 0;
 		margin-bottom: 0;
 	}
 
-
-
 	.soundcloud-player {
-		display:grid;
+		display: grid;
 	}
 
 	.media-grid,
@@ -357,7 +387,7 @@
 	}
 
 	#music {
-		padding-top:60px;
+		padding-top: 60px;
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	}
@@ -366,14 +396,6 @@
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: 1fr auto;
-	}
-
-	.home-profile-picture {
-		margin: 40px;
-		width: 80%;
-		align-self: center;
-		justify-self: end;
-		object-fit: contain;
 	}
 
 	#contact {
@@ -456,13 +478,42 @@
 
 	#home {
 		height: 100vh;
+
+		background-size: cover; /* couvre toute la zone */
+		background-position: center; /* centré */
+		background-repeat: no-repeat;
+		/* Fond plein écran */
+		background-image: url('/erwan-fond-accueil.jpg');
 	}
 
-	
 	@media (max-width: 840px) {
+		
+		/* Masquer ARRANGER et PIANIST */
+		.sous-titres-wrapper h2:nth-child(2),
+		.sous-titres-wrapper h2:nth-child(3) {
+			display: none;
+		}
+
+		/* Ajouter 20px sous COMPOSER */
+		.sous-titres-wrapper h2:first-child {
+			margin-bottom: 20px;
+		}
 
 		#home {
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end; /* pousse le contenu vers le bas */
+			/* On garde au minimum la hauteur de la fenêtre,
+			mais on autorise à grandir si le contenu (et l’image) le peuvent */
+			min-height: 50vh;
+			height: auto;
+
+			/* On force l’image à remplir la hauteur du conteneur */
+			background-size: auto 100%;
+			/* On ancre le centre de l’image en bas */
+			background-position: center bottom;
 			height: 100%;
+			position: relative;
 		}
 
 		.bio-text,
@@ -470,14 +521,20 @@
 			font-size: medium;
 		}
 		.presentation-grid {
-			grid-template-columns: 1fr ;
-			margin-left: 20px;
+			display: grid;
+			grid-template-columns: 1fr;
+			grid-template-rows: auto;
+			align-content: end; /* pousse le contenu au bas du container */
+			justify-items: center; /* centre horizontalement */
+			height: 100%;
+			margin: 0;
 		}
 		.texte-home {
-			margin-left: 0;
-		}
-		.home-profile-picture {
-			display: none;
+			position: relative;
+			width: 100%;
+			text-align: center;
+			margin: 0 0 20px; /* espace de 20px au-dessus du bas */
+			z-index: 1;
 		}
 		.media-grid {
 			grid-template-columns: 1fr 1fr 1fr;
@@ -499,12 +556,22 @@
 		.logos-grid-wrapper {
 			grid-template-columns: 0.2fr 1fr 1fr 1fr 0.2fr;
 		}
-		
 
 		.bio-title-grid,
 		.credits-titre-grid,
 		.contact-title-grid {
 			grid-template-columns: 20px 1fr 1fr 1fr 20px;
+		}
+
+		#main-title {
+			margin: 0;
+			font-size: 150%;
+		}
+		h1 {
+			font-size: 350%;
+		}
+		.sous-titres-wrapper h2:first-child {
+			margin: 0;
 		}
 	}
 
@@ -522,25 +589,14 @@
 	}
 
 	@media (max-width: 680px) {
-		h1 {
-			font-size: 500%;
-		}
-
 		h2 {
-			font-size: 300%;
+			font-size: 150%;
 		}
 	}
 
 	@media (max-width: 450px) {
-		#home h1 {
-			font-size: 400%;
-		}
-		h1 {
-			font-size: 300%;
-		}
-
 		h2 {
-			font-size: 250%;
+			font-size: 100%;
 		}
 		.email-box {
 			font-size: large;
@@ -548,12 +604,11 @@
 	}
 
 	@media (max-width: 280px) {
-
 		.icon-button-or-link {
 			width: 20px;
-			height: 20px; 
+			height: 20px;
 		}
-		
+
 		.media-grid {
 			grid-template-columns: 1fr;
 		}

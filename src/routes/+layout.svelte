@@ -55,4 +55,10 @@
 		opacity: 0.9;
 		font-size: small;
 	}
+
+	@media (max-width: 840px) {
+		main {
+			padding-top: 80px; /* = hauteur de .header-small */
+		}
+	}
 </style>
