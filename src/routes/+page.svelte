@@ -565,13 +565,13 @@
 
 		#main-title {
 			margin: 0;
-			font-size: 150%;
+			font-size: 160%;
 		}
 		h1 {
 			font-size: 350%;
 		}
 		h2 {
-			font-size: 100%;
+			font-size: 118%;
 		}
 		.sous-titres-wrapper h2:first-child {
 			margin: 0;
@@ -579,9 +579,6 @@
 	}
 
 	@media (max-width: 768px) {
-		h2 {
-			font-size: 100%;
-		}
 		.media-grid {
 			grid-template-columns: 1fr 1fr;
 		}
@@ -595,15 +592,9 @@
 	}
 
 	@media (max-width: 680px) {
-		h2 {
-			font-size: 100%;
-		}
 	}
 
 	@media (max-width: 450px) {
-		h2 {
-			font-size: 100%;
-		}
 		.email-box {
 			font-size: large;
 		}
