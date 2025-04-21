@@ -570,12 +570,18 @@
 		h1 {
 			font-size: 350%;
 		}
+		h2 {
+			font-size: 100%;
+		}
 		.sous-titres-wrapper h2:first-child {
 			margin: 0;
 		}
 	}
 
 	@media (max-width: 768px) {
+		h2 {
+			font-size: 100%;
+		}
 		.media-grid {
 			grid-template-columns: 1fr 1fr;
 		}
@@ -590,7 +596,7 @@
 
 	@media (max-width: 680px) {
 		h2 {
-			font-size: 150%;
+			font-size: 100%;
 		}
 	}
 
