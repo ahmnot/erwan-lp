@@ -431,7 +431,7 @@
 
 	h1 {
 		font-weight: 500;
-		font-size: 640%;
+		font-size: 500%;
 		word-break: break-word;
 	}
 
@@ -536,7 +536,7 @@
 			font-size: 400%;
 		}
 		h1 {
-			font-size: 200%;
+			font-size: 300%;
 		}
 
 		h2 {
