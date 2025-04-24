@@ -84,7 +84,7 @@
 </section>
 
 <section id="bio">
-	<div class="bio-title-grid"><h1>Biography</h1></div>
+	<div class="bio-title-grid"><h2>Biography</h2></div>
 	<div class="bio-image-grid">
 		<img class="musee-picture" src="/erwan-musee-carre.webp" alt="Erwan Presenting Elegie" />
 		<img class="ethnic-picture" src="/erwan-ethnic-carre.webp" alt="Erwan With an Ngoni" />
@@ -137,7 +137,7 @@
 </section>
 
 <section id="contact">
-	<div class="contact-title-grid"><h1>Contact</h1></div>
+	<div class="contact-title-grid"><h2>Contact</h2></div>
 	<div class="icon-bar-grid-wrapper">
 		<div></div>
 		<div class="icon-bar-grid">
@@ -304,9 +304,9 @@
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 	}
 
-	#bio h1,
+	#bio h2,
 	.credits-titre-grid h2,
-	.contact-title-grid h1 {
+	.contact-title-grid h2 {
 		grid-column: 2 / span 3;
 		margin-left: 0;
 		text-wrap: nowrap;
@@ -556,6 +556,14 @@
 		
 		.media-grid {
 			grid-template-columns: 1fr;
-		}
+		} 
 	}
+	
+	.bio-title-grid h2,
+.contact-title-grid h2 {
+	font-size: 640%;
+	font-weight: 500;
+	word-break: break-word;
+	margin-left: 40px;
+}
 </style>
