@@ -536,7 +536,7 @@
 			font-size: 400%;
 		}
 		h1 {
-			font-size: 300%;
+			font-size: 200%;
 		}
 
 		h2 {
