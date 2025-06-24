@@ -105,16 +105,16 @@ export const mediaList = [
         descriptiveText:"This is a collaborative work I did with sound-designers, remaking the entire audio of the game. It's a 3rd person sci-fi video game about exploring a new planet with ancient ruins of a lost civilization."
     },
     {
-        id: 'shift',
-        imageCarre: squareImagePath + 'shift-carre.webp',
-        images: [detailsImagePath + 'shift.webp'],
-        title: 'Shift',
-        author: 'A movie by Chen Sing Yap',
-        work: 'Contest/Soundtrack',
-        youtube: 'zqUw4Iwf5Zg',
-        soundcloud: 'https://on.soundcloud.com/roMsNBt6p8Cmspkz7',
-        soundcloudAPINumber: 'tracks/1881829086',
-        descriptiveText:"This film is about a nurse who, during a pandemic, is caught between her duty as a frontline worker and her duty to her son (who is extra vulnerable to COVID)."
+        id: 'PQAT',
+        imageCarre: squareImagePath + 'PQAT-carre.webp',
+        images: [detailsImagePath + 'PQAT.webp'],
+        title: 'Pourquoi as-tu Laissé le cheval à sa solitude',
+        author: 'A movie by Faouzi Bensaïdi',
+        work: 'OST Challege Finalist',
+        youtube: '',
+        soundcloud: 'https://on.soundcloud.com/6kPOqWgAo84NwaHsU0',
+        soundcloudAPINumber: 'playlists/2041646952',
+        descriptiveText:"In the desert, a lone rider approaches at a gallop. His horse, old and weary, isn’t convincing.We reshoot the scene. Still not working. What are we going to do with this horse?"
     },
     {
         id: 'inside-my-world',
@@ -129,16 +129,16 @@ export const mediaList = [
         descriptiveText: "A soundtrack of an imaginary game I composed for the OST Composing JAM 7 contest. The main theme that was given was this art and the phrase 'Inside my world'"
     },
     {
-        id: 'le-champ-de-roseaux',
-        imageCarre: squareImagePath + 'champ-de-roseaux-carre.webp',
-        images: [detailsImagePath + 'champ-de-roseaux.webp'],
-        title: 'Le Champ de Roseaux',
-        author: 'An animation by Jordane Cisse',
+        id: 'bibimbap',
+        imageCarre: squareImagePath + 'Bibimbap-carre.webp',
+        images: [detailsImagePath + 'Bibimbap.webp'],
+        title: 'BiBimBap',
+        author: 'An animation by CHARLES AMALVY, LOUIS-PIERRE DAQUIN, FLORENTIN LEYRISSOUX and MARTIN JAU',
         work: 'Original Soundtrack',
         youtube: '',
-        soundcloud: 'https://on.soundcloud.com/N1xRjM8KPvRmQ91Z7',
-        soundcloudAPINumber: 'tracks/1827289374',
-        descriptiveText:""
+        soundcloud: 'https://on.soundcloud.com/nIGmZRj2eEHUDwKBPy',
+        soundcloudAPINumber: 'playlists/2041641312',
+        descriptiveText:"This animated short was created using the “exquisite corpse” method: each contributor wrote a part of the script in turn, without knowing what the others had come up with. The only common thread? An Egg. The result is a playful and unpredictable journey through multiple worlds and moods — a delightfully absurd and original story."
     },
     {
         id: 'resistencia',

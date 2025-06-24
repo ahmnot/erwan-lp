@@ -560,7 +560,7 @@
 	}
 	
 	.bio-title-grid h2,
-.contact-title-grid h2 {
+	.contact-title-grid h2 {
 	font-size: 640%;
 	font-weight: 500;
 	word-break: break-word;
