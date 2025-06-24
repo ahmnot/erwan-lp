@@ -41,6 +41,18 @@ export const mediaList = [
         descriptiveText:"This composition, inspired by Bartholomé's sculpture 'Monument aux Morts,' was performed by the Anthemis Quartet at the Museum of Fine Arts in Lyon. It portrays death not merely as a tragedy but rather as a liberating force."
     },
     {
+        id: 'PQAT',
+        imageCarre: squareImagePath + 'PQAT-carre.webp',
+        images: [detailsImagePath + 'PQAT.webp'],
+        title: 'Pourquoi as-tu Laissé le cheval à sa solitude',
+        author: 'A movie by Faouzi Bensaïdi',
+        work: 'OST Challege Finalist',
+        youtube: '',
+        soundcloud: 'https://on.soundcloud.com/6kPOqWgAo84NwaHsU0',
+        soundcloudAPINumber: 'playlists/2041646952',
+        descriptiveText:"In the desert, a lone rider approaches at a gallop. His horse, old and weary, isn’t convincing.We reshoot the scene. Still not working. What are we going to do with this horse?"
+    },
+    {
         id: 'tomorrows-day',
         imageCarre: squareImagePath + 'tomorrows-day-carre.webp',
         images: [detailsImagePath + 'tomorrows-day.webp'],
@@ -105,16 +117,16 @@ export const mediaList = [
         descriptiveText:"This is a collaborative work I did with sound-designers, remaking the entire audio of the game. It's a 3rd person sci-fi video game about exploring a new planet with ancient ruins of a lost civilization."
     },
     {
-        id: 'PQAT',
-        imageCarre: squareImagePath + 'PQAT-carre.webp',
-        images: [detailsImagePath + 'PQAT.webp'],
-        title: 'Pourquoi as-tu Laissé le cheval à sa solitude',
-        author: 'A movie by Faouzi Bensaïdi',
-        work: 'OST Challege Finalist',
+        id: 'bibimbap',
+        imageCarre: squareImagePath + 'Bibimbap-carre.webp',
+        images: [detailsImagePath + 'Bibimbap.webp'],
+        title: 'BiBimBap',
+        author: 'An animation by CHARLES AMALVY, LOUIS-PIERRE DAQUIN, FLORENTIN LEYRISSOUX and MARTIN JAU',
+        work: 'Original Soundtrack',
         youtube: '',
-        soundcloud: 'https://on.soundcloud.com/6kPOqWgAo84NwaHsU0',
-        soundcloudAPINumber: 'playlists/2041646952',
-        descriptiveText:"In the desert, a lone rider approaches at a gallop. His horse, old and weary, isn’t convincing.We reshoot the scene. Still not working. What are we going to do with this horse?"
+        soundcloud: 'https://on.soundcloud.com/nIGmZRj2eEHUDwKBPy',
+        soundcloudAPINumber: 'playlists/2041641312',
+        descriptiveText:"This animated short was created using the “exquisite corpse” method: each contributor wrote a part of the script in turn, without knowing what the others had come up with. The only common thread? An Egg. The result is a playful and unpredictable journey through multiple worlds and moods — a delightfully absurd and original story."
     },
     {
         id: 'inside-my-world',
@@ -127,18 +139,6 @@ export const mediaList = [
         soundcloud: 'https://on.soundcloud.com/KLHvweE4WG8MAzPm9',
         soundcloudAPINumber: 'playlists/1852788867',
         descriptiveText: "A soundtrack of an imaginary game I composed for the OST Composing JAM 7 contest. The main theme that was given was this art and the phrase 'Inside my world'"
-    },
-    {
-        id: 'bibimbap',
-        imageCarre: squareImagePath + 'Bibimbap-carre.webp',
-        images: [detailsImagePath + 'Bibimbap.webp'],
-        title: 'BiBimBap',
-        author: 'An animation by CHARLES AMALVY, LOUIS-PIERRE DAQUIN, FLORENTIN LEYRISSOUX and MARTIN JAU',
-        work: 'Original Soundtrack',
-        youtube: '',
-        soundcloud: 'https://on.soundcloud.com/nIGmZRj2eEHUDwKBPy',
-        soundcloudAPINumber: 'playlists/2041641312',
-        descriptiveText:"This animated short was created using the “exquisite corpse” method: each contributor wrote a part of the script in turn, without knowing what the others had come up with. The only common thread? An Egg. The result is a playful and unpredictable journey through multiple worlds and moods — a delightfully absurd and original story."
     },
     {
         id: 'resistencia',
