@@ -23,7 +23,7 @@ export const mediaList = [
         title: 'Pourquoi as-tu Laissé le cheval à sa solitude',
         author: 'A movie by Faouzi Bensaïdi',
         work: 'OST Challege Finalist',
-        youtube: '',
+        youtube: 'QMIRNcBmqqo',
         soundcloud: 'https://on.soundcloud.com/6kPOqWgAo84NwaHsU0',
         soundcloudAPINumber: 'playlists/2041646952',
         descriptiveText:"In the desert, a lone rider approaches at a gallop. His horse, old and weary, isn’t convincing.We reshoot the scene. Still not working. What are we going to do with this horse?"
@@ -117,9 +117,9 @@ export const mediaList = [
         imageCarre: squareImagePath + 'Bibimbap-carre.webp',
         images: [detailsImagePath + 'Bibimbap.webp'],
         title: 'BiBimBap',
-        author: 'An animation by CHARLES AMALVY, LOUIS-PIERRE DAQUIN, FLORENTIN LEYRISSOUX and MARTIN JAU',
+        author: 'An animation by Charles Amalvy, Louis-Pierre Daquin, Florentin Leyrissoux and Martin Jau',
         work: 'Original Soundtrack',
-        youtube: '',
+        youtube: 'jUfMK6x-rtg',
         soundcloud: 'https://on.soundcloud.com/nIGmZRj2eEHUDwKBPy',
         soundcloudAPINumber: 'playlists/2041641312',
         descriptiveText:"This animated short was created using the “exquisite corpse” method: each contributor wrote a part of the script in turn, without knowing what the others had come up with. The only common thread? An Egg. The result is a playful and unpredictable journey through multiple worlds and moods — a delightfully absurd and original story."
