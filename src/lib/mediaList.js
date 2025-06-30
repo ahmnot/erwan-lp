@@ -16,6 +16,18 @@ export const mediaList = [
         soundcloudAPINumber: '',
         descriptiveText: "This album, made of 9 compositions, captures the essence of what could be the musical landscape of a fantastical realm."
     },
+        {
+        id: 'PQAT',
+        imageCarre: squareImagePath + 'PQAT-carre.webp',
+        images: [detailsImagePath + 'PQAT.webp'],
+        title: 'Pourquoi as-tu Laissé le cheval à sa solitude',
+        author: 'A movie by Faouzi Bensaïdi',
+        work: 'OST Challege Finalist',
+        youtube: '',
+        soundcloud: 'https://on.soundcloud.com/6kPOqWgAo84NwaHsU0',
+        soundcloudAPINumber: 'playlists/2041646952',
+        descriptiveText:"In the desert, a lone rider approaches at a gallop. His horse, old and weary, isn’t convincing.We reshoot the scene. Still not working. What are we going to do with this horse?"
+    },
     {
         id: 'bistro-belzebuth',
         imageCarre: squareImagePath + 'bistro-belzebuth-carre-3.webp',
@@ -39,18 +51,6 @@ export const mediaList = [
         soundcloud: 'https://soundcloud.com/erwanlepape/sets/elegie-pour-quatuor-a-cordes',
         soundcloudAPINumber: 'playlists/1777302918',
         descriptiveText:"This composition, inspired by Bartholomé's sculpture 'Monument aux Morts,' was performed by the Anthemis Quartet at the Museum of Fine Arts in Lyon. It portrays death not merely as a tragedy but rather as a liberating force."
-    },
-    {
-        id: 'PQAT',
-        imageCarre: squareImagePath + 'PQAT-carre.webp',
-        images: [detailsImagePath + 'PQAT.webp'],
-        title: 'Pourquoi as-tu Laissé le cheval à sa solitude',
-        author: 'A movie by Faouzi Bensaïdi',
-        work: 'OST Challege Finalist',
-        youtube: '',
-        soundcloud: 'https://on.soundcloud.com/6kPOqWgAo84NwaHsU0',
-        soundcloudAPINumber: 'playlists/2041646952',
-        descriptiveText:"In the desert, a lone rider approaches at a gallop. His horse, old and weary, isn’t convincing.We reshoot the scene. Still not working. What are we going to do with this horse?"
     },
     {
         id: 'tomorrows-day',
