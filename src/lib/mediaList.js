@@ -53,16 +53,16 @@ export const mediaList = [
         descriptiveText:"This composition, inspired by Bartholomé's sculpture 'Monument aux Morts,' was performed by the Anthemis Quartet at the Museum of Fine Arts in Lyon. It portrays death not merely as a tragedy but rather as a liberating force."
     },
     {
-        id: 'tomorrows-day',
-        imageCarre: squareImagePath + 'tomorrows-day-carre.webp',
-        images: [detailsImagePath + 'tomorrows-day.webp'],
-        title: 'Tomorrows Day',
-        author: 'A video game by Brassart',
-        work: 'Original Soundtrack, Sound Design',
-        youtube: '-oWTTdX986Y',
-        soundcloud: 'https://on.soundcloud.com/tCcQXBY2MpPGhCgDA',
-        soundcloudAPINumber: 'tracks/1829523999',
-        descriptiveText: "BRASSART Lyon Award Winner. Tomorrow's Day is an alternate history video game based on George Orwell's book 1984, which begins with the assassination of John Fitzgerald Kennedy. In the city of Dallas, you play as James Steel, a homeland security agent tasked with investigating a list of suspects through video archives from surveillance cameras scattered in every corner of the city."
+        id: 'SYM',
+        imageCarre: squareImagePath + 'SYM-carre.webp',
+        images: [detailsImagePath + 'SYM.webp'],
+        title: 'See You Moon',
+        author: 'An animation by ECV Bordeaux',
+        work: 'Original Soundtrack',
+        youtube: '',
+        soundcloud: 'https://on.soundcloud.com/eP8REH5nu7NKrWpQjX',
+        soundcloudAPINumber: 'playlists/2041810332',
+        descriptiveText: "A small boy dreams of riding the tallest attraction at the fair—one that just might take him all the way to the Moon."
     },
     {
         id: 'lueur',
