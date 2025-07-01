@@ -49,8 +49,7 @@
 			<h1 id="main-title">ERWAN <span class="le-pape">LE PAPE</span></h1>
 			<div class="sous-titres-wrapper">
 				<h2>COMPOSER</h2>
-				<h2>ARRANGER</h2>
-				<h2>PIANIST</h2>
+				<h2>ORCHESTRATOR</h2>
 			</div>
 		</div>
 		<!-- <div class="downwoard-arrow-home">↓</div> -->
@@ -461,6 +460,16 @@
 		background-position: center;
 		background-repeat: no-repeat;
 		position: relative;
+		z-index: 0; /* Ensure content is above the overlay */
+}
+
+	#home::before {
+		content: "";
+		position: absolute;
+		inset: 0;
+		background-color: rgba(0, 0, 0, 0.4); /* <-- Adjust opacity if needed */
+		z-index: -1; /* Keeps the overlay behind your text */
+	
 }
 
 
