@@ -53,7 +53,7 @@
 				<h2>PIANIST</h2>
 			</div>
 		</div>
-		<img class="home-profile-picture" src="/erwan-home-cercle.webp" alt="Erwan's Presentation" />
+		<img class="home-profile-picture" src="/erwan-fond-accueil.jpg" alt="Erwan's Presentation" />
 		<!-- <div class="downwoard-arrow-home">↓</div> -->
 	</div>
 </section>
