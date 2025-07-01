@@ -53,7 +53,6 @@
 				<h2>PIANIST</h2>
 			</div>
 		</div>
-		<img class="home-profile-picture" src="/erwan-fond-accueil.jpg" alt="Erwan's Presentation" />
 		<!-- <div class="downwoard-arrow-home">↓</div> -->
 	</div>
 </section>
@@ -457,7 +456,13 @@
 
 	#home {
 		height: 100vh;
-	}
+		background-image: url('/erwan-fond-accueil.jpg');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		position: relative;
+}
+
 
 	
 	@media (max-width: 840px) {
