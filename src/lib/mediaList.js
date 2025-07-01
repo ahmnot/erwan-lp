@@ -22,7 +22,7 @@ export const mediaList = [
         images: [detailsImagePath + 'PQAT.webp'],
         title: 'Pourquoi as-tu Laissé le cheval à sa solitude',
         author: 'A movie by Faouzi Bensaïdi',
-        work: 'OST Challege Finalist',
+        work: 'OST Challenge Finalist',
         youtube: 'QMIRNcBmqqo',
         soundcloud: 'https://on.soundcloud.com/6kPOqWgAo84NwaHsU0',
         soundcloudAPINumber: 'playlists/2041646952',
@@ -137,16 +137,16 @@ export const mediaList = [
         descriptiveText: "A soundtrack of an imaginary game I composed for the OST Composing JAM 7 contest. The main theme that was given was this art and the phrase 'Inside my world'"
     },
     {
-        id: 'resistencia',
-        imageCarre: squareImagePath + 'resistencia-carre.webp',
-        images: [detailsImagePath + 'resistencia.webp'],
-        title: 'Resistencia',
-        author: 'A movie by F. Carolliny Sena and B. Soares Pereira',
+        id: 'Ondamaris',
+        imageCarre: squareImagePath + 'Ondamaris-carre.webp',
+        images: [detailsImagePath + 'Ondamaris.webp'],
+        title: 'Ondamaris',
+        author: 'A video game by Tessa Omar, Judith Lourdel and Ludwig Lesur',
         work: 'Original Soundtrack',
-        youtube: '',
-        soundcloud: 'https://soundcloud.com/erwanlepape/sets/resistencia',
-        soundcloudAPINumber: 'playlists/1762686030',
-        descriptiveText:"In 'Resistancia', Marie, a passionate activist for environmental justice fights to prove her innocence and save the world from forces that seek to silence her. Despite her considerable political influence, we follow her through an episode of depression following significant burnout. This explores how the collective impacts the individual, highlighting the personal and emotional consequences of the fight for justice."
+        youtube: 'https://www.youtube.com/watch?v=li6NbF4OZWg',
+        soundcloud: 'https://on.soundcloud.com/UGrqN8d5ag8Em9QlkG',
+        soundcloudAPINumber: 'playlists/2044937139',
+        descriptiveText:"Set in an underwater world filled with light and music, you play as Miralya, a young heroine who arrives in a city mysteriously struck by illness. Guided by the Oracle, a divine eel, and Ondala, a benevolent goddess, Miralya must gather the fragments of a sacred musical score to restore hope and heal the city."
     }
     
 ];
