@@ -44,16 +44,16 @@
 </script>
 	
 <section id="home">
-	/* <div class="presentation-grid">
+	<div class="presentation-grid">
 		 <div class="texte-home">
-			<h1 id="main-title">ERWAN <span class="le-pape">LE PAPE</span></h1>
+			<h1 id="main-title"> <span class="le-pape"> </span></h1>
 			<div class="sous-titres-wrapper"> 
-				<h2>COMPOSER</h2>
-				<h2>ORCHESTRATOR</h2>
+				<h2> </h2>
+				<h2> </h2>
 			</div>
 		</div> 
 		<!-- <div class="downwoard-arrow-home">↓</div> -->
-	</div> */
+	</div>
 </section>
 
 <section id="music">
@@ -90,7 +90,7 @@
 	</div>
 	<div class="bio-text-grid">
 		<p class="bio-text">
-			Hi, I'm Erwan, a young composer based in France.<br /><br />
+			Hi, I'm Erwan Le Pape, a young composer based in France.<br /><br />
 			I studied music at the conservatory and college and I have a master's degree in
 			music scoring, specializing in the creation of nuanced soundtracks for various multimedia platforms.
 			I have already worked on several short films, animations and video games, collaborating closely with 
