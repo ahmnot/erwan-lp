@@ -44,16 +44,16 @@
 </script>
 	
 <section id="home">
-	<div class="presentation-grid">
-		<div class="texte-home">
+	/* <div class="presentation-grid">
+		 <div class="texte-home">
 			<h1 id="main-title">ERWAN <span class="le-pape">LE PAPE</span></h1>
-			<div class="sous-titres-wrapper">
+			<div class="sous-titres-wrapper"> 
 				<h2>COMPOSER</h2>
 				<h2>ORCHESTRATOR</h2>
 			</div>
-		</div>
+		</div> 
 		<!-- <div class="downwoard-arrow-home">↓</div> -->
-	</div>
+	</div> */
 </section>
 
 <section id="music">
