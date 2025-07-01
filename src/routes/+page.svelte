@@ -463,16 +463,6 @@
 		z-index: 0; /* Ensure content is above the overlay */
 }
 
-	#home::before {
-		content: "";
-		position: absolute;
-		inset: 0;
-		background-color: rgba(0, 0, 0, 0.4); /* <-- Adjust opacity if needed */
-		z-index: -1; /* Keeps the overlay behind your text */
-	
-}
-
-
 	
 	@media (max-width: 840px) {
 
