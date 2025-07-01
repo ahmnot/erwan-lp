@@ -143,7 +143,7 @@ export const mediaList = [
         title: 'Ondamaris',
         author: 'A video game by Tessa Omar, Judith Lourdel and Ludwig Lesur',
         work: 'Original Soundtrack',
-        youtube: 'li6NbF4OZWg',
+        youtube: '',
         soundcloud: 'https://on.soundcloud.com/UGrqN8d5ag8Em9QlkG',
         soundcloudAPINumber: 'playlists/2044937139',
         descriptiveText:"Set in an underwater world filled with light and music, you play as Miralya, a young heroine who arrives in a city mysteriously struck by illness. Guided by the Oracle, a divine eel, and Ondala, a benevolent goddess, Miralya must gather the fragments of a sacred musical score to restore hope and heal the city."

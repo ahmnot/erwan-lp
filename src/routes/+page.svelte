@@ -102,7 +102,7 @@
 			Yves Krier, a contemporary composer and conductor. I acquired most of my skills in composition
 			and orchestration from him.<br /><br />
 			While the piano remains my primary instrument, I can also play the guitar (both electric and acoustic),
-			bass guitar, violin, the ngoni and a bunch of flutes. My musical influences range from neoclassical to contemporary
+			bass guitar, the ngoni and a bunch of flutes. My musical influences range from neoclassical to contemporary
 			music, with a particular affinity for orchestral arrangements. However, I'm not one to shy away
 			from experimentation, often blending traditional orchestral elements with electronic sounds to
 			create unique and dynamic compositions.<br /><br />
@@ -112,7 +112,7 @@
 		<p class="bio-skills">
 			<b>Skills</b> <br /><br />
 
-			Piano, Guitar, Bass, Ngoni, Sop. and Tenor recorder, Synthesizers<br />
+			Piano, Guitar, Ngoni, Synthesizers<br />
 			Composition, Theory, Harmony, Arrangement, Orchestration, Sound-Design. <br />
 			I use DAWs such as Logic Pro, Sibelius, OpenMusic. <br />
 			I work from my home studio. <br />
