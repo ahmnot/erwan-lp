@@ -20,19 +20,19 @@ export const mediaList = [
         id: 'PQAT',
         imageCarre: squareImagePath + 'PQAT-carre.webp',
         images: [detailsImagePath + 'PQAT.webp'],
-        title: 'Pourquoi as-tu Laissé le cheval à sa solitude',
+        title: 'Pourquoi as-tu Laissé le cheval...',
         author: 'A movie by Faouzi Bensaïdi',
         work: 'OST Challenge Finalist',
         youtube: 'QMIRNcBmqqo',
         soundcloud: 'https://on.soundcloud.com/6kPOqWgAo84NwaHsU0',
         soundcloudAPINumber: 'playlists/2041646952',
-        descriptiveText:"In the desert, a lone rider approaches at a gallop. His horse, old and weary, isn’t convincing.We reshoot the scene. Still not working. What are we going to do with this horse?"
+        descriptiveText:"In the desert, a lone rider approaches at a gallop. His horse, old and weary, isn’t convincing. We reshoot the scene. Still not working. What are we going to do with this horse?"
     },
     {
         id: 'ciucciarella',
         imageCarre: squareImagePath + 'ciucciarella-carre.webp',
         images: [detailsImagePath + 'ciucciarella.webp'],
-        title: 'Ciuciarella',
+        title: 'Ciucciarella',
         author: 'An animation by Artfx',
         work: 'Original Soundtrack',
         youtube: '',
@@ -129,7 +129,7 @@ export const mediaList = [
         imageCarre: squareImagePath + 'Bibimbap-carre.webp',
         images: [detailsImagePath + 'Bibimbap.webp'],
         title: 'BiBimBap',
-        author: 'An animation by Charles Amalvy, Louis-Pierre Daquin, Florentin Leyrissoux and Martin Jau',
+        author: 'An animation by Brassart',
         work: 'Original Soundtrack',
         youtube: 'jUfMK6x-rtg',
         soundcloud: 'https://on.soundcloud.com/nIGmZRj2eEHUDwKBPy',
@@ -141,12 +141,12 @@ export const mediaList = [
         imageCarre: squareImagePath + 'Ondamaris-carre.webp',
         images: [detailsImagePath + 'Ondamaris.webp'],
         title: 'Ondamaris',
-        author: 'A video game by Tessa Omar, Judith Lourdel and Ludwig Lesur',
+        author: 'A video game by Brassart',
         work: 'Original Soundtrack',
         youtube: '',
         soundcloud: 'https://on.soundcloud.com/UGrqN8d5ag8Em9QlkG',
         soundcloudAPINumber: 'playlists/2044937139',
-        descriptiveText:"Set in an underwater world filled with light and music, you play as Miralya, a young heroine who arrives in a city mysteriously struck by illness. Guided by the Oracle, a divine eel, and Ondala, a benevolent goddess, Miralya must gather the fragments of a sacred musical score to restore hope and heal the city."
+        descriptiveText:"Set in an underwater world filled with light and music, you play as Miralya, a young heroine who arrives in a city mysteriously struck by illness. Guided by the Oracle, a divine eel, and Ondala, a benevolent goddess, Miralya must gather the fragments of a sacred musical score to restore hope and heal the city. A video game by Tessa Omar, Judith Lourdel and Ludwig Lesur."
     }
     
 ];
