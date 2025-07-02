@@ -16,7 +16,7 @@ export const mediaList = [
         soundcloudAPINumber: '',
         descriptiveText: "This album, made of 9 compositions, captures the essence of what could be the musical landscape of a fantastical realm."
     },
-        {
+    {
         id: 'PQAT',
         imageCarre: squareImagePath + 'PQAT-carre.webp',
         images: [detailsImagePath + 'PQAT.webp'],
@@ -27,6 +27,18 @@ export const mediaList = [
         soundcloud: 'https://on.soundcloud.com/6kPOqWgAo84NwaHsU0',
         soundcloudAPINumber: 'playlists/2041646952',
         descriptiveText:"In the desert, a lone rider approaches at a gallop. His horse, old and weary, isn’t convincing.We reshoot the scene. Still not working. What are we going to do with this horse?"
+    },
+    {
+        id: 'ciucciarella',
+        imageCarre: squareImagePath + 'ciucciarella-carre.webp',
+        images: [detailsImagePath + 'ciucciarella.webp'],
+        title: 'Ciuciarella',
+        author: 'An animation by Artfx',
+        work: 'Original Soundtrack',
+        youtube: '',
+        soundcloud: 'https://on.soundcloud.com/YEEkgt3nRSUG9MU2xJ',
+        soundcloudAPINumber: 'playlists/2045327235',
+        descriptiveText: "In a dreamlike universe within Corsican landscapes, Livia chases a mysterious sheep, bound to her by a red rope, leading her toward a haunting revelation. An animation by Mathieu LUTZ, Matairea MARE, Eléa MURACCIOLI, Léïa PROUST, Astrid SOREAU, Paul VEZINET."
     },
     {
         id: 'bistro-belzebuth',
@@ -123,18 +135,6 @@ export const mediaList = [
         soundcloud: 'https://on.soundcloud.com/nIGmZRj2eEHUDwKBPy',
         soundcloudAPINumber: 'playlists/2041641312',
         descriptiveText:"This animated short was created using the “exquisite corpse” method: each contributor wrote a part of the script in turn, without knowing what the others had come up with. The only common thread? An Egg. The result is a playful and unpredictable journey through multiple worlds and moods — a delightfully absurd and original story."
-    },
-    {
-        id: 'inside-my-world',
-        imageCarre: squareImagePath + 'inside-my-world-carre.webp',
-        images: [detailsImagePath + 'inside-my-world.webp'],
-        title: 'Inside my world',
-        author: 'Erwan Le Pape',
-        work: 'Video Game Soundtrack',
-        youtube: 'WR5mPBApPW4',
-        soundcloud: 'https://on.soundcloud.com/KLHvweE4WG8MAzPm9',
-        soundcloudAPINumber: 'playlists/1852788867',
-        descriptiveText: "A soundtrack of an imaginary game I composed for the OST Composing JAM 7 contest. The main theme that was given was this art and the phrase 'Inside my world'"
     },
     {
         id: 'Ondamaris',
