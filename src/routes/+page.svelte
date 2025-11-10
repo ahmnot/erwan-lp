@@ -696,18 +696,19 @@
 		}
 	}
 
-		/* === DISCO CSS WITH FIXED SIZING === */
+		/* === DISCO CSS WITH MORE HORIZONTAL SPACE === */
 	.disco-playlists {
-		grid-column: 2 / span 3;
+		grid-column: 1 / span 5; /* Use full width instead of 2/span3 */
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
-		gap: 20px;
+		gap: 15px; /* Reduced gap for more space */
 		margin-bottom: 60px;
+		padding: 0 20px; /* Add some padding on sides */
 	}
 
 	.disco-playlist-item {
 		width: 100%;
-		height: 395px; /* Fixed height to match iframe */
+		height: 380px; /* Slightly reduced height for better proportions */
 		display: flex;
 		justify-content: center;
 		position: relative;
@@ -739,7 +740,7 @@
 		padding: 20px;
 		border-radius: 8px;
 		border: 1px solid #333;
-		z-index: 1; /* Behind by default */
+		z-index: 1;
 		opacity: 0;
 		pointer-events: none;
 		transition: opacity 0.3s ease;
@@ -785,22 +786,50 @@
 	@media (max-width: 1400px) {
 		.disco-playlists {
 			grid-template-columns: repeat(3, 1fr);
+			gap: 20px;
+		}
+	}
+
+	@media (max-width: 1024px) {
+		.disco-playlists {
+			grid-template-columns: repeat(2, 1fr);
+			gap: 25px;
 		}
 	}
 
 	@media (max-width: 768px) {
 		.disco-playlists {
 			grid-template-columns: repeat(2, 1fr);
+			gap: 20px;
+			padding: 0 15px;
+		}
+		
+		.disco-playlist-item {
+			height: 350px;
+		}
+	}
+
+	@media (max-width: 600px) {
+		.disco-playlists {
+			grid-template-columns: 1fr;
+			gap: 20px;
+			padding: 0 10px;
+		}
+		
+		.disco-playlist-item {
+			height: 300px;
+			max-width: 400px;
+			margin: 0 auto;
 		}
 	}
 
 	@media (max-width: 480px) {
 		.disco-playlists {
-			grid-template-columns: 1fr;
+			padding: 0 5px;
 		}
 		
 		.disco-playlist-item {
-			height: 300px;
+			height: 280px;
 		}
 		
 		.iframe-fallback {
