@@ -61,68 +61,83 @@
 	<div class="disco-playlists">
 		<div class="disco-playlist-item">
 			<iframe 
-				id="disco-playlist-25812605" 
-				name="disco-playlist-25812605" 
-				allowfullscreen="true"
-				frameborder="0" 
-				class="disco-embed" 
 				src="https://erwnlp.disco.ac/e/p/25812605?download=true&s=lWgFf-vOLQQTqI1DAu1OjHZCNhc%3An4sYUGlO&artwork=true&color=%2332B57C&theme=white" 
 				width="480" 
 				height="395"
-				title="Disco Playlist 1">
+				title="Playlist 1"
+				loading="lazy"
+				referrerpolicy="no-referrer-when-downgrade">
 			</iframe>
+			<div class="iframe-fallback">
+				<p>Playlist blocked by privacy settings</p>
+				<a href="https://erwnlp.disco.ac/s/25812605" target="_blank" rel="noopener">
+					Listen on Disco.ac ↗
+				</a>
+			</div>
 		</div>
 		<div class="disco-playlist-item">
 			<iframe 
-				id="disco-playlist-25812703" 
-				name="disco-playlist-25812703" 
-				allowfullscreen="true"
-				frameborder="0" 
-				class="disco-embed" 
 				src="https://erwnlp.disco.ac/e/p/25812703?download=true&s=6Lg36zOcNASYy3FY6oYl5IIAXto%3A2zTVr1x9&artwork=true&color=%2332B57C&theme=white" 
 				width="480" 
 				height="395"
-				title="Disco Playlist 2">
+				title="Playlist 2"
+				loading="lazy"
+				referrerpolicy="no-referrer-when-downgrade">
 			</iframe>
+			<div class="iframe-fallback">
+				<p>Playlist blocked by privacy settings</p>
+				<a href="https://erwnlp.disco.ac/s/25812703" target="_blank" rel="noopener">
+					Listen on Disco.ac ↗
+				</a>
+			</div>
 		</div>
 		<div class="disco-playlist-item">
 			<iframe 
-				id="disco-playlist-25812733" 
-				name="disco-playlist-25812733" 
-				allowfullscreen="true"
-				frameborder="0" 
-				class="disco-embed" 
 				src="https://erwnlp.disco.ac/e/p/25812733?download=true&s=OsHjLe_pj24ZCzm_fPCeKzlgMIU%3AUUdpqLsw&artwork=true&color=%2332B57C&theme=white" 
 				width="480" 
 				height="395"
-				title="Disco Playlist 3">
+				title="Playlist 3"
+				loading="lazy"
+				referrerpolicy="no-referrer-when-downgrade">
 			</iframe>
+			<div class="iframe-fallback">
+				<p>Playlist blocked by privacy settings</p>
+				<a href="https://erwnlp.disco.ac/s/25812733" target="_blank" rel="noopener">
+					Listen on Disco.ac ↗
+				</a>
+			</div>
 		</div>
 		<div class="disco-playlist-item">
 			<iframe 
-				id="disco-playlist-25812761" 
-				name="disco-playlist-25812761" 
-				allowfullscreen="true"
-				frameborder="0" 
-				class="disco-embed" 
 				src="https://erwnlp.disco.ac/e/p/25812761?download=true&s=TKM7neFFklse5aSZZljRIdgpTKA%3A2jXPWKdv&artwork=true&color=%2332B57C&theme=white" 
 				width="480" 
 				height="395"
-				title="Disco Playlist 4">
+				title="Playlist 4"
+				loading="lazy"
+				referrerpolicy="no-referrer-when-downgrade">
 			</iframe>
+			<div class="iframe-fallback">
+				<p>Playlist blocked by privacy settings</p>
+				<a href="https://erwnlp.disco.ac/s/25812761" target="_blank" rel="noopener">
+					Listen on Disco.ac ↗
+				</a>
+			</div>
 		</div>
 		<div class="disco-playlist-item">
 			<iframe 
-				id="disco-playlist-25812811" 
-				name="disco-playlist-25812811" 
-				allowfullscreen="true"
-				frameborder="0" 
-				class="disco-embed" 
 				src="https://erwnlp.disco.ac/e/p/25812811?download=true&s=ty3jvmHwsmbjTubs4EvVIJHgOdw%3ARGJa3FJa&artwork=true&color=%2332B57C&theme=white" 
 				width="480" 
 				height="395"
-				title="Disco Playlist 5">
+				title="Playlist 5"
+				loading="lazy"
+				referrerpolicy="no-referrer-when-downgrade">
 			</iframe>
+			<div class="iframe-fallback">
+				<p>Playlist blocked by privacy settings</p>
+				<a href="https://erwnlp.disco.ac/s/25812811" target="_blank" rel="noopener">
+					Listen on Disco.ac ↗
+				</a>
+			</div>
 		</div>
 	</div>
 
@@ -633,34 +648,69 @@
 		}
 	}
 
-		/* === DISCO CSS WITH DEBUG === */
+		/* === DISCO CSS WITH FALLBACK === */
 	.disco-playlists {
 		grid-column: 2 / span 3;
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
 		gap: 20px;
 		margin-bottom: 60px;
-		background-color: rgba(255, 0, 0, 0.2); /* Red background to see container */
-		border: 2px dashed red; /* Dashed red border */
-		min-height: 400px; /* Ensure minimum height */
-		padding: 10px; /* Add some padding */
 	}
 
 	.disco-playlist-item {
 		width: 100%;
 		display: flex;
 		justify-content: center;
-		background-color: rgba(0, 255, 0, 0.2); /* Green background */
-		border: 1px solid green; /* Green border */
-		min-height: 400px; /* Ensure height */
+		position: relative;
 	}
 
 	.disco-playlist-item iframe {
 		max-width: 100%;
 		height: 395px;
 		border-radius: 8px;
-		border: 2px solid blue; /* Blue border around iframes */
-		background-color: white; /* White background in case iframe fails */
+	}
+
+	.iframe-fallback {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background: rgba(0, 0, 0, 0.9);
+		color: white;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		text-align: center;
+		padding: 20px;
+		border-radius: 8px;
+		opacity: 0;
+		transition: opacity 0.3s;
+		pointer-events: none;
+	}
+
+	.iframe-fallback a {
+		color: #32B57C;
+		text-decoration: none;
+		font-weight: bold;
+		margin-top: 10px;
+		pointer-events: all;
+		border: 1px solid #32B57C;
+		padding: 8px 16px;
+		border-radius: 4px;
+		transition: background-color 0.3s;
+	}
+
+	.iframe-fallback a:hover {
+		background-color: #32B57C;
+		color: black;
+	}
+
+	/* Show fallback when iframe is blocked - this will be controlled by JavaScript */
+	.disco-playlist-item.blocked .iframe-fallback {
+		opacity: 1;
+		pointer-events: all;
 	}
 
 	/* Responsive design */
