@@ -60,19 +60,69 @@
 	<!-- Disco.ac Playlists Section -->
 	<div class="disco-playlists">
 		<div class="disco-playlist-item">
-			<iframe id="disco-playlist-25812605" name="disco-playlist-25812605" allowfullscreen frameborder="0" class="disco-embed" src="https://erwnlp.disco.ac/e/p/25812605?download=true&s=lWgFf-vOLQQTqI1DAu1OjHZCNhc%3An4sYUGlO&artwork=true&color=%2332B57C&theme=white" width="480" height="395"></iframe>
+			<iframe 
+				id="disco-playlist-25812605" 
+				name="disco-playlist-25812605" 
+				allowfullscreen 
+				frameborder="0" 
+				class="disco-embed" 
+				src="https://erwnlp.disco.ac/e/p/25812605?download=true&s=lWgFf-vOLQQTqI1DAu1OjHZCNhc%3An4sYUGlO&artwork=true&color=%2332B57C&theme=white" 
+				width="480" 
+				height="395"
+				title="Disco Playlist 1">
+			</iframe>
 		</div>
 		<div class="disco-playlist-item">
-			<iframe id="disco-playlist-25812703" name="disco-playlist-25812703" allowfullscreen frameborder="0" class="disco-embed" src="https://erwnlp.disco.ac/e/p/25812703?download=true&s=6Lg36zOcNASYy3FY6oYl5IIAXto%3A2zTVr1x9&artwork=true&color=%2332B57C&theme=white" width="480" height="395"></iframe>
+			<iframe 
+				id="disco-playlist-25812703" 
+				name="disco-playlist-25812703" 
+				allowfullscreen 
+				frameborder="0" 
+				class="disco-embed" 
+				src="https://erwnlp.disco.ac/e/p/25812703?download=true&s=6Lg36zOcNASYy3FY6oYl5IIAXto%3A2zTVr1x9&artwork=true&color=%2332B57C&theme=white" 
+				width="480" 
+				height="395"
+				title="Disco Playlist 2">
+			</iframe>
 		</div>
 		<div class="disco-playlist-item">
-			<iframe id="disco-playlist-25812733" name="disco-playlist-25812733" allowfullscreen frameborder="0" class="disco-embed" src="https://erwnlp.disco.ac/e/p/25812733?download=true&s=OsHjLe_pj24ZCzm_fPCeKzlgMIU%3AUUdpqLsw&artwork=true&color=%2332B57C&theme=white" width="480" height="395"></iframe>
+			<iframe 
+				id="disco-playlist-25812733" 
+				name="disco-playlist-25812733" 
+				allowfullscreen 
+				frameborder="0" 
+				class="disco-embed" 
+				src="https://erwnlp.disco.ac/e/p/25812733?download=true&s=OsHjLe_pj24ZCzm_fPCeKzlgMIU%3AUUdpqLsw&artwork=true&color=%2332B57C&theme=white" 
+				width="480" 
+				height="395"
+				title="Disco Playlist 3">
+			</iframe>
 		</div>
 		<div class="disco-playlist-item">
-			<iframe id="disco-playlist-25812761" name="disco-playlist-25812761" allowfullscreen frameborder="0" class="disco-embed" src="https://erwnlp.disco.ac/e/p/25812761?download=true&s=TKM7neFFklse5aSZZljRIdgpTKA%3A2jXPWKdv&artwork=true&color=%2332B57C&theme=white" width="480" height="395"></iframe>
+			<iframe 
+				id="disco-playlist-25812761" 
+				name="disco-playlist-25812761" 
+				allowfullscreen 
+				frameborder="0" 
+				class="disco-embed" 
+				src="https://erwnlp.disco.ac/e/p/25812761?download=true&s=TKM7neFFklse5aSZZljRIdgpTKA%3A2jXPWKdv&artwork=true&color=%2332B57C&theme=white" 
+				width="480" 
+				height="395"
+				title="Disco Playlist 4">
+			</iframe>
 		</div>
 		<div class="disco-playlist-item">
-			<iframe id="disco-playlist-25812811" name="disco-playlist-25812811" allowfullscreen frameborder="0" class="disco-embed" src="https://erwnlp.disco.ac/e/p/25812811?download=true&s=ty3jvmHwsmbjTubs4EvVIJHgOdw%3ARGJa3FJa&artwork=true&color=%2332B57C&theme=white" width="480" height="395"></iframe>
+			<iframe 
+				id="disco-playlist-25812811" 
+				name="disco-playlist-25812811" 
+				allowfullscreen 
+				frameborder="0" 
+				class="disco-embed" 
+				src="https://erwnlp.disco.ac/e/p/25812811?download=true&s=ty3jvmHwsmbjTubs4EvVIJHgOdw%3ARGJa3FJa&artwork=true&color=%2332B57C&theme=white" 
+				width="480" 
+				height="395"
+				title="Disco Playlist 5">
+			</iframe>
 		</div>
 	</div>
 
