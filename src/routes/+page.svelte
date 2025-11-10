@@ -8,34 +8,74 @@
 	import { fade } from 'svelte/transition';
 
 onMount(() => {
-	setTimeout(() => {
+	let scrollAnimationId = null;
+	let isScrolling = false;
+
+	function startAutoScroll() {
 		const homeSection = document.getElementById('home');
 		if (homeSection) {
 			const homeHeight = homeSection.offsetHeight;
-			const scrollPosition = homeHeight * 0.5; // 50% down the home section
+			const targetPosition = homeHeight * 0.5;
 			const startPosition = window.pageYOffset;
-			const distance = scrollPosition - startPosition;
-			const duration = 4000; // 4 seconds
+			const distance = targetPosition - startPosition;
+			const duration = 4000;
 			let startTime = null;
+
+			// Cancel any existing animation
+			if (scrollAnimationId) {
+				cancelAnimationFrame(scrollAnimationId);
+			}
 
 			function animation(currentTime) {
 				if (startTime === null) startTime = currentTime;
 				const timeElapsed = currentTime - startTime;
 				const progress = Math.min(timeElapsed / duration, 1);
 				
-				// Easing function for smooth deceleration
 				const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-				
 				window.scrollTo(0, startPosition + (distance * easeOutQuart));
 				
 				if (timeElapsed < duration) {
-					requestAnimationFrame(animation);
+					scrollAnimationId = requestAnimationFrame(animation);
+				} else {
+					isScrolling = false;
+					scrollAnimationId = null;
 				}
 			}
-			
-			requestAnimationFrame(animation);
+
+			isScrolling = true;
+			scrollAnimationId = requestAnimationFrame(animation);
 		}
-	}, 1300);
+	}
+
+	// Start auto-scroll after 1 second
+	setTimeout(startAutoScroll, 1200);
+
+	// Make scroll interruptible by user interaction
+	function handleUserScroll() {
+		if (isScrolling && scrollAnimationId) {
+			cancelAnimationFrame(scrollAnimationId);
+			isScrolling = false;
+			scrollAnimationId = null;
+		}
+	}
+
+	// Listen for user scroll attempts
+	window.addEventListener('wheel', handleUserScroll, { passive: true });
+	window.addEventListener('touchmove', handleUserScroll, { passive: true });
+	window.addEventListener('keydown', (e) => {
+		if (['Space', 'ArrowUp', 'ArrowDown', 'PageUp', 'PageDown'].includes(e.code)) {
+			handleUserScroll();
+		}
+	});
+
+	// Cleanup
+	return () => {
+		if (scrollAnimationId) {
+			cancelAnimationFrame(scrollAnimationId);
+		}
+		window.removeEventListener('wheel', handleUserScroll);
+		window.removeEventListener('touchmove', handleUserScroll);
+	};
 });
 
 		// Disco iframe detection - improved version
