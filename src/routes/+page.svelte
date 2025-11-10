@@ -7,6 +7,25 @@
 	import LightYoutube from './LightYoutube.svelte';
 	import { fade } from 'svelte/transition';
 
+	// === ADD THIS CODE RIGHT HERE ===
+	onMount(() => {
+		// Check if disco iframes are blocked
+		setTimeout(() => {
+			const iframes = document.querySelectorAll('.disco-playlist-item iframe');
+			iframes.forEach((iframe) => {
+				try {
+					const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+					if (iframeDoc.body.children.length < 3) {
+						iframe.parentElement.classList.add('blocked');
+					}
+				} catch (error) {
+					iframe.parentElement.classList.add('blocked');
+				}
+			});
+		}, 2000);
+	});
+	// === END OF ADDED CODE ===
+
 	let soundcloudIframe;
 	let mediaGridElementWidth;
 	let soundcloudWidth;
