@@ -455,6 +455,7 @@
 
 	.credits-titre-grid h2 {
 		margin: 0;
+		font-size: 300%; /* Add this line */
 	}
 
 	#main-title {
@@ -610,6 +611,9 @@
 
 		#home {
 			height: 100%;
+			background-size: cover;
+			background-position: center 20%;
+			min-height: 80vh;
 		}
 
 		.bio-text,
@@ -665,6 +669,9 @@
 		.logos-grid-wrapper {
 			padding-left: 0;
 			padding-right: 0;
+		}
+		.bio-skills {
+		display: none; /* Add this line */
 		}
 	}
 
@@ -730,7 +737,7 @@
 		top: -40px;
 		left: 0;
 		color: rgb(255, 212, 137); /* Your gold color */
-		font-size: 16px;
+		font-size: 18px;
 		font-weight: normal;
 		font-family: 'Poppins', sans-serif;
 		z-index: 4;
@@ -833,7 +840,7 @@
 		}
 		
 		.playlist-title {
-			font-size: 14px;
+			font-size: 16px;
 			top: -35px;
 			letter-spacing: 1.5px; /* Added letter spacing */
 		}
@@ -854,7 +861,7 @@
 		}
 		
 		.playlist-title {
-			font-size: 13px;
+			font-size: 15px;
 			top: -30px;
 			letter-spacing: 1px; /* Added letter spacing */
 		}
@@ -871,7 +878,7 @@
 		}
 		
 		.playlist-title {
-			font-size: 12px;
+			font-size: 14px;
 			top: -25px;
 			letter-spacing: 0.8px; /* Added letter spacing */
 		}
