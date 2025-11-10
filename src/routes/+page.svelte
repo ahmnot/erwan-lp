@@ -109,7 +109,7 @@
 	<div class="disco-playlists">
 		<div class="disco-playlist-item">
 			<iframe 
-				src="https://erwnlp.disco.ac/e/p/25812605?download=false&s=mNNyU1A8vVNR4X5gGtkjSFKwcB8%3ArO2qPM4U&artwork=true&color=%2332B57C&theme=white" 
+				src="https://erwnlp.disco.ac/e/p/25812605?download=false&s=mNNyU1A8vVNR4X5gGtkjSFKwcB8%3ArO2qPM4U&artwork=true&color=%23FFD700&theme=dark" 
 				width="480" 
 				height="395"
 				title="Playlist 1"
@@ -125,7 +125,7 @@
 		</div>
 		<div class="disco-playlist-item">
 			<iframe 
-				src="https://erwnlp.disco.ac/e/p/25812703?download=false&s=EW9JzXaNYnSnPoyEHaLTQ1qtMSU%3AvJ6VjBXS&artwork=true&color=%2332B57C&theme=white" 
+				src="https://erwnlp.disco.ac/e/p/25812703?download=false&s=EW9JzXaNYnSnPoyEHaLTQ1qtMSU%3AvJ6VjBXS&artwork=true&color=%23FFD700&theme=dark" 
 				width="480" 
 				height="395"
 				title="Playlist 2"
@@ -141,7 +141,7 @@
 		</div>
 		<div class="disco-playlist-item">
 			<iframe 
-				src="https://erwnlp.disco.ac/e/p/25812733?download=false&s=MKYZDZLN0lJPRNnVkoUaxwr01xA%3AIcAWr0Ok&artwork=true&color=%2332B57C&theme=white" 
+				src="https://erwnlp.disco.ac/e/p/25812733?download=false&s=MKYZDZLN0lJPRNnVkoUaxwr01xA%3AIcAWr0Ok&artwork=true&color=%23FFD700&theme=dark" 
 				width="480" 
 				height="395"
 				title="Playlist 3"
@@ -157,7 +157,7 @@
 		</div>
 		<div class="disco-playlist-item">
 			<iframe 
-				src="https://erwnlp.disco.ac/e/p/25812761?download=false&s=-2vTFP4NhXjfFbNRfMeoZA6VvIY%3A2oaw55mX&artwork=true&color=%2332B57C&theme=white" 
+				src="https://erwnlp.disco.ac/e/p/25812761?download=false&s=-2vTFP4NhXjfFbNRfMeoZA6VvIY%3A2oaw55mX&artwork=true&color=%23FFD700&theme=dark" 
 				width="480" 
 				height="395"
 				title="Playlist 4"
@@ -173,7 +173,7 @@
 		</div>
 		<div class="disco-playlist-item">
 			<iframe 
-				src="https://erwnlp.disco.ac/e/p/25812811?download=false&s=hWBfAgeQXWdsPWoSs1EsJr01jV0%3ASl7bXK5Q&artwork=true&color=%2332B57C&theme=white" 
+				src="https://erwnlp.disco.ac/e/p/25812811?download=false&s=hWBfAgeQXWdsPWoSs1EsJr01jV0%3ASl7bXK5Q&artwork=true&color=%23FFD700&theme=dark" 
 				width="480" 
 				height="395"
 				title="Playlist 5"
@@ -767,19 +767,19 @@
 	}
 
 	.iframe-fallback a {
-		color: #32B57C;
-		text-decoration: none;
-		font-weight: bold;
-		border: 2px solid #32B57C;
-		padding: 10px 20px;
-		border-radius: 6px;
-		transition: all 0.3s ease;
-		font-size: 13px;
+	color: #FFD700; /* Gold to match the playlists */
+	text-decoration: none;
+	font-weight: bold;
+	border: 2px solid #FFD700;
+	padding: 10px 20px;
+	border-radius: 6px;
+	transition: all 0.3s ease;
+	font-size: 13px;
 	}
 
 	.iframe-fallback a:hover {
-		background-color: #32B57C;
-		color: black;
+	background-color: #FFD700;
+	color: black;
 	}
 
 	/* Responsive design */
