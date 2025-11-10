@@ -260,7 +260,6 @@
 			<br />
 		</p>
 	</div>
-	<div class="credits-titre-grid"><h2>CREDITS</h2></div>
 	<div class="logos-grid-wrapper">
 		<div></div>
 		<div class="logos-grid-imgs">
@@ -612,7 +611,7 @@
 		#home {
 			height: 100%;
 			background-size: cover;
-			background-position: center 20%;
+			background-position: 30% 20%;
 			min-height: 80vh;
 		}
 
@@ -837,12 +836,13 @@
 		
 		.disco-playlist-item {
 			height: 400px; /* Increased */
+			margin-top: 50px; /* Increased from 40px */
 		}
 		
 		.playlist-title {
 			font-size: 16px;
-			top: -35px;
-			letter-spacing: 1.5px; /* Added letter spacing */
+			top: -45px; /* Increased from -35px */
+			letter-spacing: 1.5px;
 		}
 	}
 
@@ -857,13 +857,13 @@
 			height: 350px; /* Increased */
 			max-width: 400px;
 			margin: 0 auto;
-			margin-top: 35px;
+			margin-top: 45px; /* Increased from 35px */
 		}
 		
 		.playlist-title {
 			font-size: 15px;
-			top: -30px;
-			letter-spacing: 1px; /* Added letter spacing */
+			top: -40px; /* Increased from -30px */
+			letter-spacing: 1px;
 		}
 	}
 
@@ -874,13 +874,13 @@
 		
 		.disco-playlist-item {
 			height: 320px; /* Increased */
-			margin-top: 30px;
+			margin-top: 40px; /* Increased from 30px */
 		}
 		
 		.playlist-title {
 			font-size: 14px;
-			top: -25px;
-			letter-spacing: 0.8px; /* Added letter spacing */
+			top: -35px; /* Increased from -25px */
+			letter-spacing: 0.8px;
 		}
 		
 		.iframe-fallback {
