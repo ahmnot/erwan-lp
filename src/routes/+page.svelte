@@ -15,7 +15,7 @@ onMount(() => {
 			const scrollPosition = homeHeight * 0.5; // 50% down the home section
 			const startPosition = window.pageYOffset;
 			const distance = scrollPosition - startPosition;
-			const duration = 1500; // 1.5 seconds
+			const duration = 4000; // 4 seconds
 			let startTime = null;
 
 			function animation(currentTime) {
@@ -35,7 +35,7 @@ onMount(() => {
 			
 			requestAnimationFrame(animation);
 		}
-	}, 1000);
+	}, 1300);
 });
 
 		// Disco iframe detection - improved version
