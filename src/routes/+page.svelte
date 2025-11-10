@@ -110,7 +110,7 @@
 	<div class="disco-playlist-item">
 		<div class="playlist-title">Fantasy</div>
 		<iframe 
-			src="https://erwnlp.disco.ac/e/p/25812605?download=false&s=mNNyU1A8vVNR4X5gGtkjSFKwcB8%3ArO2qPM4U&artwork=true&color=%23FFD489&theme=dark" 
+			src="https://erwnlp.disco.ac/e/p/25812605?download=false&s=mNNyU1A8vVNR4X5gGtkjSFKwcB8%3ArO2qPM4U&artwork=false&color=%23FFD489&theme=dark" 
 			width="480" 
 			height="395"
 			title="Fantasy"
@@ -128,7 +128,7 @@
 	<div class="disco-playlist-item">
 		<div class="playlist-title">Orchestral</div>
 		<iframe 
-			src="https://erwnlp.disco.ac/e/p/25812703?download=false&s=EW9JzXaNYnSnPoyEHaLTQ1qtMSU%3AvJ6VjBXS&artwork=true&color=%23FFD489&theme=dark" 
+			src="https://erwnlp.disco.ac/e/p/25812703?download=false&s=EW9JzXaNYnSnPoyEHaLTQ1qtMSU%3AvJ6VjBXS&artwork=false&color=%23FFD489&theme=dark" 
 			width="480" 
 			height="395"
 			title="Orchestral"
@@ -146,7 +146,7 @@
 	<div class="disco-playlist-item">
 		<div class="playlist-title">Action</div>
 		<iframe 
-			src="https://erwnlp.disco.ac/e/p/25812733?download=false&s=MKYZDZLN0lJPRNnVkoUaxwr01xA%3AIcAWr0Ok&artwork=true&color=%23FFD489&theme=dark" 
+			src="https://erwnlp.disco.ac/e/p/25812733?download=false&s=MKYZDZLN0lJPRNnVkoUaxwr01xA%3AIcAWr0Ok&artwork=false&color=%23FFD489&theme=dark" 
 			width="480" 
 			height="395"
 			title="Action"
@@ -164,10 +164,10 @@
 	<div class="disco-playlist-item">
 		<div class="playlist-title">Ambiant</div>
 		<iframe 
-			src="https://erwnlp.disco.ac/e/p/25812761?download=false&s=-2vTFP4NhXjfFbNRfMeoZA6VvIY%3A2oaw55mX&artwork=true&color=%23FFD489&theme=dark" 
+			src="https://erwnlp.disco.ac/e/p/25812761?download=false&s=-2vTFP4NhXjfFbNRfMeoZA6VvIY%3A2oaw55mX&artwork=false&color=%23FFD489&theme=dark" 
 			width="480" 
 			height="395"
-			title="Ambient"
+			title="Ambiant"
 			loading="lazy"
 			referrerpolicy="no-referrer-when-downgrade"
 			style="border: none; border-radius: 0;">
@@ -182,7 +182,7 @@
 	<div class="disco-playlist-item">
 		<div class="playlist-title">Others</div>
 		<iframe 
-			src="https://erwnlp.disco.ac/e/p/25812811?download=false&s=hWBfAgeQXWdsPWoSs1EsJr01jV0%3ASl7bXK5Q&artwork=true&color=%23FFD489&theme=dark" 
+			src="https://erwnlp.disco.ac/e/p/25812811?download=false&s=hWBfAgeQXWdsPWoSs1EsJr01jV0%3ASl7bXK5Q&artwork=false&color=%23FFD489&theme=dark" 
 			width="480" 
 			height="395"
 			title="Others"
@@ -726,17 +726,17 @@
 	}
 
 	.playlist-title {
-	position: absolute;
-	top: -40px;
-	left: 0;
-	color: rgb(255, 212, 137); /* Your gold color */
-	font-size: 16px;
-	font-weight: normal; /* Changed from bold to normal */
-	font-family: 'Poppins', sans-serif; /* Added Poppins font */
-	z-index: 4;
-	text-align: center;
-	width: 100%;
-	/* Removed text-transform: uppercase and letter-spacing */
+		position: absolute;
+		top: -40px;
+		left: 0;
+		color: rgb(255, 212, 137); /* Your gold color */
+		font-size: 16px;
+		font-weight: normal;
+		font-family: 'Poppins', sans-serif;
+		z-index: 4;
+		text-align: center;
+		width: 100%;
+		letter-spacing: 2px; /* Increased letter spacing */
 	}
 
 	.disco-playlist-item iframe {
@@ -835,6 +835,7 @@
 		.playlist-title {
 			font-size: 14px;
 			top: -35px;
+			letter-spacing: 1.5px; /* Added letter spacing */
 		}
 	}
 
@@ -855,6 +856,7 @@
 		.playlist-title {
 			font-size: 13px;
 			top: -30px;
+			letter-spacing: 1px; /* Added letter spacing */
 		}
 	}
 
@@ -871,6 +873,7 @@
 		.playlist-title {
 			font-size: 12px;
 			top: -25px;
+			letter-spacing: 0.8px; /* Added letter spacing */
 		}
 		
 		.iframe-fallback {
