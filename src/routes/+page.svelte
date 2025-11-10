@@ -681,7 +681,7 @@
 		}
 	}
 
-		/* === DISCO CSS WITH POLISHED FALLBACK === */
+			/* === DISCO CSS WITH PROPER FALLBACK LAYERING === */
 	.disco-playlists {
 		grid-column: 2 / span 3;
 		display: grid;
@@ -703,10 +703,11 @@
 		height: 395px;
 		border-radius: 8px;
 		position: relative;
-		z-index: 2;
+		z-index: 1; /* Lower z-index */
 		background: white;
 	}
 
+	/* Fallback should be on top by default */
 	.iframe-fallback {
 		position: absolute;
 		top: 0;
@@ -723,12 +724,19 @@
 		padding: 30px;
 		border-radius: 8px;
 		border: 1px solid #333;
-		z-index: 1;
+		z-index: 2; /* Higher z-index to be on top */
 		opacity: 1;
 	}
 
-	.disco-playlist-item.blocked .iframe-fallback {
-		z-index: 3;
+	/* When iframe loads successfully in Chrome/Safari, hide the fallback */
+	.disco-playlist-item:not(.blocked) .iframe-fallback {
+		display: none; /* Completely hide fallback when iframe works */
+	}
+
+	/* When iframe is blocked, ensure it's behind the fallback */
+	.disco-playlist-item.blocked iframe {
+		z-index: 1;
+		opacity: 0.3; /* Make the white block semi-transparent so fallback is readable */
 	}
 
 	.iframe-fallback p {
