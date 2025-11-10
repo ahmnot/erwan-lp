@@ -7,6 +7,37 @@
 	import LightYoutube from './LightYoutube.svelte';
 	import { fade } from 'svelte/transition';
 
+onMount(() => {
+	setTimeout(() => {
+		const homeSection = document.getElementById('home');
+		if (homeSection) {
+			const homeHeight = homeSection.offsetHeight;
+			const scrollPosition = homeHeight * 0.5; // 50% down the home section
+			const startPosition = window.pageYOffset;
+			const distance = scrollPosition - startPosition;
+			const duration = 1500; // 1.5 seconds
+			let startTime = null;
+
+			function animation(currentTime) {
+				if (startTime === null) startTime = currentTime;
+				const timeElapsed = currentTime - startTime;
+				const progress = Math.min(timeElapsed / duration, 1);
+				
+				// Easing function for smooth deceleration
+				const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+				
+				window.scrollTo(0, startPosition + (distance * easeOutQuart));
+				
+				if (timeElapsed < duration) {
+					requestAnimationFrame(animation);
+				}
+			}
+			
+			requestAnimationFrame(animation);
+		}
+	}, 1000);
+});
+
 		// Disco iframe detection - improved version
 	onMount(() => {
 		function checkIframes() {
@@ -894,6 +925,9 @@
 		.iframe-fallback a {
 			padding: 8px 16px;
 			font-size: 12px;
+		}
+		html {
+			scroll-behavior: smooth;
 		}
 	}
 	/* === END OF DISCO CSS === */
