@@ -106,93 +106,98 @@
 
 <section id="music">
 <!-- Disco.ac Playlist Section -->
-	<div class="disco-playlists">
-		<div class="disco-playlist-item">
-			<iframe 
-				src="https://erwnlp.disco.ac/e/p/25812605?download=false&s=mNNyU1A8vVNR4X5gGtkjSFKwcB8%3ArO2qPM4U&artwork=true&color=%23FFD489&theme=dark" 
-				width="480" 
-				height="395"
-				title="Playlist 1"
-				loading="lazy"
-				referrerpolicy="no-referrer-when-downgrade"
-				style="border: none; border-radius: 0;">
-			</iframe>
-			<div class="iframe-fallback">
-				<p>Playlist blocked by privacy settings</p>
-				<a href="https://erwnlp.disco.ac/s/25812605" target="_blank" rel="noopener">
-					Listen on Disco.ac ↗
-				</a>
-			</div>
-		</div>
-		<div class="disco-playlist-item">
-			<iframe 
-				src="https://erwnlp.disco.ac/e/p/25812703?download=false&s=EW9JzXaNYnSnPoyEHaLTQ1qtMSU%3AvJ6VjBXS&artwork=true&color=%23FFD489&theme=dark" 
-				width="480" 
-				height="395"
-				title="Playlist 2"
-				loading="lazy"
-				referrerpolicy="no-referrer-when-downgrade"
-				style="border: none; border-radius: 0;">
-			</iframe>
-			<div class="iframe-fallback">
-				<p>Playlist blocked by privacy settings</p>
-				<a href="https://erwnlp.disco.ac/s/25812703" target="_blank" rel="noopener">
-					Listen on Disco.ac ↗
-				</a>
-			</div>
-		</div>
-		<div class="disco-playlist-item">
-			<iframe 
-				src="https://erwnlp.disco.ac/e/p/25812733?download=false&s=MKYZDZLN0lJPRNnVkoUaxwr01xA%3AIcAWr0Ok&artwork=true&color=%23FFD489&theme=dark" 
-				width="480" 
-				height="395"
-				title="Playlist 3"
-				loading="lazy"
-				referrerpolicy="no-referrer-when-downgrade"
-				style="border: none; border-radius: 0;">
-			</iframe>
-			<div class="iframe-fallback">
-				<p>Playlist blocked by privacy settings</p>
-				<a href="https://erwnlp.disco.ac/s/25812733" target="_blank" rel="noopener">
-					Listen on Disco.ac ↗
-				</a>
-			</div>
-		</div>
-		<div class="disco-playlist-item">
-			<iframe 
-				src="https://erwnlp.disco.ac/e/p/25812761?download=false&s=-2vTFP4NhXjfFbNRfMeoZA6VvIY%3A2oaw55mX&artwork=true&color=%23FFD489&theme=dark" 
-				width="480" 
-				height="395"
-				title="Playlist 4"
-				loading="lazy"
-				referrerpolicy="no-referrer-when-downgrade"
-				style="border: none; border-radius: 0;">
-			</iframe>
-			<div class="iframe-fallback">
-				<p>Playlist blocked by privacy settings</p>
-				<a href="https://erwnlp.disco.ac/s/25812761" target="_blank" rel="noopener">
-					Listen on Disco.ac ↗
-				</a>
-			</div>
-		</div>
-		<div class="disco-playlist-item">
-			<iframe 
-				src="https://erwnlp.disco.ac/e/p/25812811?download=false&s=hWBfAgeQXWdsPWoSs1EsJr01jV0%3ASl7bXK5Q&artwork=true&color=%23FFD489&theme=dark" 
-				width="480" 
-				height="395"
-				title="Playlist 5"
-				loading="lazy"
-				referrerpolicy="no-referrer-when-downgrade"
-				style="border: none; border-radius: 0;">
-			</iframe>
-			<div class="iframe-fallback">
-				<p>Playlist blocked by privacy settings</p>
-				<a href="https://erwnlp.disco.ac/s/25812811" target="_blank" rel="noopener">
-					Listen on Disco.ac ↗
-				</a>
-			</div>
+<div class="disco-playlists">
+	<div class="disco-playlist-item">
+		<div class="playlist-title">ORIGINAL SOUNDTRACKS</div>
+		<iframe 
+			src="https://erwnlp.disco.ac/e/p/25812605?download=false&s=mNNyU1A8vVNR4X5gGtkjSFKwcB8%3ArO2qPM4U&artwork=true&color=%23FFD489&theme=dark" 
+			width="480" 
+			height="395"
+			title="Original Soundtracks"
+			loading="lazy"
+			referrerpolicy="no-referrer-when-downgrade"
+			style="border: none; border-radius: 0;">
+		</iframe>
+		<div class="iframe-fallback">
+			<p>Playlist blocked by privacy settings</p>
+			<a href="https://erwnlp.disco.ac/s/25812605" target="_blank" rel="noopener">
+				Listen on Disco.ac ↗
+			</a>
 		</div>
 	</div>
+	<div class="disco-playlist-item">
+		<div class="playlist-title">CLASSICAL WORKS</div>
+		<iframe 
+			src="https://erwnlp.disco.ac/e/p/25812703?download=false&s=EW9JzXaNYnSnPoyEHaLTQ1qtMSU%3AvJ6VjBXS&artwork=true&color=%23FFD489&theme=dark" 
+			width="480" 
+			height="395"
+			title="Classical Works"
+			loading="lazy"
+			referrerpolicy="no-referrer-when-downgrade"
+			style="border: none; border-radius: 0;">
+		</iframe>
+		<div class="iframe-fallback">
+			<p>Playlist blocked by privacy settings</p>
+			<a href="https://erwnlp.disco.ac/s/25812703" target="_blank" rel="noopener">
+				Listen on Disco.ac ↗
+			</a>
+		</div>
+	</div>
+	<div class="disco-playlist-item">
+		<div class="playlist-title">ELECTRONIC & AMBIENT</div>
+		<iframe 
+			src="https://erwnlp.disco.ac/e/p/25812733?download=false&s=MKYZDZLN0lJPRNnVkoUaxwr01xA%3AIcAWr0Ok&artwork=true&color=%23FFD489&theme=dark" 
+			width="480" 
+			height="395"
+			title="Electronic & Ambient"
+			loading="lazy"
+			referrerpolicy="no-referrer-when-downgrade"
+			style="border: none; border-radius: 0;">
+		</iframe>
+		<div class="iframe-fallback">
+			<p>Playlist blocked by privacy settings</p>
+			<a href="https://erwnlp.disco.ac/s/25812733" target="_blank" rel="noopener">
+				Listen on Disco.ac ↗
+			</a>
+		</div>
+	</div>
+	<div class="disco-playlist-item">
+		<div class="playlist-title">EXPERIMENTAL</div>
+		<iframe 
+			src="https://erwnlp.disco.ac/e/p/25812761?download=false&s=-2vTFP4NhXjfFbNRfMeoZA6VvIY%3A2oaw55mX&artwork=true&color=%23FFD489&theme=dark" 
+			width="480" 
+			height="395"
+			title="Experimental"
+			loading="lazy"
+			referrerpolicy="no-referrer-when-downgrade"
+			style="border: none; border-radius: 0;">
+		</iframe>
+		<div class="iframe-fallback">
+			<p>Playlist blocked by privacy settings</p>
+			<a href="https://erwnlp.disco.ac/s/25812761" target="_blank" rel="noopener">
+				Listen on Disco.ac ↗
+			</a>
+		</div>
+	</div>
+	<div class="disco-playlist-item">
+		<div class="playlist-title">ORCHESTRAL SKETCHES</div>
+		<iframe 
+			src="https://erwnlp.disco.ac/e/p/25812811?download=false&s=hWBfAgeQXWdsPWoSs1EsJr01jV0%3ASl7bXK5Q&artwork=true&color=%23FFD489&theme=dark" 
+			width="480" 
+			height="395"
+			title="Orchestral Sketches"
+			loading="lazy"
+			referrerpolicy="no-referrer-when-downgrade"
+			style="border: none; border-radius: 0;">
+		</iframe>
+		<div class="iframe-fallback">
+			<p>Playlist blocked by privacy settings</p>
+			<a href="https://erwnlp.disco.ac/s/25812811" target="_blank" rel="noopener">
+				Listen on Disco.ac ↗
+			</a>
+		</div>
+	</div>
+</div>
 
 	<div class="media-grid" bind:clientWidth={mediaGridElementWidth}>
 		{#each mediaList as media (media.id)}
@@ -701,50 +706,64 @@
 		}
 	}
 
-			/* === DISCO CSS WITH EXACT COLOR MATCHING === */
+		/* === DISCO CSS WITH TITLES AND INCREASED HEIGHT === */
 	.disco-playlists {
-		grid-column: 1 / span 5; /* Use full width instead of 2/span3 */
+		grid-column: 1 / span 5;
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
-		gap: 15px; /* Reduced gap for more space */
+		gap: 15px;
 		margin-bottom: 60px;
-		padding: 0 20px; /* Add some padding on sides */
+		padding: 0 20px;
 	}
 
 	.disco-playlist-item {
 		width: 100%;
-		height: 380px; /* Slightly reduced height for better proportions */
+		height: 450px; /* Increased height */
 		display: flex;
 		justify-content: center;
 		position: relative;
+		margin-top: 40px; /* Space for title */
+	}
+
+	.playlist-title {
+		position: absolute;
+		top: -40px;
+		left: 0;
+		color: rgb(255, 212, 137); /* Your gold color */
+		font-size: 16px;
+		font-weight: bold;
+		z-index: 4;
+		text-align: center;
+		width: 100%;
+		text-transform: uppercase;
+		letter-spacing: 1px;
 	}
 
 	.disco-playlist-item iframe {
 		width: 100%;
 		height: 100%;
-		border-radius: 0; /* Remove rounded corners to match your site */
+		border-radius: 0;
 		position: relative;
 		z-index: 2;
-		background: transparent; /* Remove white background */
-		border: none; /* Remove any border */
+		background: transparent;
+		border: none;
 	}
 
-	/* Fallback - hidden by default, exact same size as iframe */
 	.iframe-fallback {
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background: rgba(0, 0, 0, 0); /* Your exact transparent black background */
-		color: rgba(255, 255, 255, 0.9); /* Your exact text color */
+		background: rgba(0, 0, 0, 0);
+		color: rgba(255, 255, 255, 0.9);
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 		text-align: center;
 		padding: 20px;
-		border-radius: 0; /* Remove rounded corners */
+		border-radius: 0;
 		border: 1px solid #333;
 		z-index: 1;
 		opacity: 0;
@@ -753,15 +772,13 @@
 		box-sizing: border-box;
 	}
 
-	/* When iframe is blocked, show fallback on top */
 	.disco-playlist-item.blocked .iframe-fallback {
 		z-index: 3;
 		opacity: 1;
 		pointer-events: all;
-		background: rgba(0, 0, 0, 0.9); /* Dark background when visible */
+		background: rgba(0, 0, 0, 0.9);
 	}
 
-	/* When iframe is blocked, hide the iframe */
 	.disco-playlist-item.blocked iframe {
 		display: none;
 	}
@@ -769,23 +786,23 @@
 	.iframe-fallback p {
 		font-size: 14px;
 		margin-bottom: 15px;
-		opacity: 0.9; /* Match your text opacity */
+		opacity: 0.9;
 		line-height: 1.4;
 	}
 
 	.iframe-fallback a {
-		color: rgb(255, 212, 137); /* Your exact gold color */
+		color: rgb(255, 212, 137);
 		text-decoration: none;
 		font-weight: bold;
-		border: 1px solid rgb(255, 212, 137); /* Your exact gold color */
+		border: 1px solid rgb(255, 212, 137);
 		padding: 8px 16px;
-		border-radius: 0; /* Square corners to match your site */
+		border-radius: 0;
 		transition: all 0.3s ease;
 		font-size: 13px;
 	}
 
 	.iframe-fallback a:hover {
-		background-color: rgb(255, 212, 137); /* Your exact gold color */
+		background-color: rgb(255, 212, 137);
 		color: black;
 	}
 
@@ -812,7 +829,12 @@
 		}
 		
 		.disco-playlist-item {
-			height: 350px;
+			height: 400px; /* Increased */
+		}
+		
+		.playlist-title {
+			font-size: 14px;
+			top: -35px;
 		}
 	}
 
@@ -824,9 +846,15 @@
 		}
 		
 		.disco-playlist-item {
-			height: 300px;
+			height: 350px; /* Increased */
 			max-width: 400px;
 			margin: 0 auto;
+			margin-top: 35px;
+		}
+		
+		.playlist-title {
+			font-size: 13px;
+			top: -30px;
 		}
 	}
 
@@ -836,7 +864,13 @@
 		}
 		
 		.disco-playlist-item {
-			height: 280px;
+			height: 320px; /* Increased */
+			margin-top: 30px;
+		}
+		
+		.playlist-title {
+			font-size: 12px;
+			top: -25px;
 		}
 		
 		.iframe-fallback {
