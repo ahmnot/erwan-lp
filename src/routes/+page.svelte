@@ -57,7 +57,7 @@
 </section>
 
 <section id="music">
-	<!-- Disco.ac Playlists Section -->
+	<!-- Disco.ac Playlist Section -->
 	<div class="disco-playlists">
 		<div class="disco-playlist-item">
 			<iframe 
