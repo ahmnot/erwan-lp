@@ -108,12 +108,12 @@
 <!-- Disco.ac Playlist Section -->
 <div class="disco-playlists">
 	<div class="disco-playlist-item">
-		<div class="playlist-title">ORIGINAL SOUNDTRACKS</div>
+		<div class="playlist-title">Fantasy</div>
 		<iframe 
 			src="https://erwnlp.disco.ac/e/p/25812605?download=false&s=mNNyU1A8vVNR4X5gGtkjSFKwcB8%3ArO2qPM4U&artwork=true&color=%23FFD489&theme=dark" 
 			width="480" 
 			height="395"
-			title="Original Soundtracks"
+			title="Fantasy"
 			loading="lazy"
 			referrerpolicy="no-referrer-when-downgrade"
 			style="border: none; border-radius: 0;">
@@ -126,12 +126,12 @@
 		</div>
 	</div>
 	<div class="disco-playlist-item">
-		<div class="playlist-title">CLASSICAL WORKS</div>
+		<div class="playlist-title">Orchestral</div>
 		<iframe 
 			src="https://erwnlp.disco.ac/e/p/25812703?download=false&s=EW9JzXaNYnSnPoyEHaLTQ1qtMSU%3AvJ6VjBXS&artwork=true&color=%23FFD489&theme=dark" 
 			width="480" 
 			height="395"
-			title="Classical Works"
+			title="Orchestral"
 			loading="lazy"
 			referrerpolicy="no-referrer-when-downgrade"
 			style="border: none; border-radius: 0;">
@@ -144,12 +144,12 @@
 		</div>
 	</div>
 	<div class="disco-playlist-item">
-		<div class="playlist-title">ELECTRONIC & AMBIENT</div>
+		<div class="playlist-title">Action</div>
 		<iframe 
 			src="https://erwnlp.disco.ac/e/p/25812733?download=false&s=MKYZDZLN0lJPRNnVkoUaxwr01xA%3AIcAWr0Ok&artwork=true&color=%23FFD489&theme=dark" 
 			width="480" 
 			height="395"
-			title="Electronic & Ambient"
+			title="Action"
 			loading="lazy"
 			referrerpolicy="no-referrer-when-downgrade"
 			style="border: none; border-radius: 0;">
@@ -162,12 +162,12 @@
 		</div>
 	</div>
 	<div class="disco-playlist-item">
-		<div class="playlist-title">EXPERIMENTAL</div>
+		<div class="playlist-title">Ambiant</div>
 		<iframe 
 			src="https://erwnlp.disco.ac/e/p/25812761?download=false&s=-2vTFP4NhXjfFbNRfMeoZA6VvIY%3A2oaw55mX&artwork=true&color=%23FFD489&theme=dark" 
 			width="480" 
 			height="395"
-			title="Experimental"
+			title="Ambient"
 			loading="lazy"
 			referrerpolicy="no-referrer-when-downgrade"
 			style="border: none; border-radius: 0;">
@@ -180,12 +180,12 @@
 		</div>
 	</div>
 	<div class="disco-playlist-item">
-		<div class="playlist-title">ORCHESTRAL SKETCHES</div>
+		<div class="playlist-title">Others</div>
 		<iframe 
 			src="https://erwnlp.disco.ac/e/p/25812811?download=false&s=hWBfAgeQXWdsPWoSs1EsJr01jV0%3ASl7bXK5Q&artwork=true&color=%23FFD489&theme=dark" 
 			width="480" 
 			height="395"
-			title="Orchestral Sketches"
+			title="Others"
 			loading="lazy"
 			referrerpolicy="no-referrer-when-downgrade"
 			style="border: none; border-radius: 0;">
@@ -726,17 +726,17 @@
 	}
 
 	.playlist-title {
-		position: absolute;
-		top: -40px;
-		left: 0;
-		color: rgb(255, 212, 137); /* Your gold color */
-		font-size: 16px;
-		font-weight: bold;
-		z-index: 4;
-		text-align: center;
-		width: 100%;
-		text-transform: uppercase;
-		letter-spacing: 1px;
+	position: absolute;
+	top: -40px;
+	left: 0;
+	color: rgb(255, 212, 137); /* Your gold color */
+	font-size: 16px;
+	font-weight: normal; /* Changed from bold to normal */
+	font-family: 'Poppins', sans-serif; /* Added Poppins font */
+	z-index: 4;
+	text-align: center;
+	width: 100%;
+	/* Removed text-transform: uppercase and letter-spacing */
 	}
 
 	.disco-playlist-item iframe {
