@@ -105,16 +105,17 @@
 </section>
 
 <section id="music">
-	<!-- Disco.ac Playlist Section -->
+<!-- Disco.ac Playlist Section -->
 	<div class="disco-playlists">
 		<div class="disco-playlist-item">
 			<iframe 
-				src="https://erwnlp.disco.ac/e/p/25812605?download=false&s=mNNyU1A8vVNR4X5gGtkjSFKwcB8%3ArO2qPM4U&artwork=true&color=%23FFD700&theme=dark" 
+				src="https://erwnlp.disco.ac/e/p/25812605?download=false&s=mNNyU1A8vVNR4X5gGtkjSFKwcB8%3ArO2qPM4U&artwork=true&color=%23C9B037&theme=dark" 
 				width="480" 
 				height="395"
 				title="Playlist 1"
 				loading="lazy"
-				referrerpolicy="no-referrer-when-downgrade">
+				referrerpolicy="no-referrer-when-downgrade"
+				style="border: none; border-radius: 0;">
 			</iframe>
 			<div class="iframe-fallback">
 				<p>Playlist blocked by privacy settings</p>
@@ -125,12 +126,13 @@
 		</div>
 		<div class="disco-playlist-item">
 			<iframe 
-				src="https://erwnlp.disco.ac/e/p/25812703?download=false&s=EW9JzXaNYnSnPoyEHaLTQ1qtMSU%3AvJ6VjBXS&artwork=true&color=%23FFD700&theme=dark" 
+				src="https://erwnlp.disco.ac/e/p/25812703?download=false&s=EW9JzXaNYnSnPoyEHaLTQ1qtMSU%3AvJ6VjBXS&artwork=true&color=%23C9B037&theme=dark" 
 				width="480" 
 				height="395"
 				title="Playlist 2"
 				loading="lazy"
-				referrerpolicy="no-referrer-when-downgrade">
+				referrerpolicy="no-referrer-when-downgrade"
+				style="border: none; border-radius: 0;">
 			</iframe>
 			<div class="iframe-fallback">
 				<p>Playlist blocked by privacy settings</p>
@@ -141,12 +143,13 @@
 		</div>
 		<div class="disco-playlist-item">
 			<iframe 
-				src="https://erwnlp.disco.ac/e/p/25812733?download=false&s=MKYZDZLN0lJPRNnVkoUaxwr01xA%3AIcAWr0Ok&artwork=true&color=%23FFD700&theme=dark" 
+				src="https://erwnlp.disco.ac/e/p/25812733?download=false&s=MKYZDZLN0lJPRNnVkoUaxwr01xA%3AIcAWr0Ok&artwork=true&color=%23C9B037&theme=dark" 
 				width="480" 
 				height="395"
 				title="Playlist 3"
 				loading="lazy"
-				referrerpolicy="no-referrer-when-downgrade">
+				referrerpolicy="no-referrer-when-downgrade"
+				style="border: none; border-radius: 0;">
 			</iframe>
 			<div class="iframe-fallback">
 				<p>Playlist blocked by privacy settings</p>
@@ -157,12 +160,13 @@
 		</div>
 		<div class="disco-playlist-item">
 			<iframe 
-				src="https://erwnlp.disco.ac/e/p/25812761?download=false&s=-2vTFP4NhXjfFbNRfMeoZA6VvIY%3A2oaw55mX&artwork=true&color=%23FFD700&theme=dark" 
+				src="https://erwnlp.disco.ac/e/p/25812761?download=false&s=-2vTFP4NhXjfFbNRfMeoZA6VvIY%3A2oaw55mX&artwork=true&color=%23C9B037&theme=dark" 
 				width="480" 
 				height="395"
 				title="Playlist 4"
 				loading="lazy"
-				referrerpolicy="no-referrer-when-downgrade">
+				referrerpolicy="no-referrer-when-downgrade"
+				style="border: none; border-radius: 0;">
 			</iframe>
 			<div class="iframe-fallback">
 				<p>Playlist blocked by privacy settings</p>
@@ -173,12 +177,13 @@
 		</div>
 		<div class="disco-playlist-item">
 			<iframe 
-				src="https://erwnlp.disco.ac/e/p/25812811?download=false&s=hWBfAgeQXWdsPWoSs1EsJr01jV0%3ASl7bXK5Q&artwork=true&color=%23FFD700&theme=dark" 
+				src="https://erwnlp.disco.ac/e/p/25812811?download=false&s=hWBfAgeQXWdsPWoSs1EsJr01jV0%3ASl7bXK5Q&artwork=true&color=%23C9B037&theme=dark" 
 				width="480" 
 				height="395"
 				title="Playlist 5"
 				loading="lazy"
-				referrerpolicy="no-referrer-when-downgrade">
+				referrerpolicy="no-referrer-when-downgrade"
+				style="border: none; border-radius: 0;">
 			</iframe>
 			<div class="iframe-fallback">
 				<p>Playlist blocked by privacy settings</p>
@@ -696,7 +701,7 @@
 		}
 	}
 
-		/* === DISCO CSS WITH MORE HORIZONTAL SPACE === */
+		/* === DISCO CSS WITH EXACT COLOR MATCHING === */
 	.disco-playlists {
 		grid-column: 1 / span 5; /* Use full width instead of 2/span3 */
 		display: grid;
@@ -717,10 +722,11 @@
 	.disco-playlist-item iframe {
 		width: 100%;
 		height: 100%;
-		border-radius: 8px;
+		border-radius: 0; /* Remove rounded corners to match your site */
 		position: relative;
 		z-index: 2;
-		background: white;
+		background: transparent; /* Remove white background */
+		border: none; /* Remove any border */
 	}
 
 	/* Fallback - hidden by default, exact same size as iframe */
@@ -730,7 +736,7 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+		background: #0a0a0a; /* Your exact dark background color */
 		color: white;
 		display: flex;
 		flex-direction: column;
@@ -738,7 +744,7 @@
 		justify-content: center;
 		text-align: center;
 		padding: 20px;
-		border-radius: 8px;
+		border-radius: 0; /* Remove rounded corners */
 		border: 1px solid #333;
 		z-index: 1;
 		opacity: 0;
@@ -767,19 +773,19 @@
 	}
 
 	.iframe-fallback a {
-	color: #FFD700; /* Gold to match the playlists */
-	text-decoration: none;
-	font-weight: bold;
-	border: 2px solid #FFD700;
-	padding: 10px 20px;
-	border-radius: 6px;
-	transition: all 0.3s ease;
-	font-size: 13px;
+		color: #C9B037; /* Exact gold from your website title */
+		text-decoration: none;
+		font-weight: bold;
+		border: 1px solid #C9B037; /* Thinner border to match elegant style */
+		padding: 8px 16px;
+		border-radius: 0; /* Square corners to match your site */
+		transition: all 0.3s ease;
+		font-size: 13px;
 	}
 
 	.iframe-fallback a:hover {
-	background-color: #FFD700;
-	color: black;
+		background-color: #C9B037;
+		color: black;
 	}
 
 	/* Responsive design */
