@@ -7,38 +7,53 @@
 	import LightYoutube from './LightYoutube.svelte';
 	import { fade } from 'svelte/transition';
 
-		// Disco iframe detection - more aggressive version
+		// Disco iframe detection - improved version
 	onMount(() => {
-		// Check immediately and multiple times
 		function checkIframes() {
 			const iframes = document.querySelectorAll('.disco-playlist-item iframe');
-			iframes.forEach((iframe) => {
-				// Check if iframe has very small height (blocked)
-				if (iframe.offsetHeight < 100) {
-					iframe.parentElement.classList.add('blocked');
-					return;
-				}
-				
-				// Try to access content
-				try {
-					const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-					// If body is mostly empty, it's blocked
-					if (iframeDoc.body.innerHTML.length < 1000) {
-						iframe.parentElement.classList.add('blocked');
+			iframes.forEach((iframe, index) => {
+				// Check if iframe has loaded content
+				setTimeout(() => {
+					let isBlocked = false;
+					
+					try {
+						// Method 1: Check if we can access the iframe content
+						const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+						const bodyContent = iframeDoc.body.innerHTML;
+						
+						// If body is very empty or contains error-like content, it's blocked
+						if (bodyContent.length < 500 || 
+							bodyContent.includes('blocked') || 
+							bodyContent.includes('cookie') ||
+							bodyContent.includes('tracking')) {
+							isBlocked = true;
+						}
+					} catch (error) {
+						// Method 2: Cross-origin error means blocked
+						isBlocked = true;
 					}
-				} catch (error) {
-					// Any error means blocked
-					iframe.parentElement.classList.add('blocked');
-				}
+					
+					// Method 3: Check if iframe has very small visible content
+					if (iframe.offsetHeight < 50 || iframe.offsetWidth < 50) {
+						isBlocked = true;
+					}
+					
+					if (isBlocked) {
+						iframe.parentElement.classList.add('blocked');
+						console.log(`Playlist ${index + 1} is blocked`);
+					} else {
+						iframe.parentElement.classList.remove('blocked');
+						console.log(`Playlist ${index + 1} loaded successfully`);
+					}
+				}, index * 500); // Stagger the checks
 			});
 		}
 		
-		// Check multiple times
-		checkIframes();
+		// Check multiple times to catch delayed blocking
 		setTimeout(checkIframes, 1000);
 		setTimeout(checkIframes, 3000);
 		setTimeout(checkIframes, 5000);
-	});
+	});	
 
 	let soundcloudIframe;
 	let mediaGridElementWidth;
@@ -681,7 +696,7 @@
 		}
 	}
 
-			/* === DISCO CSS WITH PROPER FALLBACK LAYERING === */
+		/* === DISCO CSS WITH FIXED SIZING === */
 	.disco-playlists {
 		grid-column: 2 / span 3;
 		display: grid;
@@ -692,22 +707,22 @@
 
 	.disco-playlist-item {
 		width: 100%;
+		height: 395px; /* Fixed height to match iframe */
 		display: flex;
 		justify-content: center;
 		position: relative;
-		min-height: 400px;
 	}
 
 	.disco-playlist-item iframe {
-		max-width: 100%;
-		height: 395px;
+		width: 100%;
+		height: 100%;
 		border-radius: 8px;
 		position: relative;
-		z-index: 1; /* Lower z-index */
+		z-index: 2;
 		background: white;
 	}
 
-	/* Fallback should be on top by default */
+	/* Fallback - hidden by default, exact same size as iframe */
 	.iframe-fallback {
 		position: absolute;
 		top: 0;
@@ -721,47 +736,49 @@
 		align-items: center;
 		justify-content: center;
 		text-align: center;
-		padding: 30px;
+		padding: 20px;
 		border-radius: 8px;
 		border: 1px solid #333;
-		z-index: 2; /* Higher z-index to be on top */
+		z-index: 1; /* Behind by default */
+		opacity: 0;
+		pointer-events: none;
+		transition: opacity 0.3s ease;
+		box-sizing: border-box;
+	}
+
+	/* When iframe is blocked, show fallback on top */
+	.disco-playlist-item.blocked .iframe-fallback {
+		z-index: 3;
 		opacity: 1;
+		pointer-events: all;
 	}
 
-	/* When iframe loads successfully in Chrome/Safari, hide the fallback */
-	.disco-playlist-item:not(.blocked) .iframe-fallback {
-		display: none; /* Completely hide fallback when iframe works */
-	}
-
-	/* When iframe is blocked, ensure it's behind the fallback */
+	/* When iframe is blocked, hide the iframe */
 	.disco-playlist-item.blocked iframe {
-		z-index: 1;
-		opacity: 0.3; /* Make the white block semi-transparent so fallback is readable */
+		display: none;
 	}
 
 	.iframe-fallback p {
-		font-size: 16px;
+		font-size: 14px;
 		margin-bottom: 15px;
 		opacity: 0.8;
+		line-height: 1.4;
 	}
 
 	.iframe-fallback a {
 		color: #32B57C;
 		text-decoration: none;
 		font-weight: bold;
-		margin-top: 10px;
 		border: 2px solid #32B57C;
-		padding: 12px 24px;
+		padding: 10px 20px;
 		border-radius: 6px;
 		transition: all 0.3s ease;
-		font-size: 14px;
+		font-size: 13px;
 	}
 
 	.iframe-fallback a:hover {
 		background-color: #32B57C;
 		color: black;
-		transform: translateY(-2px);
-		box-shadow: 0 4px 12px rgba(50, 181, 124, 0.3);
 	}
 
 	/* Responsive design */
@@ -782,22 +799,21 @@
 			grid-template-columns: 1fr;
 		}
 		
-		.disco-playlist-item iframe {
-			width: 100%;
+		.disco-playlist-item {
 			height: 300px;
 		}
 		
 		.iframe-fallback {
-			padding: 20px;
+			padding: 15px;
 		}
 		
 		.iframe-fallback p {
-			font-size: 14px;
+			font-size: 13px;
 		}
 		
 		.iframe-fallback a {
-			padding: 10px 20px;
-			font-size: 13px;
+			padding: 8px 16px;
+			font-size: 12px;
 		}
 	}
 	/* === END OF DISCO CSS === */
