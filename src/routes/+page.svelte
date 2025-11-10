@@ -611,7 +611,7 @@
 		#home {
 			height: 100%;
 			background-size: cover;
-			background-position: 30% 20%;
+			background-position: 70% 20%;
 			min-height: 80vh;
 		}
 
