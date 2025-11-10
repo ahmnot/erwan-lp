@@ -109,7 +109,7 @@
 	<div class="disco-playlists">
 		<div class="disco-playlist-item">
 			<iframe 
-				src="https://erwnlp.disco.ac/e/p/25812605?download=false&s=lWgFf-vOLQQTqI1DAu1OjHZCNhc%3An4sYUGlO&artwork=true&color=%2332B57C&theme=white" 
+				src="https://erwnlp.disco.ac/e/p/25812605?download=false&s=mNNyU1A8vVNR4X5gGtkjSFKwcB8%3ArO2qPM4U&artwork=true&color=%2332B57C&theme=white" 
 				width="480" 
 				height="395"
 				title="Playlist 1"
@@ -125,7 +125,7 @@
 		</div>
 		<div class="disco-playlist-item">
 			<iframe 
-				src="https://erwnlp.disco.ac/e/p/25812703?download=false&s=6Lg36zOcNASYy3FY6oYl5IIAXto%3A2zTVr1x9&artwork=true&color=%2332B57C&theme=white" 
+				src="https://erwnlp.disco.ac/e/p/25812703?download=false&s=EW9JzXaNYnSnPoyEHaLTQ1qtMSU%3AvJ6VjBXS&artwork=true&color=%2332B57C&theme=white" 
 				width="480" 
 				height="395"
 				title="Playlist 2"
@@ -141,7 +141,7 @@
 		</div>
 		<div class="disco-playlist-item">
 			<iframe 
-				src="https://erwnlp.disco.ac/e/p/25812733?download=false&s=OsHjLe_pj24ZCzm_fPCeKzlgMIU%3AUUdpqLsw&artwork=true&color=%2332B57C&theme=white" 
+				src="https://erwnlp.disco.ac/e/p/25812733?download=false&s=MKYZDZLN0lJPRNnVkoUaxwr01xA%3AIcAWr0Ok&artwork=true&color=%2332B57C&theme=white" 
 				width="480" 
 				height="395"
 				title="Playlist 3"
@@ -157,7 +157,7 @@
 		</div>
 		<div class="disco-playlist-item">
 			<iframe 
-				src="https://erwnlp.disco.ac/e/p/25812761?download=false&s=TKM7neFFklse5aSZZljRIdgpTKA%3A2jXPWKdv&artwork=true&color=%2332B57C&theme=white" 
+				src="https://erwnlp.disco.ac/e/p/25812761?download=false&s=-2vTFP4NhXjfFbNRfMeoZA6VvIY%3A2oaw55mX&artwork=true&color=%2332B57C&theme=white" 
 				width="480" 
 				height="395"
 				title="Playlist 4"
@@ -173,7 +173,7 @@
 		</div>
 		<div class="disco-playlist-item">
 			<iframe 
-				src="https://erwnlp.disco.ac/e/p/25812811?download=false&s=ty3jvmHwsmbjTubs4EvVIJHgOdw%3ARGJa3FJa&artwork=true&color=%2332B57C&theme=white" 
+				src="https://erwnlp.disco.ac/e/p/25812811?download=false&s=hWBfAgeQXWdsPWoSs1EsJr01jV0%3ASl7bXK5Q&artwork=true&color=%2332B57C&theme=white" 
 				width="480" 
 				height="395"
 				title="Playlist 5"
