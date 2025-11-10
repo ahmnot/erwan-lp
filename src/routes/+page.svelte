@@ -109,7 +109,7 @@
 	<div class="disco-playlists">
 		<div class="disco-playlist-item">
 			<iframe 
-				src="https://erwnlp.disco.ac/e/p/25812605?download=false&s=mNNyU1A8vVNR4X5gGtkjSFKwcB8%3ArO2qPM4U&artwork=true&color=%23C9B037&theme=dark" 
+				src="https://erwnlp.disco.ac/e/p/25812605?download=false&s=mNNyU1A8vVNR4X5gGtkjSFKwcB8%3ArO2qPM4U&artwork=true&color=%23FFD489&theme=dark" 
 				width="480" 
 				height="395"
 				title="Playlist 1"
@@ -126,7 +126,7 @@
 		</div>
 		<div class="disco-playlist-item">
 			<iframe 
-				src="https://erwnlp.disco.ac/e/p/25812703?download=false&s=EW9JzXaNYnSnPoyEHaLTQ1qtMSU%3AvJ6VjBXS&artwork=true&color=%23C9B037&theme=dark" 
+				src="https://erwnlp.disco.ac/e/p/25812703?download=false&s=EW9JzXaNYnSnPoyEHaLTQ1qtMSU%3AvJ6VjBXS&artwork=true&color=%23FFD489&theme=dark" 
 				width="480" 
 				height="395"
 				title="Playlist 2"
@@ -143,7 +143,7 @@
 		</div>
 		<div class="disco-playlist-item">
 			<iframe 
-				src="https://erwnlp.disco.ac/e/p/25812733?download=false&s=MKYZDZLN0lJPRNnVkoUaxwr01xA%3AIcAWr0Ok&artwork=true&color=%23C9B037&theme=dark" 
+				src="https://erwnlp.disco.ac/e/p/25812733?download=false&s=MKYZDZLN0lJPRNnVkoUaxwr01xA%3AIcAWr0Ok&artwork=true&color=%23FFD489&theme=dark" 
 				width="480" 
 				height="395"
 				title="Playlist 3"
@@ -160,7 +160,7 @@
 		</div>
 		<div class="disco-playlist-item">
 			<iframe 
-				src="https://erwnlp.disco.ac/e/p/25812761?download=false&s=-2vTFP4NhXjfFbNRfMeoZA6VvIY%3A2oaw55mX&artwork=true&color=%23C9B037&theme=dark" 
+				src="https://erwnlp.disco.ac/e/p/25812761?download=false&s=-2vTFP4NhXjfFbNRfMeoZA6VvIY%3A2oaw55mX&artwork=true&color=%23FFD489&theme=dark" 
 				width="480" 
 				height="395"
 				title="Playlist 4"
@@ -177,7 +177,7 @@
 		</div>
 		<div class="disco-playlist-item">
 			<iframe 
-				src="https://erwnlp.disco.ac/e/p/25812811?download=false&s=hWBfAgeQXWdsPWoSs1EsJr01jV0%3ASl7bXK5Q&artwork=true&color=%23C9B037&theme=dark" 
+				src="https://erwnlp.disco.ac/e/p/25812811?download=false&s=hWBfAgeQXWdsPWoSs1EsJr01jV0%3ASl7bXK5Q&artwork=true&color=%23FFD489&theme=dark" 
 				width="480" 
 				height="395"
 				title="Playlist 5"
@@ -701,7 +701,7 @@
 		}
 	}
 
-		/* === DISCO CSS WITH EXACT COLOR MATCHING === */
+			/* === DISCO CSS WITH EXACT COLOR MATCHING === */
 	.disco-playlists {
 		grid-column: 1 / span 5; /* Use full width instead of 2/span3 */
 		display: grid;
@@ -736,8 +736,8 @@
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background: #0a0a0a; /* Your exact dark background color */
-		color: white;
+		background: rgba(0, 0, 0, 0); /* Your exact transparent black background */
+		color: rgba(255, 255, 255, 0.9); /* Your exact text color */
 		display: flex;
 		flex-direction: column;
 		align-items: center;
@@ -758,6 +758,7 @@
 		z-index: 3;
 		opacity: 1;
 		pointer-events: all;
+		background: rgba(0, 0, 0, 0.9); /* Dark background when visible */
 	}
 
 	/* When iframe is blocked, hide the iframe */
@@ -768,15 +769,15 @@
 	.iframe-fallback p {
 		font-size: 14px;
 		margin-bottom: 15px;
-		opacity: 0.8;
+		opacity: 0.9; /* Match your text opacity */
 		line-height: 1.4;
 	}
 
 	.iframe-fallback a {
-		color: #C9B037; /* Exact gold from your website title */
+		color: rgb(255, 212, 137); /* Your exact gold color */
 		text-decoration: none;
 		font-weight: bold;
-		border: 1px solid #C9B037; /* Thinner border to match elegant style */
+		border: 1px solid rgb(255, 212, 137); /* Your exact gold color */
 		padding: 8px 16px;
 		border-radius: 0; /* Square corners to match your site */
 		transition: all 0.3s ease;
@@ -784,7 +785,7 @@
 	}
 
 	.iframe-fallback a:hover {
-		background-color: #C9B037;
+		background-color: rgb(255, 212, 137); /* Your exact gold color */
 		color: black;
 	}
 
