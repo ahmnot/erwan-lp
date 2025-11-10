@@ -7,24 +7,38 @@
 	import LightYoutube from './LightYoutube.svelte';
 	import { fade } from 'svelte/transition';
 
-	// === ADD THIS CODE RIGHT HERE ===
+		// Disco iframe detection - more aggressive version
 	onMount(() => {
-		// Check if disco iframes are blocked
-		setTimeout(() => {
+		// Check immediately and multiple times
+		function checkIframes() {
 			const iframes = document.querySelectorAll('.disco-playlist-item iframe');
 			iframes.forEach((iframe) => {
+				// Check if iframe has very small height (blocked)
+				if (iframe.offsetHeight < 100) {
+					iframe.parentElement.classList.add('blocked');
+					return;
+				}
+				
+				// Try to access content
 				try {
 					const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-					if (iframeDoc.body.children.length < 3) {
+					// If body is mostly empty, it's blocked
+					if (iframeDoc.body.innerHTML.length < 1000) {
 						iframe.parentElement.classList.add('blocked');
 					}
 				} catch (error) {
+					// Any error means blocked
 					iframe.parentElement.classList.add('blocked');
 				}
 			});
-		}, 2000);
+		}
+		
+		// Check multiple times
+		checkIframes();
+		setTimeout(checkIframes, 1000);
+		setTimeout(checkIframes, 3000);
+		setTimeout(checkIframes, 5000);
 	});
-	// === END OF ADDED CODE ===
 
 	let soundcloudIframe;
 	let mediaGridElementWidth;
@@ -667,7 +681,7 @@
 		}
 	}
 
-		/* === DISCO CSS WITH FALLBACK === */
+		/* === DISCO CSS WITH ALWAYS-VISIBLE FALLBACK === */
 	.disco-playlists {
 		grid-column: 2 / span 3;
 		display: grid;
@@ -681,21 +695,26 @@
 		display: flex;
 		justify-content: center;
 		position: relative;
+		min-height: 400px;
 	}
 
 	.disco-playlist-item iframe {
 		max-width: 100%;
 		height: 395px;
 		border-radius: 8px;
+		position: relative;
+		z-index: 2;
+		background: white; /* Add background so we can see if iframe is empty */
 	}
 
+	/* Fallback is always there but hidden behind */
 	.iframe-fallback {
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background: rgba(0, 0, 0, 0.9);
+		background: rgba(0, 0, 0, 0.95);
 		color: white;
 		display: flex;
 		flex-direction: column;
@@ -704,9 +723,13 @@
 		text-align: center;
 		padding: 20px;
 		border-radius: 8px;
-		opacity: 0;
-		transition: opacity 0.3s;
-		pointer-events: none;
+		z-index: 1;
+		opacity: 1; /* Always visible but behind */
+	}
+
+	/* When iframe is blocked or empty, bring fallback to front */
+	.disco-playlist-item.blocked .iframe-fallback {
+		z-index: 3;
 	}
 
 	.iframe-fallback a {
@@ -714,7 +737,6 @@
 		text-decoration: none;
 		font-weight: bold;
 		margin-top: 10px;
-		pointer-events: all;
 		border: 1px solid #32B57C;
 		padding: 8px 16px;
 		border-radius: 4px;
@@ -724,12 +746,6 @@
 	.iframe-fallback a:hover {
 		background-color: #32B57C;
 		color: black;
-	}
-
-	/* Show fallback when iframe is blocked - this will be controlled by JavaScript */
-	.disco-playlist-item.blocked .iframe-fallback {
-		opacity: 1;
-		pointer-events: all;
 	}
 
 	/* Responsive design */
