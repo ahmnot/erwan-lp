@@ -57,6 +57,25 @@
 </section>
 
 <section id="music">
+	<!-- Disco.ac Playlists Section -->
+	<div class="disco-playlists">
+		<div class="disco-playlist-item">
+			<iframe id="disco-playlist-25812605" name="disco-playlist-25812605" allowfullscreen frameborder="0" class="disco-embed" src="https://erwnlp.disco.ac/e/p/25812605?download=true&s=lWgFf-vOLQQTqI1DAu1OjHZCNhc%3An4sYUGlO&artwork=true&color=%2332B57C&theme=white" width="480" height="395"></iframe>
+		</div>
+		<div class="disco-playlist-item">
+			<iframe id="disco-playlist-25812703" name="disco-playlist-25812703" allowfullscreen frameborder="0" class="disco-embed" src="https://erwnlp.disco.ac/e/p/25812703?download=true&s=6Lg36zOcNASYy3FY6oYl5IIAXto%3A2zTVr1x9&artwork=true&color=%2332B57C&theme=white" width="480" height="395"></iframe>
+		</div>
+		<div class="disco-playlist-item">
+			<iframe id="disco-playlist-25812733" name="disco-playlist-25812733" allowfullscreen frameborder="0" class="disco-embed" src="https://erwnlp.disco.ac/e/p/25812733?download=true&s=OsHjLe_pj24ZCzm_fPCeKzlgMIU%3AUUdpqLsw&artwork=true&color=%2332B57C&theme=white" width="480" height="395"></iframe>
+		</div>
+		<div class="disco-playlist-item">
+			<iframe id="disco-playlist-25812761" name="disco-playlist-25812761" allowfullscreen frameborder="0" class="disco-embed" src="https://erwnlp.disco.ac/e/p/25812761?download=true&s=TKM7neFFklse5aSZZljRIdgpTKA%3A2jXPWKdv&artwork=true&color=%2332B57C&theme=white" width="480" height="395"></iframe>
+		</div>
+		<div class="disco-playlist-item">
+			<iframe id="disco-playlist-25812811" name="disco-playlist-25812811" allowfullscreen frameborder="0" class="disco-embed" src="https://erwnlp.disco.ac/e/p/25812811?download=true&s=ty3jvmHwsmbjTubs4EvVIJHgOdw%3ARGJa3FJa&artwork=true&color=%2332B57C&theme=white" width="480" height="395"></iframe>
+		</div>
+	</div>
+
 	<div class="media-grid" bind:clientWidth={mediaGridElementWidth}>
 		{#each mediaList as media (media.id)}
 			<MediaSquareContainer {...media} />
@@ -563,4 +582,51 @@
 			grid-template-columns: 1fr;
 		}
 	}
+
+	/* === PASTE DISCO CSS RIGHT HERE === */
+	.disco-playlists {
+		grid-column: 2 / span 3;
+		display: grid;
+		grid-template-columns: repeat(5, 1fr);
+		gap: 20px;
+		margin-bottom: 60px;
+	}
+
+	.disco-playlist-item {
+		width: 100%;
+		display: flex;
+		justify-content: center;
+	}
+
+	.disco-playlist-item iframe {
+		max-width: 100%;
+		height: 395px;
+		border-radius: 8px;
+	}
+
+	/* Responsive design */
+	@media (max-width: 1400px) {
+		.disco-playlists {
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+
+	@media (max-width: 768px) {
+		.disco-playlists {
+			grid-template-columns: repeat(2, 1fr);
+		}
+	}
+
+	@media (max-width: 480px) {
+		.disco-playlists {
+			grid-template-columns: 1fr;
+		}
+		
+		.disco-playlist-item iframe {
+			width: 100%;
+			height: 300px;
+		}
+	}
+	/* === END OF DISCO CSS === */
+	
 </style>
