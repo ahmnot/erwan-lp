@@ -681,7 +681,7 @@
 		}
 	}
 
-		/* === DISCO CSS WITH ALWAYS-VISIBLE FALLBACK === */
+		/* === DISCO CSS WITH POLISHED FALLBACK === */
 	.disco-playlists {
 		grid-column: 2 / span 3;
 		display: grid;
@@ -704,32 +704,37 @@
 		border-radius: 8px;
 		position: relative;
 		z-index: 2;
-		background: white; /* Add background so we can see if iframe is empty */
+		background: white;
 	}
 
-	/* Fallback is always there but hidden behind */
 	.iframe-fallback {
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
-		background: rgba(0, 0, 0, 0.95);
+		background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
 		color: white;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
 		text-align: center;
-		padding: 20px;
+		padding: 30px;
 		border-radius: 8px;
+		border: 1px solid #333;
 		z-index: 1;
-		opacity: 1; /* Always visible but behind */
+		opacity: 1;
 	}
 
-	/* When iframe is blocked or empty, bring fallback to front */
 	.disco-playlist-item.blocked .iframe-fallback {
 		z-index: 3;
+	}
+
+	.iframe-fallback p {
+		font-size: 16px;
+		margin-bottom: 15px;
+		opacity: 0.8;
 	}
 
 	.iframe-fallback a {
@@ -737,15 +742,18 @@
 		text-decoration: none;
 		font-weight: bold;
 		margin-top: 10px;
-		border: 1px solid #32B57C;
-		padding: 8px 16px;
-		border-radius: 4px;
-		transition: background-color 0.3s;
+		border: 2px solid #32B57C;
+		padding: 12px 24px;
+		border-radius: 6px;
+		transition: all 0.3s ease;
+		font-size: 14px;
 	}
 
 	.iframe-fallback a:hover {
 		background-color: #32B57C;
 		color: black;
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(50, 181, 124, 0.3);
 	}
 
 	/* Responsive design */
@@ -769,6 +777,19 @@
 		.disco-playlist-item iframe {
 			width: 100%;
 			height: 300px;
+		}
+		
+		.iframe-fallback {
+			padding: 20px;
+		}
+		
+		.iframe-fallback p {
+			font-size: 14px;
+		}
+		
+		.iframe-fallback a {
+			padding: 10px 20px;
+			font-size: 13px;
 		}
 	}
 	/* === END OF DISCO CSS === */
