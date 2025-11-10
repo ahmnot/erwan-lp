@@ -633,25 +633,34 @@
 		}
 	}
 
-	/* === PASTE DISCO CSS RIGHT HERE === */
+		/* === DISCO CSS WITH DEBUG === */
 	.disco-playlists {
 		grid-column: 2 / span 3;
 		display: grid;
 		grid-template-columns: repeat(5, 1fr);
 		gap: 20px;
 		margin-bottom: 60px;
+		background-color: rgba(255, 0, 0, 0.2); /* Red background to see container */
+		border: 2px dashed red; /* Dashed red border */
+		min-height: 400px; /* Ensure minimum height */
+		padding: 10px; /* Add some padding */
 	}
 
 	.disco-playlist-item {
 		width: 100%;
 		display: flex;
 		justify-content: center;
+		background-color: rgba(0, 255, 0, 0.2); /* Green background */
+		border: 1px solid green; /* Green border */
+		min-height: 400px; /* Ensure height */
 	}
 
 	.disco-playlist-item iframe {
 		max-width: 100%;
 		height: 395px;
 		border-radius: 8px;
+		border: 2px solid blue; /* Blue border around iframes */
+		background-color: white; /* White background in case iframe fails */
 	}
 
 	/* Responsive design */
