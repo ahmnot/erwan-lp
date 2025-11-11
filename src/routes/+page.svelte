@@ -233,12 +233,12 @@ onMount(() => {
 		</div>
 	</div>
 	<div class="disco-playlist-item">
-		<div class="playlist-title">Ambiant</div>
+		<div class="playlist-title">Ambient</div>
 		<iframe 
 			src="https://erwnlp.disco.ac/e/p/25812761?download=false&s=-2vTFP4NhXjfFbNRfMeoZA6VvIY%3A2oaw55mX&artwork=false&color=%23FFD489&theme=dark" 
 			width="480" 
 			height="395"
-			title="Ambiant"
+			title="Ambient"
 			loading="lazy"
 			referrerpolicy="no-referrer-when-downgrade"
 			style="border: none; border-radius: 0;">
