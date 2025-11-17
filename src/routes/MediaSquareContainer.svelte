@@ -2,7 +2,6 @@
 	// @ts-nocheck
 	import { underlineVisible } from '$lib/underlineVisibility';
 	import { onMount } from 'svelte';
-	import { spring } from 'svelte/motion';
 	
 	export let id = '';
 	export let imageCarre = '';
@@ -19,53 +18,38 @@
 	let imageComplete = false;
 	
 	// Tilt effect variables
-	let ref;
-	let lastY = 0;
+	let container;
+	let rotateX = 0;
+	let rotateY = 0;
+	let scale = 1;
+	let tooltipVisible = false;
+	let tooltipX = 0;
+	let tooltipY = 0;
 
-	// Use regular let variables for state that we'll update
-	let x = 0;
-	let y = 0;
+	function handleMouseMove(e) {
+		if (!container) return;
 
-	// Create spring motions for smooth animations
-	let rotateXSpring = $state(spring(0, { stiffness: 100, damping: 30, mass: 2 }));
-	let rotateYSpring = $state(spring(0, { stiffness: 100, damping: 30, mass: 2 }));
-	let scaleSpring = $state(spring(1, { stiffness: 100, damping: 30, mass: 2 }));
-	let opacitySpring = $state(spring(0, { stiffness: 100, damping: 30, mass: 2 }));
-	let rotateFigcaptionSpring = $state(spring(0, { stiffness: 350, damping: 30, mass: 1 }));
-
-	function handleMouse(e) {
-		if (!ref) return;
-
-		const rect = ref.getBoundingClientRect();
+		const rect = container.getBoundingClientRect();
 		const offsetX = e.clientX - rect.left - rect.width / 2;
 		const offsetY = e.clientY - rect.top - rect.height / 2;
 
-		const rotationX = (offsetY / (rect.height / 2)) * -14;
-		const rotationY = (offsetX / (rect.width / 2)) * 14;
-
-		// Update the spring values directly
-		rotateXSpring.set(rotationX);
-		rotateYSpring.set(rotationY);
-
-		x = e.clientX - rect.left;
-		y = e.clientY - rect.top;
-
-		const velocityY = offsetY - lastY;
-		rotateFigcaptionSpring.set(-velocityY * 0.6);
-		lastY = offsetY;
+		rotateX = (offsetY / (rect.height / 2)) * -10;
+		rotateY = (offsetX / (rect.width / 2)) * 10;
+		
+		tooltipX = e.clientX - rect.left;
+		tooltipY = e.clientY - rect.top;
 	}
 
 	function handleMouseEnter() {
-		scaleSpring.set(1.05);
-		opacitySpring.set(1);
+		scale = 1.05;
+		tooltipVisible = true;
 	}
 
 	function handleMouseLeave() {
-		opacitySpring.set(0);
-		scaleSpring.set(1);
-		rotateXSpring.set(0);
-		rotateYSpring.set(0);
-		rotateFigcaptionSpring.set(0);
+		scale = 1;
+		rotateX = 0;
+		rotateY = 0;
+		tooltipVisible = false;
 	}
 
 	function handleClick() {
@@ -83,7 +67,6 @@
 	}
 
 	onMount(() => {
-		// assignments just to remove the warnings
 		youtube = '';
 		soundcloud = '';
 		soundcloudAPINumber = '';
@@ -98,21 +81,19 @@
 	});
 </script>
 
-<a
-	href="/{id}" 
-	class="media-container"
-	on:click={handleClick}
-	on:keydown={handleKeyDown}
-	role="button"
-	tabindex="0"
-	bind:this={ref}
-	on:mousemove={handleMouse}
-	on:mouseenter={handleMouseEnter}
-	on:mouseleave={handleMouseLeave}
->
-	<div 
-		class="tilted-card-inner"
-		style="transform: rotateX({$rotateXSpring}deg) rotateY({$rotateYSpring}deg) scale({$scaleSpring})"
+<div class="tilt-container">
+	<a
+		href="/{id}" 
+		class="media-container"
+		on:click={handleClick}
+		on:keydown={handleKeyDown}
+		role="button"
+		tabindex="0"
+		bind:this={container}
+		on:mousemove={handleMouseMove}
+		on:mouseenter={handleMouseEnter}
+		on:mouseleave={handleMouseLeave}
+		style="transform: perspective(800px) rotateX({rotateX}deg) rotateY({rotateY}deg) scale({scale});"
 	>
 		<div class="media-image-wrapper">
 			<img
@@ -133,60 +114,63 @@
 			<span class="media-author">{author}</span> - 
 			<div class="media-work">{work}</div>
 		</div>
-	</div>
-</a>
+	</a>
 
-<figcaption
-	class="tilted-card-caption"
-	style="left: {x}px; top: {y}px; opacity: {$opacitySpring}; transform: rotate({$rotateFigcaptionSpring}deg)"
->
-	{title}
-</figcaption>
+	{#if tooltipVisible}
+		<div 
+			class="tilt-tooltip"
+			style="left: {tooltipX}px; top: {tooltipY}px;"
+		>
+			{title}
+		</div>
+	{/if}
+</div>
 
 <style>
+	.tilt-container {
+		position: relative;
+		width: 100%;
+		height: 100%;
+	}
+
 	.media-container {
 		position: relative;
 		overflow: hidden;
-		perspective: 800px;
-	}
-
-	.tilted-card-inner {
-		transform-style: preserve-3d;
+		display: block;
 		width: 100%;
 		height: 100%;
 		transition: transform 0.1s ease-out;
+		transform-style: preserve-3d;
+	}
+
+	.tilt-tooltip {
+		position: absolute;
+		pointer-events: none;
+		background: white;
+		color: black;
+		padding: 5px 10px;
+		border-radius: 4px;
+		font-size: 12px;
+		white-space: nowrap;
+		z-index: 100;
+		transform: translate(-50%, -100%);
+		margin-top: -10px;
 	}
 
 	.media-image {
 		transform: translateZ(0);
-		will-change: transform;
 	}
 
 	.media-info {
 		transform: translateZ(20px);
-		z-index: 5;
-	}
-
-	.tilted-card-caption {
-		pointer-events: none;
-		position: absolute;
-		left: 0;
-		top: 0;
-		border-radius: 4px;
-		background-color: #fff;
-		padding: 4px 10px;
-		font-size: 10px;
-		color: #2d2d2d;
-		opacity: 0;
-		z-index: 10;
 	}
 
 	@media (max-width: 640px) {
-		.tilted-card-caption {
+		.tilt-tooltip {
 			display: none;
 		}
 		.media-container {
-			perspective: 0;
+			transform: none !important;
 		}
 	}
 
