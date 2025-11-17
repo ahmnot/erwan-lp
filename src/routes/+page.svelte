@@ -174,9 +174,15 @@ onMount(() => {
 </script>
 	
 <section id="home">
-	<div class="home-content">
-		<h1 class="home-name">Erwan Le Pape</h1>
-		<h2 class="home-title">composer</h2>
+	<div class="presentation-grid">
+		 <div class="texte-home">
+			<h1 id="main-title"> <span class="le-pape"> </span></h1>
+			<div class="sous-titres-wrapper"> 
+				<h2> </h2>
+				<h2> </h2>
+			</div>
+		</div> 
+		<!-- <div class="downwoard-arrow-home">↓</div> -->
 	</div>
 </section>
 
@@ -975,6 +981,8 @@ onMount(() => {
 			scroll-behavior: smooth;
 		}
 	}
+	
+	/* === END OF DISCO CSS === */
 		#home {
 		height: 100vh;
 		background-image: url('/erwan-fond-accueil.jpg');
@@ -983,13 +991,11 @@ onMount(() => {
 		background-repeat: no-repeat;
 		position: relative;
 		z-index: 0;
-		/* ADD THIS FOR GRADIENT OVERLAY */
 		display: flex;
 		align-items: center;
 	}
 
-	/* ADD THESE NEW RULES */
-
+	/* UPDATED GRADIENT - DARKER FROM LEFT */
 	#home::before {
 		content: '';
 		position: absolute;
@@ -998,10 +1004,12 @@ onMount(() => {
 		right: 0;
 		bottom: 0;
 		background: linear-gradient(to right, 
-			rgba(0, 0, 0, 0.6) 0%,
-			rgba(0, 0, 0, 0.4) 25%,
-			rgba(0, 0, 0, 0.2) 50%,
-			rgba(0, 0, 0, 0) 100%);
+			rgba(0, 0, 0, 0.8) 0%,        /* Much darker on the left */
+			rgba(0, 0, 0, 0.5) 25%,      /* Still quite dark at 25% */
+			rgba(0, 0, 0, 0.3) 50%,      /* Medium dark at 50% */
+			rgba(0, 0, 0, 0.1) 75%,      /* Very light at 75% */
+			rgba(0, 0, 0, 0) 100%        /* Completely transparent on the right */
+		);
 		z-index: 1;
 	}
 
@@ -1018,6 +1026,7 @@ onMount(() => {
 		font-weight: 600;
 		margin: 0;
 		line-height: 1.1;
+		text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Added shadow for better readability */
 	}
 
 	.home-title {
@@ -1026,6 +1035,7 @@ onMount(() => {
 		margin: 0;
 		line-height: 1.2;
 		opacity: 0.9;
+		text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Added shadow for better readability */
 	}
 
 	/* Responsive adjustments */
