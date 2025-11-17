@@ -110,58 +110,49 @@
 </script>
 
 <a
-	href="/{id}" 
-	class="media-container"
-	on:click={handleClick}
-	on:keydown={handleKeyDown}
-	role="button"
-	tabindex="0"
-
-	bind:this={ref}
-	on:mousemove={handleMouse}
-	on:mouseenter={handleMouseEnter}
-	on:mouseleave={handleMouseLeave}
-	
-	<!-- ADDED BIND AND EVENTS END -->
-
-	<!-- ADDED TILT WRAPPER START -->
-	<div 
-		class="tilted-card-inner"
-		style="transform: rotateX({rotateXSpring}deg) rotateY({rotateYSpring}deg) scale({scaleSpring})"
-	>
-	<!-- ADDED TILT WRAPPER END -->
-		<div class="media-image-wrapper">
-			<img
-				bind:this={imageElement}
-				{id}
-				src={imageCarre}
-				alt={title}
-				class="media-image"
-				style="opacity: {imageComplete
-					? 1
-					: 0}; transition: opacity 0.3s ease;"
-				on:load={handleImageLoading}
-			/>
-			{#if !imageComplete}
-				<div class="loading-placeholder"></div>
-			{/if}
-		</div>
-		<div class="media-info">
-			<a href="/{id}" class="media-title">{title}</a> -
-			<span class="media-author">{author}</span> - 
-			<div class="media-work">{work}</div>
-		</div>
-	<!-- ADDED CLOSING DIV FOR TILT WRAPPER -->
-	</div>
-
-	<!-- ADDED TILT CAPTION -->
-	<figcaption
-		class="tilted-card-caption"
-		style="left: {x}px; top: {y}px; opacity: {opacitySpring}; transform: rotate({rotateFigcaptionSpring}deg)"
-	>
-		{title}
-	</figcaption>
+    href="/{id}" 
+    class="media-container"
+    on:click={handleClick}
+    on:keydown={handleKeyDown}
+    role="button"
+    tabindex="0"
+    bind:this={ref}
+    on:mousemove={handleMouse}
+    on:mouseenter={handleMouseEnter}
+    on:mouseleave={handleMouseLeave}
+>
+    <div 
+        class="tilted-card-inner"
+        style="transform: rotateX({rotateXSpring}deg) rotateY({rotateYSpring}deg) scale({scaleSpring})"
+    >
+        <div class="media-image-wrapper">
+            <img
+                bind:this={imageElement}
+                {id}
+                src={imageCarre}
+                alt={title}
+                class="media-image"
+                style="opacity: {imageComplete ? 1 : 0}; transition: opacity 0.3s ease;"
+                on:load={handleImageLoading}
+            />
+            {#if !imageComplete}
+                <div class="loading-placeholder"></div>
+            {/if}
+        </div>
+        <div class="media-info">
+            <a href="/{id}" class="media-title">{title}</a> -
+            <span class="media-author">{author}</span> - 
+            <div class="media-work">{work}</div>
+        </div>
+    </div>
 </a>
+
+<figcaption
+    class="tilted-card-caption"
+    style="left: {x}px; top: {y}px; opacity: {opacitySpring}; transform: rotate({rotateFigcaptionSpring}deg)"
+>
+    {title}
+</figcaption>
 
 <style>
 	/* ADDED TILT EFFECT STYLES START */
