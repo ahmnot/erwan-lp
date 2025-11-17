@@ -12,40 +12,51 @@ onMount(() => {
 	let isScrolling = false;
 
 	function startAutoScroll() {
-		const homeSection = document.getElementById('home');
-		if (homeSection) {
-			const homeHeight = homeSection.offsetHeight;
-			const targetPosition = homeHeight * 0.5;
-			const startPosition = window.pageYOffset;
-			const distance = targetPosition - startPosition;
-			const duration = 4000;
-			let startTime = null;
-
-			// Cancel any existing animation
-			if (scrollAnimationId) {
-				cancelAnimationFrame(scrollAnimationId);
-			}
-
-			function animation(currentTime) {
-				if (startTime === null) startTime = currentTime;
-				const timeElapsed = currentTime - startTime;
-				const progress = Math.min(timeElapsed / duration, 1);
-				
-				const easeOutQuart = 1 - Math.pow(1 - progress, 4);
-				window.scrollTo(0, startPosition + (distance * easeOutQuart));
-				
-				if (timeElapsed < duration) {
-					scrollAnimationId = requestAnimationFrame(animation);
-				} else {
-					isScrolling = false;
-					scrollAnimationId = null;
-				}
-			}
-
-			isScrolling = true;
-			scrollAnimationId = requestAnimationFrame(animation);
-		}
+	// Only auto-scroll if we're at the top of the page (in home section)
+	if (window.pageYOffset > 100) {
+		return; // Don't auto-scroll if we're not at the top
 	}
+
+	const homeSection = document.getElementById('home');
+	if (homeSection) {
+		const homeHeight = homeSection.offsetHeight;
+		const targetPosition = homeHeight * 0.5;
+		const startPosition = window.pageYOffset;
+		const distance = targetPosition - startPosition;
+		
+		// Don't scroll if we're already close to the target
+		if (Math.abs(distance) < 100) {
+			return;
+		}
+		
+		const duration = 4000;
+		let startTime = null;
+
+		// Cancel any existing animation
+		if (scrollAnimationId) {
+			cancelAnimationFrame(scrollAnimationId);
+		}
+
+		function animation(currentTime) {
+			if (startTime === null) startTime = currentTime;
+			const timeElapsed = currentTime - startTime;
+			const progress = Math.min(timeElapsed / duration, 1);
+			
+			const easeOutQuart = 1 - Math.pow(1 - progress, 4);
+			window.scrollTo(0, startPosition + (distance * easeOutQuart));
+			
+			if (timeElapsed < duration) {
+				scrollAnimationId = requestAnimationFrame(animation);
+			} else {
+				isScrolling = false;
+				scrollAnimationId = null;
+			}
+		}
+
+		isScrolling = true;
+		scrollAnimationId = requestAnimationFrame(animation);
+	}
+}
 
 	// Start auto-scroll after 1 second
 	setTimeout(startAutoScroll, 1200);
