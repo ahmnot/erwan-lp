@@ -996,7 +996,7 @@ onMount(() => {
 	}
 
 	/* UPDATED GRADIENT - DARKER FROM LEFT */
-	#home::before {
+		#home::before {
 		content: '';
 		position: absolute;
 		top: 0;
@@ -1004,11 +1004,9 @@ onMount(() => {
 		right: 0;
 		bottom: 0;
 		background: linear-gradient(to right, 
-			rgba(0, 0, 0, 0.8) 0%,        /* Much darker on the left */
-			rgba(0, 0, 0, 0.5) 25%,      /* Still quite dark at 25% */
-			rgba(0, 0, 0, 0.3) 50%,      /* Medium dark at 50% */
-			rgba(0, 0, 0, 0.1) 75%,      /* Very light at 75% */
-			rgba(0, 0, 0, 0) 100%        /* Completely transparent on the right */
+			rgba(0, 0, 0, 0.7) 0%,        /* Dark on the left */
+			rgba(0, 0, 0, 0.7) 40%,      /* Same darkness until 40% */
+			rgba(0, 0, 0, 0) 60%         /* Sharp cutoff to transparent by 60% */
 		);
 		z-index: 1;
 	}
@@ -1062,5 +1060,5 @@ onMount(() => {
 			font-size: 1.2rem;
 		}
 	}
-	
+
 </style>
