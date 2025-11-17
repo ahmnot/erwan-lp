@@ -174,15 +174,9 @@ onMount(() => {
 </script>
 	
 <section id="home">
-	<div class="presentation-grid">
-		 <div class="texte-home">
-			<h1 id="main-title"> <span class="le-pape"> </span></h1>
-			<div class="sous-titres-wrapper"> 
-				<h2> </h2>
-				<h2> </h2>
-			</div>
-		</div> 
-		<!-- <div class="downwoard-arrow-home">↓</div> -->
+	<div class="home-content">
+		<h1 class="home-name">Erwan Le Pape</h1>
+		<h2 class="home-title">composer</h2>
 	</div>
 </section>
 
@@ -981,6 +975,82 @@ onMount(() => {
 			scroll-behavior: smooth;
 		}
 	}
-	/* === END OF DISCO CSS === */
+		#home {
+		height: 100vh;
+		background-image: url('/erwan-fond-accueil.jpg');
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		position: relative;
+		z-index: 0;
+		/* ADD THIS FOR GRADIENT OVERLAY */
+		display: flex;
+		align-items: center;
+	}
+
+	/* ADD THESE NEW RULES */
+
+	#home::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		background: linear-gradient(to right, 
+			rgba(0, 0, 0, 0.6) 0%,
+			rgba(0, 0, 0, 0.4) 25%,
+			rgba(0, 0, 0, 0.2) 50%,
+			rgba(0, 0, 0, 0) 100%);
+		z-index: 1;
+	}
+
+	.home-content {
+		position: relative;
+		z-index: 2;
+		margin-left: 10%;
+		color: white;
+		font-family: 'Poppins', sans-serif;
+	}
+
+	.home-name {
+		font-size: 4rem;
+		font-weight: 600;
+		margin: 0;
+		line-height: 1.1;
+	}
+
+	.home-title {
+		font-size: 2rem;
+		font-weight: 300;
+		margin: 0;
+		line-height: 1.2;
+		opacity: 0.9;
+	}
+
+	/* Responsive adjustments */
+	@media (max-width: 768px) {
+		.home-name {
+			font-size: 3rem;
+		}
+		
+		.home-title {
+			font-size: 1.5rem;
+		}
+		
+		.home-content {
+			margin-left: 5%;
+		}
+	}
+
+	@media (max-width: 480px) {
+		.home-name {
+			font-size: 2.5rem;
+		}
+		
+		.home-title {
+			font-size: 1.2rem;
+		}
+	}
 	
 </style>
