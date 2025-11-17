@@ -1004,9 +1004,10 @@ onMount(() => {
 		right: 0;
 		bottom: 0;
 		background: linear-gradient(to right, 
-			rgba(0, 0, 0, 0.7) 0%,        /* Dark on the left */
-			rgba(0, 0, 0, 0.7) 40%,      /* Same darkness until 40% */
-			rgba(0, 0, 0, 0) 60%         /* Sharp cutoff to transparent by 60% */
+			rgba(0, 0, 0, 0.8) 0%,        /* Dark on the left */
+			rgba(0, 0, 0, 0.8) 20%,      /* Same darkness until 20% */
+			rgba(0, 0, 0, 0.4) 25%,      /* Quick drop at 25% */
+			rgba(0, 0, 0, 0) 30%         /* Completely transparent by 30% */
 		);
 		z-index: 1;
 	}
