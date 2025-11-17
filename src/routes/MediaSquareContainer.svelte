@@ -22,9 +22,6 @@
 	let rotateX = 0;
 	let rotateY = 0;
 	let scale = 1;
-	let tooltipVisible = false;
-	let tooltipX = 0;
-	let tooltipY = 0;
 
 	function handleMouseMove(e) {
 		if (!container) return;
@@ -35,21 +32,16 @@
 
 		rotateX = (offsetY / (rect.height / 2)) * -10;
 		rotateY = (offsetX / (rect.width / 2)) * 10;
-		
-		tooltipX = e.clientX - rect.left;
-		tooltipY = e.clientY - rect.top;
 	}
 
 	function handleMouseEnter() {
 		scale = 1.05;
-		tooltipVisible = true;
 	}
 
 	function handleMouseLeave() {
 		scale = 1;
 		rotateX = 0;
 		rotateY = 0;
-		tooltipVisible = false;
 	}
 
 	function handleClick() {
@@ -115,15 +107,6 @@
 			<div class="media-work">{work}</div>
 		</div>
 	</a>
-
-	{#if tooltipVisible}
-		<div 
-			class="tilt-tooltip"
-			style="left: {tooltipX}px; top: {tooltipY}px;"
-		>
-			{title}
-		</div>
-	{/if}
 </div>
 
 <style>
@@ -143,20 +126,6 @@
 		transform-style: preserve-3d;
 	}
 
-	.tilt-tooltip {
-		position: absolute;
-		pointer-events: none;
-		background: white;
-		color: black;
-		padding: 5px 10px;
-		border-radius: 4px;
-		font-size: 12px;
-		white-space: nowrap;
-		z-index: 100;
-		transform: translate(-50%, -100%);
-		margin-top: -10px;
-	}
-
 	.media-image {
 		transform: translateZ(0);
 	}
@@ -166,9 +135,6 @@
 	}
 
 	@media (max-width: 640px) {
-		.tilt-tooltip {
-			display: none;
-		}
 		.media-container {
 			transform: none !important;
 		}
@@ -208,7 +174,7 @@
 		object-fit: cover;
 		height: 100%;
 		width: 100%;
-		transition: opacity 0.1s ease;
+		transition: opacity 0.3s ease; /* Smoother transition */
 	}
 
 	.media-info {
@@ -222,19 +188,19 @@
 		justify-content: center;
 		align-items: center;
 		text-align: center;
-		background: rgba(0, 0, 0, 0.9);
+		background: rgba(0, 0, 0, 0.6); /* Changed from 0.9 to 0.6 for more transparency */
 		color: white;
 		visibility: hidden;
 		opacity: 0;
 		transition:
 			visibility 0s,
-			opacity 0.15s ease;
+			opacity 0.3s ease; /* Smoother transition */
 		padding: 10px;
 		font-size: x-large;
 	}
 
 	.media-container:hover .media-image {
-		opacity: 0.1;
+		opacity: 0.8; /* Changed from 0.1 to 0.8 for more subtle effect */
 	}
 	.media-container:hover .media-info {
 		visibility: visible;
