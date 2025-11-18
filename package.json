@@ -33,7 +33,7 @@
 		"node": ">=18 <=20"
 	},
 	"dependencies": {
-		"erwan-lp": "file:"
+		"erwan-lp": "file:",
+		"ogl": "^1.0.11"
 	}
 }
-

@@ -6,6 +6,7 @@
 	import { underlineVisible } from '$lib/underlineVisibility';
 	import LightYoutube from './LightYoutube.svelte';
 	import { fade } from 'svelte/transition';
+	import Ribbons from './Ribbons.svelte';
 
 onMount(() => {
 	let scrollAnimationId = null;
@@ -172,7 +173,7 @@ onMount(() => {
 		}
 	});
 </script>
-	
+
 <section id="home">
 	<div class="presentation-grid">
 		 <div class="texte-home">
@@ -983,6 +984,7 @@ onMount(() => {
 	}
 	
 	/* === END OF DISCO CSS === */
+	
 		#home {
 		height: 100vh;
 		background-image: url('/erwan-fond-accueil.jpg');
@@ -1062,5 +1064,16 @@ onMount(() => {
 			font-size: 1.2rem;
 		}
 	}
+	    /* ... your existing CSS ... */
 
 </style>
+
+	<!-- RIBBONS COMPONENT -->
+	<Ribbons 
+		colors={['#FC8EAC', '#8EFCAC', '#8EACFC']}
+		baseSpring={0.03}
+		baseFriction={0.9}
+		baseThickness={25}
+		enableFade={true}
+		speedMultiplier={0.8}
+	/>
