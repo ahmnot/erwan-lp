@@ -1069,11 +1069,11 @@ onMount(() => {
 </style>
 
 	<!-- RIBBONS COMPONENT -->
-	<Ribbons 
-		colors={['#FF0000', '#00FF00', '#0000FF']}
-		baseSpring={0.05}
-		baseFriction={0.8}
-		baseThickness={50}  
-		enableFade={false} 
-		speedMultiplier={1.0}
+		<Ribbons 
+		colors={['#FC8EAC', '#8EFCAC', '#8EACFC']}
+		baseSpring={0.03}
+		baseFriction={0.9}
+		baseThickness={25}
+		enableFade={true}
+		speedMultiplier={0.8}
 	/>
