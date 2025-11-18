@@ -26,12 +26,12 @@
   export let colors: string[] = ['#FC8EAC'];
   export let baseSpring: number = 0.03;
   export let baseFriction: number = 0.9;
-  export let baseThickness: number = 30;
+  export let baseThickness: number = 25;
   export let offsetFactor: number = 0.05;
   export let maxAge: number = 500;
   export let pointCount: number = 50;
-  export let speedMultiplier: number = 0.6;
-  export let enableFade: boolean = false;
+  export let speedMultiplier: number = 0.8;
+  export let enableFade: boolean = true;
   export let enableShaderEffect: boolean = false;
   export let effectAmplitude: number = 2;
   export let backgroundColor: number[] = [0, 0, 0, 0];
@@ -41,20 +41,33 @@
   let frameId: number | null = null;
 
   onMount(() => {
+    console.log('Ribbons component mounted');
+    
     const init = async () => {
+      console.log('Initializing ribbons...');
+      
       // Dynamically import OGL
       try {
         OGL = await import('ogl');
+        console.log('OGL loaded successfully');
       } catch (error) {
         console.error('Failed to load OGL library:', error);
         return;
       }
 
-      if (!OGL) return;
+      if (!OGL) {
+        console.error('OGL is null');
+        return;
+      }
 
       const { Renderer, Transform, Vec3, Color, Polyline } = OGL;
 
-      if (!container) return;
+      if (!container) {
+        console.error('Container is null');
+        return;
+      }
+
+      console.log('Creating WebGL renderer...');
 
       // Initialize OGL renderer
       renderer = new Renderer({ dpr: window.devicePixelRatio || 2, alpha: true });
@@ -66,13 +79,16 @@
         gl.clearColor(0, 0, 0, 0);
       }
 
-      gl.canvas.style.position = 'absolute';
+      gl.canvas.style.position = 'fixed'; // Changed from absolute to fixed
       gl.canvas.style.top = '0';
       gl.canvas.style.left = '0';
       gl.canvas.style.width = '100%';
       gl.canvas.style.height = '100%';
       gl.canvas.style.pointerEvents = 'none';
+      gl.canvas.style.zIndex = '9999';
       container.appendChild(gl.canvas);
+
+      console.log('WebGL canvas added to DOM');
 
       const scene = new Transform();
       const lines: Line[] = [];
@@ -148,6 +164,7 @@
             line.polyline.resize();
           }
         });
+        console.log('Resized to:', width, height);
       }
 
       window.addEventListener('resize', resize);
@@ -202,6 +219,8 @@
         lines.push(line);
       });
 
+      console.log('Created', lines.length, 'ribbon lines');
+
       resize();
 
       // Mouse tracking
@@ -228,12 +247,17 @@
       container.addEventListener('touchstart', updateMouse);
       container.addEventListener('touchmove', updateMouse);
 
+      console.log('Mouse event listeners attached');
+
       // Animation
       const tmp = new Vec3();
       let lastTime = performance.now();
       
       function update() {
-        if (!renderer) return;
+        if (!renderer) {
+          console.log('Renderer not available, stopping animation');
+          return;
+        }
         
         frameId = requestAnimationFrame(update);
         const currentTime = performance.now();
@@ -270,9 +294,11 @@
       }
       
       update();
+      console.log('Animation started');
 
       // Cleanup function for onMount
       return () => {
+        console.log('Cleaning up ribbons...');
         window.removeEventListener('resize', resize);
         if (container) {
           container.removeEventListener('mousemove', updateMouse);
@@ -286,6 +312,7 @@
   });
 
   onDestroy(() => {
+    console.log('Ribbons component destroyed');
     if (frameId) {
       cancelAnimationFrame(frameId);
     }
