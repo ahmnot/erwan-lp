@@ -223,9 +223,6 @@
 		{#if isHamburgerExpanded}
 			<ul class="hamburger-menu" in:slide={{ duration: 200 }} out:fade={{ duration: 50 }} bind:this={hamburgerMenuElement}>
 				<li>
-					<a id="homeId" href="/#home" on:click={(e) => handleAnchorClick(e, 'home')}>Home</a>
-				</li>
-				<li>
 					<a href="/#music" on:click={(e) => handleAnchorClick(e, 'music')}>Music</a>
 				</li>
 				<li>

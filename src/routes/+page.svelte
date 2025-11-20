@@ -155,6 +155,27 @@ onMount(() => {
 		isDiscordNameShown = !isDiscordNameShown;
 	}
 
+	let isMediaGridExpanded = false;
+
+function toggleMediaGrid() {
+	isMediaGridExpanded = !isMediaGridExpanded;
+	const container = document.querySelector('.media-grid-container');
+	const toggleText = document.querySelector('.toggle-text');
+	const toggleIcon = document.querySelector('.toggle-icon');
+	
+	if (container) {
+		if (isMediaGridExpanded) {
+			container.style.maxHeight = container.scrollHeight + 'px';
+			toggleText.textContent = 'Hide Media Projects';
+			toggleIcon.textContent = '↑';
+		} else {
+			container.style.maxHeight = '0';
+			toggleText.textContent = 'Show Media Projects';
+			toggleIcon.textContent = '↓';
+		}
+	}
+}
+
 	onMount(() => {
 		underlineVisible.set(true);
 
@@ -282,10 +303,19 @@ onMount(() => {
 	</div>
 </div>
 
-	<div class="media-grid" bind:clientWidth={mediaGridElementWidth}>
-		{#each mediaList as media (media.id)}
-			<MediaSquareContainer {...media} />
-		{/each}
+	<!-- Collapsible Media Grid -->
+	<div class="collapsible-media">
+		<button class="collapsible-toggle" on:click={toggleMediaGrid}>
+			<span class="toggle-text">Show Media Projects</span>
+			<span class="toggle-icon">↓</span>
+		</button>
+		<div class="media-grid-container">
+			<div class="media-grid" bind:clientWidth={mediaGridElementWidth}>
+				{#each mediaList as media (media.id)}
+					<MediaSquareContainer {...media} />
+				{/each}
+			</div>
+		</div>
 	</div>
 	<div class="youtube-showreel">
 		<LightYoutube videoId="BteChDYwoBs" image='/image-showreel.webp'></LightYoutube>
@@ -692,10 +722,11 @@ onMount(() => {
 	@media (max-width: 840px) {
 
 		#home {
-			height: 100%;
-			background-size: cover;
-			background-position: 70% 20%;
-			min-height: 80vh;
+			display: none !important; /* Hide home section */
+		}
+		
+		#music {
+			padding-top: 20px !important; /* Reduce top padding */
 		}
 
 		.bio-text,
@@ -1070,7 +1101,54 @@ onMount(() => {
 	#home {
 		background-position: 70% 20% !important; /* Forcer la priorité */
 	}
-}
+	}
+	/* Collapsible Media Grid - Mobile Only */
+	@media (max-width: 840px) {
+		.collapsible-media {
+			margin: 30px 0;
+		}
+		
+		.collapsible-toggle {
+			width: 100%;
+			background: rgba(255, 255, 255, 0.1);
+			border: 1px solid rgba(255, 255, 255, 0.3);
+			color: white;
+			padding: 15px 20px;
+			font-size: 16px;
+			font-family: 'Poppins', sans-serif;
+			cursor: pointer;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			border-radius: 8px;
+			transition: all 0.3s ease;
+		}
+		
+		.collapsible-toggle:hover {
+			background: rgba(255, 255, 255, 0.2);
+		}
+		
+		.media-grid-container {
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 0.5s ease;
+		}
+		
+		.toggle-icon {
+			transition: transform 0.3s ease;
+		}
+	}
+
+	/* Desktop - keep normal layout */
+	@media (min-width: 841px) {
+		.collapsible-toggle {
+			display: none;
+		}
+		
+		.media-grid-container {
+			max-height: none !important;
+		}
+	}
 
 </style>
 
