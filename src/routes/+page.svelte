@@ -1147,6 +1147,11 @@ function toggleMediaGrid() {
 			border-radius: 8px;
 			transition: all 0.3s ease;
 		}
+				.toggle-icon {
+			color: rgb(255, 212, 137); /* Gold color for the arrow only */
+			font-weight: bold;
+			transition: transform 0.3s ease;
+		}
 		
 		.collapsible-toggle:hover {
 			background: rgba(255, 255, 255, 0.2);
