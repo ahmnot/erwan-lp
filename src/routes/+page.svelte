@@ -1065,6 +1065,12 @@ onMount(() => {
 		}
 	}
 	    /* ... your existing CSS ... */
+		/* À la fin de votre CSS, après toutes les autres règles #home */
+@media (max-width: 840px) {
+	#home {
+		background-position: 30% 20% !important; /* Forcer la priorité */
+	}
+}
 
 </style>
 
