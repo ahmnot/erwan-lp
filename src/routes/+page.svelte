@@ -765,7 +765,9 @@ function toggleMediaGrid() {
 		}
 
 		.bio-image-grid {
-			grid-template-columns: 5px 1fr 1fr 5px; /* Reduced from 10px to 5px */
+			grid-template-columns: 10px 1fr 1fr 10px; 
+			gap: 15px; /* Reduced gap between images */
+			padding-right: 10px; /* Reduced right padding */
 		}
 
 		.bio-text-grid {
