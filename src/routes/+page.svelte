@@ -659,13 +659,6 @@ function toggleMediaGrid() {
 		margin: 0; /* Remove any default margins */
 	}
 
-	.bio-image-grid {
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr; /* 3 equal columns like media-grid */
-		gap: 20px; /* Same gap as media-grid */
-		grid-column: 2 / span 3; /* Position it exactly like media-grid */
-	}
-
 	.bio-text-grid {
 		display: grid;
 		grid-template-rows: 1fr auto;
@@ -677,16 +670,6 @@ function toggleMediaGrid() {
 
 	.musee-picture {
 		grid-column: 2;
-	}
-
-	.musee-picture,
-	.piano-picture,
-	.ethnic-picture {
-		width: 100%; /* Make images fill their grid cells */
-		height: auto; /* Maintain aspect ratio */
-		justify-self: center;
-		align-self: center;
-		object-fit: cover; /* This will make them behave like media-grid images */
 	}
 
 	/* Above 1160px */
@@ -1122,31 +1105,23 @@ function toggleMediaGrid() {
 			background-position: 70% 20% !important; /* Forcer la priorité */
 		}
 		}
-		/* Desktop version - Bio images with same spacing as media-grid */
-		/* Desktop Bio Images - Match media-grid layout */
+	/* Desktop Bio Images - Match media-grid layout exactly */
 	@media (min-width: 841px) {
 		.bio-image-grid {
 			display: grid;
 			grid-template-columns: 1fr 1fr 1fr;
 			gap: 20px;
 			grid-column: 2 / span 3;
+			margin-top: 20px; /* Add some spacing from the title */
 		}
 		
 		.musee-picture,
 		.piano-picture,
 		.ethnic-picture {
 			width: 100%;
-			height: auto;
-			object-fit: cover;
-		}
-	}
-	@media (min-width: 841px) {
-		.bio-image-grid {
-			grid-template-columns: 1fr 1fr 1fr;
-			gap: 20px;
-			padding-right: 0;
-			justify-content: center;
-			grid-column: 2 / span 3;
+			height: 200px; /* Set a fixed height like media-grid items */
+			object-fit: cover; /* This will crop images to fit */
+			border-radius: 8px; /* Match media-grid rounded corners if they have them */
 		}
 	}
 	/* Desktop Media Grid - Always Visible */
