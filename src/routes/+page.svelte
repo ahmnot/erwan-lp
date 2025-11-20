@@ -1134,9 +1134,9 @@ function toggleMediaGrid() {
 		
 		.collapsible-toggle {
 			width: 100%;
-			background: rgba(255, 212, 137, 0.1); /* Gold overlay with transparency */
-			border: 1px solid rgb(255, 212, 137); /* Solid gold border */
-			color: rgb(255, 212, 137); /* Gold text color */
+			background: rgba(255, 255, 255, 0.1);
+			border: 1px solid rgba(255, 255, 255, 0.3);
+			color: white;
 			padding: 15px 20px;
 			font-size: 16px;
 			font-family: 'Poppins', sans-serif;
@@ -1149,7 +1149,7 @@ function toggleMediaGrid() {
 		}
 		
 		.collapsible-toggle:hover {
-			background: rgba(255, 212, 137, 0.2);
+			background: rgba(255, 255, 255, 0.2);
 		}
 		
 		.media-grid-container {
