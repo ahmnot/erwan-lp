@@ -765,15 +765,18 @@ function toggleMediaGrid() {
 		}
 
 		.bio-image-grid {
-			grid-template-columns: 10px 1fr 1fr 10px; /* Add consistent side padding */
-			gap: 15px; /* Reduce gap between images */
-			padding-right: 10px; /* Reduce right padding */
+			grid-template-columns: 5px 1fr 1fr 5px; /* Reduced from 10px to 5px */
+		}
+		.bio-text-grid {
+			grid-template-columns: 5px 1fr 1fr 1fr 5px; /* Minimal side spacing */
+			gap: 15px;
+			margin-top: 20px; /* Balanced spacing matching title-to-pictures */
 		}
 
 		.bio-text-grid {
-			grid-template-columns: 10px 1fr 1fr 1fr 10px; /* Reduced side padding from 20px to 10px */
+			grid-template-columns: 5px 1fr 1fr 1fr 5px; /* Reduced side padding from 20px to 10px */
 			gap: 15px; /* Reduced gap between elements */
-			margin-top: 30px; /* Reduced top margin from 60px */
+			margin-top: 20px; /* Reduced top margin from 60px */
 		}
 
 		.logos-grid-wrapper {
@@ -781,7 +784,9 @@ function toggleMediaGrid() {
 		}
 		
 
-		.bio-title-grid,
+		.bio-title-grid {
+			margin-bottom: 20px; /* Add spacing below title to match spacing above pictures */
+		}
 		.credits-titre-grid,
 		.contact-title-grid {
 			grid-template-columns: 20px 1fr 1fr 1fr 20px;
