@@ -662,9 +662,11 @@ function toggleMediaGrid() {
 	.bio-image-grid {
 		display: grid;
 		grid-template-rows: 1fr;
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1fr; /* Changed from 5 columns to 3 columns */
 		gap: 20px;
-		padding-right: 20px;
+		padding-right: 0; /* Remove the right padding */
+		justify-content: center; /* Center the grid */
+		grid-column: 2 / span 3; /* Add this to match the media-grid positioning */
 	}
 
 	.bio-text-grid {
@@ -784,9 +786,7 @@ function toggleMediaGrid() {
 		}
 		
 
-		.bio-title-grid {
-			margin-bottom: 20px; /* Add spacing below title to match spacing above pictures */
-		}
+		.bio-title-grid
 		.credits-titre-grid,
 		.contact-title-grid {
 			grid-template-columns: 20px 1fr 1fr 1fr 20px;
@@ -1118,10 +1118,20 @@ function toggleMediaGrid() {
 	}
 	    /* ... your existing CSS ... */
 		/* À la fin de votre CSS, après toutes les autres règles #home */
-@media (max-width: 840px) {
-	#home {
-		background-position: 70% 20% !important; /* Forcer la priorité */
-	}
+	@media (max-width: 840px) {
+		#home {
+			background-position: 70% 20% !important; /* Forcer la priorité */
+		}
+		}
+		/* Desktop version - Bio images with same spacing as media-grid */
+	@media (min-width: 841px) {
+		.bio-image-grid {
+			grid-template-columns: 1fr 1fr 1fr;
+			gap: 20px;
+			padding-right: 0;
+			justify-content: center;
+			grid-column: 2 / span 3;
+		}
 	}
 	/* Desktop Media Grid - Always Visible */
 	.media-grid-desktop {
