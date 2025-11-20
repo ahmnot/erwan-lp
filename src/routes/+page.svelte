@@ -664,7 +664,7 @@ function toggleMediaGrid() {
 		grid-template-rows: 1fr;
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 		gap: 20px;
-		padding-right: 30px;
+		padding-right: 10px;
 	}
 
 	.bio-text-grid {
