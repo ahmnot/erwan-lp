@@ -661,10 +661,19 @@ function toggleMediaGrid() {
 
 	.bio-image-grid {
 		display: grid;
-		grid-template-rows: 1fr;
-		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-		gap: 20px;
-		padding-right: 20px;
+		grid-template-columns: 1fr 1fr 1fr; /* 3 columns like media-grid */
+		gap: 20px; /* Same gap as media-grid */
+		grid-column: 2 / span 3; /* Same positioning as media-grid */
+	}
+
+	/* Create square containers for bio images like MediaSquareContainer */
+	.musee-picture,
+	.piano-picture,
+	.ethnic-picture {
+		width: 100%;
+		aspect-ratio: 1 / 1; /* Force square aspect ratio */
+		object-fit: cover; /* Crop to fit square */
+		border-radius: 8px; /* Match media-grid rounded corners */
 	}
 
 	.bio-text-grid {
@@ -1186,6 +1195,24 @@ function toggleMediaGrid() {
 		
 		.toggle-icon {
 			transition: transform 0.3s ease;
+		}
+	}
+		/* Desktop Bio Images - Match media-grid square layout */
+	@media (min-width: 841px) {
+		.bio-image-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			gap: 20px;
+			grid-column: 2 / span 3;
+		}
+		
+		.musee-picture,
+		.piano-picture,
+		.ethnic-picture {
+			width: 100%;
+			aspect-ratio: 1 / 1;
+			object-fit: cover;
+			border-radius: 8px;
 		}
 	}
 	
