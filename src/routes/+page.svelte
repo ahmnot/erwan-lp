@@ -1006,11 +1006,11 @@ onMount(() => {
 		right: 0;
 		bottom: 0;
 		background: linear-gradient(to right, 
-			rgba(0, 0, 0, 0.8) 0%,        /* Dark on the left */
-			rgba(0, 0, 0, 0.7) 15%,      /* Slightly lighter at 15% */
-			rgba(0, 0, 0, 0.4) 25%,      /* Medium at 25% */
-			rgba(0, 0, 0, 0.2) 35%,      /* Light at 35% */
-			rgba(0, 0, 0, 0) 45%         /* Completely transparent by 45% */
+			rgba(0, 0, 0, 0.6) 0%,        /* Dark on the left */
+			rgba(0, 0, 0, 0.3) 10%,      /* Slightly lighter at 15% */
+			rgba(0, 0, 0, 0.2) 20%,      /* Medium at 25% */
+			rgba(0, 0, 0, 0.1) 30%,      /* Light at 35% */
+			rgba(0, 0, 0, 0) 40%         /* Completely transparent by 45% */
 		);
 		z-index: 1;
 	}
