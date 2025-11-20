@@ -1188,6 +1188,25 @@ function toggleMediaGrid() {
 			transition: transform 0.3s ease;
 		}
 	}
+		/* Desktop Bio Images - Match media-grid layout exactly */
+	@media (min-width: 841px) {
+		.bio-image-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr; /* 3 columns like media-grid */
+			gap: 20px; /* Same gap as media-grid */
+			grid-column: 2 / span 3; /* Same positioning as media-grid */
+			padding-right: 0; /* Remove extra padding */
+		}
+		
+		.musee-picture,
+		.piano-picture,
+		.ethnic-picture {
+			width: 100%;
+			height: 250px; /* Increase height to match media-grid size */
+			object-fit: cover; /* Crop images to fit properly */
+			border-radius: 8px; /* Add rounded corners like media-grid */
+		}
+	}
 
 </style>
 
