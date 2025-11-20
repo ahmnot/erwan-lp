@@ -1196,26 +1196,6 @@ function toggleMediaGrid() {
 		.toggle-icon {
 			transition: transform 0.3s ease;
 		}
-	}
-		/* Desktop Bio Images - Match media-grid square layout */
-	@media (min-width: 841px) {
-		.bio-image-grid {
-			display: grid;
-			grid-template-columns: 1fr 1fr 1fr;
-			gap: 20px;
-			grid-column: 2 / span 3;
-		}
-		
-		.musee-picture,
-		.piano-picture,
-		.ethnic-picture {
-			width: 100%;
-			aspect-ratio: 1 / 1;
-			object-fit: cover;
-			border-radius: 8px;
-		}
-	}
-	
 
 </style>
 
