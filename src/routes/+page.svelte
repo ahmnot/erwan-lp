@@ -663,8 +663,8 @@ function toggleMediaGrid() {
 		display: grid;
 		grid-template-rows: 1fr;
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-		gap: 30px;
-		padding-right: 20px;
+		gap: 20px;
+		padding-right: 30px;
 	}
 
 	.bio-text-grid {
