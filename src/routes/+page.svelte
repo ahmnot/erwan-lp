@@ -325,7 +325,7 @@ onMount(() => {
 			Yves Krier, a contemporary composer and conductor. I acquired most of my skills in composition
 			and orchestration from him.<br /><br />
 			While the piano remains my primary instrument, I can also play the guitar (both electric and acoustic),
-			bass guitar, the ngoni and a different flutes. My musical influences range from neoclassical to contemporary
+			bass guitar, the ngoni and different flutes. My musical influences range from neoclassical to contemporary
 			music, with a particular affinity for orchestral arrangements. However, I'm not one to shy away
 			from experimentation, often blending traditional orchestral elements with electronic sounds to
 			create unique and dynamic compositions.<br /><br />
