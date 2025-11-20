@@ -1131,6 +1131,11 @@ function toggleMediaGrid() {
 			display: block;
 			margin: 30px 0;
 		}
+
+		/* Add spacing specifically for the collapsible section */
+		.collapsible-media-mobile .collapsible-toggle {
+			margin-bottom: 15px; /* Space between button and grid when expanded */
+		}
 		
 		.collapsible-toggle {
 			width: 100%;
@@ -1161,6 +1166,18 @@ function toggleMediaGrid() {
 			max-height: 0;
 			overflow: hidden;
 			transition: max-height 0.5s ease;
+		}
+
+		/* Ensure the media grid inside is visible */
+		.media-grid-container .media-grid {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			gap: 20px;
+			padding: 20px 0; /* Add spacing above and below the grid */
+		}
+		/* When expanded, add proper spacing */
+		.media-grid-container[style*="max-height"] {
+			padding-top: 10px; /* Space between button and grid */
 		}
 		
 		.toggle-icon {
