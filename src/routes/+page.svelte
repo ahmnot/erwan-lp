@@ -655,6 +655,8 @@ function toggleMediaGrid() {
 		grid-row: 1;
 		grid-column: 2 / span 3;
 		text-align: left;
+		padding: 0 10px; /* Reduce horizontal padding */
+		margin: 0; /* Remove any default margins */
 	}
 
 	.bio-image-grid {
@@ -763,11 +765,15 @@ function toggleMediaGrid() {
 		}
 
 		.bio-image-grid {
-			grid-template-columns: 0 1fr 1fr;
+			grid-template-columns: 10px 1fr 1fr 10px; /* Add consistent side padding */
+			gap: 15px; /* Reduce gap between images */
+			padding-right: 10px; /* Reduce right padding */
 		}
 
 		.bio-text-grid {
-			grid-template-columns: 20px 1fr 1fr 1fr 20px;
+			grid-template-columns: 10px 1fr 1fr 1fr 10px; /* Reduced side padding from 20px to 10px */
+			gap: 15px; /* Reduced gap between elements */
+			margin-top: 30px; /* Reduced top margin from 60px */
 		}
 
 		.logos-grid-wrapper {
