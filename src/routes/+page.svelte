@@ -659,6 +659,14 @@ function toggleMediaGrid() {
 		margin: 0; /* Remove any default margins */
 	}
 
+	.bio-image-grid {
+		display: grid;
+		grid-template-rows: 1fr;
+		grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+		gap: 20px;
+		padding-right: 20px;
+	}
+
 	.bio-text-grid {
 		display: grid;
 		grid-template-rows: 1fr auto;
@@ -670,6 +678,14 @@ function toggleMediaGrid() {
 
 	.musee-picture {
 		grid-column: 2;
+	}
+
+	.musee-picture,
+	.piano-picture,
+	.ethnic-picture {
+		width: 100%;
+		justify-self: center;
+		align-self: center;
 	}
 
 	/* Above 1160px */
@@ -751,16 +767,11 @@ function toggleMediaGrid() {
 		.bio-image-grid {
 			grid-template-columns: 5px 1fr 1fr 5px; /* Reduced from 10px to 5px */
 		}
-		.bio-text-grid {
-			grid-template-columns: 5px 1fr 1fr 1fr 5px; /* Minimal side spacing */
-			gap: 15px;
-			margin-top: 20px; /* Balanced spacing matching title-to-pictures */
-		}
 
 		.bio-text-grid {
 			grid-template-columns: 5px 1fr 1fr 1fr 5px; /* Reduced side padding from 20px to 10px */
 			gap: 15px; /* Reduced gap between elements */
-			margin-top: 20px; /* Reduced top margin from 60px */
+			margin-top: 30px; /* Reduced top margin from 60px */
 		}
 
 		.logos-grid-wrapper {
@@ -768,7 +779,7 @@ function toggleMediaGrid() {
 		}
 		
 
-		.bio-title-grid
+		.bio-title-grid,
 		.credits-titre-grid,
 		.contact-title-grid {
 			grid-template-columns: 20px 1fr 1fr 1fr 20px;
@@ -1100,29 +1111,10 @@ function toggleMediaGrid() {
 	}
 	    /* ... your existing CSS ... */
 		/* À la fin de votre CSS, après toutes les autres règles #home */
-	@media (max-width: 840px) {
-		#home {
-			background-position: 70% 20% !important; /* Forcer la priorité */
-		}
-		}
-	/* Desktop Bio Images - Match media-grid layout exactly */
-	@media (min-width: 841px) {
-		.bio-image-grid {
-			display: grid;
-			grid-template-columns: 1fr 1fr 1fr;
-			gap: 20px;
-			grid-column: 2 / span 3;
-			margin-top: 20px; /* Add some spacing from the title */
-		}
-		
-		.musee-picture,
-		.piano-picture,
-		.ethnic-picture {
-			width: 100%;
-			height: 200px; /* Set a fixed height like media-grid items */
-			object-fit: cover; /* This will crop images to fit */
-			border-radius: 8px; /* Match media-grid rounded corners if they have them */
-		}
+@media (max-width: 840px) {
+	#home {
+		background-position: 70% 20% !important; /* Forcer la priorité */
+	}
 	}
 	/* Desktop Media Grid - Always Visible */
 	.media-grid-desktop {
