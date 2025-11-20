@@ -694,7 +694,7 @@ onMount(() => {
 		#home {
 			height: 100%;
 			background-size: cover;
-			background-position: 30% 20%;
+			background-position: 70% 20%;
 			min-height: 80vh;
 		}
 
@@ -1068,7 +1068,7 @@ onMount(() => {
 		/* À la fin de votre CSS, après toutes les autres règles #home */
 @media (max-width: 840px) {
 	#home {
-		background-position: 30% 20% !important; /* Forcer la priorité */
+		background-position: 70% 20% !important; /* Forcer la priorité */
 	}
 }
 
