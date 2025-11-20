@@ -155,7 +155,7 @@ onMount(() => {
 		isDiscordNameShown = !isDiscordNameShown;
 	}
 
-	let isMediaGridExpanded = false;
+let isMediaGridExpanded = false;
 
 function toggleMediaGrid() {
 	isMediaGridExpanded = !isMediaGridExpanded;
@@ -163,7 +163,7 @@ function toggleMediaGrid() {
 	const toggleText = document.querySelector('.toggle-text');
 	const toggleIcon = document.querySelector('.toggle-icon');
 	
-	if (container) {
+	if (container && toggleText && toggleIcon) {
 		if (isMediaGridExpanded) {
 			container.style.maxHeight = container.scrollHeight + 'px';
 			toggleText.textContent = 'Hide Media Projects';
@@ -303,8 +303,17 @@ function toggleMediaGrid() {
 	</div>
 </div>
 
-	<!-- Collapsible Media Grid -->
-	<div class="collapsible-media">
+	<!-- Media Grid - Desktop Version (always visible) -->
+	<div class="media-grid-desktop">
+		<div class="media-grid" bind:clientWidth={mediaGridElementWidth}>
+			{#each mediaList as media (media.id)}
+				<MediaSquareContainer {...media} />
+			{/each}
+		</div>
+	</div>
+
+	<!-- Collapsible Media Grid - Mobile Only -->
+	<div class="collapsible-media-mobile">
 		<button class="collapsible-toggle" on:click={toggleMediaGrid}>
 			<span class="toggle-text">Show Media Projects</span>
 			<span class="toggle-icon">↓</span>
@@ -592,7 +601,8 @@ function toggleMediaGrid() {
 		display:grid;
 	}
 
-	.media-grid,
+	.media-grid-desktop,
+	.collapsible-media-mobile,
 	.soundcloud-player,
 	.youtube-showreel {
 		grid-column: 2 / span 3;
@@ -1102,9 +1112,23 @@ function toggleMediaGrid() {
 		background-position: 70% 20% !important; /* Forcer la priorité */
 	}
 	}
-	/* Collapsible Media Grid - Mobile Only */
+	/* Desktop Media Grid - Always Visible */
+	.media-grid-desktop {
+		display: block;
+	}
+
+	.collapsible-media-mobile {
+		display: none;
+	}
+
+	/* Mobile Media Grid - Collapsible */
 	@media (max-width: 840px) {
-		.collapsible-media {
+		.media-grid-desktop {
+			display: none;
+		}
+		
+		.collapsible-media-mobile {
+			display: block;
 			margin: 30px 0;
 		}
 		
@@ -1136,17 +1160,6 @@ function toggleMediaGrid() {
 		
 		.toggle-icon {
 			transition: transform 0.3s ease;
-		}
-	}
-
-	/* Desktop - keep normal layout */
-	@media (min-width: 841px) {
-		.collapsible-toggle {
-			display: none;
-		}
-		
-		.media-grid-container {
-			max-height: none !important;
 		}
 	}
 
