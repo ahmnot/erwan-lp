@@ -49,9 +49,17 @@
 	}
 
 	async function handleAnchorClick(event) {
+		// Cancel any ongoing auto-scroll immediately when header link is clicked
+		if (typeof window !== 'undefined' && window.cancelAutoScroll) {
+			window.cancelAutoScroll();
+		}
+		
 		underlineVisible.set(true);
 		event.preventDefault();
 		const link = event.currentTarget;
+		// ... rest of your existing code continues unchanged
+		underlineVisible.set(true);
+		event.preventDefault();
 		const anchorId = new URL(link.href).hash.replace('#', '');
 		const anchor = document.getElementById(anchorId);
 

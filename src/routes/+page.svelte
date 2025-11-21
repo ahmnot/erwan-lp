@@ -9,8 +9,22 @@
 	import Ribbons from './Ribbons.svelte';
 
 onMount(() => {
+	    // Make cancel function available globally for header navigation
+    if (typeof window !== 'undefined') {
+        window.cancelAutoScroll = cancelAutoScroll;
+    }
 	let scrollAnimationId = null;
 	let isScrolling = false;
+
+	// Add this function to cancel auto-scroll
+	function cancelAutoScroll() {
+		if (scrollAnimationId) {
+			cancelAnimationFrame(scrollAnimationId);
+			scrollAnimationId = null;
+			isScrolling = false;
+			isAutoScrolling = false;
+		}
+	}	
 
 	// === ADD THIS CODE RIGHT HERE ===
     // Preconnect for faster Disco loading
@@ -73,9 +87,7 @@ onMount(() => {
 	// Make scroll interruptible by user interaction
 	function handleUserScroll() {
 		if (isScrolling && scrollAnimationId) {
-			cancelAnimationFrame(scrollAnimationId);
-			isScrolling = false;
-			scrollAnimationId = null;
+			cancelAutoScroll(); // Use the new function instead
 		}
 	}
 
@@ -975,8 +987,9 @@ function toggleMediaGrid() {
 		}
 		
 		.disco-playlist-item {
-			height: 400px; /* Increased */
-			margin-top: 50px; /* Increased from 40px */
+			height: 300px; /* Increased */
+			margin-top: 45px; /* Increased from 40px */		
+			padding: 10px 0; /* Add vertical padding */
 		}
 		
 		.playlist-title {
