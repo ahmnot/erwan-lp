@@ -12,6 +12,14 @@ onMount(() => {
 	let scrollAnimationId = null;
 	let isScrolling = false;
 
+	// === ADD THIS CODE RIGHT HERE ===
+    // Preconnect for faster Disco loading
+    const preconnect = document.createElement('link');
+    preconnect.rel = 'preconnect';
+    preconnect.href = 'https://erwnlp.disco.ac';
+    document.head.appendChild(preconnect);
+    // === END OF ADDED CODE ===
+
 	function startAutoScroll() {
 	// Only auto-scroll if we're at the top of the page (in home section)
 	if (window.pageYOffset > 100) {
@@ -147,14 +155,6 @@ onMount(() => {
 		soundcloudWidth = mediaGridElementWidth;
 	}
 
-	
-	let aligndiscordbottom = false;
-	let isDiscordNameShown = false;
-
-	function discordClickHandler() {
-		isDiscordNameShown = !isDiscordNameShown;
-	}
-
 let isMediaGridExpanded = false;
 
 function toggleMediaGrid() {
@@ -218,7 +218,7 @@ function toggleMediaGrid() {
 			width="480" 
 			height="395"
 			title="Fantasy"
-			loading="lazy"
+			loading="eager"
 			referrerpolicy="no-referrer-when-downgrade"
 			style="border: none; border-radius: 0;">
 		</iframe>
@@ -236,7 +236,7 @@ function toggleMediaGrid() {
 			width="480" 
 			height="395"
 			title="Orchestral"
-			loading="lazy"
+			loading="eager"
 			referrerpolicy="no-referrer-when-downgrade"
 			style="border: none; border-radius: 0;">
 		</iframe>
@@ -254,7 +254,7 @@ function toggleMediaGrid() {
 			width="480" 
 			height="395"
 			title="Action"
-			loading="lazy"
+			loading="eager"
 			referrerpolicy="no-referrer-when-downgrade"
 			style="border: none; border-radius: 0;">
 		</iframe>
@@ -272,7 +272,7 @@ function toggleMediaGrid() {
 			width="480" 
 			height="395"
 			title="Ambient"
-			loading="lazy"
+			loading="eager"
 			referrerpolicy="no-referrer-when-downgrade"
 			style="border: none; border-radius: 0;">
 		</iframe>
@@ -290,7 +290,7 @@ function toggleMediaGrid() {
 			width="480" 
 			height="395"
 			title="Others"
-			loading="lazy"
+			loading="eager"
 			referrerpolicy="no-referrer-when-downgrade"
 			style="border: none; border-radius: 0;">
 		</iframe>
@@ -411,14 +411,9 @@ function toggleMediaGrid() {
 				<img class="icon-large" src="/icons/instagram.webp" alt="Instagram Link" />
 			</a>
 
-			<button class="icon-button-or-link" on:click={discordClickHandler}>
+			<a class="icon-button-or-link" href="discord://discordapp.com/users/783996252018573332" target="_blank">
 				<img class="icon-large" src="/icons/discord.webp" alt="Discord Icon" />
-				{#if isDiscordNameShown}
-					<div class="discord-name-box" class:aligndiscordbottom transition:fade={{ duration: 50 }}>
-						erwanlp
-					</div>
-				{/if}
-			</button>
+			</a>
 
 			<a class="icon-button-or-link" href="https://www.facebook.com/profile.php?id=61551473833966" target="_blank">
 				<img class="icon-large" src="/icons/facebook.webp" alt="Facebook Link" />
@@ -493,6 +488,21 @@ function toggleMediaGrid() {
 		justify-items: center;
 		gap:40px;
 	}
+	/* Mobile version - vertical icons only */
+	@media (max-width: 768px) {
+		.icon-bar-grid {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 30px;
+		}
+		
+		/* Reset grid positioning for mobile */
+		.icon-bar-grid .icon-button-or-link {
+			grid-row: auto;
+			grid-column: auto;
+		}
+	}	
 
 	.icon-large {
 		width: 60px;
