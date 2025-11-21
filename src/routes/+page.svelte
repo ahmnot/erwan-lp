@@ -6,7 +6,6 @@
 	import { underlineVisible } from '$lib/underlineVisibility';
 	import LightYoutube from './LightYoutube.svelte';
 	import { fade } from 'svelte/transition';
-	import Ribbons from './Ribbons.svelte';
 
 onMount(() => {
 	    // Make cancel function available globally for header navigation
@@ -203,6 +202,19 @@ function toggleMediaGrid() {
 			});
 
 			observer.observe(soundcloudIframe);
+		}
+	});
+	// Temporary WebGL test
+	onMount(() => {
+		console.log('🔵 Checking WebGL support...');
+		const canvas = document.createElement('canvas');
+		const gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+		console.log('🔵 WebGL supported:', !!gl);
+		
+		if (!gl) {
+			console.error('❌ WebGL not supported in this browser');
+		} else {
+			console.log('✅ WebGL is supported');
 		}
 	});
 </script>
@@ -1216,13 +1228,3 @@ function toggleMediaGrid() {
 	
 
 </style>
-
-	<!-- RIBBONS COMPONENT -->
-		<Ribbons 
-		colors={['#FC8EAC', '#8EFCAC', '#8EACFC']}
-		baseSpring={0.03}
-		baseFriction={0.9}
-		baseThickness={25}
-		enableFade={true}
-		speedMultiplier={0.8}
-	/>
