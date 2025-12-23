@@ -35,7 +35,7 @@ export const mediaList = [
         title: 'Ciucciarella',
         author: 'An animation by Artfx',
         work: 'Original Soundtrack',
-        youtube: '',
+        youtube: 'fFwmS7Cu5fA',
         soundcloud: 'https://on.soundcloud.com/YEEkgt3nRSUG9MU2xJ',
         soundcloudAPINumber: 'playlists/2045327235',
         descriptiveText: "In a dreamlike universe within Corsican landscapes, Livia chases a mysterious sheep, bound to her by a red rope, leading her toward a haunting revelation. An animation by Mathieu LUTZ, Matairea MARE, Eléa MURACCIOLI, Léïa PROUST, Astrid SOREAU, Paul VEZINET."
