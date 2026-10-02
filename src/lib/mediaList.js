@@ -26,7 +26,7 @@ export const mediaList = [
         youtube: '',
         soundcloud: 'https://on.soundcloud.com/Nj97g5z0F2V5r1MmK9',
         soundcloudAPINumber: 'playlists/2308042758',
-        descriptiveText: "Animated horror short movie by Thomas Castellini, Verónica Corimayo, Camille Girardin Jouffreau, Eden GRIVEL, Alice Lombard, Ludovic LOUREIRO CARRICO, Elyes Messelmani, Axel Revidon and Gauthier Vincent"
+        descriptiveText: "Animated horror short by Thomas Castellini, Verónica Corimayo, Camille Girardin Jouffreau, Eden GRIVEL, Alice Lombard, Ludovic LOUREIRO CARRICO, Elyes Messelmani, Axel Revidon and Gauthier Vincent"
     },
     {
         id: 'PQAT',
