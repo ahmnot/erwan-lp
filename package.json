@@ -30,7 +30,7 @@
 	},
 	"type": "module",
 	"engines": {
-		"node": ">=18 <=20"
+    	"node": "24.x"
 	},
 	"dependencies": {
 		"erwan-lp": "file:",
