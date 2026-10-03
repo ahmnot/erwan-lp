@@ -411,7 +411,7 @@ function toggleMediaGrid() {
 		<div class="logos-grid-imgs">
 			<img src="/logos-ecoles/brassart.webp" alt="Brassart logo" />
 			<img src="/logos-ecoles/bellecour.webp" alt="Bellecour École logo" />
-			<img src="/logos-ecoles/gamagora.webp" alt="Gamagora logo" />
+			<img src="/logos-ecoles/esma.webp" alt="ESMA logo" />
 			<img src="/logos-ecoles/maaav.webp" alt="MAAAV logo" />
 			<img src="/logos-ecoles/mba-lyon.webp" alt="MBA Lyon logo" />
 			<img src="/logos-ecoles/artfx.webp" alt="Art FX School of Digital Arts logo" />
